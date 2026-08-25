@@ -338,7 +338,3 @@ No responde a:
 Esa información pertenece exclusivamente a:
 
 00-CONTROL/ESTADO.md
-
-Cuando lo hayas guardado, dime **`hecho`**.
-
-Después de esto quiero hacer una última comprobación estructural antes de declarar la base preparada para la **prueba real de la peluquería**.
