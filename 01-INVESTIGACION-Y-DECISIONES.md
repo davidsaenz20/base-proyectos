@@ -2191,5 +2191,313 @@ Continuar con los documentos restantes de arquitectura y datos, especialmente UR
 Progreso global estimado: 50 %.
 
 
+ENTRADA 006 — ENTIDADES, RELACIONES Y ARQUITECTURA
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 57 %
+
+ARCHIVOS REVISADOS
+
+- "proyecto/seo/arquitectura-urls.md"
+- "proyecto/seo/estados-sistema.md"
+- comprobación de la estructura disponible de "proyecto/seo/"
+
+---
+
+INVESTIGACIÓN
+
+La arquitectura de URLs establece un principio que puede generalizarse mucho más allá del SEO:
+
+«La salida final no debe decidirse directamente a partir de un dato aislado.»
+
+En el sistema SEO:
+
+INVESTIGACIÓN
+↓
+OPORTUNIDAD
+↓
+DECISIÓN
+↓
+ARQUITECTURA
+↓
+URL
+↓
+DATOS
+↓
+BLOQUES
+↓
+IA
+↓
+VALIDACIÓN
+↓
+ORQUESTACIÓN
+↓
+PUBLICACIÓN
+
+La URL, por tanto, es una consecuencia de decisiones anteriores y no una decisión independiente de la IA.
+
+---
+
+DECISIÓN #001 — ARQUITECTURA DERIVADA DE ENTIDADES
+
+"BASE-PROYECTOS" deberá considerar que la arquitectura de un sistema debe partir, cuando sea aplicable, de:
+
+- entidades;
+- relaciones;
+- capacidades;
+- procesos;
+- requisitos;
+- reglas.
+
+No de la tecnología final.
+
+Ejemplo conceptual:
+
+ENTIDADES
+↓
+RELACIONES
+↓
+PROCESOS
+↓
+ARQUITECTURA
+↓
+IMPLEMENTACIÓN
+
+Esto permite que el mismo modelo pueda terminar implementándose en tecnologías diferentes.
+
+---
+
+DECISIÓN #002 — UNA ENTIDAD NO ES NECESARIAMENTE UNA PÁGINA
+
+La documentación SEO demuestra que una oportunidad, una miniweb y una página interna son conceptos distintos.
+
+Esto generaliza a cualquier proyecto:
+
+«Una entidad lógica del sistema no tiene por qué corresponder directamente a una pantalla, página, tabla o componente visual.»
+
+Por tanto, "BASE-PROYECTOS" deberá separar:
+
+MODELO LÓGICO
+≠
+REPRESENTACIÓN
+
+---
+
+DECISIÓN #003 — MODELO LÓGICO ANTES DE IMPLEMENTACIÓN
+
+Antes de elegir:
+
+- WordPress;
+- N8N;
+- React;
+- Flutter;
+- PHP;
+- Python;
+- una API;
+- una base de datos;
+
+debe entenderse primero:
+
+- qué entidades existen;
+- cómo se relacionan;
+- qué procesos existen;
+- qué estados tienen;
+- qué datos necesitan;
+- qué entradas y salidas existen.
+
+Decisión:
+
+El modelo lógico deberá preceder a la implementación técnica siempre que la complejidad del proyecto lo justifique.
+
+---
+
+DECISIÓN #004 — ARQUITECTURA PREDECIBLE
+
+La documentación exige que las URLs sean:
+
+- coherentes;
+- predecibles;
+- estables;
+- legibles;
+- escalables;
+- automatizables.
+
+Este principio se puede generalizar.
+
+Los sistemas deben evitar estructuras arbitrarias y favorecer patrones previsibles.
+
+Esto facilita:
+
+- automatización;
+- mantenimiento;
+- debugging;
+- escalabilidad;
+- documentación;
+- migraciones;
+- integración con otros sistemas.
+
+---
+
+DECISIÓN #005 — FUENTE ÚNICA DE VERDAD
+
+Cuando diferentes capas utilizan la misma información, debe existir una fuente canónica.
+
+No debería ocurrir:
+
+WORDPRESS → tiene unos datos
+N8N → tiene otros
+IA → recuerda otros
+FRONTEND → tiene otros
+
+Debe existir:
+
+FUENTE CANÓNICA
+↓
+CAPAS / COMPONENTES
+
+Cada capa puede transformar o presentar los datos, pero no crear silenciosamente una versión alternativa de la verdad.
+
+---
+
+DECISIÓN #006 — TRAZABILIDAD ENTRE CAPAS
+
+Una entidad importante debería poder seguirse desde su origen hasta su resultado:
+
+ORIGEN
+↓
+ID
+↓
+DECISIÓN
+↓
+PROCESAMIENTO
+↓
+VALIDACIÓN
+↓
+SALIDA
+
+Esto conecta directamente con los principios anteriores de:
+
+- identificadores estables;
+- contratos;
+- estados;
+- incidencias;
+- validación.
+
+Decisión:
+
+La trazabilidad será un requisito transversal de "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #007 — NO CREAR POR PERMUTACIÓN
+
+La arquitectura SEO establece explícitamente que una combinación de elementos no justifica automáticamente una nueva página.
+
+La regla universal derivada es:
+
+«La existencia de una combinación posible de datos no implica que deba existir un nuevo componente, registro, pantalla, proceso o producto.»
+
+Antes de crear algo debe existir una justificación.
+
+Esto evita:
+
+- duplicación;
+- complejidad innecesaria;
+- datos basura;
+- componentes inútiles;
+- automatizaciones artificiales.
+
+---
+
+DECISIÓN #008 — ARQUITECTURA ESCALABLE
+
+La arquitectura debe permitir añadir nuevos elementos sin romper los existentes.
+
+Por tanto, al diseñar un sistema se deberá preguntar:
+
+- ¿qué ocurre si aparecen 10 veces más entidades?
+- ¿qué ocurre si aparece otro tipo de entidad?
+- ¿qué ocurre si cambiamos la tecnología?
+- ¿qué ocurre si añadimos otro canal?
+- ¿qué ocurre si automatizamos el proceso?
+- ¿qué ocurre si necesitamos varios clientes?
+
+Decisión:
+
+La escalabilidad será evaluada antes de la implementación, no después de que el sistema ya esté construido.
+
+---
+
+OBSERVACIÓN #001 — DOCUMENTACIÓN INCOMPLETA O MOVEDIZA
+
+Al intentar acceder directamente a algunos nombres esperados como:
+
+- "validacion.md";
+- "validacion-landing.md";
+- "evidencias.md";
+- "investigacion.md";
+
+GitHub devuelve "404".
+
+No se asumirá que esos documentos existen con esos nombres.
+
+Puede tratarse de:
+
+- nombres diferentes;
+- archivos movidos;
+- documentación integrada en otros archivos;
+- cambios de estructura.
+
+Decisión:
+
+Cuando terminemos la auditoría inicial se hará una revisión de inventario real del repositorio para identificar exactamente todos los archivos existentes.
+
+No se crearán conclusiones basadas en archivos inexistentes.
+
+---
+
+ACCIONES REALIZADAS
+
+- Revisada la arquitectura de URLs.
+- Revisado nuevamente el sistema de estados.
+- Extraídos principios sobre entidades y relaciones.
+- Identificada la separación entre modelo lógico y representación.
+- Identificado el principio de fuente única de verdad.
+- Identificado el principio de trazabilidad entre capas.
+- Identificado el principio de no crear elementos por simple permutación.
+- Identificado el requisito de escalabilidad previa a implementación.
+- Detectados algunos nombres de archivo que no existen actualmente con esas rutas exactas.
+
+---
+
+PENDIENTES
+
+Continuar con:
+
+- documentación restante de arquitectura;
+- imágenes;
+- interlinking;
+- datos;
+- investigación;
+- implementación;
+- testing;
+- seguridad;
+- despliegue;
+- documentación fuera de "proyecto/seo".
+
+Después se realizará el inventario completo y una segunda pasada de coherencia.
+
+---
+
+PRÓXIMO BLOQUE
+
+Continuar con datos, imágenes y relaciones entre entidades, buscando patrones universales que puedan servir tanto para webs como para automatizaciones, aplicaciones, SaaS y sistemas de IA.
+
+Progreso global estimado: 57 %.
+
+
+
+
 
 
