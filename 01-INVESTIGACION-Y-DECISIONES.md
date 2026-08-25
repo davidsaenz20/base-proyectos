@@ -5124,4 +5124,369 @@ y pasar a diseñar la estructura definitiva de "BASE-PROYECTOS".
 
 
 
+ENTRADA 013 — DESCUBRIMIENTO DE LA METODOLOGÍA REUTILIZABLE EXISTENTE
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 96 %
+
+ARCHIVO REVISADO
+
+- "proyecto/roadmap-fabrica-webs.md"
+
+---
+
+HALLAZGO PRINCIPAL
+
+Este archivo ya fue concebido explícitamente como:
+
+«Metodología reutilizable»
+
+y establece que no contiene el estado de un proyecto concreto ni sustituye al roadmap específico.
+
+Esto confirma que el trabajo que estamos realizando actualmente no parte de cero.
+
+Ya existe una primera versión conceptual de la futura metodología universal.
+
+---
+
+DECISIÓN #001 — NO REINVENTAR LA METODOLOGÍA
+
+La futura "BASE-PROYECTOS" deberá utilizar como materia prima:
+
+MAESTRO ACTUAL
++
+METODOLOGÍA
++
+PROTOCOLO DE EJECUCIÓN
++
+ROADMAP UNIVERSAL EXISTENTE
++
+DOCUMENTACIÓN TÉCNICA
+
+No debemos diseñar una metodología completamente nueva ignorando lo ya construido.
+
+---
+
+DECISIÓN #002 — GENERALIZAR, NO COPIAR
+
+Aunque "roadmap-fabrica-webs.md" se denomina "Fábrica de webs automáticas", sus principios ya son mucho más generales.
+
+Por ejemplo:
+
+- definición;
+- investigación;
+- modelo de datos;
+- oportunidades;
+- decisión;
+- arquitectura;
+- generación;
+- validación;
+- infraestructura;
+- automatización;
+- implementación;
+- QA;
+- producción;
+- escalado;
+- monitorización;
+- mejora.
+
+La tarea será eliminar la dependencia del producto "web automática" y convertir estas fases en un marco aplicable a cualquier proyecto.
+
+---
+
+DECISIÓN #003 — EL NÚCLEO UNIVERSAL YA ESTÁ CASI DEFINIDO
+
+El documento establece explícitamente que cada proyecto puede adaptar las fases y pasos necesarios manteniendo los principios fundamentales de control y validación.
+
+Esto coincide exactamente con el objetivo de "BASE-PROYECTOS".
+
+Por tanto, el núcleo universal deberá conservar:
+
+DEFINICIÓN
+↓
+INVESTIGACIÓN
+↓
+MODELO
+↓
+DECISIÓN
+↓
+ARQUITECTURA
+↓
+IMPLEMENTACIÓN
+↓
+VALIDACIÓN
+↓
+DESPLIEGUE
+↓
+OPERACIÓN
+↓
+MEDICIÓN
+↓
+MEJORA
+
+Pero las fases concretas serán configurables.
+
+---
+
+DECISIÓN #004 — LA REUTILIZACIÓN ES UN OBJETIVO EXPLÍCITO
+
+El documento distingue entre:
+
+NÚCLEO REUTILIZABLE
+
+- metodología;
+- protocolo;
+- validación;
+- arquitectura técnica;
+- automatización;
+- componentes;
+- infraestructura;
+- observabilidad.
+
+y:
+
+CONFIGURACIÓN ESPECÍFICA
+
+- sector;
+- servicio;
+- localidad;
+- fuentes;
+- entidades;
+- contenido;
+- reglas;
+- datos.
+
+Este principio es directamente trasladable a "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #005 — EL OBJETIVO ES CONFIGURAR, NO RECONSTRUIR
+
+El documento establece expresamente:
+
+«crear un nuevo proyecto debe requerir principalmente configurar el sistema existente, no reconstruirlo desde cero.»
+
+Esta será una de las reglas principales de "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #006 — EL MÉTODO NO DEBE GUARDAR EL ESTADO DEL PROYECTO
+
+El documento universal ya establece que el estado operativo pertenece al roadmap del proyecto concreto.
+
+Por tanto:
+
+BASE UNIVERSAL
+→ reglas y método
+
+PROYECTO
+→ estado y ejecución
+
+Esto evita contaminar la plantilla con información temporal.
+
+---
+
+DECISIÓN #007 — EL ESTADO MÍNIMO UNIVERSAL YA ESTÁ IDENTIFICADO
+
+El proyecto concreto debe poder indicar como mínimo:
+
+FASE ACTUAL
+PASO ACTUAL
+OBJETIVO
+ENTREGABLE
+ESTADO
+BLOQUEOS
+SIGUIENTE PASO
+
+Este modelo debe convertirse en una plantilla universal de estado.
+
+---
+
+DECISIÓN #008 — CRITERIO DE COMPLETITUD
+
+El documento establece un criterio extremadamente útil:
+
+QUÉ HACER
+↓
+EN QUÉ ORDEN
+↓
+CÓMO VALIDAR
+↓
+CÓMO AUTOMATIZAR
+↓
+CÓMO PUBLICAR
+↓
+CÓMO ESCALAR
+↓
+CÓMO MEDIR
+↓
+CÓMO MEJORAR
+
+Este criterio puede utilizarse para comprobar si la metodología universal de "BASE-PROYECTOS" está realmente completa.
+
+---
+
+DECISIÓN #009 — EL ROADMAP UNIVERSAL NO DEBE CONTENER IMPLEMENTACIÓN ESPECÍFICA
+
+El documento distingue claramente:
+
+MÉTODO
+↓
+ROADMAP CONCRETO
+↓
+DOCUMENTACIÓN TÉCNICA
+↓
+IMPLEMENTACIÓN
+
+Esto debe conservarse.
+
+Por ejemplo:
+
+N8N
+WordPress
+React
+Python
+WhatsApp
+OpenAI
+
+pueden aparecer como implementaciones posibles dentro de módulos técnicos, pero no deben formar parte de las reglas universales.
+
+---
+
+DECISIÓN #010 — LA IA ES UN EJECUTOR CONTROLADO
+
+El documento establece que la IA debe generar dentro de límites definidos y no puede modificar unilateralmente:
+
+- decisiones;
+- arquitectura;
+- reglas;
+- identidad;
+- datos fuente;
+- criterios de publicación.
+
+Esta regla es especialmente importante para la futura base porque permitirá utilizar IA en:
+
+- webs;
+- WhatsApp;
+- automatizaciones;
+- aplicaciones;
+- procesamiento documental;
+- SaaS.
+
+---
+
+DECISIÓN #011 — PRODUCCIÓN REQUIERE OPERACIÓN CONTROLADA
+
+La fase de producción incluye:
+
+- seguridad;
+- backups;
+- monitorización;
+- logs;
+- gestión de errores;
+- recuperación;
+- control de publicaciones.
+
+Esto confirma que seguridad y operación forman parte del ciclo de vida y no deben considerarse añadidos opcionales al final.
+
+---
+
+DECISIÓN #012 — ESCALADO SOLO DESPUÉS DE VALIDACIÓN
+
+El documento establece:
+
+«No escalar un sistema que todavía no funciona correctamente con una unidad.»
+
+Esta regla será universal.
+
+---
+
+DECISIÓN #013 — OBSERVABILIDAD FORMA PARTE DEL SISTEMA
+
+La metodología incluye una fase específica de monitorización para conocer qué ocurre después de publicar.
+
+Se propone medir:
+
+- elementos creados;
+- elementos publicados;
+- errores;
+- tráfico;
+- conversiones;
+- costes;
+- rendimiento;
+- problemas de calidad.
+
+La lista concreta cambiará según el proyecto, pero el principio será universal:
+
+«Todo sistema operativo debe proporcionar información suficiente para saber si está funcionando correctamente.»
+
+---
+
+DECISIÓN #014 — MEJORAR NO SIGNIFICA INTERRUMPIR
+
+Las mejoras deben registrarse y priorizarse.
+
+No deben interrumpir automáticamente el trabajo actual.
+
+Esto refuerza la regla de control de alcance.
+
+---
+
+DECISIÓN #015 — AUDITORÍA DE LA METODOLOGÍA CASI CERRADA
+
+Con este descubrimiento, prácticamente todos los pilares fundamentales ya están identificados.
+
+La auditoría restante debe limitarse a:
+
+1. comprobar si existe algún principio importante en archivos todavía no revisados;
+2. detectar contradicciones;
+3. eliminar duplicidades;
+4. separar definitivamente lo universal de lo específico;
+5. comprobar que no falta ninguna fase esencial del ciclo de vida.
+
+---
+
+ACCIONES REALIZADAS
+
+- Localizado "roadmap-fabrica-webs.md".
+- Leído por bloques hasta el final.
+- Confirmado que ya fue diseñado como metodología reutilizable.
+- Extraído su núcleo universal.
+- Separadas las partes específicas de webs automáticas.
+- Confirmado el modelo núcleo + configuración.
+- Confirmado el modelo de estado persistente.
+- Confirmado el criterio de completitud metodológica.
+- Consolidadas las reglas de IA controlada.
+- Consolidado el ciclo producción → monitorización → mejora.
+
+---
+
+ESTADO ACTUAL
+
+Progreso global: 96 %.
+
+Queda aproximadamente 4 %.
+
+Ya estamos en el punto en que no tiene sentido seguir creando bloques de investigación indefinidamente.
+
+El siguiente trabajo será la auditoría final de cierre.
+
+Si no aparece ninguna contradicción o principio nuevo importante, el siguiente resultado será:
+
+AUDITORÍA CERRADA
+↓
+INVENTARIO DEFINITIVO
+↓
+MAPA UNIVERSAL / MÓDULO / PROYECTO / FIXTURE
+↓
+DISEÑO DE BASE-PROYECTOS
+
+Ese será el momento de empezar a construir la plantilla real.
+
+Progreso global: 96 %.
+
+
+
+
 
