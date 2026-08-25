@@ -596,4 +596,290 @@ Siguiente paso exacto: inventario de documentos universales.
 No tienes que modificar ningún otro archivo ahora. El único trabajo del usuario en este punto es haber añadido esta entrada al "02".
 
 
+ENTRADA 002 — INVENTARIO MÍNIMO DE DOCUMENTOS DE BASE-PROYECTOS
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 18 %
+
+OBJETIVO
+
+Determinar qué documentación necesita realmente "BASE-PROYECTOS" antes de construirla.
+
+La regla será:
+
+«Crear el menor número de documentos posible, siempre que el sistema conserve control, trazabilidad, reutilización y capacidad de ejecución.»
+
+---
+
+1. NÚCLEO DE CONTROL
+
+Debe existir un único documento principal que explique qué es la base y cómo utilizarla.
+
+README.md
+
+Función:
+
+- explicar el propósito;
+- explicar la arquitectura;
+- explicar cómo iniciar un proyecto;
+- indicar dónde está cada tipo de información.
+
+---
+
+2. METODOLOGÍA UNIVERSAL
+
+Debe existir un documento central:
+
+01-METODOLOGIA-UNIVERSAL.md
+
+Contendrá el método común a cualquier proyecto:
+
+IDEA
+↓
+INVESTIGACIÓN
+↓
+DEFINICIÓN
+↓
+REQUISITOS
+↓
+DECISIONES
+↓
+ARQUITECTURA
+↓
+IMPLEMENTACIÓN
+↓
+VALIDACIÓN
+↓
+DESPLIEGUE
+↓
+OPERACIÓN
+↓
+MEDICIÓN
+↓
+MEJORA
+
+---
+
+3. PROTOCOLO UNIVERSAL DE EJECUCIÓN
+
+Debe existir separado de la metodología:
+
+02-PROTOCOLO-EJECUCION.md
+
+Su función será definir cómo se trabaja, no qué proyecto se está construyendo.
+
+Incluirá:
+
+- recuperación de estado;
+- paso actual;
+- control de alcance;
+- bloqueos;
+- no desviación;
+- documentación;
+- validación;
+- cierre de pasos;
+- reanudación.
+
+---
+
+4. PLANTILLA DE PROYECTO
+
+Debe existir una plantilla que permita iniciar cualquier proyecto:
+
+03-PLANTILLA-PROYECTO.md
+
+Será una estructura vacía para rellenar:
+
+- objetivo;
+- problema;
+- usuarios;
+- propuesta;
+- modelo de negocio;
+- requisitos;
+- restricciones;
+- riesgos;
+- decisiones;
+- arquitectura;
+- tecnología;
+- módulos;
+- estado;
+- roadmap.
+
+---
+
+5. PLANTILLA DE ROADMAP
+
+Debe existir:
+
+04-PLANTILLA-ROADMAP.md
+
+No contendrá las fases de una web SEO concreta.
+
+Contendrá una estructura adaptable:
+
+FASE
+PASO
+OBJETIVO
+ENTREGABLE
+DEPENDENCIAS
+CRITERIO DE FINALIZACIÓN
+ESTADO
+BLOQUEOS
+SIGUIENTE PASO
+
+---
+
+6. PLANTILLA DE DECISIONES
+
+Debe existir:
+
+05-PLANTILLA-DECISIONES.md
+
+Servirá para registrar decisiones importantes:
+
+DECISIÓN
+CONTEXTO
+ALTERNATIVAS
+CRITERIOS
+ELECCIÓN
+JUSTIFICACIÓN
+IMPACTO
+
+La decisión formal no debe depender de la conversación.
+
+---
+
+7. PLANTILLA DE VALIDACIÓN
+
+Debe existir:
+
+06-PLANTILLA-VALIDACION.md
+
+Permitirá definir:
+
+- qué debe funcionar;
+- cómo se prueba;
+- resultado esperado;
+- resultado obtenido;
+- evidencia;
+- incidencias;
+- estado final.
+
+---
+
+8. PLANTILLA DE ESTADO
+
+No necesitamos inicialmente un archivo independiente.
+
+El estado debe formar parte del proyecto y del roadmap.
+
+Debe existir una estructura estándar:
+
+FASE ACTUAL
+PASO ACTUAL
+OBJETIVO
+ENTREGABLE
+ESTADO
+BLOQUEOS
+SIGUIENTE PASO
+
+Decisión: no crear un documento independiente de estado salvo que posteriormente resulte necesario.
+
+---
+
+9. MÓDULOS
+
+Los módulos no necesitan crearse todavía.
+
+La arquitectura permitirá añadirlos posteriormente:
+
+modulos/
+├── ia/
+├── n8n/
+├── whatsapp/
+├── wordpress/
+├── api/
+├── base-datos/
+└── ...
+
+Solo se creará un módulo cuando exista conocimiento reutilizable suficiente para justificarlo.
+
+---
+
+10. TIPOS DE PROYECTO
+
+Tampoco se crearán inicialmente muchos tipos.
+
+Primero se definirá una plantilla genérica.
+
+Posteriormente podrán aparecer:
+
+tipos-proyecto/
+├── web/
+├── automatizacion/
+├── ia/
+├── app/
+├── api/
+├── saas/
+└── ...
+
+---
+
+11. DECISIÓN PRINCIPAL
+
+El núcleo inicial de "BASE-PROYECTOS" tendrá solamente:
+
+README.md
+
+01-METODOLOGIA-UNIVERSAL.md
+02-PROTOCOLO-EJECUCION.md
+03-PLANTILLA-PROYECTO.md
+04-PLANTILLA-ROADMAP.md
+05-PLANTILLA-DECISIONES.md
+06-PLANTILLA-VALIDACION.md
+
+Los módulos y tipos de proyecto se añadirán progresivamente.
+
+Esto evita construir una estructura enorme antes de demostrar que es necesaria.
+
+---
+
+12. REGLA DE CRECIMIENTO
+
+"BASE-PROYECTOS" debe crecer por necesidad real.
+
+No se creará un documento porque "podría ser útil".
+
+Se creará cuando:
+
+1. exista una necesidad repetida;
+2. la información sea reutilizable;
+3. pueda separarse claramente del proyecto concreto;
+4. mantenerla en otro documento aporte una ventaja real.
+
+---
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+████████████████░░░░ 80 %
+
+ARQUITECTURA
+████████░░░░░░░░░░░░ 40 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso de la FASE 2: 18 %.
+
+Siguiente paso: definir exactamente qué debe contener cada uno de los seis documentos del núcleo y comprobar que no haya duplicidades entre ellos.
+
+
+
 
