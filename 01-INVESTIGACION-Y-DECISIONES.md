@@ -1510,5 +1510,349 @@ Progreso global estimado: 36 %.
 
 
 
+ENTRADA 004 — MÁQUINA DE ESTADOS Y CONTROL DEL PROCESO
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 44 %
+
+ARCHIVO PRINCIPAL REVISADO
+
+- "proyecto/seo/estados-sistema.md"
+
+---
+
+INVESTIGACIÓN
+
+La documentación define cuatro conceptos independientes:
+
+1. DECISIÓN
+2. ESTADO DEL PROCESO
+3. RESULTADO DE VALIDACIÓN
+4. INCIDENCIA
+
+La separación evita que una palabra como "REVISAR" tenga significados diferentes dependiendo del documento.
+
+Este patrón es completamente reutilizable fuera de SEO.
+
+---
+
+DECISIÓN #001 — SEPARAR DECISIÓN Y ESTADO
+
+Una decisión responde:
+
+«¿Qué hemos decidido hacer?»
+
+Un estado responde:
+
+«¿En qué punto del proceso estamos?»
+
+Una validación responde:
+
+«¿El resultado cumple los controles?»
+
+Una incidencia responde:
+
+«¿Qué problema concreto existe?»
+
+Por tanto, no deben almacenarse como una única variable.
+
+Modelo universal:
+
+DECISIÓN
++
+ESTADO
++
+VALIDACIÓN
++
+INCIDENCIAS
+
+---
+
+DECISIÓN #002 — LAS DECISIONES NO CAMBIAN POR UN ERROR OPERATIVO
+
+La documentación contiene un principio especialmente importante:
+
+Si una oportunidad ya tiene una decisión y posteriormente aparece un problema durante la ejecución, el problema no debe cambiar automáticamente la decisión original.
+
+Solo debe volver a la fase de decisión si el problema afecta realmente a la decisión inicial.
+
+Decisión universal:
+
+DECISIÓN
+↓
+EJECUCIÓN
+↓
+ERROR
+↓
+REVISIÓN
+
+no significa automáticamente:
+
+ERROR
+↓
+BORRAR DECISIÓN
+
+Esto protege la trazabilidad y evita ciclos automáticos incorrectos.
+
+---
+
+DECISIÓN #003 — MÁQUINA DE ESTADOS
+
+El flujo SEO contiene una secuencia explícita:
+
+DECIDIDA
+↓
+DATOS_PREPARADOS
+↓
+ARQUITECTURA_PREPARADA
+↓
+BLOQUES_SELECCIONADOS
+↓
+CONTENIDO_GENERADO
+↓
+VALIDACION_PENDIENTE
+↓
+VALIDADA
+↓
+PUBLICADA
+
+y define caminos alternativos para errores y revisiones.
+
+Decisión:
+
+"BASE-PROYECTOS" deberá utilizar el concepto de máquina de estados para procesos suficientemente complejos.
+
+Cada estado deberá tener:
+
+- significado;
+- condiciones de entrada;
+- condiciones de salida;
+- acciones permitidas;
+- estados siguientes válidos;
+- errores posibles.
+
+No se permitirá cambiar arbitrariamente de estado.
+
+---
+
+DECISIÓN #004 — ESTADOS CONTROLADOS
+
+No deben existir estados inventados libremente durante la ejecución.
+
+Debe existir un conjunto de valores oficiales.
+
+Ejemplo conceptual:
+
+DETECTADO
+↓
+EN_PROCESO
+↓
+VALIDACION
+↓
+APROBADO
+↓
+COMPLETADO
+
+Los nombres concretos dependerán del proyecto.
+
+Decisión:
+
+La base universal deberá proporcionar una plantilla para definir estados y transiciones.
+
+---
+
+DECISIÓN #005 — REVISAR ES UN ESTADO OPERATIVO
+
+"REVISAR" no debe utilizarse como una decisión estratégica.
+
+Representa:
+
+«Existe un problema que requiere comprobación o intervención.»
+
+Puede aparecer después de:
+
+- generación;
+- validación;
+- comprobación de datos;
+- comprobación técnica;
+- integración;
+- publicación.
+
+Decisión:
+
+Este patrón será universal.
+
+---
+
+DECISIÓN #006 — INCIDENCIAS COMO OBJETOS INDEPENDIENTES
+
+Una incidencia debe poder existir independientemente del estado principal.
+
+Debe poder contener como mínimo:
+
+incidence_id
+code
+element
+severity
+status
+description
+created_at
+resolved_at
+resolution
+
+La documentación actual utiliza estados como:
+
+ABIERTA
+EN_REVISION
+RESUELTA
+DESCARTADA
+
+Decisión:
+
+El modelo de incidencias será una pieza reutilizable de "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #007 — VALIDACIÓN COMO CAPA INDEPENDIENTE
+
+La validación tiene sus propios resultados:
+
+APROBADA
+RECHAZADA
+REVISAR
+
+No debe confundirse con el estado del proceso.
+
+Decisión:
+
+Los proyectos deberán poder definir una capa independiente de validación.
+
+Una implementación puede estar:
+
+EN_PROCESO
+
+y simultáneamente:
+
+VALIDACIÓN = PENDIENTE
+
+---
+
+DECISIÓN #008 — TRAZABILIDAD DE COMPLETADOS
+
+Cuando un elemento alcanza un estado final, deben conservarse los datos necesarios para saber:
+
+- qué se hizo;
+- cuándo;
+- con qué versión;
+- sobre qué elemento;
+- qué validación obtuvo;
+- qué incidencias tuvo.
+
+La documentación actual exige conservar URL, fecha, versión, identificador y resultado de validación después de una publicación.
+
+Decisión:
+
+La trazabilidad de operaciones completadas será un principio universal.
+
+---
+
+DECISIÓN #009 — NO AUTOMATIZAR TRANSICIONES PELIGROSAS
+
+Una automatización no debe asumir que cualquier error permite continuar.
+
+Cada transición debe tener reglas explícitas.
+
+Ejemplo:
+
+VALIDACION_RECHAZADA
+↓
+CORREGIR
+↓
+VOLVER A VALIDAR
+
+No:
+
+VALIDACION_RECHAZADA
+↓
+PUBLICAR
+
+Decisión:
+
+Las automatizaciones futuras deberán respetar las transiciones permitidas por el modelo de estados.
+
+---
+
+CONCLUSIÓN DEL BLOQUE
+
+El sistema actual contiene una máquina de estados implícita bastante madura.
+
+No debemos copiar sus nombres SEO.
+
+Debemos extraer el patrón:
+
+DECISIÓN
+↓
+ESTADO
+↓
+ACCIÓN
+↓
+VALIDACIÓN
+↓
+RESULTADO
+↓
+INCIDENCIA SI EXISTE
+↓
+SIGUIENTE TRANSICIÓN
+
+Este patrón puede utilizarse en:
+
+- automatizaciones N8N;
+- asistentes IA;
+- SaaS;
+- aplicaciones;
+- procesos de facturación;
+- sistemas de WhatsApp;
+- workflows;
+- APIs;
+- procesamiento de documentos;
+- proyectos web.
+
+---
+
+ACCIONES REALIZADAS
+
+- Auditado el sistema de estados.
+- Identificada la separación formal entre decisión, proceso, validación e incidencia.
+- Identificada una máquina de estados reutilizable.
+- Identificado el concepto de transición controlada.
+- Identificado el tratamiento independiente de incidencias.
+- Identificada la necesidad de conservar trazabilidad.
+
+---
+
+PENDIENTES
+
+Continuar con:
+
+- automatización;
+- idempotencia;
+- errores y recuperación;
+- testing;
+- seguridad;
+- despliegue;
+- mantenimiento.
+
+Después se realizará una revisión transversal para detectar posibles contradicciones entre documentos.
+
+---
+
+PRÓXIMO BLOQUE
+
+Auditar la documentación de automatización y orquestación, especialmente N8N, para extraer qué patrones son universales y cuáles son específicos de esta implementación.
+
+Progreso global estimado: 44 %.
+
+
 
 
