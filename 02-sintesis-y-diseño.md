@@ -1774,4 +1774,182 @@ Siguiente paso: definir cómo se relacionarán entre sí el proyecto, el roadmap
 
 
 
+ENTRADA 008 — RELACIÓN ENTRE PROYECTO, ROADMAP, DECISIONES Y VALIDACIONES
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 68 %
+
+OBJETIVO
+
+Definir cómo se relacionarán los documentos de un proyecto para evitar duplicaciones y mantener una única fuente de verdad.
+
+1. PROYECTO
+
+El documento de proyecto define:
+
+«QUÉ ESTAMOS CONSTRUYENDO Y PARA QUÉ.»
+
+Contiene la definición general y el alcance.
+
+---
+
+2. ROADMAP
+
+El roadmap define:
+
+«EN QUÉ ORDEN LO VAMOS A CONSTRUIR.»
+
+No debe repetir toda la información del proyecto.
+
+Solo debe utilizarla para establecer fases y pasos.
+
+---
+
+3. DECISIONES
+
+El registro de decisiones define:
+
+«QUÉ HEMOS DECIDIDO Y POR QUÉ.»
+
+Una decisión no debe copiarse repetidamente en otros documentos.
+
+Los demás documentos pueden referenciarla.
+
+---
+
+4. VALIDACIONES
+
+La validación define:
+
+«QUÉ HEMOS DEMOSTRADO QUE FUNCIONA.»
+
+Una afirmación de que algo funciona no sustituye a una prueba.
+
+---
+
+5. RELACIÓN
+
+El sistema queda conceptualmente así:
+
+PROYECTO
+   │
+   ├── define QUÉ
+   │
+   ↓
+ROADMAP
+   │
+   ├── define CUÁNDO / ORDEN
+   │
+   ↓
+EJECUCIÓN
+   │
+   ├── genera DECISIONES
+   ├── genera EVIDENCIAS
+   └── genera VALIDACIONES
+
+Las decisiones pueden modificar el roadmap.
+
+Las validaciones pueden obligar a revisar decisiones.
+
+---
+
+6. CICLO DE CAMBIO
+
+Cuando una validación descubre un problema:
+
+VALIDACIÓN
+↓
+PROBLEMA
+↓
+NUEVA INVESTIGACIÓN
+↓
+NUEVA DECISIÓN
+↓
+ACTUALIZAR ROADMAP
+↓
+IMPLEMENTAR
+↓
+VALIDAR DE NUEVO
+
+El historial anterior se conserva.
+
+---
+
+7. REGLA DE FUENTE ÚNICA
+
+Cada dato debe tener una ubicación principal.
+
+Ejemplo:
+
+OBJETIVO
+→ PROYECTO
+
+ORDEN DE EJECUCIÓN
+→ ROADMAP
+
+DECISIÓN
+→ DECISIONES
+
+RESULTADO DE PRUEBA
+→ VALIDACIÓN
+
+Los demás documentos podrán enlazar o referenciar esa información.
+
+---
+
+8. RECUPERACIÓN
+
+Para retomar un proyecto no será necesario leer todos los documentos desde cero.
+
+El orden de recuperación será:
+
+ESTADO
+↓
+PROYECTO
+↓
+ROADMAP
+↓
+DECISIONES RECIENTES
+↓
+VALIDACIONES PENDIENTES
+↓
+SIGUIENTE PASO
+
+Esto permitirá trabajar de forma eficiente incluso después de una interrupción prolongada.
+
+---
+
+9. DECISIÓN
+
+Se establece que los documentos del proyecto formarán un sistema relacionado, no una colección independiente.
+
+La prioridad será:
+
+«Una información → una fuente principal → referencias desde el resto.»
+
+---
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+████████████████████ 100 %
+
+ARQUITECTURA
+██████████████████░░ 90 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 68 %.
+
+Siguiente paso: definir la estructura mínima de un proyecto real derivado de "BASE-PROYECTOS".
+
+
+
 
