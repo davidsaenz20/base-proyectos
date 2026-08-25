@@ -1953,3 +1953,222 @@ Siguiente paso: definir la estructura mínima de un proyecto real derivado de "B
 
 
 
+ENTRADA 009 — ESTRUCTURA MÍNIMA DE UN PROYECTO DERIVADO
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 76 %
+
+OBJETIVO
+
+Definir qué documentación mínima debe recibir un proyecto nuevo cuando se crea a partir de "BASE-PROYECTOS".
+
+La prioridad es evitar que cada proyecto tenga una estructura excesivamente grande.
+
+---
+
+1. PRINCIPIO
+
+Un proyecto derivado no debe copiar toda la base.
+
+Debe recibir únicamente:
+
+NÚCLEO NECESARIO
++
+TIPO DE PROYECTO
++
+MÓDULOS NECESARIOS
++
+PLANTILLAS NECESARIAS
+
+---
+
+2. ESTRUCTURA MÍNIMA
+
+Provisionalmente, un proyecto nuevo deberá poder funcionar con:
+
+PROYECTO/
+│
+├── 00-CONTROL/
+├── 01-DEFINICION/
+├── 02-DECISIONES/
+├── 03-ARQUITECTURA/
+├── 04-ROADMAP/
+├── 05-VALIDACION/
+└── 06-EVIDENCIAS/
+
+No se crearán carpetas adicionales hasta que exista una necesidad real.
+
+---
+
+3. 00-CONTROL
+
+Contendrá el estado operativo del proyecto:
+
+- nombre;
+- objetivo;
+- tipo;
+- estado;
+- fase actual;
+- paso actual;
+- siguiente paso;
+- bloqueos;
+- fecha de última actualización.
+
+Debe permitir recuperar rápidamente el proyecto.
+
+---
+
+4. 01-DEFINICION
+
+Contendrá la definición específica:
+
+- problema;
+- usuario;
+- propuesta de valor;
+- alcance;
+- requisitos;
+- restricciones;
+- modelo de funcionamiento;
+- modelo de negocio cuando corresponda.
+
+---
+
+5. 02-DECISIONES
+
+Contendrá únicamente decisiones específicas de ese proyecto.
+
+Las reglas universales permanecerán en "BASE-PROYECTOS".
+
+---
+
+6. 03-ARQUITECTURA
+
+Contendrá la arquitectura elegida para ese proyecto:
+
+- componentes;
+- tecnologías;
+- integraciones;
+- datos;
+- seguridad;
+- dependencias;
+- infraestructura.
+
+No debe convertirse en un manual general de la tecnología utilizada.
+
+---
+
+7. 04-ROADMAP
+
+Contendrá la secuencia concreta de construcción.
+
+Cada paso deberá indicar como mínimo:
+
+OBJETIVO
+ENTREGABLE
+DEPENDENCIAS
+CRITERIO DE FINALIZACIÓN
+ESTADO
+
+---
+
+8. 05-VALIDACION
+
+Contendrá las pruebas necesarias para demostrar que el proyecto cumple sus requisitos.
+
+---
+
+9. 06-EVIDENCIAS
+
+Contendrá o referenciará las evidencias relevantes:
+
+- capturas;
+- resultados;
+- documentos;
+- pruebas;
+- logs;
+- enlaces;
+- demostraciones.
+
+No será obligatorio almacenar físicamente todos los archivos; podrá utilizar referencias.
+
+---
+
+10. MÓDULOS
+
+Los módulos reutilizables no se copiarán necesariamente dentro del proyecto.
+
+El proyecto deberá poder indicar:
+
+MÓDULO UTILIZADO
+→ versión
+→ configuración específica
+→ referencia
+
+Esto evita mantener múltiples copias del mismo conocimiento.
+
+---
+
+11. REGLA DE INSTANCIACIÓN
+
+Crear un proyecto nuevo debe parecerse a:
+
+BASE-PROYECTOS
+      ↓
+TIPO
+      ↓
+MÓDULOS
+      ↓
+PLANTILLAS
+      ↓
+INSTANCIA DEL PROYECTO
+
+La instancia se completa con información específica.
+
+---
+
+12. DECISIÓN
+
+La estructura anterior queda como estructura mínima provisional.
+
+No se considera todavía definitiva.
+
+Antes de construir "BASE-PROYECTOS" debemos comprobar si esta estructura cubre correctamente proyectos muy diferentes:
+
+- web SEO;
+- automatización con N8N;
+- asistente IA + WhatsApp;
+- aplicación;
+- SaaS;
+- herramienta interna.
+
+Si funciona para todos ellos sin introducir excepciones innecesarias, podrá convertirse en la estructura base.
+
+---
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+████████████████████ 100 %
+
+ARQUITECTURA
+████████████████████ 100 %
+
+ESTRUCTURA DE PROYECTO
+████████████████░░░░ 80 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 76 %.
+
+Siguiente paso exacto: someter esta estructura a varios proyectos de naturaleza diferente y comprobar si realmente es universal o necesita ajustes.
+
+
+
+
