@@ -1,6 +1,6 @@
-# PROTOCOLO DE EJECUCIÓN
+PROTOCOLO DE EJECUCIÓN
 
-## PROPÓSITO
+PROPÓSITO
 
 Definir cómo debe actuar la IA al iniciar, ejecutar, continuar, validar y reanudar cualquier proyecto utilizando BASE-PROYECTOS.
 
@@ -10,21 +10,22 @@ El objetivo del protocolo es garantizar:
 - trazabilidad;
 - no improvisación;
 - no desviación;
+- fidelidad al objetivo del usuario;
 - validación;
 - documentación;
 - ejecución hasta funcionamiento real.
 
 ---
 
-# 1. JERARQUÍA DE LA DOCUMENTACIÓN
+1. JERARQUÍA DE LA DOCUMENTACIÓN
 
 Durante la ejecución existen diferentes niveles de información.
 
-## 1.1 ESTADO
+1.1 ESTADO
 
-`00-CONTROL/ESTADO.md`
+"00-CONTROL/ESTADO.md"
 
-Es la fuente única del **estado operativo actual**.
+Es la fuente única del estado operativo actual.
 
 Determina:
 
@@ -41,11 +42,11 @@ Ningún otro documento debe competir con ESTADO para indicar dónde se encuentra
 
 ---
 
-## 1.2 ROADMAP
+1.2 ROADMAP
 
-`03-PLANTILLAS/ROADMAP.md`
+"03-PLANTILLAS/ROADMAP.md"
 
-Define el **plan específico del proyecto**.
+Define el plan específico del proyecto.
 
 Determina:
 
@@ -59,11 +60,11 @@ No determina el estado actual.
 
 ---
 
-## 1.3 FLUJO DE EJECUCIÓN
+1.3 FLUJO DE EJECUCIÓN
 
-`03-PLANTILLAS/FLUJO-EJECUCION-PROYECTO.md`
+"03-PLANTILLAS/FLUJO-EJECUCION-PROYECTO.md"
 
-Define el **flujo general de ejecución**.
+Define el flujo general de ejecución.
 
 Determina:
 
@@ -77,7 +78,7 @@ Determina:
 
 ---
 
-## 1.4 PLANTILLAS
+1.4 PLANTILLAS
 
 Las plantillas determinan la estructura de los entregables.
 
@@ -90,19 +91,19 @@ No determinan por sí mismas:
 
 ---
 
-## 1.5 DOCUMENTACIÓN UNIVERSAL
+1.5 DOCUMENTACIÓN UNIVERSAL
 
-La documentación de `01-UNIVERSAL` define reglas, principios y mecanismos reutilizables.
+La documentación de "01-UNIVERSAL" define reglas, principios y mecanismos reutilizables.
 
 ---
 
-# 2. RECUPERAR EL CONTEXTO
+2. RECUPERAR EL CONTEXTO
 
 Antes de comenzar cualquier trabajo se debe revisar, cuando corresponda:
 
-1. `00-CONTROL/ESTADO.md`
-2. `03-PLANTILLAS/ROADMAP.md`
-3. `03-PLANTILLAS/FLUJO-EJECUCION-PROYECTO.md`
+1. "00-CONTROL/ESTADO.md"
+2. "03-PLANTILLAS/ROADMAP.md"
+3. "03-PLANTILLAS/FLUJO-EJECUCION-PROYECTO.md"
 4. decisiones vigentes;
 5. bloqueos;
 6. documentación relevante;
@@ -115,11 +116,11 @@ Debe consultarse únicamente la documentación necesaria para el paso actual.
 
 ---
 
-# 3. IDENTIFICAR EL ESTADO
+3. IDENTIFICAR EL ESTADO
 
 Antes de ejecutar se debe poder responder:
 
-**¿DÓNDE ESTAMOS?**
+¿DÓNDE ESTAMOS?
 
 Debe existir:
 
@@ -136,9 +137,88 @@ Debe recuperarse la información necesaria o preguntar al usuario si realmente f
 
 ---
 
-# 4. IDENTIFICAR EL PASO ACTUAL
+3.1 BLOQUEO DEL OBJETIVO PRIMARIO
 
-Debe existir **una única acción principal en curso**.
+Antes de iniciar o continuar un proyecto, la IA debe identificar y conservar el objetivo primario expresado por el usuario.
+
+El objetivo primario representa qué quiere conseguir realmente el usuario.
+
+Debe diferenciarse obligatoriamente entre:
+
+- objetivo: qué quiere conseguir el usuario;
+- problema: qué necesidad se pretende resolver;
+- sistema o producto: qué solución se pretende construir;
+- medio técnico: tecnología, plataforma, automatización o herramienta utilizada;
+- interfaz: forma mediante la que el usuario interactúa con el sistema;
+- mejora o ampliación: funcionalidad adicional que podría incorporarse posteriormente.
+
+Regla fundamental
+
+La IA no puede convertir un medio técnico, una interfaz o una posible implementación en el objetivo principal del proyecto.
+
+Ejemplo:
+
+Usuario:
+
+«“Quiero una automatización de reservas para una peluquería.”»
+
+Interpretación correcta:
+
+- objetivo: automatizar las reservas;
+- problema: gestionar las reservas de forma eficiente;
+- sistema: sistema de automatización de reservas;
+- medios posibles: n8n, WhatsApp, calendario, formulario, web u otros;
+- interfaz: todavía por determinar.
+
+Interpretación incorrecta:
+
+«“Crear una web para una peluquería.”»
+
+La web podría formar parte de la solución, pero no puede convertirse en el objetivo principal sin que el usuario lo haya solicitado o confirmado.
+
+Regla de fidelidad
+
+Toda decisión posterior debe poder relacionarse con el objetivo primario.
+
+Antes de avanzar de una fase a otra, la IA debe comprobar:
+
+¿Lo que estamos construyendo sigue resolviendo el objetivo primario del usuario?
+
+Si la respuesta es negativa o dudosa:
+
+1. detener el avance;
+2. identificar la desviación;
+3. determinar si se trata de una interpretación incorrecta, una mejora o una nueva necesidad;
+4. volver al punto correcto del flujo;
+5. preguntar al usuario cuando la interpretación no pueda resolverse con la información disponible.
+
+Regla de confirmación
+
+Cuando una petición admita varias interpretaciones que puedan cambiar sustancialmente el proyecto, la IA debe presentar la interpretación antes de avanzar.
+
+Debe confirmar especialmente cuando una posible interpretación:
+
+- cambia el tipo de producto;
+- cambia el objetivo;
+- cambia el usuario;
+- cambia el problema;
+- introduce una tecnología como si fuera el producto;
+- convierte una interfaz en el objetivo;
+- amplía significativamente el alcance.
+
+No se debe elegir silenciosamente una interpretación que pueda alterar el proyecto.
+
+Registro del objetivo
+
+El objetivo primario debe quedar registrado en la documentación del proyecto y mantenerse estable durante toda la ejecución.
+
+Si posteriormente el usuario cambia expresamente el objetivo, debe registrarse como una decisión o cambio de alcance y actualizarse la documentación correspondiente.
+
+---
+
+4. IDENTIFICAR EL PASO ACTUAL
+
+Debe existir una única acción principal en curso.
 
 La IA debe trabajar sobre ese paso antes de iniciar otro.
 
@@ -146,23 +226,26 @@ No debe ejecutar simultáneamente varias líneas de trabajo independientes salvo
 
 ---
 
-# 5. EJECUTAR
+5. EJECUTAR
 
 Realizar únicamente el trabajo necesario para completar el paso actual.
 
 La IA debe:
 
 1. consultar la documentación necesaria;
-2. ejecutar;
-3. producir el entregable correspondiente;
-4. comprobar el resultado;
-5. registrar las decisiones relevantes.
+2. comprobar el objetivo primario cuando el trabajo pueda afectar al alcance;
+3. ejecutar;
+4. producir el entregable correspondiente;
+5. comprobar el resultado;
+6. registrar las decisiones relevantes.
 
 No debe introducir una nueva metodología durante la ejecución sin justificarla.
 
+Ninguna decisión técnica puede sustituir silenciosamente al objetivo del proyecto.
+
 ---
 
-# 6. VALIDAR
+6. VALIDAR
 
 Todo paso debe tener una validación.
 
@@ -175,9 +258,11 @@ No se considera terminado un paso simplemente porque:
 
 Debe comprobarse que el resultado cumple su criterio de salida.
 
+Además, cuando corresponda, debe comprobarse que el resultado sigue siendo coherente con el objetivo primario del proyecto.
+
 ---
 
-# 7. ACTUALIZAR EL ESTADO
+7. ACTUALIZAR EL ESTADO
 
 Cuando un paso termine:
 
@@ -185,34 +270,48 @@ Cuando un paso termine:
 2. registrar el trabajo realizado;
 3. registrar decisiones relevantes;
 4. registrar bloqueos si existen;
-5. actualizar `00-CONTROL/ESTADO.md`;
-6. establecer el siguiente paso únicamente cuando corresponda.
+5. comprobar que el objetivo primario permanece intacto;
+6. actualizar "00-CONTROL/ESTADO.md";
+7. establecer el siguiente paso únicamente cuando corresponda.
 
 El estado debe reflejar la situación real del proyecto.
 
 ---
 
-# 8. CONTROL DE DESVIACIONES
+8. CONTROL DE DESVIACIONES
 
 Si durante el trabajo aparece una cuestión que no pertenece al paso actual:
 
-### Si es necesaria para completar el paso
+Si es necesaria para completar el paso
 
 Se incorpora al trabajo.
 
-### Si es un bloqueo real
+Si es un bloqueo real
 
 Se detiene el paso y se resuelve el bloqueo.
 
-### Si es una mejora, idea o trabajo futuro
+Si es una mejora, idea o trabajo futuro
 
 Se registra y se continúa con el paso actual.
+
+Si modifica el objetivo primario
+
+No se incorpora automáticamente.
+
+Debe:
+
+1. identificar el cambio;
+2. explicar por qué afecta al objetivo;
+3. distinguirlo del objetivo original;
+4. solicitar confirmación del usuario cuando corresponda;
+5. registrar la decisión;
+6. actualizar la documentación si el usuario confirma el cambio.
 
 No se debe cambiar automáticamente de objetivo.
 
 ---
 
-# 9. BLOQUEOS
+9. BLOQUEOS
 
 Se considera bloqueo aquello que impide completar el paso actual.
 
@@ -244,7 +343,7 @@ Si existe un bloqueo:
 
 ---
 
-# 10. CAMBIOS DE PLAN
+10. CAMBIOS DE PLAN
 
 El roadmap puede cambiar cuando exista una razón real.
 
@@ -253,14 +352,15 @@ Si es necesario modificarlo:
 1. explicar el motivo;
 2. registrar la decisión;
 3. actualizar el roadmap;
-4. actualizar `ESTADO.md`;
-5. continuar desde el nuevo paso.
+4. actualizar "ESTADO.md";
+5. comprobar que el objetivo primario continúa siendo el mismo o registrar formalmente su modificación;
+6. continuar desde el nuevo paso.
 
 No se debe cambiar el plan simplemente porque aparezca una idea mejor.
 
 ---
 
-# 11. REGLA DE NO RETROCESO
+11. REGLA DE NO RETROCESO
 
 No se debe retroceder de fase por iniciativa propia.
 
@@ -269,7 +369,8 @@ Solo se retrocede cuando:
 - una validación demuestra un problema;
 - existe un bloqueo;
 - una decisión anterior impide continuar;
-- aparece información nueva que invalida una decisión crítica.
+- aparece información nueva que invalida una decisión crítica;
+- se detecta una desviación respecto al objetivo primario.
 
 Cuando se retrocede:
 
@@ -281,39 +382,42 @@ Cuando se retrocede:
 
 ---
 
-# 12. REGLA PARA "SIGUE"
+12. REGLA PARA "SIGUE"
 
 Cuando el usuario indique:
 
-**"Sigue"**
+"Sigue"
 
 la IA debe interpretar la orden como:
 
-> Continuar el proyecto desde el estado persistente actual.
+«Continuar el proyecto desde el estado persistente actual.»
 
 Debe:
 
-1. recuperar `ESTADO.md`;
+1. recuperar "ESTADO.md";
 2. identificar fase y paso actuales;
 3. comprobar qué está hecho;
 4. identificar qué falta;
-5. consultar la documentación necesaria;
-6. ejecutar el trabajo correspondiente;
-7. validar;
-8. actualizar el estado;
-9. continuar únicamente si el criterio de avance está cumplido.
+5. comprobar el objetivo primario;
+6. consultar la documentación necesaria;
+7. ejecutar el trabajo correspondiente;
+8. validar;
+9. comprobar que no existe desviación del objetivo;
+10. actualizar el estado;
+11. continuar únicamente si el criterio de avance está cumplido.
 
-**"Sigue" no significa:**
+"Sigue" no significa:
 
 - cambiar de fase;
 - empezar una idea nueva;
+- cambiar el objetivo;
 - crear una nueva metodología;
 - investigar algo no relacionado;
 - rehacer trabajo ya validado.
 
 ---
 
-# 13. REGLA DE CONTINUIDAD
+13. REGLA DE CONTINUIDAD
 
 La conversación puede interrumpirse en cualquier momento.
 
@@ -323,11 +427,11 @@ No debe depender de recordar conversaciones anteriores.
 
 Debe poder responder:
 
-**DÓNDE ESTAMOS → QUÉ ESTÁ HECHO → QUÉ FALTA → QUÉ TOCA AHORA**
+DÓNDE ESTAMOS → QUÉ ESTÁ HECHO → QUÉ FALTA → QUÉ TOCA AHORA → CUÁL ES EL OBJETIVO PRIMARIO
 
 ---
 
-# 14. REGLA DE NO IMPROVISACIÓN
+14. REGLA DE NO IMPROVISACIÓN
 
 Si existe información crítica desconocida:
 
@@ -342,9 +446,11 @@ Determinar si:
 3. debe preguntarse al usuario;
 4. puede posponerse sin bloquear.
 
+Cuando la información desconocida pueda cambiar sustancialmente la interpretación del proyecto, debe preguntarse antes de avanzar.
+
 ---
 
-# 15. REGLA DE DOCUMENTACIÓN
+15. REGLA DE DOCUMENTACIÓN
 
 Toda información necesaria para continuar el proyecto debe quedar registrada en la documentación correspondiente.
 
@@ -352,9 +458,11 @@ La conversación no debe ser necesaria para reconstruir el estado del proyecto.
 
 Las decisiones importantes deben conservarse.
 
+El objetivo primario debe poder reconstruirse desde la documentación persistente.
+
 ---
 
-# 16. REGLA DE VALIDACIÓN REAL
+16. REGLA DE VALIDACIÓN REAL
 
 El objetivo final no es producir documentación.
 
@@ -362,17 +470,17 @@ El objetivo final es construir una solución que funcione realmente.
 
 Por tanto:
 
-**documentado ≠ terminado**
+documentado ≠ terminado
 
-**implementado ≠ validado**
+implementado ≠ validado
 
-**probado en desarrollo ≠ funcionando en producción**
+probado en desarrollo ≠ funcionando en producción
 
 Un proyecto solo puede considerarse terminado cuando el flujo real haya sido comprobado y los criterios de cierre se hayan cumplido.
 
 ---
 
-# 17. REANUDACIÓN
+17. REANUDACIÓN
 
 Cuando se retome un proyecto después de una interrupción:
 
@@ -380,47 +488,55 @@ Cuando se retome un proyecto después de una interrupción:
 2. leer el roadmap cuando sea necesario;
 3. identificar la fase;
 4. identificar el paso;
-5. comprobar el entregable pendiente;
-6. comprobar bloqueos;
-7. revisar las decisiones relevantes;
-8. continuar.
+5. comprobar el objetivo primario;
+6. comprobar el entregable pendiente;
+7. comprobar bloqueos;
+8. revisar las decisiones relevantes;
+9. comprobar si existe alguna desviación;
+10. continuar.
 
 No comenzar desde la memoria de la conversación.
 
 ---
 
-# 18. REGLA FINAL
+18. REGLA FINAL
 
 La IA debe trabajar siempre con esta secuencia:
 
-**RECUPERAR → IDENTIFICAR → EJECUTAR → VALIDAR → DOCUMENTAR → ACTUALIZAR → AVANZAR**
+RECUPERAR → IDENTIFICAR → EJECUTAR → VALIDAR → DOCUMENTAR → ACTUALIZAR → AVANZAR
 
 Y siempre respetando:
 
-**ESTADO = dónde estamos**
+ESTADO = dónde estamos
 
-**ROADMAP = qué trabajo está planificado**
+ROADMAP = qué trabajo está planificado
 
-**FLUJO = cómo se ejecuta**
+FLUJO = cómo se ejecuta
 
-**PLANTILLAS = cómo se estructuran los entregables**
+PLANTILLAS = cómo se estructuran los entregables
 
-**PROTOCOLO = cómo debe comportarse la IA**
+PROTOCOLO = cómo debe comportarse la IA
+
+OBJETIVO PRIMARIO = qué quiere conseguir realmente el usuario
 
 ---
 
-# PRINCIPIO PRINCIPAL
+PRINCIPIO PRINCIPAL
 
 La IA no debe limitarse a ayudar a documentar un proyecto.
 
 Debe guiarlo desde:
 
-**IDEA**
+IDEA
 
 hasta:
 
-**SISTEMA FUNCIONANDO EN LA REALIDAD**
+SISTEMA FUNCIONANDO EN LA REALIDAD
 
 sin perder el contexto, sin improvisar y sin desviarse innecesariamente.
+
+Y, sobre todo:
+
+NO DEBE CONFUNDIR EL OBJETIVO DEL USUARIO CON EL MEDIO UTILIZADO PARA CONSEGUIRLO.
 
 
