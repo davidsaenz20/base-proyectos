@@ -4172,4 +4172,437 @@ Progreso global: 82 %.
 
 
 
+ENTRADA 011 — CONTROL DE EJECUCIÓN, ESTADO PERSISTENTE Y REGLA ANTI-DESVIACIÓN
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 88 %
+
+ARCHIVO REVISADO
+
+- "proyecto/protocolo-ejecucion.md"
+
+---
+
+INVESTIGACIÓN
+
+El protocolo de ejecución establece una separación especialmente útil:
+
+MÉTODO UNIVERSAL
+↓
+ROADMAP DEL PROYECTO
+↓
+DOCUMENTACIÓN TÉCNICA
+↓
+EJECUCIÓN
+
+El protocolo no decide qué construir; determina cómo debe ejecutarse el trabajo. El roadmap específico determina el paso actual. La documentación técnica determina cómo construir cada componente.
+
+Esta separación debe formar parte de "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #001 — EL ESTADO OPERATIVO DEBE SER ÚNICO
+
+Debe existir una fuente única para responder:
+
+- dónde estamos;
+- qué estamos haciendo;
+- qué falta;
+- qué bloqueos existen;
+- qué toca después.
+
+En el sistema original esa responsabilidad corresponde al roadmap del proyecto.
+
+Regla universal:
+
+«El estado operativo no puede estar repartido entre múltiples archivos.»
+
+---
+
+DECISIÓN #002 — EL ROADMAP Y EL PROTOCOLO SON DIFERENTES
+
+Debe mantenerse esta separación:
+
+PROTOCOLO
+→ cómo trabajar
+
+ROADMAP
+→ qué trabajar y en qué orden
+
+Un protocolo no debe contener el estado actual.
+
+Un roadmap no debe convertirse en un manual técnico completo.
+
+---
+
+DECISIÓN #003 — NO SE DEBE SUPONER EL ESTADO
+
+Antes de comenzar una sesión de trabajo relevante:
+
+LEER CONTROL
+↓
+RECUPERAR MÉTODO
+↓
+RECUPERAR ROADMAP
+↓
+IDENTIFICAR ESTADO
+↓
+IDENTIFICAR PASO ACTIVO
+↓
+REVISAR DOCUMENTACIÓN NECESARIA
+↓
+TRABAJAR
+
+Decisión:
+
+La plantilla universal deberá contener un procedimiento de recuperación de estado.
+
+---
+
+DECISIÓN #004 — CADA PASO TIENE UN CONTRATO DE EJECUCIÓN
+
+Antes de ejecutar un paso deben conocerse:
+
+FASE
+PASO
+OBJETIVO
+ENTREGABLE
+DEPENDENCIAS
+BLOQUEOS
+CRITERIO DE FINALIZACIÓN
+SIGUIENTE PASO
+
+Esto puede convertirse en una plantilla universal para cualquier tarea importante.
+
+---
+
+DECISIÓN #005 — EL "PASO ACTUAL" ES LA UNIDAD DE TRABAJO
+
+El proyecto no debería ejecutarse por conversaciones, archivos o sesiones.
+
+La unidad operativa es:
+
+PASO ACTUAL
+
+Una conversación puede durar varias tareas.
+
+Una tarea puede durar varias conversaciones.
+
+El estado persistente debe indicar siempre qué paso está activo.
+
+---
+
+DECISIÓN #006 — BLOQUEO REAL VS MEJORA
+
+El protocolo hace una distinción fundamental.
+
+No son necesariamente bloqueos:
+
+- una duda;
+- una mejora;
+- una optimización;
+- una alternativa tecnológica;
+- una contradicción que no afecta al paso actual.
+
+Un bloqueo real es aquel que impide completar correctamente el paso.
+
+Regla universal:
+
+«No se detiene el proyecto por problemas que no impiden avanzar.»
+
+---
+
+DECISIÓN #007 — PROCEDIMIENTO UNIVERSAL ANTE INCIDENCIAS
+
+Cuando aparece un problema:
+
+DETECTAR
+↓
+EVALUAR
+↓
+¿BLOQUEA?
+
+Si no bloquea:
+
+REGISTRAR
+↓
+CONTINUAR
+
+Si bloquea:
+
+DETENER
+↓
+RESOLVER SOLO EL BLOQUEO
+↓
+VERIFICAR
+↓
+VOLVER AL PASO ORIGINAL
+↓
+CONTINUAR
+
+Este patrón debe ser universal.
+
+---
+
+DECISIÓN #008 — NO REDISEÑAR COMO REACCIÓN A UNA MEJORA
+
+Durante la implementación pueden aparecer ideas mejores.
+
+La secuencia correcta es:
+
+DETECTAR
+↓
+REGISTRAR
+↓
+CONTINUAR
+↓
+EVALUAR EN EL MOMENTO PLANIFICADO
+
+No:
+
+DETECTAR
+↓
+PARAR TODO
+↓
+REDISEÑAR TODO
+
+---
+
+DECISIÓN #009 — CONTROL DEL ALCANCE
+
+Una funcionalidad nueva no entra automáticamente en el paso actual.
+
+Debe seguir:
+
+IDEA
+↓
+REGISTRAR
+↓
+EVALUAR
+↓
+APROBAR / DESCARTAR
+↓
+INCORPORAR AL ROADMAP
+
+Esto evita que el proyecto se vuelva interminable por acumulación de ideas.
+
+---
+
+DECISIÓN #010 — UNA INFORMACIÓN → UNA FUENTE DE AUTORIDAD
+
+El protocolo establece explícitamente que no se deben mantener copias contradictorias de una misma decisión.
+
+Regla universal:
+
+UNA INFORMACIÓN
+↓
+UNA FUENTE DE AUTORIDAD
+↓
+REFERENCIAS DESDE OTROS DOCUMENTOS
+
+Esto es uno de los principios más importantes de la futura plantilla.
+
+---
+
+DECISIÓN #011 — DOCUMENTAR NO ES EL OBJETIVO
+
+La documentación tiene que servir para:
+
+- definir;
+- especificar;
+- registrar;
+- justificar;
+- controlar.
+
+Pero no debe convertirse en trabajo infinito.
+
+Cuando una decisión permite ejecutar correctamente:
+
+DOCUMENTAR
+↓
+IMPLEMENTAR
+↓
+VERIFICAR
+
+No seguir documentando indefinidamente.
+
+---
+
+DECISIÓN #012 — CONSTRUIR → PROBAR → CORREGIR → VALIDAR
+
+El protocolo define una secuencia clara:
+
+DISEÑAR
+↓
+CONSTRUIR
+↓
+PROBAR
+↓
+CORREGIR
+↓
+VALIDAR
+
+Decisión:
+
+Esta secuencia será un patrón universal de implementación.
+
+---
+
+DECISIÓN #013 — LA VALIDACIÓN DEBE PRODUCIR EVIDENCIA
+
+No basta con afirmar:
+
+«"Está probado."»
+
+Debe existir evidencia suficiente para considerar el entregable completado.
+
+Esto conecta directamente con:
+
+- testing;
+- evidencias;
+- decisiones;
+- auditoría;
+- trazabilidad.
+
+---
+
+DECISIÓN #014 — AUDITORÍA LIMITADA POR MOMENTOS
+
+Una auditoría completa no debe ejecutarse continuamente.
+
+El protocolo establece momentos concretos:
+
+- inicio de fase importante;
+- bloqueo estructural;
+- contradicción relevante;
+- cambio importante de arquitectura;
+- petición explícita de auditoría.
+
+Regla universal:
+
+«La auditoría debe tener un propósito concreto y no convertirse en una excusa para retrasar la ejecución.»
+
+---
+
+DECISIÓN #015 — EL PROYECTO DEBE SER REANUDABLE
+
+La documentación debe permitir volver al proyecto después de una interrupción sin reconstruir mentalmente todo el trabajo.
+
+Debe poder recuperarse:
+
+FASE
+PASO
+OBJETIVO
+ENTREGABLE
+ESTADO
+BLOQUEOS
+DECISIONES
+SIGUIENTE PASO
+
+Esto es especialmente importante para nuestro sistema porque el usuario puede trabajar desde móvil, ordenador o en sesiones separadas.
+
+---
+
+DECISIÓN #016 — LA CONVERSACIÓN NO CAMBIA EL ESTADO POR SÍ SOLA
+
+Una idea surgida en conversación no debe convertirse automáticamente en:
+
+- decisión;
+- requisito;
+- funcionalidad;
+- cambio de arquitectura;
+- cambio de roadmap.
+
+Primero debe registrarse y evaluarse.
+
+Decisión:
+
+La conversación puede proponer cambios, pero la documentación persistente es la que formaliza esos cambios.
+
+---
+
+DECISIÓN #017 — EL SISTEMA DEBE SER OPERABLE POR SESIONES INDEPENDIENTES
+
+El método debe permitir:
+
+SESIÓN 1
+↓
+ACTUALIZAR ESTADO
+↓
+SESIÓN 2
+↓
+RECUPERAR ESTADO
+↓
+CONTINUAR
+
+No debe depender de que la misma instancia de conversación recuerde todo.
+
+---
+
+DECISIÓN #018 — ESTO DEBE FORMAR PARTE DEL NÚCLEO DE BASE-PROYECTOS
+
+Se consolidan como reglas universales:
+
+1. Fuente única del estado.
+2. Paso actual como unidad de trabajo.
+3. Roadmap separado del protocolo.
+4. Recuperación obligatoria de estado.
+5. Objetivo y entregable por paso.
+6. Criterio de finalización.
+7. Definición de bloqueo real.
+8. Gestión controlada de incidencias.
+9. Prohibición de desviaciones injustificadas.
+10. Control de alcance.
+11. Una información → una fuente de autoridad.
+12. Documentación orientada a ejecución.
+13. Construcción verificable.
+14. Evidencia de validación.
+15. Auditorías con propósito.
+16. Reanudación desde documentación persistente.
+17. Conversación separada del estado oficial.
+
+---
+
+ACCIONES REALIZADAS
+
+- Auditado "protocolo-ejecucion.md".
+- Confirmada la separación entre protocolo, roadmap, documentación técnica y ejecución.
+- Identificada la unidad operativa universal: el paso actual.
+- Definido el procedimiento universal de bloqueo.
+- Definido el control de alcance.
+- Consolidada la regla de fuente única de autoridad.
+- Consolidado el patrón construir → probar → corregir → validar.
+- Consolidado el principio de reanudación.
+- Consolidada la separación entre conversación y estado persistente.
+
+---
+
+ESTADO DE LA AUDITORÍA
+
+Progreso global: 88 %.
+
+Queda aproximadamente un 12 %.
+
+Ya no necesitamos seguir acumulando principios indefinidamente.
+
+El siguiente objetivo será cerrar la auditoría, revisar los documentos restantes y hacer una comprobación final para detectar:
+
+- duplicidades;
+- contradicciones;
+- principios que todavía falten;
+- reglas que sean específicas de SEO y deban excluirse;
+- reglas universales que deban entrar en "BASE-PROYECTOS".
+
+Después pasaremos oficialmente de:
+
+INVESTIGACIÓN
+
+a:
+
+SÍNTESIS Y DISEÑO DE LA PLANTILLA BASE.
+
+
+
+
 
