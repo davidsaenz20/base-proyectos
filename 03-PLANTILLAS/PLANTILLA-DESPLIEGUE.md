@@ -1,51 +1,69 @@
 # PLANTILLA DE DESPLIEGUE
 
-## Objetivo
+> Documento para definir y registrar cómo se pone el proyecto en funcionamiento real.
+>
+> No controla el estado operativo. El estado actual se registra exclusivamente en `00-CONTROL/ESTADO.md`.
 
-Definir y registrar el proceso necesario para poner el proyecto en funcionamiento.
+# 1. OBJETIVO
 
-## ENTORNO
+Definir y registrar el proceso necesario para desplegar el proyecto en el entorno objetivo y comprobar que funciona correctamente.
 
-**Entorno:** Desarrollo / Pruebas / Producción
+# 2. ENTORNO
+
+**Entorno objetivo:**
 
 **Infraestructura:**
 
 **Proveedor:**
 
-## PREPARACIÓN
+**Dominio / URL:**
 
-### Requisitos
+# 3. PREPARACIÓN
 
-- 
-
-### Configuración
+## Requisitos
 
 - 
 
-### Credenciales
+## Configuración
 
 - 
 
-## DESPLIEGUE
+## Credenciales y secretos
 
-### Procedimiento
+- 
+
+## Dependencias
+
+- 
+
+# 4. PROCEDIMIENTO DE DESPLIEGUE
 
 1. 
 2. 
 3. 
 
-## VERIFICACIÓN
+# 5. VERIFICACIÓN POST-DESPLIEGUE
 
-Después del despliegue se debe comprobar:
+Después del despliegue comprobar:
 
 - [ ] El sistema está disponible.
 - [ ] Las funcionalidades principales funcionan.
 - [ ] Las integraciones funcionan.
-- [ ] No existen errores críticos.
 - [ ] Los datos se procesan correctamente.
-- [ ] La seguridad básica está correctamente configurada.
+- [ ] No existen errores críticos.
+- [ ] La configuración de seguridad es correcta.
+- [ ] Los servicios externos responden correctamente.
+- [ ] Las operaciones principales funcionan de extremo a extremo.
 
-## ROLLBACK
+# 6. CRITERIOS DE ACEPTACIÓN
+
+El despliegue se considera técnicamente correcto cuando:
+
+- 
+- 
+- 
+
+# 7. ROLLBACK
 
 **Condición para realizar rollback:**
 
@@ -55,9 +73,9 @@ Después del despliegue se debe comprobar:
 2. 
 3. 
 
-## MONITORIZACIÓN
+# 8. MONITORIZACIÓN
 
-**Qué se debe monitorizar:**
+**Qué debe monitorizarse:**
 
 - 
 
@@ -65,7 +83,11 @@ Después del despliegue se debe comprobar:
 
 - 
 
-## MANTENIMIENTO
+La configuración detallada de monitorización se documenta en:
+
+`PLANTILLA-MONITORIZACION.md`
+
+# 9. MANTENIMIENTO
 
 **Tareas periódicas:**
 
@@ -73,27 +95,34 @@ Después del despliegue se debe comprobar:
 
 **Responsable:**
 
-## COSTES
+# 10. COSTES
 
 **Coste inicial:**
 
 **Coste recurrente:**
 
-## ESTADO
+# 11. EVIDENCIAS
 
-**Estado:** Pendiente
+Registrar evidencias del despliegue:
 
-**Fecha de despliegue:**
-
-**Versión desplegada:**
-
-## EVIDENCIAS
+- URL;
+- capturas;
+- logs;
+- resultados de comprobaciones;
+- versiones;
+- cualquier otra evidencia relevante.
 
 - 
 
-## REGLA
+# 12. INCIDENCIAS
 
-Un despliegue no se considera terminado hasta comprobar que el sistema funciona correctamente en el entorno objetivo.
+- 
 
+# REGLA
 
+Un despliegue no se considera técnicamente terminado hasta comprobar que el sistema funciona correctamente en el entorno objetivo.
+
+El estado del proyecto se registra exclusivamente en:
+
+`00-CONTROL/ESTADO.md`
 
