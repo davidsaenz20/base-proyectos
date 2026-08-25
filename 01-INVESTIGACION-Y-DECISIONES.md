@@ -887,5 +887,286 @@ No crear todavía la estructura definitiva de "BASE-PROYECTOS".
 Progreso global estimado: 20 %.
 
 
+ENTRADA 002 — COMPONENTIZACIÓN, CONTRATOS Y VALIDACIÓN
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 28 %
+
+Archivos revisados
+
+Se ha profundizado especialmente en:
+
+- "proyecto/seo/sistema-bloques.md"
+- "proyecto/seo/especificacion-plantillas.md"
+- documentación relacionada con arquitectura, datos y validación.
+
+---
+
+INVESTIGACIÓN
+
+El sistema de bloques confirma un patrón arquitectónico muy reutilizable:
+
+LÓGICA
+↓
+DATOS
+↓
+RENDERER / PROCESADOR
+↓
+PRESENTACIÓN / SALIDA
+
+Los bloques lógicos no dependen directamente del diseño visual, del tema de WordPress ni del HTML final.
+
+Esto demuestra que la documentación existente ya contiene un principio de desacoplamiento entre lógica y presentación.
+
+---
+
+DECISIÓN #001 — COMPONENTIZACIÓN
+
+"BASE-PROYECTOS" debe considerar la componentización como principio universal.
+
+Un proyecto debe dividirse en componentes con:
+
+- responsabilidad definida;
+- entrada conocida;
+- procesamiento definido;
+- salida conocida;
+- versión;
+- estado;
+- validación.
+
+La implementación concreta dependerá del proyecto.
+
+---
+
+DECISIÓN #002 — CONTRATOS DE COMPONENTES
+
+Los componentes no deben comunicarse mediante estructuras arbitrarias.
+
+Cuando sea necesario intercambiar información entre componentes, deberá existir un contrato que defina:
+
+- estructura;
+- campos;
+- tipos;
+- valores permitidos;
+- campos obligatorios;
+- campos opcionales;
+- errores;
+- versión;
+- reglas de validación.
+
+Este principio se podrá aplicar a:
+
+- APIs;
+- IA;
+- N8N;
+- bases de datos;
+- frontend/backend;
+- módulos internos;
+- aplicaciones móviles;
+- integraciones externas.
+
+---
+
+DECISIÓN #003 — IDENTIFICADORES ESTABLES
+
+El sistema de bloques utiliza identificadores estables para distinguir:
+
+- tipo lógico;
+- instancia concreta;
+- versión;
+- posición.
+
+Esto permite trazabilidad e idempotencia.
+
+Decisión:
+
+La base universal deberá incluir un principio de identificación estable de entidades y componentes.
+
+No se trasladarán los IDs "B01", "B02", etc., porque son específicos del proyecto SEO.
+
+Lo reutilizable es el patrón:
+
+TIPO
++
+ID ESTABLE
++
+VERSIÓN
++
+ESTADO
+
+---
+
+DECISIÓN #004 — VALIDACIÓN ANTES DE CONTINUAR
+
+La documentación existente insiste en que los datos y salidas deben validarse antes de pasar a la siguiente capa.
+
+Esto debe generalizarse:
+
+ENTRADA
+↓
+VALIDACIÓN
+↓
+PROCESAMIENTO
+↓
+VALIDACIÓN DE SALIDA
+↓
+SIGUIENTE CAPA
+
+Una salida técnicamente generada no debe considerarse válida simplemente porque el proceso haya terminado.
+
+---
+
+DECISIÓN #005 — DATOS REALES VS DATOS GENERADOS
+
+El sistema diferencia entre:
+
+datos reales/autorizados
+
+y
+
+contenido generado.
+
+La IA puede generar contenido, pero no debe inventar información factual que el sistema no posea.
+
+Este principio aparece repetidamente en bloques como:
+
+- trust;
+- testimonials;
+- pricing;
+- opening_hours;
+- map;
+- local_context;
+- coverage.
+
+Decisión:
+
+"BASE-PROYECTOS" debe incorporar una política universal de procedencia de datos.
+
+Cada dato importante deberá poder clasificarse, cuando proceda, como:
+
+REAL / FUENTE EXTERNA / PROPORCIONADO POR USUARIO
+GENERADO
+CALCULADO
+DERIVADO
+DESCONOCIDO
+
+La IA no debe convertir automáticamente un dato desconocido en un dato real.
+
+---
+
+DECISIÓN #006 — DESACTIVAR EN VEZ DE INVENTAR
+
+El sistema de bloques utiliza una estrategia correcta cuando un dato o funcionalidad no existe:
+
+enabled = false
+
+en lugar de rellenar información ficticia.
+
+Decisión:
+
+Este principio será universal:
+
+«Cuando un componente no pueda utilizarse correctamente por falta de información válida, debe omitirse o desactivarse antes que inventar información para completarlo.»
+
+---
+
+DECISIÓN #007 — LOS COMPONENTES NO DEBEN EXISTIR POR LONGITUD
+
+El sistema establece que no deben añadirse bloques simplemente para aumentar la cantidad de contenido.
+
+Deben utilizarse únicamente cuando aporten valor real a la finalidad del proyecto.
+
+Decisión:
+
+Se generaliza como:
+
+«Ningún componente debe existir únicamente para aumentar artificialmente volumen, complejidad o apariencia de funcionalidad.»
+
+Esto será aplicable tanto a contenido como a software.
+
+---
+
+DECISIÓN #008 — VERSIONADO
+
+La documentación utiliza versiones lógicas independientes de las versiones tecnológicas.
+
+Por ejemplo:
+
+block_version
+
+no depende de la versión del tema visual.
+
+Decisión:
+
+La base universal deberá distinguir:
+
+- versión del componente;
+- versión del contrato;
+- versión de los datos;
+- versión de la implementación;
+- versión de una dependencia externa;
+
+cuando sea necesario.
+
+No deben mezclarse automáticamente.
+
+---
+
+CONOCIMIENTO QUE NO SE TRASLADA
+
+No se trasladarán directamente a la base universal:
+
+- los 23 bloques SEO;
+- sus IDs "B01-B23";
+- estructuras específicas de páginas SEO;
+- reglas específicas de WordPress;
+- nombres de bloques concretos;
+- estructuras de datos propias del proyecto SEO.
+
+Se trasladará únicamente el patrón arquitectónico subyacente.
+
+---
+
+ACCIONES REALIZADAS
+
+- Profundizada la auditoría del sistema modular SEO.
+- Identificados patrones universales de componentización.
+- Identificado el concepto de contrato entre capas.
+- Identificado el patrón de identificadores estables.
+- Identificada una política generalizable de procedencia de datos.
+- Identificada la regla de desactivar componentes cuando no existe información válida.
+- Identificada la necesidad de separar versiones lógicas de versiones tecnológicas.
+
+---
+
+PENDIENTES
+
+Continuar auditando:
+
+- validaciones completas;
+- tratamiento de errores;
+- idempotencia;
+- estados;
+- automatización;
+- IA;
+- testing;
+- seguridad;
+- despliegue;
+- documentación de operaciones.
+
+Después se revisará el resto de archivos específicos para comprobar si aparecen nuevos patrones universales.
+
+---
+
+PRÓXIMO BLOQUE
+
+Auditar los documentos de validación, estados, errores y automatización, buscando convertirlos en procedimientos universales.
+
+Progreso global estimado: 28 %.
+
+
+
+
 
 
