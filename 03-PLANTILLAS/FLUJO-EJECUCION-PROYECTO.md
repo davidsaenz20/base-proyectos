@@ -1,206 +1,327 @@
-# FLUJO DE EJECUCIÓN DE PROYECTO
+FLUJO DE EJECUCIÓN DE PROYECTO
 
-## Propósito
+PROPÓSITO
 
 Definir el proceso general que debe seguir un proyecto desde su inicio hasta su funcionamiento real en producción.
 
-Este documento sirve como guía de ejecución para la IA y para las personas que participen en el proyecto.
+Este documento define cómo se ejecuta un proyecto.
 
-## Principio
+No sustituye:
 
-No comenzar a construir directamente.
-
-Primero comprender, después diseñar, después construir, probar y finalmente desplegar.
-
-Cada fase debe producir una salida verificable antes de avanzar a la siguiente.
+- "01-UNIVERSAL/PROTOCOLO-EJECUCION.md" → define el comportamiento operativo de la IA.
+- "00-CONTROL/ESTADO.md" → define dónde está actualmente el proyecto.
+- "03-PLANTILLAS/ROADMAP.md" → define el plan específico del proyecto.
 
 ---
 
-# FASE 1 — ENTRADA
+REGLA GENERAL DE EJECUCIÓN
 
-## Objetivo
+Cada fase debe seguir este ciclo:
+
+ENTRADA → ANÁLISIS/TRABAJO → ENTREGABLE → VALIDACIÓN → ACTUALIZACIÓN DE ESTADO → AVANCE
+
+No se debe avanzar a la siguiente fase mientras el criterio de salida de la fase actual no esté cumplido.
+
+Crear un archivo, completar una plantilla o realizar una configuración no significa que el trabajo esté terminado.
+
+Debe existir evidencia suficiente de que el resultado cumple su objetivo.
+
+---
+
+FUENTE DE VERDAD
+
+Durante la ejecución:
+
+- "ESTADO.md" determina la fase y paso actuales.
+- "ROADMAP.md" determina el trabajo específico planificado.
+- Este documento determina el flujo general y los criterios de las fases.
+- Las plantillas determinan la estructura de los entregables.
+- El protocolo de ejecución determina cómo debe actuar la IA.
+
+Si existe una contradicción, la IA debe detenerse y resolverla antes de continuar.
+
+---
+
+FASE 1 — ENTRADA
+
+Objetivo
 
 Comprender qué quiere conseguir el usuario.
 
-## Entrada
+Entrada
+
+Puede existir:
 
 - necesidad;
 - problema;
 - idea;
 - petición;
-- documentación disponible.
+- documentación;
+- proyecto existente;
+- automatización existente.
 
-## Acciones
+Acciones
 
 1. Leer la petición.
 2. Identificar el objetivo.
 3. Identificar el problema.
-4. Identificar al usuario.
-5. Detectar información desconocida.
-6. Determinar si el proyecto es viable de definir.
+4. Identificar al usuario o usuarios.
+5. Identificar el resultado esperado.
+6. Detectar información desconocida.
+7. Determinar si existe información suficiente para comenzar el análisis.
 
-## Salida
+Entregable
 
-Una primera descripción del proyecto.
+Primera descripción estructurada del proyecto.
 
-## Criterio para avanzar
+Validación
 
-El objetivo debe estar suficientemente claro para comenzar el análisis.
+Debe quedar claro:
+
+- qué se quiere conseguir;
+- qué problema se pretende resolver;
+- para quién;
+- cuál es el resultado esperado.
+
+Para avanzar
+
+Si falta información crítica, preguntar.
+
+Si la información es suficiente, registrar la salida y pasar a Fase 2.
 
 ---
 
-# FASE 2 — ANÁLISIS
+FASE 2 — ANÁLISIS
 
-## Objetivo
+Objetivo
 
 Determinar qué necesita realmente el proyecto.
 
-## Acciones
+Entrada
 
-1. Analizar el problema.
-2. Identificar usuarios.
-3. Identificar entradas.
-4. Identificar procesos.
-5. Identificar salidas.
-6. Identificar integraciones.
-7. Identificar datos.
-8. Identificar restricciones.
-9. Identificar riesgos.
-10. Detectar información que falta.
+Resultado validado de Fase 1.
 
-## Regla
+Acciones
 
-Si falta información importante, preguntar antes de tomar decisiones críticas.
+Analizar:
 
-## Salida
+- problema;
+- usuarios;
+- entradas;
+- procesos;
+- salidas;
+- integraciones;
+- datos;
+- restricciones;
+- riesgos;
+- costes relevantes;
+- información desconocida.
+
+Entregable
 
 Análisis inicial validado.
 
+Validación
+
+Debe existir una comprensión suficiente del problema y de sus restricciones para tomar decisiones de definición.
+
+Para avanzar
+
+No tomar decisiones críticas basadas en información desconocida.
+
+Si falta información crítica, preguntar.
+
 ---
 
-# FASE 3 — CLASIFICACIÓN
+FASE 3 — CLASIFICACIÓN
 
-## Objetivo
+Objetivo
 
-Determinar qué tipo de proyecto se está construyendo.
+Determinar qué tipo o tipos de proyecto se están construyendo.
 
-## Acciones
+Entrada
 
-1. Consultar `04-TIPOS-PROYECTO`.
+Análisis inicial.
+
+Acciones
+
+1. Consultar "04-TIPOS-PROYECTO".
 2. Comparar el proyecto con los tipos disponibles.
-3. Seleccionar uno o varios tipos cuando corresponda.
-4. Consultar el fixture correspondiente como referencia.
-5. No copiar contenido ficticio al proyecto real.
+3. Seleccionar el tipo o tipos adecuados.
+4. Consultar fixtures relacionados cuando sean útiles.
+5. Utilizar los fixtures únicamente como referencia.
+6. No copiar datos ficticios al proyecto real.
 
-## Salida
+Entregable
 
-Tipo o tipos de proyecto identificados.
+Clasificación del proyecto.
+
+Validación
+
+Debe existir una justificación suficiente de la clasificación elegida.
+
+Para avanzar
+
+El tipo de proyecto debe estar identificado o documentarse por qué no encaja en los tipos existentes.
+
+Si falta una categoría reutilizable, registrarla como necesidad antes de continuar.
 
 ---
 
-# FASE 4 — DEFINICIÓN
+FASE 4 — DEFINICIÓN
 
-## Objetivo
+Objetivo
 
-Convertir la idea en una definición concreta del proyecto.
+Convertir la idea y el análisis en una definición concreta y verificable.
 
-## Acciones
+Entrada
+
+Fases 1–3 validadas.
+
+Acciones
 
 Completar la plantilla de proyecto con:
 
 - identificación;
 - objetivo;
 - problema;
-- usuario;
+- usuarios;
 - propuesta;
 - alcance;
-- requisitos;
+- fuera de alcance;
+- requisitos iniciales;
 - módulos;
-- tecnología;
+- tecnología inicial;
 - arquitectura inicial;
 - datos;
 - riesgos;
 - decisiones;
 - roadmap;
+- criterios de éxito;
 - validación.
 
-## Salida
+Entregable
 
-`definicion.md`
+"definicion.md"
 
-## Criterio para avanzar
+Validación
 
-El proyecto debe tener un objetivo, alcance y requisitos suficientemente claros.
+Debe quedar definido como mínimo:
+
+- qué se construye;
+- para quién;
+- qué problema resuelve;
+- qué incluye;
+- qué no incluye;
+- qué requisitos debe cumplir;
+- cómo se sabrá si funciona.
+
+Para avanzar
+
+No comenzar el diseño técnico si el objetivo, alcance o requisitos críticos siguen siendo ambiguos.
 
 ---
 
-# FASE 5 — SELECCIÓN DE MÓDULOS
+FASE 5 — SELECCIÓN DE MÓDULOS
 
-## Objetivo
+Objetivo
 
 Determinar qué capacidades reutilizables necesita el proyecto.
 
-## Acciones
+Entrada
 
-1. Consultar `02-MODULOS`.
+Definición validada.
+
+Acciones
+
+1. Consultar "02-MODULOS".
 2. Identificar módulos necesarios.
-3. Evitar incorporar módulos innecesarios.
-4. Detectar capacidades que todavía no estén documentadas.
-5. Si falta una capacidad reutilizable, documentarla como módulo antes de continuar.
+3. Seleccionar únicamente los necesarios.
+4. Detectar capacidades inexistentes.
+5. Si una capacidad debe ser reutilizable, documentarla como módulo.
+6. Registrar excepciones específicas del proyecto.
 
-## Salida
+Entregable
 
-Lista de módulos seleccionados.
+Lista de módulos seleccionados y capacidades necesarias.
+
+Validación
+
+Cada módulo seleccionado debe tener una función concreta dentro del proyecto.
+
+Para avanzar
+
+No deben quedar capacidades críticas sin resolver o identificadas como pendientes.
 
 ---
 
-# FASE 6 — REQUISITOS
+FASE 6 — REQUISITOS
 
-## Objetivo
+Objetivo
 
 Definir exactamente qué debe hacer el sistema.
 
-## Acciones
+Entrada
+
+Definición y módulos seleccionados.
+
+Acciones
 
 Documentar:
 
-### Requisitos funcionales
+Requisitos funcionales
 
-- 
+Qué debe hacer el sistema.
 
-### Requisitos técnicos
+Requisitos técnicos
 
-- 
+Qué condiciones técnicas debe cumplir.
 
-### Requisitos no funcionales
+Requisitos no funcionales
 
-- 
+Rendimiento, disponibilidad, escalabilidad, mantenibilidad y otras condiciones relevantes.
 
-### Integraciones
+Integraciones
 
-- 
+Servicios, APIs, plataformas y sistemas externos.
 
-### Datos
+Datos
 
-- 
+Qué datos recibe, procesa, almacena y produce.
 
-### Seguridad
+Seguridad
 
-- 
+Autenticación, autorización, secretos, privacidad y protección de datos cuando corresponda.
 
-## Salida
+Entregable
 
-Requisitos completos y verificables.
+"requisitos.md"
+
+Validación
+
+Cada requisito crítico debe ser:
+
+- comprensible;
+- verificable;
+- suficientemente concreto.
+
+Para avanzar
+
+No pasar a arquitectura con requisitos críticos ambiguos.
 
 ---
 
-# FASE 7 — ARQUITECTURA
+FASE 7 — ARQUITECTURA
 
-## Objetivo
+Objetivo
 
 Diseñar cómo funcionará el sistema.
 
-## Acciones
+Entrada
+
+Requisitos validados.
+
+Acciones
 
 Definir:
 
@@ -211,84 +332,140 @@ Definir:
 - automatizaciones;
 - flujo de información;
 - autenticación;
+- autorización;
 - seguridad;
 - almacenamiento;
-- observabilidad.
+- observabilidad;
+- dependencias externas;
+- recuperación ante errores.
 
-## Regla
+Entregable
 
-La arquitectura debe ser suficientemente sencilla para cumplir el objetivo y suficientemente sólida para funcionar en producción.
+"arquitectura.md"
 
-## Salida
+Validación
 
-`arquitectura.md`
+La arquitectura debe:
+
+- cumplir los requisitos;
+- ser técnicamente viable;
+- ser suficientemente sencilla;
+- contemplar seguridad;
+- contemplar errores;
+- poder desplegarse en la realidad.
+
+Para avanzar
+
+No construir componentes cuya arquitectura crítica todavía no esté resuelta.
 
 ---
 
-# FASE 8 — PLANIFICACIÓN
+FASE 8 — PLANIFICACIÓN
 
-## Objetivo
+Objetivo
 
-Convertir la arquitectura en un plan de construcción.
+Convertir la definición y arquitectura en un plan ejecutable.
 
-## Acciones
+Entrada
 
-1. Dividir el proyecto en fases.
-2. Ordenar las tareas.
-3. Identificar dependencias.
+Arquitectura validada.
+
+Acciones
+
+1. Crear o actualizar el roadmap específico.
+2. Dividir el trabajo en tareas.
+3. Ordenar dependencias.
 4. Identificar bloqueos.
 5. Definir criterios de finalización.
-6. Establecer el siguiente paso concreto.
+6. Identificar entregables.
+7. Establecer el siguiente paso concreto.
+8. Preparar el estado inicial de ejecución.
 
-## Salida
+Entregable
 
-`roadmap.md`
+"roadmap.md"
+
+y estado operativo inicial en:
+
+"00-CONTROL/ESTADO.md"
+
+Validación
+
+Cada bloque importante del trabajo debe tener:
+
+- objetivo;
+- tareas;
+- entregable;
+- criterio de finalización;
+- dependencias cuando existan.
+
+Para avanzar
+
+Debe existir un primer paso ejecutable sin necesidad de improvisar.
 
 ---
 
-# FASE 9 — CONSTRUCCIÓN
+FASE 9 — CONSTRUCCIÓN
 
-## Objetivo
+Objetivo
 
-Construir el sistema.
+Construir el sistema definido.
 
-## Acciones
+Entrada
 
-1. Implementar cada componente.
-2. Configurar servicios.
-3. Crear integraciones.
-4. Configurar automatizaciones.
-5. Conectar APIs.
-6. Configurar datos.
-7. Aplicar seguridad.
-8. Documentar decisiones importantes.
+Planificación validada.
 
-## Regla
+Acciones
 
-No considerar una tarea terminada únicamente porque se haya creado un archivo o configuración.
+Implementar:
 
-Debe comprobarse que funciona.
+- componentes;
+- servicios;
+- integraciones;
+- automatizaciones;
+- APIs;
+- datos;
+- configuración;
+- seguridad.
 
-## Salida
+Regla
+
+Trabajar siguiendo el paso actual registrado en "ESTADO.md".
+
+No saltar a tareas posteriores por iniciativa propia.
+
+Entregable
 
 Primera versión funcional.
 
+Validación
+
+Cada componente importante debe comprobarse individualmente y dentro del flujo correspondiente.
+
+Para avanzar
+
+Debe existir una versión funcional suficiente para realizar pruebas.
+
 ---
 
-# FASE 10 — PRUEBAS
+FASE 10 — PRUEBAS
 
-## Objetivo
+Objetivo
 
-Comprobar que el sistema funciona correctamente.
+Comprobar que el sistema funciona técnicamente.
 
-## Acciones
+Entrada
 
-Realizar pruebas:
+Primera versión funcional.
+
+Acciones
+
+Realizar las pruebas necesarias:
 
 - funcionales;
 - integración;
-- seguridad;
 - errores;
+- seguridad;
 - rendimiento cuando sea necesario;
 - compatibilidad;
 - regresión.
@@ -296,59 +473,86 @@ Realizar pruebas:
 Registrar:
 
 - prueba;
+- objetivo;
 - resultado esperado;
 - resultado obtenido;
 - estado;
 - error;
-- corrección.
+- corrección;
+- nueva prueba cuando corresponda.
 
-## Salida
+Entregable
 
 Resultados de testing.
 
+Validación
+
+Los errores críticos deben estar corregidos o existir una decisión explícita y documentada sobre ellos.
+
+Para avanzar
+
+El sistema debe superar las pruebas necesarias para poder validarse como solución.
+
 ---
 
-# FASE 11 — VALIDACIÓN
+FASE 11 — VALIDACIÓN
 
-## Objetivo
+Objetivo
 
-Determinar si el proyecto cumple realmente su objetivo.
+Determinar si el proyecto resuelve realmente el problema para el que fue creado.
 
-## Acciones
+Entrada
+
+Sistema probado.
+
+Acciones
 
 Comprobar:
 
-1. requisitos;
-2. funcionamiento;
-3. seguridad;
-4. integraciones;
-5. experiencia del usuario;
-6. costes;
-7. estabilidad;
-8. criterios de éxito.
+1. objetivo;
+2. requisitos;
+3. funcionamiento;
+4. seguridad;
+5. integraciones;
+6. experiencia del usuario;
+7. costes;
+8. estabilidad;
+9. criterios de éxito.
 
-## Regla
+Regla
 
-Una automatización que técnicamente funciona pero no resuelve el problema del usuario no se considera terminada.
+Un sistema técnicamente funcional que no resuelve el problema real no se considera terminado.
 
-## Salida
+Entregable
 
-`validacion.md`
+"validacion.md"
+
+Validación
+
+Debe existir evidencia suficiente de que el sistema cumple el objetivo.
+
+Para avanzar
+
+El proyecto debe estar preparado para despliegue real.
 
 ---
 
-# FASE 12 — DESPLIEGUE
+FASE 12 — DESPLIEGUE
 
-## Objetivo
+Objetivo
 
 Poner el sistema en funcionamiento real.
 
-## Acciones
+Entrada
 
-Definir:
+Sistema validado.
+
+Acciones
+
+Configurar:
 
 - entorno de producción;
-- dominio;
+- dominio cuando corresponda;
 - servidores;
 - credenciales;
 - variables de entorno;
@@ -356,11 +560,10 @@ Definir:
 - copias de seguridad;
 - recuperación;
 - permisos;
-- configuración final.
+- configuración final;
+- monitorización.
 
-## Antes de producción
-
-Comprobar:
+Comprobaciones previas
 
 - configuración;
 - seguridad;
@@ -369,44 +572,70 @@ Comprobar:
 - monitorización;
 - recuperación ante errores.
 
-## Salida
+Entregable
 
 Sistema desplegado.
 
----
+Validación
 
-# FASE 13 — VALIDACIÓN EN PRODUCCIÓN
+Debe poder accederse al sistema en su entorno real.
 
-## Objetivo
+Para avanzar
 
-Comprobar el comportamiento del sistema real.
-
-## Acciones
-
-1. Ejecutar operaciones reales controladas.
-2. Comprobar entradas.
-3. Comprobar procesamiento.
-4. Comprobar salidas.
-5. Comprobar errores.
-6. Comprobar notificaciones.
-7. Comprobar registros.
-8. Comprobar recuperación.
-
-## Criterio
-
-No considerar el proyecto terminado hasta comprobar su funcionamiento en el entorno real.
+El despliegue debe estar realizado y preparado para operaciones reales controladas.
 
 ---
 
-# FASE 14 — MONITORIZACIÓN
+FASE 13 — VALIDACIÓN EN PRODUCCIÓN
 
-## Objetivo
+Objetivo
+
+Comprobar el funcionamiento del sistema real en su entorno real.
+
+Entrada
+
+Sistema desplegado.
+
+Acciones
+
+Ejecutar operaciones reales controladas y comprobar:
+
+- entradas;
+- procesamiento;
+- salidas;
+- errores;
+- notificaciones;
+- registros;
+- integraciones;
+- recuperación.
+
+Entregable
+
+Evidencias de funcionamiento real.
+
+Validación
+
+El flujo real debe funcionar de extremo a extremo.
+
+Para avanzar
+
+No considerar el proyecto terminado si solamente funciona en pruebas o entorno de desarrollo.
+
+---
+
+FASE 14 — MONITORIZACIÓN
+
+Objetivo
 
 Detectar problemas después del despliegue.
 
-## Acciones
+Entrada
 
-Monitorizar:
+Sistema funcionando en producción.
+
+Acciones
+
+Monitorizar, cuando corresponda:
 
 - disponibilidad;
 - errores;
@@ -417,61 +646,157 @@ Monitorizar:
 - integraciones;
 - eventos importantes.
 
-## Salida
+Definir también:
 
-Sistema monitorizado.
+- qué se vigila;
+- cómo se detecta;
+- qué ocurre ante un error;
+- quién debe actuar;
+- cómo se recupera el servicio.
 
----
+Entregable
 
-# FASE 15 — CIERRE
+Sistema monitorizado y procedimiento básico de actuación.
 
-## Objetivo
+Validación
 
-Determinar que el proyecto está terminado.
+Debe existir una forma realista de detectar los problemas relevantes.
 
-## Criterios
+Para avanzar
 
-El proyecto puede considerarse terminado cuando:
-
-- el objetivo se cumple;
-- los requisitos están validados;
-- las pruebas están superadas;
-- la seguridad está revisada;
-- el sistema está desplegado;
-- funciona en producción;
-- existe monitorización;
-- existen evidencias;
-- la documentación está actualizada.
-
-## Estado final
-
-**Estado:** Terminado
-
-**Progreso:** 100 %
+La operación debe ser suficientemente controlable para considerar estable el proyecto.
 
 ---
 
-# REGLAS DE EJECUCIÓN PARA LA IA
+FASE 15 — CIERRE
+
+Objetivo
+
+Determinar que el proyecto ha cumplido su objetivo y puede considerarse terminado.
+
+Comprobaciones finales
+
+- objetivo cumplido;
+- requisitos validados;
+- pruebas superadas;
+- seguridad revisada;
+- sistema desplegado;
+- funcionamiento real comprobado;
+- monitorización disponible;
+- evidencias conservadas;
+- documentación actualizada;
+- decisiones importantes registradas;
+- incidencias críticas resueltas o aceptadas explícitamente.
+
+Entregable
+
+Proyecto cerrado y documentación final actualizada.
+
+Estado final
+
+El proyecto solo puede marcarse como:
+
+TERMINADO
+
+cuando los criterios anteriores estén cumplidos.
+
+El "ESTADO.md" debe reflejar:
+
+Estado: Terminado
+
+Progreso: 100 %
+
+---
+
+REGLAS DE EJECUCIÓN PARA LA IA
 
 La IA debe:
 
-1. Leer primero el protocolo general.
-2. Leer la estructura de la base.
-3. Consultar los módulos necesarios.
-4. Consultar las plantillas necesarias.
-5. Consultar el tipo de proyecto.
-6. Mantener separada la información del proyecto real.
-7. No inventar información que no conozca.
-8. Preguntar cuando falten datos críticos.
-9. Validar cada fase antes de avanzar.
-10. Registrar decisiones importantes.
-11. Mantener actualizado el estado.
-12. Mantener actualizado el roadmap.
-13. No considerar terminado algo que no haya sido probado.
-14. No considerar terminado el proyecto hasta validar su funcionamiento real.
+1. Leer el protocolo general antes de ejecutar.
+2. Leer el estado actual del proyecto.
+3. Identificar el paso actual.
+4. Consultar únicamente la documentación necesaria para ese paso.
+5. Consultar las plantillas correspondientes.
+6. Consultar los módulos necesarios.
+7. Consultar el tipo de proyecto cuando corresponda.
+8. Mantener separada la información general de la información específica del proyecto.
+9. No inventar información desconocida.
+10. Preguntar cuando falten datos críticos.
+11. Ejecutar únicamente el trabajo correspondiente al paso actual.
+12. No cambiar de fase por iniciativa propia.
+13. No confundir una mejora con un bloqueo.
+14. Registrar los bloqueos reales.
+15. Registrar las decisiones importantes.
+16. Crear o actualizar el entregable correspondiente.
+17. Validar el resultado antes de avanzar.
+18. Actualizar "ESTADO.md".
+19. Mantener actualizado el roadmap cuando cambie el plan.
+20. No considerar terminado un trabajo únicamente porque exista un archivo.
+21. No considerar terminado un sistema que no haya sido probado.
+22. No considerar terminado el proyecto hasta comprobar su funcionamiento real.
+23. Si detecta una necesidad fuera del paso actual que no sea un bloqueo, registrarla y continuar.
+24. Si detecta una contradicción entre documentos, detenerse y resolverla antes de continuar.
 
-# REGLA PRINCIPAL
+---
 
-**Pensar → definir → diseñar → construir → probar → desplegar → validar → monitorizar → cerrar.**
+REGLA PARA "SIGUE"
 
+Cuando el usuario indique:
 
+"Sigue"
+
+la IA debe:
+
+1. recuperar el estado persistente;
+2. identificar la fase y paso actuales;
+3. comprobar el entregable pendiente;
+4. ejecutar el siguiente trabajo correspondiente al paso actual;
+5. validar;
+6. actualizar el estado;
+7. continuar únicamente si el criterio de avance está cumplido.
+
+"Sigue" no autoriza a cambiar de fase, introducir una nueva metodología ni iniciar trabajo no relacionado con el paso actual.
+
+---
+
+REGLA DE BLOQUEO
+
+Se considera bloqueo únicamente aquello que impide completar el paso actual.
+
+No son bloqueos por sí mismos:
+
+- ideas nuevas;
+- mejoras;
+- optimizaciones;
+- alternativas tecnológicas;
+- refactorizaciones;
+- documentación no necesaria para el paso actual.
+
+Una mejora pendiente no permite cambiar de fase ni desviarse del plan.
+
+---
+
+REGLA DE RETROCESO
+
+No se retrocede de fase salvo que exista un bloqueo o una validación que demuestre que una decisión anterior impide continuar.
+
+Si es necesario retroceder:
+
+1. identificar la causa;
+2. documentarla;
+3. actualizar "ESTADO.md";
+4. indicar qué fase debe revisarse;
+5. resolver el problema;
+6. volver al flujo normal.
+
+---
+
+PRINCIPIO FINAL
+
+Pensar → definir → diseñar → planificar → construir → probar → validar → desplegar → comprobar en producción → monitorizar → cerrar.
+
+El objetivo final no es producir documentación.
+
+El objetivo final es:
+
+CONSTRUIR ALGO QUE FUNCIONE REALMENTE.
