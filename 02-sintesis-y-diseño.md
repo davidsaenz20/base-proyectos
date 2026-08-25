@@ -1659,5 +1659,119 @@ Progreso Fase 2: 52 %.
 Siguiente paso: definir el mecanismo de recuperación de estado para poder continuar cualquier proyecto sin depender de la memoria de la conversación.
 
 
+ENTRADA 007 — MECANISMO UNIVERSAL DE RECUPERACIÓN DE ESTADO
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 60 %
+
+OBJETIVO
+
+Diseñar un mecanismo que permita recuperar un proyecto después de una interrupción sin depender de recordar la conversación anterior.
+
+1. PRINCIPIO
+
+La información necesaria para continuar un proyecto debe estar documentada dentro del propio proyecto.
+
+La conversación puede servir para trabajar, pero no debe ser la fuente de verdad.
+
+2. ESTADO RECUPERABLE
+
+Todo proyecto deberá poder responder rápidamente:
+
+¿QUÉ ESTAMOS HACIENDO?
+¿EN QUÉ FASE ESTAMOS?
+¿QUÉ PASO ESTÁ ACTIVO?
+¿QUÉ ESTÁ TERMINADO?
+¿QUÉ FALTA?
+¿QUÉ ESTÁ BLOQUEADO?
+¿QUÉ DECISIONES SON VÁLIDAS?
+¿CUÁL ES EL SIGUIENTE PASO?
+
+3. FUENTE DE VERDAD
+
+La información deberá seguir esta jerarquía:
+
+DOCUMENTACIÓN DEL PROYECTO
+        ↓
+DECISIONES REGISTRADAS
+        ↓
+ROADMAP / ESTADO
+        ↓
+CONVERSACIÓN
+
+La conversación nunca debe contradecir silenciosamente la documentación.
+
+4. INTERRUPCIÓN
+
+Si el trabajo se detiene durante días o semanas:
+
+REABRIR PROYECTO
+↓
+LEER ESTADO
+↓
+LEER DECISIONES RELEVANTES
+↓
+IDENTIFICAR PASO ACTUAL
+↓
+COMPROBAR DEPENDENCIAS
+↓
+CONTINUAR
+
+5. REGLA DE NO SUPOSICIÓN
+
+Si la documentación no permite determinar el siguiente paso con seguridad:
+
+NO SUPONER
+NO INVENTAR
+NO CONTINUAR AUTOMÁTICAMENTE
+
+Se deberá identificar qué información falta.
+
+6. REGISTRO DE CAMBIOS
+
+Cuando una decisión cambie, se añadirá una nueva entrada.
+
+No se eliminará el historial anterior.
+
+Esto permite conocer:
+
+DECISIÓN ORIGINAL
+↓
+MOTIVO DEL CAMBIO
+↓
+NUEVA DECISIÓN
+↓
+IMPACTO
+
+7. DECISIÓN
+
+El sistema deberá diseñarse para que otro agente, otra conversación o el propio usuario pueda recuperar el proyecto sin conocer el historial completo de la conversación.
+
+Este principio será obligatorio para todos los proyectos derivados de "BASE-PROYECTOS".
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+████████████████████ 100 %
+
+ARQUITECTURA
+██████████████████░░ 90 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 60 %.
+
+Siguiente paso: definir cómo se relacionarán entre sí el proyecto, el roadmap, las decisiones y las validaciones sin duplicar información.
+
+
+
+
 
 
