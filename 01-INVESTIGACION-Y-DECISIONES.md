@@ -3383,5 +3383,485 @@ Progreso global estimado: 69 %.
 
 
 
+ENTRADA 009 — METODOLOGÍA UNIVERSAL DE PROYECTOS
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 76 %
+
+ARCHIVOS REVISADOS
+
+- "proyecto/metodologia.md"
+- "proyecto/checklist-arranque.md"
+- "proyecto/protocolo-ejecucion.md"
+- estructura actual de "proyecto/".
+
+---
+
+INVESTIGACIÓN
+
+La metodología actual ya contiene una secuencia madura:
+
+INVESTIGACIÓN
+↓
+ESTRUCTURACIÓN
+↓
+DECISIÓN
+↓
+ARQUITECTURA
+↓
+DATOS
+↓
+IMPLEMENTACIÓN
+↓
+VALIDACIÓN
+↓
+AUTOMATIZACIÓN
+↓
+PUBLICACIÓN / ENTREGA
+↓
+MEDICIÓN
+↓
+APRENDIZAJE
+
+Aunque está escrita para el proyecto SEO, la lógica es mucho más general.
+
+---
+
+DECISIÓN #001 — LA METODOLOGÍA DEBE SER AGNÓSTICA AL PRODUCTO
+
+"BASE-PROYECTOS" no debe contener una metodología específica para:
+
+- webs;
+- SEO;
+- WordPress;
+- N8N;
+- IA.
+
+Debe definir el proceso común de creación de proyectos digitales.
+
+La tecnología y el tipo de producto se decidirán posteriormente.
+
+---
+
+DECISIÓN #002 — VALIDAR ANTES DE CONSTRUIR
+
+La metodología establece explícitamente que no debe automatizarse todo antes de que estén suficientemente definidos:
+
+- investigación;
+- decisiones;
+- arquitectura;
+- datos;
+- bloques/componentes;
+- reglas;
+- validaciones.
+
+Regla universal:
+
+«No construir a gran escala una solución cuya arquitectura todavía está cambiando.»
+
+Primero se valida el diseño.
+
+Después se implementa.
+
+---
+
+DECISIÓN #003 — PROTOTIPO ANTES DE ESCALA
+
+La metodología actual separa la prueba técnica de la publicación real.
+
+Esto es correcto.
+
+El patrón universal será:
+
+HIPÓTESIS
+↓
+PROTOTIPO
+↓
+PRUEBA
+↓
+VALIDACIÓN
+↓
+CORRECCIÓN
+↓
+ESCALA
+
+No:
+
+IDEA
+↓
+AUTOMATIZACIÓN MASIVA
+
+---
+
+DECISIÓN #004 — LA PRIMERA IMPLEMENTACIÓN DEBE SER REPRESENTATIVA
+
+Cuando sea necesario realizar una prueba, debe utilizarse un caso que permita comprobar el sistema completo.
+
+No hace falta construir cien elementos para descubrir que el modelo estaba mal diseñado.
+
+Regla universal:
+
+«Probar primero con una unidad representativa antes de escalar.»
+
+---
+
+DECISIÓN #005 — SEPARAR NÚCLEO Y DATOS DEL PROYECTO
+
+La metodología actual utiliza documentación sectorial separada de la metodología general.
+
+Esto confirma el modelo:
+
+METODOLOGÍA UNIVERSAL
+        +
+CONFIGURACIÓN DEL PROYECTO
+        +
+DATOS DEL PROYECTO
+
+Por tanto, un nuevo proyecto no necesita empezar desde cero.
+
+---
+
+DECISIÓN #006 — LAS FASES DEBEN SER CONFIGURABLES
+
+No todos los proyectos necesitan exactamente las mismas fases.
+
+Por ejemplo:
+
+Web sencilla:
+
+REQUISITOS
+↓
+DISEÑO
+↓
+IMPLEMENTACIÓN
+↓
+TEST
+↓
+DESPLIEGUE
+
+Automatización IA + WhatsApp:
+
+PROBLEMA
+↓
+INVESTIGACIÓN
+↓
+DISEÑO DEL FLUJO
+↓
+DATOS
+↓
+IA
+↓
+INTEGRACIONES
+↓
+TEST
+↓
+DESPLIEGUE
+↓
+MONITORIZACIÓN
+
+Automatización de facturas:
+
+DOCUMENTOS
+↓
+EXTRACCIÓN
+↓
+VALIDACIÓN
+↓
+CLASIFICACIÓN
+↓
+PROCESAMIENTO
+↓
+SALIDA
+↓
+AUDITORÍA
+
+Decisión:
+
+La plantilla debe proporcionar fases disponibles, pero permitir activar o desactivar las que realmente necesite cada proyecto.
+
+---
+
+DECISIÓN #007 — CADA FASE DEBE TENER UN ENTREGABLE
+
+Una fase no debería considerarse terminada simplemente porque "hemos trabajado en ella".
+
+Debe producir un resultado identificable.
+
+Ejemplo:
+
+INVESTIGACIÓN
+→ documento de evidencias
+
+ARQUITECTURA
+→ documento de arquitectura
+
+MODELO DE DATOS
+→ esquema validado
+
+IMPLEMENTACIÓN
+→ código/prototipo
+
+TEST
+→ resultados de pruebas
+
+Regla universal:
+
+«Toda fase debe tener un objetivo y un entregable verificable.»
+
+---
+
+DECISIÓN #008 — CRITERIO DE SALIDA
+
+Cada fase deberá definir qué condiciones permiten pasar a la siguiente.
+
+Modelo:
+
+FASE
+↓
+TRABAJO
+↓
+ENTREGABLE
+↓
+VERIFICACIÓN
+↓
+CRITERIO DE SALIDA
+↓
+SIGUIENTE FASE
+
+Esto evita avanzar simplemente porque haya transcurrido suficiente tiempo.
+
+---
+
+DECISIÓN #009 — REGISTRO DE CAMBIOS
+
+La metodología establece que las decisiones importantes deben conservar:
+
+- fecha;
+- cambio;
+- motivo;
+- evidencia;
+- consecuencia.
+
+Decisión:
+
+El historial será parte permanente de la metodología.
+
+No se sobrescribirá una decisión importante sin dejar trazabilidad.
+
+---
+
+DECISIÓN #010 — EL APRENDIZAJE FORMA PARTE DEL PROYECTO
+
+La metodología actual termina en:
+
+MEDICIÓN
+↓
+APRENDIZAJE
+↓
+MEJORA
+
+Esto debe conservarse en la base universal.
+
+Un proyecto no termina necesariamente cuando se despliega.
+
+Debe existir la posibilidad de:
+
+- medir;
+- detectar problemas;
+- aprender;
+- mejorar;
+- versionar;
+- repetir.
+
+---
+
+DECISIÓN #011 — VERSIONADO DEL SISTEMA
+
+Cuando una regla, contrato, algoritmo, modelo o arquitectura cambia, debe poder saberse qué versión estaba activa cuando se produjo un resultado.
+
+Ejemplo:
+
+RESULTADO
++
+VERSION DEL SISTEMA
++
+VERSION DE DATOS
++
+FECHA
+
+Esto conecta con:
+
+- IA;
+- contratos;
+- motor de decisión;
+- validación;
+- automatización;
+- debugging.
+
+---
+
+DECISIÓN #012 — CHECKLIST DE ARRANQUE UNIVERSAL
+
+El repositorio ya dispone de un "checklist-arranque.md", lo que demuestra que el arranque controlado debe ser una pieza independiente de la metodología.
+
+La plantilla universal deberá contemplar:
+
+[ ] Leer documentación de control
+[ ] Identificar fase
+[ ] Identificar paso
+[ ] Identificar objetivo
+[ ] Identificar entregable
+[ ] Comprobar decisiones previas
+[ ] Comprobar bloqueos
+[ ] Revisar documentación necesaria
+[ ] Ejecutar solo el trabajo correspondiente
+[ ] Verificar
+[ ] Registrar resultado
+[ ] Actualizar estado
+
+---
+
+DECISIÓN #013 — EL SISTEMA DEBE PODER REANUDARSE
+
+El proyecto debe poder detenerse y continuar posteriormente sin depender de recordar toda la conversación.
+
+Debe ser posible determinar desde la documentación:
+
+DÓNDE ESTAMOS
+QUÉ ESTÁ HECHO
+QUÉ ESTÁ PENDIENTE
+QUÉ DECIDIMOS
+QUÉ BLOQUEOS EXISTEN
+QUÉ TOCA AHORA
+
+Este es uno de los objetivos centrales de "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #014 — "Sigue" NO ES UNA ORDEN AMBIGUA
+
+Cuando el usuario indique:
+
+«Sigue»
+
+el sistema de trabajo debe interpretar:
+
+«Continuar desde el punto persistente documentado.»
+
+No significa:
+
+- inventar una tarea nueva;
+- rediseñar el proyecto;
+- retroceder;
+- cambiar de fase;
+- comenzar otra investigación.
+
+Salvo que exista un bloqueo real o el usuario lo indique explícitamente.
+
+---
+
+DECISIÓN #015 — EL PROYECTO DEBE SER AUDITABLE
+
+Al terminar un proyecto deberíamos poder reconstruir:
+
+QUÉ QUERÍAMOS HACER
+↓
+POR QUÉ
+↓
+QUÉ INVESTIGAMOS
+↓
+QUÉ DESCUBRIMOS
+↓
+QUÉ DECIDIMOS
+↓
+QUÉ CONSTRUIMOS
+↓
+CÓMO LO VALIDAMOS
+↓
+QUÉ RESULTADO OBTUVIMOS
+↓
+QUÉ APRENDIMOS
+
+Decisión:
+
+La auditabilidad será un principio universal.
+
+---
+
+CONCLUSIÓN
+
+La auditoría inicial está acercándose al final.
+
+Ya tenemos identificados como pilares universales:
+
+1. Protocolo de arranque.
+2. Fuente persistente de verdad.
+3. Investigación.
+4. Evidencias.
+5. Decisiones.
+6. Arquitectura.
+7. Modelo de datos.
+8. Entidades y relaciones.
+9. Componentización.
+10. Contratos.
+11. IA controlada.
+12. Orquestación.
+13. Estados.
+14. Validación.
+15. Incidencias.
+16. Idempotencia.
+17. Trazabilidad.
+18. Testing/prototipado.
+19. Seguridad.
+20. Despliegue.
+21. Mantenimiento.
+22. Medición.
+23. Aprendizaje.
+24. Versionado.
+25. Auditabilidad.
+
+La siguiente fase ya no será simplemente "seguir leyendo archivos".
+
+Estamos llegando al punto en el que podremos hacer una síntesis final de la auditoría y diseñar la estructura definitiva de "base-proyectos".
+
+---
+
+ACCIONES REALIZADAS
+
+- Revisada la metodología general.
+- Revisado el sistema documental general.
+- Confirmada la separación entre metodología y documentación específica.
+- Identificado el concepto de fase configurable.
+- Identificado el requisito de entregables verificables.
+- Identificados criterios de salida.
+- Confirmado el valor del checklist de arranque.
+- Identificado el requisito de reanudación.
+- Identificado el principio de auditabilidad.
+- Consolidado el conjunto provisional de principios universales.
+
+---
+
+PENDIENTE
+
+Aproximadamente 24 % de auditoría inicial.
+
+Queda principalmente:
+
+- revisar los documentos restantes;
+- comprobar si existen principios adicionales;
+- detectar contradicciones;
+- realizar inventario definitivo;
+- hacer segunda pasada de coherencia;
+- decidir la estructura final de "BASE-PROYECTOS".
+
+Todavía NO vamos a construir la plantilla definitiva.
+
+Primero quiero cerrar la auditoría para no diseñarla sobre información incompleta.
+
+Progreso global: 76 %.
+
+
+
 
 
