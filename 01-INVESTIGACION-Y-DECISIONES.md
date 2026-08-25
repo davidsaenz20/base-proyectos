@@ -3864,4 +3864,312 @@ Progreso global: 76 %.
 
 
 
+ENTRADA 010 — JERARQUÍA DOCUMENTAL, FUENTES DE VERDAD Y EVOLUCIÓN
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 82 %
+
+ARCHIVO REVISADO
+
+- "proyecto/metodologia.md"
+
+---
+
+INVESTIGACIÓN
+
+La metodología existente establece cinco niveles documentales:
+
+1. Maestro/control.
+2. Metodología.
+3. Documentos estructurales.
+4. Documentación sectorial.
+5. Evidencias y decisiones.
+
+Aunque los nombres y contenidos concretos pertenecen al proyecto SEO, la idea de separar la documentación por función es universal.
+
+---
+
+DECISIÓN #001 — LA DOCUMENTACIÓN DEBE TENER JERARQUÍA
+
+"BASE-PROYECTOS" no debe convertirse en una carpeta con muchos archivos independientes sin relación.
+
+Debe existir una jerarquía clara:
+
+CONTROL
+↓
+METODOLOGÍA
+↓
+ARQUITECTURA / SISTEMA
+↓
+MÓDULOS
+↓
+PROYECTO
+↓
+EVIDENCIAS / HISTORIAL
+
+Cada nivel responde a una pregunta diferente.
+
+---
+
+DECISIÓN #002 — DOCUMENTO DE CONTROL ≠ FUENTE DE DATOS
+
+El documento de control sirve para saber:
+
+- qué estamos haciendo;
+- dónde estamos;
+- qué reglas están activas;
+- qué toca después.
+
+Pero no debe contener necesariamente todo el conocimiento técnico.
+
+Regla universal:
+
+«El documento de control dirige el trabajo; los documentos especializados contienen el conocimiento.»
+
+Esto evita crear un único archivo gigante imposible de mantener.
+
+---
+
+DECISIÓN #003 — METODOLOGÍA ≠ IMPLEMENTACIÓN
+
+La metodología explica:
+
+«cómo se trabaja.»
+
+La arquitectura explica:
+
+«cómo funciona el sistema.»
+
+La implementación explica:
+
+«cómo se construye técnicamente.»
+
+La configuración explica:
+
+«cómo se adapta al proyecto concreto.»
+
+Deben permanecer separados.
+
+---
+
+DECISIÓN #004 — EVIDENCIA COMO PARTE DEL CONOCIMIENTO
+
+Una decisión importante no debe almacenarse únicamente como:
+
+"Decidimos hacer X."
+
+Debe poder reconstruirse:
+
+DECISIÓN
+↓
+FECHA
+↓
+EVIDENCIA
+↓
+MOTIVO
+↓
+CONSECUENCIA
+
+La metodología actual especifica precisamente la conservación de fuentes, observaciones, datos, fechas, decisiones, versiones y resultados de validación.
+
+Decisión:
+
+La evidencia será una pieza estructural de la documentación universal.
+
+---
+
+DECISIÓN #005 — LAS DECISIONES SON VERSIONABLES
+
+Una decisión anterior no debe desaparecer cuando cambia.
+
+Ejemplo:
+
+DECISIÓN D-001
+Estado: sustituida
+Motivo: nueva evidencia
+↓
+DECISIÓN D-017
+Estado: vigente
+
+Esto permite conocer la evolución del proyecto.
+
+---
+
+DECISIÓN #006 — PRIORIDAD DE FUENTES
+
+Si dos documentos contienen información contradictoria, no se debe decidir arbitrariamente.
+
+El orden universal será:
+
+1. FECHA
+2. ACTUALIZACIÓN
+3. EVIDENCIA
+4. CONTEXTO
+5. DECISIÓN EXPLÍCITA
+6. ACTUALIZACIÓN DE DOCUMENTOS AFECTADOS
+
+La metodología actual establece precisamente que la información posterior y mejor fundamentada puede sustituir una decisión anterior.
+
+---
+
+DECISIÓN #007 — NO EXISTE "DOCUMENTO MÁS IMPORTANTE" PARA TODO
+
+El archivo maestro no debe convertirse en una autoridad absoluta sobre cualquier cuestión.
+
+Debe distinguirse:
+
+CONTROL
+
+de:
+
+FUENTE DE VERDAD ESPECIALIZADA
+
+Por ejemplo:
+
+- el protocolo puede decir cómo trabajar;
+- el modelo de datos define los datos;
+- el contrato define una interfaz;
+- el documento de seguridad define una regla de seguridad;
+- el proyecto define una decisión concreta.
+
+Esto reduce contradicciones.
+
+---
+
+DECISIÓN #008 — CAMBIOS CON IMPACTO
+
+Si cambia una decisión estructural, hay que identificar qué documentos dependen de ella.
+
+Patrón:
+
+CAMBIO
+↓
+DOCUMENTO AFECTADO
+↓
+DEPENDENCIAS
+↓
+DOCUMENTOS SECUNDARIOS
+↓
+VALIDACIÓN
+
+No basta con modificar un archivo y dejar los demás obsoletos.
+
+---
+
+DECISIÓN #009 — EL HISTORIAL NO DEBE SUSTITUIR A LA DOCUMENTACIÓN ACTUAL
+
+El historial sirve para saber:
+
+«cómo llegamos hasta aquí.»
+
+Pero la documentación actual debe responder:
+
+«cuál es la situación vigente.»
+
+Por tanto:
+
+DOCUMENTACIÓN ACTUAL
++
+HISTORIAL DE CAMBIOS
+
+son dos cosas diferentes.
+
+No debemos obligar a reconstruir el estado actual leyendo cientos de entradas históricas.
+
+---
+
+DECISIÓN #010 — EL PROYECTO DEBE PODER AUDITARSE SIN LA CONVERSACIÓN
+
+La metodología afirma explícitamente que la memoria de la conversación no sustituye la documentación.
+
+Esto coincide exactamente con el sistema que estamos utilizando ahora.
+
+Decisión universal:
+
+Un tercero debería poder abrir el repositorio y entender:
+
+- objetivo;
+- metodología;
+- decisiones;
+- arquitectura;
+- estado;
+- evidencias;
+- pendientes;
+
+sin necesitar acceder a esta conversación.
+
+---
+
+DECISIÓN #011 — LA DOCUMENTACIÓN DEBE SER MIGRABLE
+
+Si mañana dejamos de utilizar:
+
+- ChatGPT;
+- N8N;
+- WordPress;
+- una determinada IA;
+- una determinada API;
+
+la documentación universal debe seguir siendo válida.
+
+Por eso los documentos base deben explicar principios y contratos, no depender de una herramienta concreta.
+
+---
+
+DECISIÓN #012 — PRINCIPIO DE "UNA VEZ, REUTILIZABLE"
+
+Si durante un proyecto descubrimos una solución aplicable a otros proyectos:
+
+DESCUBRIMIENTO
+↓
+GENERALIZACIÓN
+↓
+MÓDULO / PATRÓN UNIVERSAL
+
+No debemos copiar y pegar la misma solución en futuros proyectos.
+
+Debe convertirse en una pieza reutilizable.
+
+---
+
+ACCIONES REALIZADAS
+
+- Confirmada la estructura real de "base-proyectos".
+- Comprobado su "README.md".
+- Revisada nuevamente la metodología del proyecto original.
+- Identificada la jerarquía documental como patrón universal.
+- Separados conceptualmente control, metodología, arquitectura, proyecto e historial.
+- Consolidado el principio de evidencia.
+- Consolidado el versionado de decisiones.
+- Definida una regla de prioridad ante contradicciones.
+- Identificado el impacto de cambios entre documentos.
+- Confirmado que la conversación no puede ser la única fuente de verdad.
+
+---
+
+PENDIENTES
+
+Aproximadamente 18 % de auditoría inicial.
+
+Queda principalmente:
+
+- terminar los documentos generales todavía no auditados;
+- localizar posibles reglas de seguridad;
+- localizar observabilidad/medición;
+- localizar despliegue y mantenimiento;
+- revisar documentación técnica adicional;
+- realizar inventario final;
+- ejecutar segunda pasada para detectar contradicciones y duplicidades.
+
+Después de eso:
+
+FIN DE AUDITORÍA → SÍNTESIS → DISEÑO DE BASE-PROYECTOS.
+
+Todavía no construiremos la estructura definitiva hasta cerrar esa comprobación.
+
+Progreso global: 82 %.
+
+
+
 
