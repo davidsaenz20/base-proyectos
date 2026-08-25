@@ -2345,4 +2345,250 @@ Siguiente paso exacto: definir cómo deben estructurarse los módulos y tipos de
 
 
 
+ENTRADA 011 — ESTRUCTURA UNIVERSAL DE MÓDULOS Y TIPOS DE PROYECTO
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 92 %
+
+OBJETIVO
+
+Definir cómo se documentarán los módulos y tipos de proyecto para que puedan reutilizarse sin duplicar el núcleo universal.
+
+1. DIFERENCIA FUNDAMENTAL
+
+Un módulo representa una capacidad tecnológica o funcional reutilizable.
+
+Un tipo de proyecto representa una categoría de proyecto que necesita una combinación determinada de capacidades, fases, riesgos y validaciones.
+
+Por tanto:
+
+MÓDULO
+= capacidad reutilizable
+
+TIPO DE PROYECTO
+= combinación/metodología adaptada
+
+2. ESTRUCTURA DE UN MÓDULO
+
+Cada módulo deberá tener una estructura mínima:
+
+modulo/
+├── README.md
+├── conocimiento.md
+├── decisiones.md
+└── validacion.md
+
+No todos los módulos necesitarán necesariamente todos los archivos.
+
+La estructura deberá crecer únicamente cuando exista una necesidad real.
+
+3. README DEL MÓDULO
+
+Debe explicar:
+
+- qué es;
+- para qué sirve;
+- cuándo utilizarlo;
+- cuándo no utilizarlo;
+- dependencias;
+- riesgos principales;
+- proyectos donde puede utilizarse.
+
+4. CONOCIMIENTO DEL MÓDULO
+
+Contendrá el conocimiento técnico o funcional reutilizable.
+
+Ejemplo:
+
+MÓDULO WHATSAPP
+
+podría contener:
+
+- conceptos;
+- arquitectura habitual;
+- APIs;
+- webhooks;
+- mensajes;
+- errores habituales;
+- seguridad;
+- límites;
+- costes;
+- buenas prácticas.
+
+No contendrá información específica de un cliente.
+
+5. DECISIONES DEL MÓDULO
+
+Se utilizará cuando existan decisiones reutilizables que afecten al propio módulo.
+
+Ejemplo:
+
+- criterios para seleccionar proveedor;
+- arquitectura recomendada;
+- estrategia de autenticación;
+- límites conocidos.
+
+Las decisiones específicas de un proyecto permanecen en el proyecto.
+
+6. VALIDACIÓN DEL MÓDULO
+
+Contendrá pruebas reutilizables que permitan comprobar que el módulo funciona correctamente.
+
+Esto permite no repetir desde cero las mismas comprobaciones en cada proyecto.
+
+7. ESTRUCTURA DE UN TIPO DE PROYECTO
+
+Un tipo de proyecto deberá definir:
+
+TIPO
+↓
+OBJETIVO HABITUAL
+↓
+MÓDULOS FRECUENTES
+↓
+FASES RELEVANTES
+↓
+RIESGOS
+↓
+VALIDACIONES ESPECÍFICAS
+↓
+DECISIONES HABITUALES
+
+No debe convertirse en una copia de la metodología universal.
+
+8. EJEMPLO
+
+Para:
+
+TIPO: AUTOMATIZACIÓN
+
+podrían definirse como habituales:
+
+MÓDULOS
+→ N8N
+→ APIs
+→ BASE DE DATOS
+→ IA
+→ DOCUMENTOS
+
+RIESGOS
+→ errores de integración
+→ pérdida de datos
+→ límites de APIs
+→ costes variables
+→ credenciales
+
+VALIDACIONES
+→ entrada correcta
+→ procesamiento correcto
+→ salida correcta
+→ recuperación ante error
+
+El proyecto concreto decidirá cuáles necesita realmente.
+
+9. REGLA DE COMPOSICIÓN
+
+Un proyecto no debe copiar conocimiento innecesariamente.
+
+Debe declarar:
+
+TIPO
++
+MÓDULOS
++
+CONFIGURACIÓN
+
+La documentación universal permanece en la base.
+
+La documentación especializada permanece en sus módulos.
+
+La adaptación metodológica permanece en el tipo.
+
+La información específica permanece en el proyecto.
+
+10. REGLA DE VERSIONADO
+
+Los módulos deberán poder evolucionar independientemente.
+
+Un cambio en:
+
+MÓDULO WHATSAPP
+
+no debe obligar a modificar todos los proyectos que lo utilizan.
+
+El proyecto deberá poder registrar qué versión del módulo utilizaba.
+
+11. DECISIÓN
+
+Se establece el siguiente modelo:
+
+BASE-PROYECTOS
+│
+├── UNIVERSAL
+│
+├── MÓDULOS
+│     ├── IA
+│     ├── WHATSAPP
+│     ├── N8N
+│     ├── APIs
+│     └── ...
+│
+├── TIPOS DE PROYECTO
+│     ├── WEB
+│     ├── AUTOMATIZACIÓN
+│     ├── IA
+│     ├── APP
+│     ├── SAAS
+│     └── ...
+│
+└── PROYECTOS
+
+Los proyectos consumen módulos y tipos.
+
+Nunca deben convertirse en fuentes del conocimiento universal.
+
+12. RESULTADO
+
+Con esta separación, la misma base podrá utilizarse para:
+
+- una web automática;
+- un asistente IA para WhatsApp;
+- una automatización de facturas;
+- una aplicación;
+- un SaaS;
+- una API;
+- una herramienta interna.
+
+Sin empezar la metodología desde cero.
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+████████████████████ 100 %
+
+ARQUITECTURA
+████████████████████ 100 %
+
+ESTRUCTURA DE PROYECTO
+████████████████████ 100 %
+
+MÓDULOS Y TIPOS
+████████████████████ 100 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 92 %.
+
+Siguiente paso exacto: hacer una auditoría final de la síntesis y determinar si ya tenemos suficiente diseño para cerrar la Fase 2 y comenzar la construcción de "BASE-PROYECTOS".
+
+
+
+
 
