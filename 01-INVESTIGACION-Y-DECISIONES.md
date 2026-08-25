@@ -3007,5 +3007,381 @@ Progreso global estimado: 63 %.
 
 
 
+ENTRADA 008 — SEPARACIÓN ENTRE METODOLOGÍA UNIVERSAL Y PROYECTO ESPECÍFICO
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 69 %
+
+ARCHIVOS REVISADOS
+
+Se ha revisado:
+
+- "maestro.md"
+- inventario real de la raíz del repositorio;
+- estructura de "proyecto/";
+- estructura de "proyecto/seo/".
+
+El inventario real confirma que la raíz contiene, entre otros:
+
+- "README.md"
+- "maestro.md"
+- "proyecto/"
+
+y que dentro de "proyecto/seo/" existe una documentación extensa y especializada.
+
+---
+
+INVESTIGACIÓN
+
+"maestro.md" contiene principios muy buenos y reutilizables:
+
+- protocolo de arranque;
+- fuente de verdad persistente;
+- no desviación;
+- identificación del paso actual;
+- documentación de decisiones;
+- verificación;
+- actualización del estado;
+- separación entre tecnología y negocio;
+- investigación antes de construcción;
+- validación;
+- trazabilidad.
+
+Pero también contiene elementos exclusivamente SEO:
+
+- objetivo de generación de landings SEO;
+- "SERVICIO × LOCALIDAD";
+- bloques B01-B23;
+- "OPP-001";
+- Fontanero Marbella;
+- decisiones "CREAR / AGRUPAR / INVESTIGAR / NO CREAR";
+- URLs SEO;
+- WordPress como destino concreto.
+
+Por tanto, el archivo maestro actual no puede convertirse directamente en la plantilla universal.
+
+---
+
+DECISIÓN #001 — DOS CAPAS DOCUMENTALES
+
+"BASE-PROYECTOS" deberá separar claramente:
+
+NÚCLEO UNIVERSAL
+        +
+CONFIGURACIÓN DEL PROYECTO
+
+El núcleo universal contendrá:
+
+- metodología;
+- protocolo de trabajo;
+- investigación;
+- decisiones;
+- arquitectura;
+- modelo de datos;
+- contratos;
+- validación;
+- estados;
+- incidencias;
+- testing;
+- seguridad;
+- despliegue;
+- mantenimiento;
+- documentación;
+- control de cambios.
+
+La configuración del proyecto contendrá:
+
+- objetivo concreto;
+- tipo de proyecto;
+- entidades;
+- reglas;
+- herramientas;
+- integraciones;
+- usuarios;
+- datos;
+- restricciones;
+- decisiones específicas.
+
+---
+
+DECISIÓN #002 — LA PLANTILLA NO DEBE SER UNA WEB
+
+El objetivo de "BASE-PROYECTOS" no será:
+
+«"Crear webs automáticamente."»
+
+Será:
+
+«"Proporcionar una metodología y arquitectura reutilizable para diseñar, validar, construir, automatizar, desplegar y mantener proyectos digitales."»
+
+Esto permitirá utilizarla para:
+
+- webs;
+- webs automatizadas;
+- SaaS;
+- aplicaciones;
+- automatizaciones N8N;
+- asistentes de IA;
+- WhatsApp;
+- APIs;
+- procesamiento de documentos;
+- automatización de facturas;
+- herramientas internas;
+- pequeños programas;
+- sistemas híbridos.
+
+---
+
+DECISIÓN #003 — EL TIPO DE PROYECTO SERÁ CONFIGURABLE
+
+La futura plantilla deberá permitir definir:
+
+PROJECT_TYPE
+
+Por ejemplo:
+
+WEB
+WEB_AUTOMATION
+SAAS
+APP
+AI_ASSISTANT
+WHATSAPP_AUTOMATION
+N8N_AUTOMATION
+API
+DOCUMENT_AUTOMATION
+INTERNAL_TOOL
+OTHER
+
+La metodología seguirá siendo la misma en lo esencial.
+
+Lo que cambia es la implementación.
+
+---
+
+DECISIÓN #004 — EL PROTOCOLO DE ARRANQUE ES UNIVERSAL
+
+La regla actual de "maestro.md" sobre el arranque es especialmente valiosa.
+
+Antes de trabajar:
+
+LEER DOCUMENTACIÓN DE CONTROL
+↓
+IDENTIFICAR FASE
+↓
+IDENTIFICAR PASO
+↓
+IDENTIFICAR OBJETIVO
+↓
+IDENTIFICAR ENTREGABLE
+↓
+COMPROBAR BLOQUEOS
+↓
+TRABAJAR SOLO EN EL PASO ACTUAL
+↓
+VERIFICAR
+↓
+DOCUMENTAR
+
+Decisión:
+
+Este patrón debe formar parte del núcleo universal de "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #005 — "SIGUE" DEBE SER UNA INSTRUCCIÓN OPERATIVA
+
+La regla actual define correctamente qué significa:
+
+«"Sigue"»
+
+Debe significar:
+
+«Continuar desde el paso actual documentado, no comenzar una línea de trabajo nueva.»
+
+Decisión:
+
+Esta regla será incluida en el protocolo universal.
+
+---
+
+DECISIÓN #006 — EL REPOSITORIO ES LA MEMORIA PERSISTENTE
+
+"maestro.md" establece algo que coincide exactamente con el sistema que estamos construyendo:
+
+«La conversación no sustituye al repositorio.»
+
+Decisión:
+
+En "BASE-PROYECTOS" la documentación persistente tendrá prioridad para conocer:
+
+- estado;
+- decisiones;
+- pasos;
+- restricciones;
+- resultados;
+- pendientes.
+
+La memoria conversacional servirá para continuidad, pero no será la única fuente de estado.
+
+---
+
+DECISIÓN #007 — NO RETROCEDER SIN BLOQUEO REAL
+
+La regla actual de no desviación es universalmente útil.
+
+Si aparece un problema:
+
+NO BLOQUEA
+→ registrar
+→ continuar
+
+SÍ BLOQUEA
+→ detener
+→ resolver
+→ volver al paso original
+
+Decisión:
+
+Esta regla formará parte del protocolo universal.
+
+---
+
+DECISIÓN #008 — LOS PROYECTOS ESPECÍFICOS NO CONTAMINAN LA PLANTILLA
+
+Un nuevo proyecto no debe modificar las reglas universales simplemente porque tenga una necesidad concreta.
+
+Ejemplo:
+
+BASE-PROYECTOS
+    ↓
+PROYECTO A — WEB SEO
+    ↓
+PROYECTO B — WHATSAPP IA
+    ↓
+PROYECTO C — FACTURAS
+    ↓
+PROYECTO D — APP
+
+Cada proyecto utiliza la misma base.
+
+Las particularidades permanecen dentro de su proyecto.
+
+---
+
+DECISIÓN #009 — LA BASE DEBE PERMITIR EXTENSIONES
+
+La plantilla universal no debe intentar prever absolutamente todos los proyectos.
+
+Debe permitir:
+
+NÚCLEO
+↓
+MÓDULOS
+↓
+EXTENSIONES
+↓
+CONFIGURACIÓN DEL PROYECTO
+
+Así evitamos crear una plantilla gigantesca e inmanejable.
+
+---
+
+DECISIÓN #010 — NO TODO DEBE APLICARSE A TODOS LOS PROYECTOS
+
+Una web sencilla no necesita necesariamente:
+
+- máquina de estados compleja;
+- sistema avanzado de incidencias;
+- múltiples contratos;
+- orquestación;
+- arquitectura distribuida.
+
+Pero la plantilla debe permitir incorporarlos cuando sean necesarios.
+
+Principio:
+
+«La metodología define qué comprobar; el proyecto determina qué necesita implementar.»
+
+---
+
+CONSECUENCIA PRINCIPAL
+
+La futura estructura de "base-proyectos" deberá parecerse conceptualmente a:
+
+BASE-PROYECTOS
+│
+├── CONTROL
+├── METODOLOGIA
+├── PROTOCOLO
+├── INVESTIGACION
+├── DECISIONES
+├── ARQUITECTURA
+├── DATOS
+├── CONTRATOS
+├── IA
+├── AUTOMATIZACION
+├── VALIDACION
+├── TESTING
+├── SEGURIDAD
+├── DESPLIEGUE
+├── MANTENIMIENTO
+└── PLANTILLA-PROYECTO
+
+Y después:
+
+NUEVO PROYECTO
+│
+├── CONFIGURACION
+├── INVESTIGACION
+├── DECISIONES
+├── ARQUITECTURA
+├── IMPLEMENTACION
+└── ESTADO
+
+---
+
+ACCIONES REALIZADAS
+
+- Revisada la raíz real de "archivo-maestro".
+- Confirmada la existencia de "maestro.md".
+- Analizado su protocolo de arranque.
+- Identificadas las reglas universales.
+- Identificadas las partes específicas de SEO.
+- Confirmado que "maestro.md" no debe copiarse directamente a "base-proyectos".
+- Definida conceptualmente la separación entre núcleo universal y configuración de proyecto.
+- Confirmado que la plantilla puede servir para webs, automatizaciones, IA, apps, SaaS y otros proyectos.
+
+---
+
+PENDIENTES
+
+Queda aproximadamente un 31 % de la auditoría inicial.
+
+Falta revisar especialmente:
+
+- testing;
+- seguridad;
+- despliegue;
+- mantenimiento;
+- medición/observabilidad;
+- documentación operativa;
+- posibles documentos adicionales fuera de SEO;
+- coherencia entre todos los principios encontrados.
+
+Después de eso podremos comenzar la fase de síntesis, donde dejaremos de investigar y empezaremos a diseñar la estructura definitiva de "base-proyectos".
+
+---
+
+PRÓXIMO BLOQUE
+
+Continuar auditando los aspectos de testing, errores, seguridad, observabilidad, despliegue y mantenimiento.
+
+Cuando terminemos esa parte, haré una revisión final para determinar si realmente tenemos suficiente información para empezar a construir la plantilla.
+
+Progreso global estimado: 69 %.
+
+
+
 
 
