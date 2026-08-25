@@ -2499,5 +2499,513 @@ Progreso global estimado: 57 %.
 
 
 
+ENTRADA 007 — MODELO DE DATOS CANÓNICO Y RELACIONES
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 63 %
+
+ARCHIVO REVISADO
+
+- "proyecto/seo/esquema-datos.md"
+
+---
+
+INVESTIGACIÓN
+
+El esquema de datos establece una separación especialmente valiosa:
+
+«El modelo de datos define cómo se representa la información, pero no decide qué debe existir, no genera contenido y no publica.»
+
+El documento define explícitamente que los datos son utilizados por las distintas capas y que debe existir un único modelo canónico.
+
+Este principio es aplicable a prácticamente cualquier proyecto.
+
+---
+
+DECISIÓN #001 — MODELO DE DATOS CANÓNICO
+
+Cada proyecto complejo deberá tener, cuando sea necesario, un modelo de datos canónico.
+
+Ese modelo será la referencia común para:
+
+- automatizaciones;
+- IA;
+- APIs;
+- bases de datos;
+- frontend;
+- backend;
+- WordPress;
+- aplicaciones;
+- integraciones externas.
+
+La regla será:
+
+UNA FUENTE DE VERDAD
+↓
+MÚLTIPLES COMPONENTES
+
+No:
+
+CADA COMPONENTE
+↓
+SU PROPIO MODELO
+
+---
+
+DECISIÓN #002 — LOS DATOS NO DECIDEN POR SÍ SOLOS
+
+El esquema actual separa:
+
+DATOS
+≠
+DECISIÓN
+≠
+GENERACIÓN
+≠
+PUBLICACIÓN
+
+Esto es fundamental.
+
+Por ejemplo, que exista un servicio no significa automáticamente que:
+
+- deba crearse una página;
+- deba crearse un producto;
+- deba crearse una automatización;
+- deba enviarse un mensaje;
+- deba ejecutarse una acción.
+
+Decisión:
+
+Los datos proporcionan información para tomar decisiones, pero no deben contener implícitamente la lógica de decisión salvo que el contrato lo establezca.
+
+---
+
+DECISIÓN #003 — IDENTIFICADORES ESTABLES UNIVERSALES
+
+El esquema utiliza:
+
+- "opportunity_id";
+- "site_id";
+- "page_id";
+- "link_id".
+
+Todos cumplen la misma función arquitectónica:
+
+IDENTIFICAR
++
+TRAZAR
++
+ACTUALIZAR
++
+EVITAR DUPLICADOS
+
+Decisión:
+
+Toda entidad importante de un nuevo proyecto deberá tener un identificador estable.
+
+Ejemplos universales:
+
+client_id
+project_id
+customer_id
+invoice_id
+message_id
+workflow_id
+document_id
+task_id
+
+Los nombres concretos dependerán del proyecto.
+
+---
+
+DECISIÓN #004 — IDENTIDAD ≠ URL
+
+El modelo SEO diferencia claramente:
+
+page_id
+
+de:
+
+url
+
+La URL puede cambiar mientras la identidad lógica permanece.
+
+Decisión:
+
+En "BASE-PROYECTOS" no se utilizará una URL, nombre visible o posición como identificador principal cuando exista riesgo de que cambie.
+
+Esto es especialmente importante para:
+
+- páginas;
+- clientes;
+- facturas;
+- conversaciones;
+- documentos;
+- productos;
+- tareas;
+- registros.
+
+---
+
+DECISIÓN #005 — RELACIONES COMO ENTIDADES
+
+El sistema no trata un enlace interno simplemente como:
+
+"URL destino"
+
+Lo trata como una entidad con:
+
+- ID;
+- origen;
+- destino;
+- relación;
+- anchor;
+- motivo;
+- ubicación;
+- estado.
+
+Decisión universal:
+
+Cuando una relación tenga importancia operativa, deberá poder representarse como una entidad independiente.
+
+Ejemplo:
+
+ENTITY A
+↓
+RELACIÓN
+↓
+ENTITY B
+
+Esto permite gestionar las relaciones sin modificar directamente las entidades.
+
+---
+
+DECISIÓN #006 — RELACIONES TIPADAS
+
+El esquema no utiliza simplemente "relacionado con".
+
+Define tipos concretos:
+
+- "parent_to_child";
+- "child_to_parent";
+- "related_service";
+- "territorial";
+- "contextual";
+- "navigation".
+
+Decisión:
+
+Las relaciones importantes deberán estar tipadas.
+
+Esto permite que el sistema sepa qué significa una relación, no solamente que existe.
+
+---
+
+DECISIÓN #007 — RELACIONES AUTORIZADAS
+
+El sistema actual utiliza listas de relaciones permitidas.
+
+Por ejemplo, una página puede tener bloques autorizados y una relación puede estar autorizada antes de convertirse en activa.
+
+Decisión:
+
+Los sistemas automatizados deberán distinguir:
+
+POSIBLE
+↓
+AUTORIZADO
+↓
+VALIDADO
+↓
+ACTIVO
+
+Esto evita que una IA o automatización pueda crear relaciones arbitrarias.
+
+---
+
+DECISIÓN #008 — ESTADO DE LAS RELACIONES
+
+Una relación puede estar:
+
+PROPOSED
+VALIDATED
+ACTIVE
+DISABLED
+ERROR
+
+Decisión:
+
+Las relaciones importantes tendrán su propio ciclo de vida.
+
+No dependerán exclusivamente del estado de las entidades relacionadas.
+
+---
+
+DECISIÓN #009 — NO TODAS LAS RELACIONES SON BIDIRECCIONALES
+
+El esquema permite:
+
+A → B
+
+sin exigir:
+
+B → A
+
+Decisión:
+
+La base universal no asumirá simetría.
+
+Cada relación deberá definir si es:
+
+- unidireccional;
+- bidireccional;
+- derivable automáticamente.
+
+Esto será útil en:
+
+- workflows;
+- jerarquías;
+- dependencias;
+- referencias;
+- sistemas de clientes;
+- automatizaciones.
+
+---
+
+DECISIÓN #010 — DATOS DESCONOCIDOS
+
+El esquema utiliza "null" o "DESCONOCIDO" en lugar de inventar valores.
+
+Decisión:
+
+La plantilla universal deberá diferenciar al menos:
+
+VALOR REAL
+VALOR CALCULADO
+VALOR DERIVADO
+VALOR GENERADO
+VALOR DESCONOCIDO
+VALOR NO APLICABLE
+
+Esto es especialmente importante cuando intervenga IA.
+
+---
+
+DECISIÓN #011 — DATOS CALCULADOS NO SON DATOS DE ORIGEN
+
+El esquema contiene métricas que deben ser calculadas por el sistema, no inventadas por la IA.
+
+Decisión:
+
+Debe diferenciarse entre:
+
+DATO DE ENTRADA
+↓
+CÁLCULO
+↓
+RESULTADO DERIVADO
+
+Los resultados calculados deberían poder regenerarse a partir de los datos originales.
+
+---
+
+DECISIÓN #012 — NO DUPLICACIÓN
+
+El esquema utiliza identificadores y comprobaciones de origen/destino/tipo para evitar relaciones duplicadas.
+
+Decisión:
+
+La prevención de duplicados será una regla universal de los procesos automatizados.
+
+Antes de crear una entidad o relación deberá comprobarse si ya existe una equivalente.
+
+---
+
+DECISIÓN #013 — MODELO PREPARADO PARA REPROCESAMIENTO
+
+El uso de IDs estables e idempotencia permite que N8N pueda volver a procesar información sin generar duplicados.
+
+Decisión:
+
+Los proyectos automatizados deberán diseñarse pensando en:
+
+PROCESAR
+↓
+FALLAR
+↓
+REINTENTAR
+↓
+CONTINUAR
+
+sin destruir ni duplicar el trabajo anterior.
+
+---
+
+DECISIÓN #014 — IMÁGENES COMO DATOS, NO COMO DECORACIÓN
+
+El esquema representa cada imagen mediante:
+
+- "image_id";
+- URL;
+- alt;
+- title;
+- type.
+
+La idea universal no es la estructura exacta, sino que un recurso multimedia importante debe tener identidad y metadatos.
+
+Decisión:
+
+En proyectos donde existan archivos o recursos digitales se deberá contemplar:
+
+RESOURCE_ID
++
+SOURCE
++
+TYPE
++
+METADATA
++
+STATUS
+
+Esto puede aplicarse a:
+
+- imágenes;
+- PDFs;
+- vídeos;
+- documentos;
+- archivos generados;
+- logos;
+- adjuntos;
+- recursos descargables.
+
+---
+
+DECISIÓN #015 — EL MODELO DE DATOS DEBE SER AGNÓSTICO
+
+No debemos convertir:
+
+opportunity
+site
+page
+
+en conceptos universales.
+
+Son entidades propias del proyecto SEO.
+
+Lo universal es:
+
+ENTIDAD
++
+IDENTIDAD
++
+DATOS
++
+RELACIONES
++
+ESTADO
++
+PROCEDENCIA
++
+TRAZABILIDAD
+
+Decisión:
+
+La futura plantilla "BASE-PROYECTOS" deberá utilizar conceptos genéricos y después permitir que cada proyecto defina sus entidades concretas.
+
+---
+
+CONSECUENCIA PARA FUTUROS PROYECTOS
+
+Con este principio, un proyecto de:
+
+automatización de facturas
+
+podría definir:
+
+CLIENT
+INVOICE
+DOCUMENT
+PAYMENT
+WORKFLOW
+
+Un proyecto de:
+
+asistente WhatsApp
+
+podría definir:
+
+CUSTOMER
+CONVERSATION
+MESSAGE
+INTENT
+RESPONSE
+APPOINTMENT
+
+Una:
+
+aplicación móvil
+
+podría definir:
+
+USER
+PROFILE
+SESSION
+ACTION
+NOTIFICATION
+
+La metodología sería la misma.
+
+Solo cambian las entidades y reglas específicas.
+
+---
+
+ACCIONES REALIZADAS
+
+- Auditado el esquema de datos canónico.
+- Identificado el modelo universal de entidad.
+- Identificados IDs estables.
+- Identificada la diferencia entre identidad y representación.
+- Identificadas relaciones como entidades independientes.
+- Identificadas relaciones tipadas y autorizadas.
+- Identificados estados propios de las relaciones.
+- Confirmada la necesidad de soportar relaciones unidireccionales.
+- Identificada la procedencia de datos.
+- Identificada la diferencia entre datos originales y calculados.
+- Confirmada la prevención de duplicados.
+- Confirmada la necesidad de reprocesamiento seguro.
+- Generalizado el tratamiento de recursos digitales.
+
+---
+
+PENDIENTES
+
+Queda aproximadamente el 37 % de la auditoría inicial.
+
+Falta principalmente:
+
+- testing;
+- errores y recuperación;
+- seguridad;
+- observabilidad;
+- despliegue;
+- mantenimiento;
+- documentación operativa;
+- inventario completo fuera de "proyecto/seo";
+- segunda pasada de coherencia.
+
+Después comenzaremos a transformar todo lo descubierto en la estructura real de "BASE-PROYECTOS".
+
+---
+
+PRÓXIMO BLOQUE
+
+Continuar con testing, validación, errores y recuperación, porque son los últimos pilares técnicos importantes antes de empezar a diseñar la plantilla universal.
+
+Progreso global estimado: 63 %.
+
+
+
+
 
 
