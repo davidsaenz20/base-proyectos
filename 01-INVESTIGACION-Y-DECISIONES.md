@@ -1168,5 +1168,347 @@ Progreso global estimado: 28 %.
 
 
 
+ENTRADA 003 — INVESTIGACIÓN, DECISIÓN Y LÍMITES DE LA IA
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 36 %
+
+Archivos revisados
+
+- "proyecto/seo/analisis-competencia.md"
+- "proyecto/seo/benchmark-competitivo.md"
+- "proyecto/seo/especificacion-ia.md"
+
+---
+
+INVESTIGACIÓN
+
+La documentación existente separa correctamente tres funciones que no deben confundirse:
+
+INVESTIGACIÓN
+↓
+EVIDENCIAS
+↓
+DECISIÓN
+↓
+IMPLEMENTACIÓN
+
+El análisis de competencia, por ejemplo, aporta información al motor de decisión pero no decide por sí mismo si debe crearse una página.
+
+Este patrón es mucho más amplio que SEO.
+
+En cualquier proyecto puede existir:
+
+- investigación de mercado;
+- investigación técnica;
+- investigación de usuarios;
+- análisis de competencia;
+- análisis de viabilidad;
+- pruebas técnicas;
+- evidencias;
+- requisitos.
+
+Ninguno de ellos debería convertirse automáticamente en una decisión de implementación.
+
+---
+
+DECISIÓN #001 — INVESTIGACIÓN NO ES DECISIÓN
+
+"BASE-PROYECTOS" deberá separar explícitamente:
+
+DATOS / EVIDENCIAS
+
+de:
+
+DECISIONES
+
+Una investigación puede demostrar que algo existe, pero no implica automáticamente que debamos construirlo.
+
+El flujo universal será:
+
+PREGUNTA / PROBLEMA
+↓
+INVESTIGACIÓN
+↓
+EVIDENCIAS
+↓
+ANÁLISIS
+↓
+DECISIÓN
+↓
+REQUISITOS
+↓
+IMPLEMENTACIÓN
+
+---
+
+DECISIÓN #002 — LAS DECISIONES DEBEN TENER EVIDENCIA
+
+Una decisión importante debe poder relacionarse con:
+
+- información disponible;
+- requisitos;
+- restricciones;
+- pruebas;
+- análisis;
+- objetivos del proyecto.
+
+No se debe documentar únicamente:
+
+«"Hemos decidido X."»
+
+Debe poder entenderse:
+
+«"Hemos decidido X porque..."»
+
+Esto permitirá auditar posteriormente el proyecto.
+
+---
+
+DECISIÓN #003 — EL BENCHMARK NO ES COPIA
+
+El benchmark competitivo existente establece que estudiar competidores sirve para conocer el estándar existente y detectar oportunidades, pero no para copiar:
+
+- textos;
+- estructuras;
+- imágenes;
+- testimonios;
+- precios;
+- afirmaciones;
+- diseños;
+- URLs;
+- datos propietarios.
+
+Decisión:
+
+La metodología universal deberá diferenciar:
+
+REFERENCIA
+
+de:
+
+COPIA
+
+La investigación externa sirve para comprender y comparar, no para reproducir automáticamente.
+
+---
+
+DECISIÓN #004 — UNIDAD DE ANÁLISIS
+
+El benchmark establece que la investigación debe realizarse sobre una unidad de análisis concreta y que no se deben mezclar indiscriminadamente objetivos diferentes.
+
+Decisión:
+
+Antes de investigar se debe definir:
+
+- qué pregunta se intenta responder;
+- cuál es la unidad de análisis;
+- qué información se necesita;
+- cuándo se considera suficiente la investigación.
+
+Esto evita investigaciones interminables.
+
+---
+
+DECISIÓN #005 — MUESTRA REPRESENTATIVA
+
+La documentación establece que no siempre es necesario analizar absolutamente todo.
+
+Puede ser suficiente una muestra representativa de los elementos más relevantes.
+
+Decisión:
+
+La metodología universal deberá utilizar el principio:
+
+«Investigar lo suficiente para tomar una decisión fiable, no investigar indefinidamente.»
+
+La profundidad de la investigación dependerá del riesgo y de la importancia de la decisión.
+
+---
+
+DECISIÓN #006 — LA IA NO DEBE TOMAR DECISIONES QUE NO LE CORRESPONDEN
+
+La especificación de IA contiene una separación especialmente importante.
+
+La IA:
+
+- genera;
+- transforma;
+- procesa;
+- respeta datos recibidos;
+- respeta contratos;
+- devuelve una salida estructurada.
+
+Pero no decide:
+
+- estrategia;
+- arquitectura;
+- URLs;
+- publicación.
+
+Decisión:
+
+Este patrón se convierte en una regla universal:
+
+«Una IA no debe recibir autoridad implícita sobre decisiones que pertenecen a otra capa del sistema.»
+
+La IA debe operar dentro de unos límites explícitos.
+
+---
+
+DECISIÓN #007 — CAMPOS PROTEGIDOS
+
+La especificación actual define campos que la IA recibe pero no puede modificar.
+
+Esto generaliza perfectamente a otros sistemas.
+
+Ejemplos:
+
+- ID;
+- usuario;
+- precio autorizado;
+- permisos;
+- estado;
+- configuración;
+- URL;
+- decisión previa;
+- restricciones;
+- datos legales;
+- datos financieros.
+
+Decisión:
+
+Los sistemas que utilicen IA deberán poder declarar campos protegidos.
+
+La IA puede trabajar con ellos, pero no modificarlos salvo que el contrato autorice expresamente esa operación.
+
+---
+
+DECISIÓN #008 — CONTRADICCIÓN → REVIEW
+
+La documentación establece que si la IA detecta una contradicción debe registrarla y utilizar un estado de revisión cuando corresponda.
+
+Decisión:
+
+La base universal deberá incorporar el patrón:
+
+CONTRADICCIÓN
+↓
+NO INVENTAR
+↓
+NO CONTINUAR SILENCIOSAMENTE
+↓
+REGISTRAR
+↓
+REVIEW / BLOQUEO SEGÚN GRAVEDAD
+
+Esto es especialmente importante en sistemas automatizados.
+
+---
+
+DECISIÓN #009 — LA IA NO DEBE SER LA FUENTE DE VERDAD
+
+La IA recibe información estructurada procedente de otras capas.
+
+Por tanto:
+
+FUENTE DE VERDAD
+        ↓
+DATOS / REGLAS / CONTRATO
+        ↓
+IA
+        ↓
+SALIDA
+
+y no:
+
+IA
+↓
+DECIDE LOS DATOS
+↓
+DECIDE LA ARQUITECTURA
+↓
+DECIDE EL PRODUCTO
+
+Decisión:
+
+La IA será considerada componente de procesamiento, salvo que un proyecto concreto le otorgue explícitamente otra función y esta quede definida mediante contrato.
+
+---
+
+DECISIÓN #010 — SALIDAS ESTRUCTURADAS
+
+La IA actual devuelve una salida estructurada compatible con un contrato JSON.
+
+Decisión:
+
+Cuando una IA participe en una automatización, siempre que sea viable deberá utilizarse una salida estructurada y validable en lugar de texto libre.
+
+Esto facilitará:
+
+- automatización;
+- validación;
+- trazabilidad;
+- integración con APIs;
+- N8N;
+- bases de datos;
+- aplicaciones.
+
+---
+
+CONOCIMIENTO ESPECÍFICO QUE NO SE TRASLADA
+
+No se trasladan directamente:
+
+- "decision_seo";
+- consultas SEO;
+- competidores SEO;
+- URLs SEO;
+- estructura de landings;
+- bloques específicos SEO.
+
+Sí se trasladan los patrones generales que hay detrás de ellos.
+
+---
+
+ACCIONES REALIZADAS
+
+- Analizada la separación entre investigación y decisión.
+- Identificado el principio de evidencia → decisión.
+- Identificado el principio de investigación acotada.
+- Identificado el uso de muestras representativas.
+- Analizados los límites de autoridad de la IA.
+- Identificado el concepto de campos protegidos.
+- Identificado el tratamiento formal de contradicciones.
+- Confirmada la conveniencia de salidas estructuradas y contratos.
+
+---
+
+PENDIENTES
+
+Continuar con:
+
+- estados y transiciones;
+- errores e incidencias;
+- validación;
+- automatización;
+- idempotencia;
+- recuperación ante fallos;
+- testing;
+- seguridad;
+- despliegue y mantenimiento.
+
+---
+
+PRÓXIMO BLOQUE
+
+Analizar especialmente estados, errores, idempotencia y recuperación, porque estos conceptos pueden convertirse en una base universal para cualquier automatización o aplicación.
+
+Progreso global estimado: 36 %.
+
+
+
+
 
 
