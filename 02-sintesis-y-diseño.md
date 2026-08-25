@@ -882,4 +882,229 @@ Siguiente paso: definir exactamente qué debe contener cada uno de los seis docu
 
 
 
+ENTRADA 003 — CONTENIDO Y LÍMITES DE LOS DOCUMENTOS DEL NÚCLEO
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 28 %
+
+OBJETIVO
+
+Definir exactamente qué responsabilidad tendrá cada documento del núcleo para evitar duplicaciones y contradicciones.
+
+---
+
+1. README.md
+
+Responsabilidad:
+
+«Explicar el sistema.»
+
+Debe responder:
+
+- qué es "BASE-PROYECTOS";
+- para qué sirve;
+- cómo se organiza;
+- cómo se inicia un proyecto;
+- dónde buscar cada información.
+
+No contendrá la metodología completa.
+
+---
+
+2. 01-METODOLOGIA-UNIVERSAL.md
+
+Responsabilidad:
+
+«Definir qué debe hacerse y por qué.»
+
+Contendrá los principios y fases universales del ciclo de vida de un proyecto.
+
+No contendrá instrucciones operativas detalladas de cómo trabajar con el repositorio.
+
+---
+
+3. 02-PROTOCOLO-EJECUCION.md
+
+Responsabilidad:
+
+«Definir cómo se ejecuta el trabajo.»
+
+Contendrá las reglas de trabajo:
+
+- leer el estado antes de continuar;
+- identificar el paso actual;
+- trabajar solo en el objetivo actual;
+- investigar cuando sea necesario;
+- registrar decisiones;
+- registrar bloqueos;
+- validar;
+- cerrar el paso;
+- continuar.
+
+No contendrá la metodología completa.
+
+---
+
+4. 03-PLANTILLA-PROYECTO.md
+
+Responsabilidad:
+
+«Crear la documentación inicial de un proyecto concreto.»
+
+Será un documento vacío pero estructurado.
+
+No contendrá decisiones predeterminadas sobre tecnología ni negocio.
+
+---
+
+5. 04-PLANTILLA-ROADMAP.md
+
+Responsabilidad:
+
+«Convertir el proyecto definido en una secuencia ejecutable.»
+
+Cada paso deberá poder contener:
+
+FASE
+PASO
+OBJETIVO
+ENTREGABLE
+DEPENDENCIAS
+CRITERIO DE FINALIZACIÓN
+ESTADO
+BLOQUEOS
+SIGUIENTE PASO
+
+El roadmap será específico para cada proyecto.
+
+---
+
+6. 05-PLANTILLA-DECISIONES.md
+
+Responsabilidad:
+
+«Mantener un registro formal de las decisiones importantes del proyecto.»
+
+Debe permitir conocer:
+
+- qué se decidió;
+- por qué;
+- qué alternativas se consideraron;
+- qué evidencia se utilizó;
+- qué impacto tiene;
+- si posteriormente se modificó.
+
+---
+
+7. 06-PLANTILLA-VALIDACION.md
+
+Responsabilidad:
+
+«Demostrar que una parte del proyecto funciona realmente.»
+
+Debe diferenciar:
+
+PREVISTO
+↓
+PROBADO
+↓
+RESULTADO
+↓
+EVIDENCIA
+↓
+VALIDADO / NO VALIDADO
+
+No se considerará completado un proyecto únicamente porque la documentación diga que debería funcionar.
+
+---
+
+8. REGLA DE NO DUPLICACIÓN
+
+Cada información deberá tener una ubicación principal.
+
+Ejemplo:
+
+METODOLOGÍA
+→ qué hacer
+
+PROTOCOLO
+→ cómo trabajar
+
+PROYECTO
+→ qué estamos construyendo
+
+ROADMAP
+→ en qué orden
+
+DECISIONES
+→ qué hemos decidido
+
+VALIDACIÓN
+→ qué hemos demostrado
+
+Si una información aparece en varios documentos, deberá ser una referencia o resumen, no una segunda versión independiente.
+
+---
+
+9. REGLA DE AUTORIDAD
+
+Cuando exista una contradicción:
+
+1. se identifica el documento que debería ser la fuente de autoridad;
+2. se corrige la duplicación;
+3. nunca se mantienen dos reglas contradictorias.
+
+La base debe tener una única interpretación válida.
+
+---
+
+10. REGLA DE SEPARACIÓN
+
+La documentación deberá mantener esta separación:
+
+MÉTODO
+≠
+EJECUCIÓN
+≠
+PROYECTO
+≠
+TECNOLOGÍA
+≠
+RESULTADOS
+
+Esto permitirá reutilizar la metodología aunque cambie completamente el proyecto.
+
+---
+
+11. DECISIÓN
+
+Se confirma que los seis documentos iniciales son suficientes como núcleo documental.
+
+No se añadirá otro documento universal hasta demostrar que existe una responsabilidad que no pueda ubicarse correctamente en uno de ellos.
+
+---
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+██████████████████░░ 90 %
+
+ARQUITECTURA
+██████████████░░░░░░ 70 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 28 %.
+
+Siguiente paso: diseñar el flujo exacto para crear un proyecto nuevo utilizando estas plantillas.
+
+
+
 
