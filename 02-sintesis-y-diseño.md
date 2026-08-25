@@ -1386,5 +1386,124 @@ Siguiente paso: definir qué información mínima debe contener un proyecto ante
 
 
 
+ENTRADA 005 — INFORMACIÓN MÍNIMA PARA PASAR A ARQUITECTURA
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 44 %
+
+OBJETIVO
+
+Definir cuándo un proyecto tiene suficiente información para abandonar la fase de investigación y comenzar su diseño técnico.
+
+INFORMACIÓN OBLIGATORIA
+
+Antes de diseñar la arquitectura debemos conocer, como mínimo:
+
+1. Problema
+   
+   - Qué problema se quiere resolver.
+
+2. Usuario
+   
+   - Quién utilizará el sistema.
+
+3. Resultado
+   
+   - Qué debe conseguir el usuario.
+
+4. Alcance
+   
+   - Qué entra y qué queda fuera.
+
+5. Requisitos
+   
+   - Qué debe hacer el sistema.
+
+6. Restricciones
+   
+   - Presupuesto, conocimientos, tiempo, plataformas, normativa u otras limitaciones.
+
+7. Modelo de funcionamiento
+   
+   - Cómo se espera que funcione el servicio o producto.
+
+8. Viabilidad
+   
+   - Si existe una solución técnicamente posible y económicamente razonable.
+
+9. Decisiones relevantes
+   
+   - Qué decisiones ya están tomadas y cuáles siguen abiertas.
+
+REGLA DE PASO
+
+No se pasa a arquitectura simplemente porque exista una idea.
+
+El proyecto puede pasar a arquitectura cuando:
+
+PROBLEMA
++
+USUARIO
++
+RESULTADO
++
+ALCANCE
++
+REQUISITOS
++
+RESTRICCIONES
++
+VIABILIDAD
+
+sean suficientemente claros.
+
+No es necesario conocer absolutamente todo.
+
+Debe existir suficiente información para tomar decisiones técnicas con fundamento.
+
+INFORMACIÓN QUE PUEDE QUEDAR ABIERTA
+
+Pueden permanecer abiertas:
+
+- tecnologías concretas;
+- proveedor de hosting;
+- APIs concretas;
+- estructura interna definitiva;
+- determinados costes;
+- detalles de implementación.
+
+Estas decisiones se resolverán durante el diseño cuando exista información suficiente.
+
+DECISIÓN
+
+Se establece que "BASE-PROYECTOS" utilizará un criterio de madurez del proyecto para decidir cuándo una fase puede cerrarse.
+
+No se avanzará por tiempo transcurrido ni por cantidad de documentación escrita.
+
+Se avanzará cuando se cumplan los criterios definidos.
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+██████████████████░░ 90 %
+
+ARQUITECTURA
+█████████████████░░░ 85 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 44 %.
+
+Siguiente paso: diseñar el sistema de estados y criterios de finalización que permitirá saber objetivamente cuándo cada fase está terminada.
+
+
+
 
 
