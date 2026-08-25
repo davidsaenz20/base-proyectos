@@ -1506,4 +1506,158 @@ Siguiente paso: diseñar el sistema de estados y criterios de finalización que 
 
 
 
+ENTRADA 006 — SISTEMA UNIVERSAL DE ESTADOS Y CRITERIOS DE FINALIZACIÓN
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 52 %
+
+OBJETIVO
+
+Definir un sistema universal para saber en qué estado se encuentra un proyecto y cuándo una fase puede considerarse realmente terminada.
+
+1. ESTADOS UNIVERSALES
+
+Todo proyecto, fase o paso podrá encontrarse en uno de estos estados:
+
+NO INICIADO
+EN INVESTIGACIÓN
+EN DISEÑO
+EN CONSTRUCCIÓN
+EN VALIDACIÓN
+BLOQUEADO
+COMPLETADO
+CANCELADO
+
+No se utilizarán estados ambiguos como:
+
+CASI TERMINADO
+AVANZADO
+PENDIENTE
+CREO QUE ESTÁ BIEN
+
+2. REGLA DE FINALIZACIÓN
+
+Un paso no se considera completado porque se haya trabajado sobre él.
+
+Se considera completado cuando cumple su:
+
+«CRITERIO DE FINALIZACIÓN»
+
+Ejemplo:
+
+PASO
+↓
+OBJETIVO
+↓
+ENTREGABLE
+↓
+VALIDACIÓN
+↓
+CRITERIO DE FINALIZACIÓN
+↓
+COMPLETADO
+
+3. EVIDENCIA
+
+Cuando sea necesario, el estado "COMPLETADO" deberá estar respaldado por evidencia.
+
+La evidencia puede ser:
+
+- documento;
+- prueba;
+- captura;
+- resultado;
+- dato;
+- ejecución;
+- validación externa.
+
+4. BLOQUEOS
+
+Si un paso no puede continuar por una dependencia externa, técnica, económica o de información, se marcará como:
+
+BLOQUEADO
+
+y deberá registrarse:
+
+BLOQUEO
+CAUSA
+IMPACTO
+QUÉ SE NECESITA
+ACCIÓN SIGUIENTE
+
+No se deberá continuar artificialmente como si el paso estuviera terminado.
+
+5. CAMBIOS DE DECISIÓN
+
+Si una nueva evidencia obliga a modificar una decisión anterior:
+
+NUEVA INFORMACIÓN
+↓
+REVISIÓN
+↓
+NUEVA DECISIÓN
+↓
+ACTUALIZACIÓN DEL ROADMAP
+↓
+NUEVA VALIDACIÓN
+
+La decisión anterior no se borra: queda registrada como antecedente.
+
+6. CRITERIO PARA CERRAR UNA FASE
+
+Una fase se considera completada cuando:
+
+1. sus pasos obligatorios están completados;
+2. sus entregables existen;
+3. los criterios de finalización se cumplen;
+4. no existen bloqueos pendientes que afecten a la fase;
+5. las decisiones relevantes están registradas.
+
+7. REGLA DE NO AVANCE
+
+No se debe avanzar automáticamente a la siguiente fase simplemente porque la anterior haya consumido tiempo o documentación.
+
+El sistema debe comprobar:
+
+«¿Se cumplen realmente los criterios de finalización?»
+
+Si no:
+
+NO AVANZAR
+
+8. DECISIÓN
+
+"BASE-PROYECTOS" deberá utilizar estados objetivos y criterios de finalización verificables.
+
+Esto permitirá que una persona pueda retomar un proyecto después de días o meses y conocer inmediatamente:
+
+DÓNDE ESTÁ
+QUÉ ESTÁ TERMINADO
+QUÉ FALTA
+QUÉ ESTÁ BLOQUEADO
+QUÉ DEBE HACER AHORA
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+████████████████████ 100 %
+
+ARQUITECTURA
+██████████████████░░ 90 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 52 %.
+
+Siguiente paso: definir el mecanismo de recuperación de estado para poder continuar cualquier proyecto sin depender de la memoria de la conversación.
+
+
+
 
