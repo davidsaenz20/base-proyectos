@@ -1,99 +1,282 @@
 # PLANTILLA DE PROYECTO
 
-## Identificación
+> Documento de definición del proyecto.
+>
+> Este archivo describe qué es el proyecto, qué problema resuelve, qué se construirá y cuáles son sus criterios de éxito.
+>
+> **No controla el estado operativo.**
+>
+> El estado actual se controla exclusivamente mediante:
+>
+> `00-CONTROL/ESTADO.md`
 
-**Nombre del proyecto:**  
-**Tipo de proyecto:**  
-**Versión:**  
-**Fecha de inicio:**  
+---
 
-## Objetivo
+# 1. IDENTIFICACIÓN
 
-**Objetivo principal:**  
+**Nombre del proyecto:**
 
-## Problema
+**Tipo de proyecto:**
 
-**Problema que se quiere resolver:**  
+**Versión:**
 
-## Usuario
+**Fecha de inicio:**
 
-**Usuario o cliente objetivo:**  
+---
 
-## Propuesta
+# 2. OBJETIVO
 
-**Solución propuesta:**  
+**Objetivo principal:**
 
-## Alcance
+**Resultado que se pretende conseguir:**
 
-### Incluido
+---
 
-- 
+# 3. PROBLEMA
 
-### No incluido
+**Problema que se quiere resolver:**
 
-- 
+**Situación actual:**
 
-## Requisitos
+**Consecuencia del problema:**
 
-### Funcionales
+---
 
-- 
+# 4. USUARIO / CLIENTE
 
-### Técnicos
+**Usuario o cliente objetivo:**
 
-- 
+**Necesidad principal:**
 
-### No funcionales
+**Contexto de uso:**
 
-- 
+---
 
-## Módulos necesarios
+# 5. PROPUESTA
 
-- 
+**Solución propuesta:**
 
-## Tecnología
+**Cómo resuelve el problema:**
 
-**Tecnologías previstas:**  
+**Valor aportado:**
 
-**Motivo de elección:**  
+---
 
-## Arquitectura
+# 6. ALCANCE
 
-**Descripción general:**  
-
-## Datos
-
-**Datos necesarios:**  
-
-## Riesgos
-
-- 
-
-## Decisiones
+## Incluido
 
 - 
 
-## Roadmap
-
-**Fase actual:**  
-
-**Siguiente paso:**  
-
-## Validación
-
-**Criterios de éxito:**  
-
-## Estado
-
-**Estado actual:**  
-**Progreso:** 0 %
-
-## Evidencias
+## No incluido
 
 - 
 
-## Notas
+---
 
+# 7. REQUISITOS
 
+## Funcionales
 
+- 
+
+## Técnicos
+
+- 
+
+## No funcionales
+
+- 
+
+---
+
+# 8. MÓDULOS NECESARIOS
+
+- 
+
+Para cada módulo indicar, cuando sea relevante:
+
+- función;
+- motivo por el que se necesita;
+- dependencia con otros módulos.
+
+---
+
+# 9. TECNOLOGÍA
+
+**Tecnologías previstas:**
+
+**Motivo de elección:**
+
+**Servicios externos:**
+
+**Dependencias:**
+
+---
+
+# 10. ARQUITECTURA
+
+**Descripción general:**
+
+**Componentes principales:**
+
+**Flujo general:**
+
+**Integraciones:**
+
+---
+
+# 11. DATOS
+
+**Datos necesarios:**
+
+**Origen de los datos:**
+
+**Datos procesados:**
+
+**Datos almacenados:**
+
+**Datos generados:**
+
+---
+
+# 12. SEGURIDAD
+
+**Autenticación:**
+
+**Autorización:**
+
+**Secretos y credenciales:**
+
+**Protección de datos:**
+
+**Riesgos de seguridad relevantes:**
+
+---
+
+# 13. RIESGOS
+
+- 
+
+Para cada riesgo relevante indicar:
+
+**Riesgo:**
+
+**Probabilidad:**
+
+**Impacto:**
+
+**Mitigación:**
+
+---
+
+# 14. DECISIONES
+
+- 
+
+Las decisiones importantes deben registrar:
+
+- decisión;
+- motivo;
+- alternativas consideradas cuando sea necesario;
+- consecuencia.
+
+---
+
+# 15. ROADMAP
+
+El plan específico del proyecto se encuentra en:
+
+`ROADMAP.md`
+
+Este documento no debe duplicar:
+
+- fase actual;
+- paso actual;
+- siguiente acción;
+- progreso;
+- bloqueos.
+
+---
+
+# 16. VALIDACIÓN
+
+## Criterios de éxito
+
+- 
+
+## Criterios funcionales
+
+- 
+
+## Criterios técnicos
+
+- 
+
+## Criterios de funcionamiento real
+
+- 
+
+## Evidencias necesarias
+
+- 
+
+---
+
+# 17. DEFINICIÓN DE TERMINADO
+
+El proyecto podrá considerarse terminado cuando se hayan cumplido los criterios definidos en:
+
+- requisitos;
+- validación;
+- funcionamiento real;
+- despliegue;
+- monitorización;
+- cierre.
+
+El estado operativo final se registrará en:
+
+`00-CONTROL/ESTADO.md`
+
+---
+
+# 18. EVIDENCIAS
+
+- 
+
+Las evidencias deben demostrar que las afirmaciones importantes del proyecto han sido comprobadas.
+
+---
+
+# 19. NOTAS
+
+Información relevante que no pertenezca a otra sección:
+
+- 
+
+---
+
+# REGLA
+
+Este documento responde a:
+
+**¿QUÉ ES EL PROYECTO?**
+
+**¿QUÉ PROBLEMA RESUELVE?**
+
+**¿PARA QUIÉN?**
+
+**¿QUÉ VAMOS A CONSTRUIR?**
+
+**¿QUÉ REQUISITOS DEBE CUMPLIR?**
+
+**¿CÓMO SABREMOS QUE FUNCIONA?**
+
+No responde a:
+
+**¿EN QUÉ PUNTO ESTAMOS?**
+
+Esa información pertenece exclusivamente a:
+
+`00-CONTROL/ESTADO.md`
 
