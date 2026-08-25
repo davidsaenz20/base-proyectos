@@ -1,83 +1,143 @@
 # PLANTILLA DE MONITORIZACIÓN
 
-## Objetivo
+> Documento para definir cómo se supervisará el sistema después del despliegue.
+>
+> No controla el estado operativo del proyecto. El estado actual se registra exclusivamente en `00-CONTROL/ESTADO.md`.
+
+# 1. OBJETIVO
 
 Definir qué debe supervisarse para detectar errores, fallos, degradaciones o situaciones anómalas.
 
-## ELEMENTOS A MONITORIZAR
+# 2. ELEMENTOS A MONITORIZAR
 
-| Elemento | Qué se controla | Frecuencia | Umbral |
-|---|---|---|---|
-| | | | |
+| Elemento | Qué se controla | Frecuencia | Umbral | Acción |
+|---|---|---|---|---|
+| | | | | |
 
-## DISPONIBILIDAD
+# 3. DISPONIBILIDAD
 
-**Servicio:**  
+**Servicio:**
 
-**Método de comprobación:**  
+**Método de comprobación:**
 
-**Frecuencia:**  
+**Frecuencia:**
 
-## RENDIMIENTO
+**Umbral:**
+
+**Acción ante fallo:**
+
+# 4. RENDIMIENTO
 
 **Métricas principales:**
 
 - 
 
-## ERRORES
-
-**Errores críticos:**
+**Umbrales:**
 
 - 
 
-**Errores no críticos:**
+# 5. ERRORES
+
+## Errores críticos
 
 - 
 
-## ALERTAS
+## Errores no críticos
 
-| Evento | Severidad | Acción |
-|---|---|---|
-| | | |
+- 
 
-## REGISTROS
+# 6. ALERTAS
 
-**Logs disponibles:**  
+| Evento | Severidad | Condición | Acción |
+|---|---|---|---|
+| | | | |
 
-**Ubicación:**  
+# 7. REGISTROS
 
-**Retención:**  
+**Logs disponibles:**
 
-## INCIDENTES
+**Ubicación:**
 
-### INC-001
+**Retención:**
 
-**Fecha:**  
+**Quién puede acceder:**
 
-**Problema:**  
+# 8. INCIDENTES
 
-**Impacto:**  
+## INC-001
 
-**Causa:**  
+**Fecha:**
 
-**Solución:**  
+**Problema:**
 
-**Estado:**  
+**Impacto:**
 
-## MANTENIMIENTO
+**Causa:**
+
+**Solución:**
+
+**Evidencia:**
+
+**Lección aprendida:**
+
+# 9. MANTENIMIENTO
 
 **Revisiones periódicas:**
 
 - 
 
-## VALIDACIÓN
+**Frecuencia:**
 
-**Cómo se comprobará que la monitorización funciona:**
+**Responsable:**
 
-## ESTADO
+# 10. RECUPERACIÓN
 
-**Estado:** Pendiente
+**Qué ocurre ante un fallo:**
 
-**Versión:** 1.0
+**Procedimiento de recuperación:**
 
+1. 
+2. 
+3. 
 
+# 11. VALIDACIÓN DE LA MONITORIZACIÓN
+
+La monitorización debe probarse deliberadamente.
+
+**Prueba realizada:**
+
+**Evento simulado:**
+
+**Alerta esperada:**
+
+**Resultado obtenido:**
+
+**Evidencia:**
+
+# 12. EVIDENCIAS
+
+- 
+
+# 13. NOTAS
+
+- 
+
+# REGLA
+
+Esta plantilla responde a:
+
+**¿QUÉ ESTAMOS SUPERVISANDO?**
+
+**¿CÓMO DETECTAMOS LOS PROBLEMAS?**
+
+**¿QUÉ HACEMOS CUANDO APARECEN?**
+
+**¿CÓMO SABEMOS QUE LA MONITORIZACIÓN FUNCIONA?**
+
+No responde a:
+
+**¿EN QUÉ FASE ESTÁ EL PROYECTO?**
+
+Esa información pertenece exclusivamente a:
+
+`00-CONTROL/ESTADO.md`
