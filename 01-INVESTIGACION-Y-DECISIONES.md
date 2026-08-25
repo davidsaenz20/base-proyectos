@@ -5488,5 +5488,359 @@ Progreso global: 96 %.
 
 
 
+ENTRADA 014 — CIERRE DE AUDITORÍA Y TRANSICIÓN A DISEÑO DE BASE-PROYECTOS
+
+Fecha: 25/08/2026
+
+Progreso de investigación y auditoría: 100 %
+
+---
+
+1. AUDITORÍA CERRADA
+
+Se considera finalizada la auditoría inicial de "archivo-maestro".
+
+Se ha revisado la estructura del repositorio y se han identificado los documentos generales situados fuera de "proyecto/seo".
+
+El árbol actual contiene siete documentos generales principales y un conjunto de documentos específicos del proyecto SEO.
+
+---
+
+2. DOCUMENTOS GENERALES AUDITADOS
+
+Se han utilizado como fuente:
+
+- "maestro.md"
+- "proyecto/metodologia.md"
+- "proyecto/protocolo-ejecucion.md"
+- "proyecto/checklist-arranque.md"
+- "proyecto/roadmap-proyecto.md"
+- "proyecto/roadmap-fabrica-webs.md"
+- "README.md"
+
+El resto de documentación pertenece principalmente al módulo SEO y no debe trasladarse automáticamente al núcleo universal.
+
+---
+
+3. RESULTADO DE LA AUDITORÍA
+
+Se han identificado como reutilizables los siguientes principios:
+
+CONTROL
+
+- fuente persistente;
+- recuperación obligatoria del estado;
+- jerarquía documental;
+- control del estado actual;
+- trazabilidad.
+
+METODOLOGÍA
+
+- investigación antes de construcción;
+- decisiones basadas en evidencia;
+- arquitectura antes de automatización;
+- separación entre método y proyecto;
+- configuración frente a reconstrucción;
+- reutilización;
+- escalado progresivo.
+
+EJECUCIÓN
+
+- trabajo por pasos;
+- objetivo y entregable por paso;
+- control de alcance;
+- no desviación;
+- gestión de bloqueos;
+- no retroceder sin bloqueo real;
+- no rediseñar innecesariamente durante ejecución.
+
+VALIDACIÓN
+
+- construir;
+- probar;
+- corregir;
+- validar;
+- evidencia de validación;
+- criterios de aceptación.
+
+OPERACIÓN
+
+- despliegue controlado;
+- seguridad;
+- backups;
+- logs;
+- monitorización;
+- recuperación;
+- mantenimiento;
+- mejora continua.
+
+DOCUMENTACIÓN
+
+- una fuente de autoridad por información;
+- decisiones versionables;
+- historial separado del estado actual;
+- documentación independiente de la conversación;
+- documentación independiente de herramientas concretas.
+
+IA Y AUTOMATIZACIÓN
+
+- la IA ejecuta dentro de límites;
+- la automatización ejecuta decisiones previamente definidas;
+- ni IA ni automatización deben sustituir la investigación estratégica;
+- las integraciones deben ser capas sustituibles.
+
+---
+
+4. INFORMACIÓN QUE NO DEBE ENTRAR EN EL NÚCLEO UNIVERSAL
+
+Se ha decidido excluir del núcleo:
+
+- SEO local;
+- servicios × localidades;
+- fontanería;
+- landings SEO;
+- WordPress como requisito;
+- N8N como requisito;
+- bloques B01-B23;
+- arquitectura concreta de URLs;
+- reglas específicas de indexación;
+- matrices de servicios;
+- matrices de localidades;
+- motor de decisión SEO;
+- datos de Fontanero Marbella;
+- monetización específica del proyecto SEO.
+
+Estos elementos podrán convertirse posteriormente en:
+
+MÓDULOS
+
+o:
+
+PROYECTOS
+
+pero no deben contaminar la base universal.
+
+---
+
+5. CONCLUSIÓN PRINCIPAL
+
+La auditoría demuestra que el objetivo inicial es viable.
+
+No necesitamos crear una metodología desde cero.
+
+Tenemos suficiente material para construir una base reutilizable.
+
+La tarea ahora es:
+
+ARCHIVO-MAESTRO
+        ↓
+EXTRACCIÓN
+        ↓
+GENERALIZACIÓN
+        ↓
+BASE-PROYECTOS
+
+No:
+
+ARCHIVO-MAESTRO
+        ↓
+COPIA
+
+---
+
+6. DEFINICIÓN PROVISIONAL DE BASE-PROYECTOS
+
+"BASE-PROYECTOS" será un repositorio independiente destinado a contener la metodología y las plantillas reutilizables para iniciar diferentes tipos de proyectos.
+
+Debe poder servir para proyectos como:
+
+- webs;
+- webs automáticas;
+- automatizaciones;
+- servicios de IA;
+- asistentes de WhatsApp;
+- sistemas con N8N;
+- pequeños programas;
+- aplicaciones;
+- APIs;
+- SaaS;
+- herramientas internas;
+- sistemas de procesamiento documental;
+- otros proyectos tecnológicos o de negocio.
+
+No estará limitado al desarrollo web.
+
+---
+
+7. PRINCIPIO CENTRAL
+
+La base no debe definir:
+
+«qué proyecto construir.»
+
+Debe definir:
+
+«cómo iniciar, analizar, diseñar, construir, validar, desplegar, operar y mejorar cualquier proyecto.»
+
+---
+
+8. MODELO UNIVERSAL
+
+La futura base se organizará conceptualmente en:
+
+BASE-PROYECTOS
+│
+├── METODOLOGÍA UNIVERSAL
+│
+├── PROTOCOLO DE TRABAJO
+│
+├── PLANTILLAS
+│
+├── MÓDULOS REUTILIZABLES
+│
+├── TIPOS DE PROYECTO
+│
+└── REGLAS / CONTRATOS
+
+Un proyecto nuevo utilizará estas piezas para crear su propia documentación.
+
+---
+
+9. MODELO NÚCLEO + CONFIGURACIÓN
+
+Cada proyecto deberá separar:
+
+NÚCLEO REUTILIZABLE
+
+de:
+
+CONFIGURACIÓN DEL PROYECTO
+
+Ejemplo:
+
+BASE-PROYECTOS
+      ↓
+METODOLOGÍA
+      ↓
+PLANTILLA
+      ↓
+NUEVO PROYECTO
+      ↓
+CONFIGURACIÓN
+      ↓
+IMPLEMENTACIÓN
+
+El objetivo es que crear un segundo proyecto requiera principalmente configurar y seleccionar módulos, no empezar desde cero.
+
+---
+
+10. PRÓXIMA FASE
+
+A partir de ahora comienza:
+
+FASE 2 — SÍNTESIS Y DISEÑO DE BASE-PROYECTOS
+
+Orden previsto:
+
+1. Definir arquitectura de BASE-PROYECTOS
+2. Definir jerarquía documental
+3. Definir archivos universales
+4. Definir protocolo universal
+5. Definir plantilla de proyecto
+6. Definir plantilla de roadmap
+7. Definir sistema de estados
+8. Definir sistema de decisiones
+9. Definir sistema de evidencias
+10. Definir sistema de bloqueos
+11. Definir módulos reutilizables
+12. Definir tipos de proyecto
+13. Definir contratos universales
+14. Revisar coherencia
+15. Crear los archivos definitivos
+
+No se crearán todos de golpe.
+
+Se construirán uno por uno y se validará cada pieza antes de continuar.
+
+---
+
+11. REGLA DE TRABAJO A PARTIR DE AHORA
+
+Cuando el usuario diga:
+
+«"Sigue"»
+
+se deberá:
+
+1. recuperar el estado persistente;
+2. identificar el paso actual;
+3. trabajar únicamente en ese paso;
+4. investigar si es necesario;
+5. tomar las decisiones correspondientes;
+6. documentar el resultado en el historial;
+7. indicar el porcentaje;
+8. indicar si el usuario debe crear/modificar algún archivo;
+9. continuar solamente después de la confirmación del usuario cuando sea necesario modificar un archivo.
+
+---
+
+12. PORCENTAJE
+
+Investigación y auditoría de "archivo-maestro"
+
+100 % COMPLETADO
+
+Diseño de "BASE-PROYECTOS"
+
+0 %
+
+Ejecución total del nuevo repositorio
+
+aprox. 50 % del objetivo global, considerando que la investigación necesaria ya está realizada pero todavía falta convertirla en la estructura definitiva.
+
+Este porcentaje se mantendrá separado para evitar confundir:
+
+INVESTIGACIÓN
+
+con:
+
+CONSTRUCCIÓN
+
+---
+
+13. SIGUIENTE PASO EXACTO
+
+El siguiente trabajo será:
+
+«Diseñar la arquitectura definitiva de "BASE-PROYECTOS" antes de crear los archivos.»
+
+Primero decidiremos qué carpetas y documentos debe tener.
+
+Después empezaremos a generar los archivos completos para que el usuario los copie manualmente.
+
+No se modifica todavía ningún archivo del repositorio "base-proyectos".
+
+---
+
+ESTADO
+
+AUDITORÍA ARCHIVO-MAESTRO
+████████████████████ 100 %
+
+SÍNTESIS
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+DISEÑO BASE-PROYECTOS
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+FASE ACTUAL: DISEÑO DE BASE-PROYECTOS
+
+SIGUIENTE PASO: arquitectura de carpetas y documentos universales.
+
+
+
 
 
