@@ -1855,4 +1855,341 @@ Progreso global estimado: 44 %.
 
 
 
+ENTRADA 005 — ORQUESTACIÓN, SINCRONIZACIÓN E INDEPENDENCIA TECNOLÓGICA
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 50 %
+
+ARCHIVOS REVISADOS
+
+Se ha revisado especialmente:
+
+- "proyecto/seo/implementacion-plantillas-wordpress.md"
+- "proyecto/seo/arquitectura-seo.md"
+- estructura completa disponible de "proyecto/seo/".
+
+---
+
+INVESTIGACIÓN
+
+La arquitectura de implementación define una separación clara:
+
+DATOS
+↓
+BLOQUES LÓGICOS
+↓
+VALIDADOR
+↓
+ORQUESTACIÓN
+↓
+WORDPRESS
+↓
+RENDERER
+↓
+PLANTILLA
+↓
+DESIGN SYSTEM
+↓
+TEMA
+↓
+HTML FINAL
+
+En esta arquitectura, N8N actúa como capa de orquestación, validación, transformación y sincronización, mientras que WordPress almacena y sirve los datos.
+
+Esto confirma que el proyecto actual ya está utilizando un patrón de arquitectura por capas.
+
+---
+
+DECISIÓN #001 — ORQUESTACIÓN NO ES LÓGICA DE NEGOCIO
+
+Una herramienta de automatización como N8N no debería convertirse automáticamente en el lugar donde reside toda la lógica del proyecto.
+
+Su función principal debe ser coordinar:
+
+- entradas;
+- procesos;
+- llamadas a servicios;
+- transformaciones;
+- validaciones;
+- sincronizaciones;
+- estados;
+- errores.
+
+Las reglas de negocio importantes deben permanecer definidas independientemente del motor de automatización.
+
+Decisión:
+
+"BASE-PROYECTOS" deberá separar:
+
+REGLAS DEL PROYECTO
++
+COMPONENTES
++
+ORQUESTADOR
+
+Así podremos cambiar N8N por otro sistema si algún proyecto lo requiere.
+
+---
+
+DECISIÓN #002 — INDEPENDENCIA DEL ORQUESTADOR
+
+El proyecto actual demuestra que la lógica puede mantenerse independiente de la herramienta utilizada para ejecutarla.
+
+Por tanto:
+
+«N8N será considerado un módulo/orquestador reutilizable, no una dependencia obligatoria de "BASE-PROYECTOS".»
+
+Esto permitirá utilizar en otros proyectos:
+
+- N8N;
+- scripts;
+- cron;
+- workers;
+- funciones serverless;
+- backend propio;
+- otros sistemas de automatización.
+
+La metodología universal debe definir qué debe hacer el proceso, mientras que la implementación concreta define con qué herramienta se ejecuta.
+
+---
+
+DECISIÓN #003 — SINCRONIZACIÓN ENTRE SISTEMAS
+
+Cuando varios sistemas participan en un mismo proyecto, debe existir una definición clara de:
+
+- sistema origen;
+- sistema destino;
+- datos transferidos;
+- formato;
+- identificador;
+- versión;
+- frecuencia;
+- resultado;
+- errores;
+- reintentos.
+
+El sistema actual utiliza identificadores de instancia para permitir actualizaciones parciales, trazabilidad, debugging y sincronización.
+
+Decisión:
+
+La sincronización entre sistemas será un concepto universal de "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #004 — IDEMPOTENCIA
+
+La existencia de identificadores estables y actualizaciones parciales apunta a un principio fundamental para las automatizaciones:
+
+«Ejecutar dos veces una misma operación no debería provocar dos resultados incorrectos o duplicados.»
+
+Esto será especialmente importante en:
+
+- N8N;
+- APIs;
+- generación de contenido;
+- facturación;
+- WhatsApp;
+- bases de datos;
+- publicación;
+- sincronización;
+- procesamiento de documentos.
+
+Decisión:
+
+"BASE-PROYECTOS" deberá incluir un patrón universal de idempotencia.
+
+---
+
+DECISIÓN #005 — ORIGEN Y DESTINO EXPLÍCITOS
+
+Toda automatización importante deberá poder responder:
+
+¿DE DÓNDE VIENE EL DATO?
+↓
+¿QUÉ PROCESO LO MODIFICA?
+↓
+¿A DÓNDE VA?
+↓
+¿CÓMO SE SABE QUE LLEGÓ CORRECTAMENTE?
+
+Esto evita automatizaciones opacas difíciles de mantener.
+
+Decisión:
+
+Las futuras plantillas deberán incluir trazabilidad del flujo de datos.
+
+---
+
+DECISIÓN #006 — DESACOPLAMIENTO DEL FRONTEND
+
+La implementación actual permite cambiar el tema visual sin modificar:
+
+- contenido;
+- arquitectura;
+- bloques;
+- contratos;
+- identificadores;
+- reglas de validación.
+
+Decisión:
+
+Este patrón se generaliza:
+
+«La representación final debe poder cambiar sin obligar a reconstruir la lógica interna cuando la arquitectura lo permita.»
+
+Esto abre la posibilidad de reutilizar un mismo núcleo para:
+
+- WordPress;
+- web propia;
+- aplicación;
+- API;
+- aplicación móvil.
+
+---
+
+DECISIÓN #007 — ARQUITECTURA BASADA EN EVIDENCIA
+
+La arquitectura SEO utiliza:
+
+EVIDENCIA
+↓
+OPORTUNIDAD
+↓
+DECISIÓN
+↓
+ARQUITECTURA
+↓
+DATOS
+↓
+CONTENIDO
+↓
+VALIDACIÓN
+↓
+PUBLICACIÓN
+
+Aunque el contenido SEO es específico, la estructura metodológica es universal.
+
+Decisión:
+
+"BASE-PROYECTOS" deberá contemplar una fase previa de validación de la oportunidad/problema antes de construir.
+
+No se debe pasar directamente de:
+
+IDEA → CONSTRUCCIÓN
+
+sino:
+
+IDEA
+↓
+VALIDACIÓN
+↓
+DECISIÓN
+↓
+CONSTRUCCIÓN
+
+---
+
+DECISIÓN #008 — LA ESCALA NO JUSTIFICA AUTOMATIZAR SIN CONTROL
+
+La arquitectura SEO busca escalabilidad, pero mantiene:
+
+- justificación;
+- diferenciación;
+- trazabilidad;
+- verificación.
+
+Decisión:
+
+En "BASE-PROYECTOS", la automatización deberá considerarse una herramienta para escalar procesos ya definidos y controlados, no una excusa para eliminar validaciones.
+
+---
+
+OBSERVACIÓN IMPORTANTE
+
+No se ha encontrado en la carpeta SEO un archivo independiente llamado "automatizacion-n8n.md", "orquestacion-n8n.md" o "automatizacion.md".
+
+Por tanto, no se asumirá que existe una documentación N8N independiente.
+
+La información sobre N8N está actualmente integrada principalmente dentro de la arquitectura y la implementación.
+
+Decisión:
+
+Durante la auditoría no se crearán documentos ficticios ni se atribuirá a "archivo-maestro" documentación que no existe.
+
+---
+
+CONOCIMIENTO ESPECÍFICO QUE NO SE TRASLADA
+
+No pasan al núcleo universal:
+
+- WordPress como sistema concreto;
+- Renderer específico;
+- tema concreto;
+- bloques SEO;
+- tipos de página SEO;
+- estructura territorial SEO;
+- decisiones "CREAR / AGRUPAR / INVESTIGAR / NO_CREAR".
+
+Sí pasan:
+
+- arquitectura por capas;
+- orquestación;
+- contratos;
+- sincronización;
+- identificadores;
+- idempotencia;
+- trazabilidad;
+- independencia tecnológica;
+- validación previa a la construcción.
+
+---
+
+ACCIONES REALIZADAS
+
+- Comprobada la estructura real de "proyecto/".
+- Comprobada la carpeta "proyecto/seo/".
+- Revisada la arquitectura de implementación.
+- Revisada la arquitectura SEO.
+- Identificados patrones de orquestación.
+- Identificado el principio de idempotencia.
+- Identificado el patrón de sincronización entre sistemas.
+- Confirmada la independencia respecto a WordPress y al tema.
+- Evitado asumir la existencia de documentación N8N que no está presente.
+
+---
+
+PENDIENTES
+
+Todavía queda auditar una parte importante de "archivo-maestro", especialmente:
+
+- evidencias;
+- arquitectura de URLs;
+- documentación de imágenes;
+- interlinking;
+- implementación restante;
+- sistema completo de bloques;
+- cualquier documentación fuera de "proyecto/";
+- archivos históricos o adicionales de la raíz.
+
+Después habrá que hacer una segunda pasada transversal para detectar contradicciones entre documentos.
+
+---
+
+PRÓXIMO BLOQUE
+
+Continuar con los documentos restantes de arquitectura y datos, especialmente URLs, evidencias e información local, buscando patrones universales de:
+
+- identidad;
+- trazabilidad;
+- procedencia;
+- entidades;
+- relaciones;
+- reglas;
+- validación.
+
+Progreso global estimado: 50 %.
+
+
+
 
