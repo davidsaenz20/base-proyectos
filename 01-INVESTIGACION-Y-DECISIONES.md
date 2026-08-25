@@ -439,3 +439,453 @@ Se han realizado análisis preliminares en conversación, pero a partir de este 
 Primer objetivo de trabajo:
 
 Auditar sistemáticamente "archivo-maestro" completo.
+
+ENTRADA 001 — AUDITORÍA INICIAL DE ARQUITECTURA Y METODOLOGÍA
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 20 %
+
+Archivos/documentación revisados
+
+Se ha iniciado la auditoría directa del repositorio:
+
+"davidsaenz20/archivo-maestro"
+
+Se han revisado especialmente:
+
+- "maestro.md"
+- "proyecto/metodologia.md"
+- "proyecto/protocolo-ejecucion.md"
+- "proyecto/checklist-arranque.md"
+- "proyecto/roadmap-fabrica-webs.md"
+- "proyecto/roadmap-proyecto.md"
+- "proyecto/seo/arquitectura-landing.md"
+- "proyecto/seo/esquema-datos.md"
+- "proyecto/seo/contrato-salida-ia.md"
+- "proyecto/seo/estados-sistema.md"
+- "proyecto/seo/arquitectura-wordpress.md"
+- "proyecto/seo/especificacion-plantillas.md"
+
+El repositorio contiene una cantidad importante de documentación estructural ya desarrollada. La carpeta "proyecto/seo" contiene numerosos documentos específicos que todavía deben auditarse individualmente.
+
+---
+
+INVESTIGACIÓN REALIZADA
+
+La primera conclusión es que "BASE-PROYECTOS" no debe construirse desde cero.
+
+El repositorio actual contiene varios principios que pueden convertirse en metodología universal.
+
+La documentación actual separa explícitamente:
+
+- contexto;
+- metodología;
+- roadmap;
+- documentación técnica;
+- implementación;
+- validación;
+- estado persistente.
+
+Esto constituye un patrón válido para proyectos tecnológicos de diferentes tipos.
+
+---
+
+CONOCIMIENTO UNIVERSAL #001 — FUENTE PERSISTENTE DE ESTADO
+
+Uno de los principios más sólidos encontrados es que la conversación no debe ser la fuente de verdad del proyecto.
+
+El repositorio debe conservar:
+
+- estado;
+- decisiones;
+- documentación;
+- problemas;
+- pendientes;
+- siguiente paso.
+
+La conversación sirve para interactuar, pero el estado persistente debe quedar documentado.
+
+Decisión:
+
+Este principio debe pasar a "BASE-PROYECTOS" como regla universal.
+
+Debe aplicarse a cualquier proyecto, no solamente a SEO.
+
+---
+
+CONOCIMIENTO UNIVERSAL #002 — JERARQUÍA DOCUMENTAL
+
+La documentación actual utiliza una jerarquía:
+
+MAESTRO
+↓
+METODOLOGÍA / ROADMAP UNIVERSAL
+↓
+ROADMAP DEL PROYECTO
+↓
+DOCUMENTACIÓN TÉCNICA
+↓
+IMPLEMENTACIÓN
+↓
+VERIFICACIÓN
+
+Cada nivel tiene una responsabilidad diferente y una capa inferior no debe modificar unilateralmente una decisión de una capa superior.
+
+Decisión:
+
+Este patrón debe generalizarse para "BASE-PROYECTOS".
+
+No utilizaremos necesariamente esos mismos nombres de archivo, pero sí el concepto de jerarquía de control y responsabilidades.
+
+---
+
+CONOCIMIENTO UNIVERSAL #003 — TRABAJO SECUENCIAL
+
+El protocolo actual establece:
+
+PASO ACTUAL
+↓
+OBJETIVO
+↓
+ENTREGABLE
+↓
+VERIFICACIÓN
+↓
+ACTUALIZACIÓN DEL ESTADO
+↓
+SIGUIENTE PASO
+
+También establece que una mejora, duda u optimización no debe cambiar automáticamente el objetivo actual.
+
+Decisión:
+
+Debe existir en "BASE-PROYECTOS" un protocolo universal de ejecución secuencial.
+
+La idea de "paso actual" debe mantenerse, aunque cada tipo de proyecto pueda tener un roadmap diferente.
+
+---
+
+CONOCIMIENTO UNIVERSAL #004 — BLOQUEO REAL
+
+El protocolo diferencia entre:
+
+problema normal
+
+y
+
+bloqueo real.
+
+Solo un problema que impide completar correctamente el paso actual debe provocar una interrupción o retroceso.
+
+Decisión:
+
+Este concepto será una regla universal.
+
+Evita que durante la construcción de cualquier proyecto se produzcan rediseños constantes por pequeñas mejoras o nuevas ideas.
+
+---
+
+CONOCIMIENTO UNIVERSAL #005 — DESCUBRIR Y PODAR
+
+La arquitectura SEO introduce un principio especialmente interesante:
+
+DESCUBRIMIENTO AMPLIO + PODA INTELIGENTE
+
+Primero se descubren todas las posibilidades razonables y posteriormente se evalúan, agrupan o descartan.
+
+Aunque nació para arquitectura SEO, el patrón es generalizable:
+
+ESPACIO DE POSIBILIDADES
+↓
+EVALUACIÓN
+↓
+PRIORIZACIÓN
+↓
+SELECCIÓN
+↓
+ALCANCE FINAL
+
+Decisión:
+
+Este patrón puede formar parte de la metodología universal para fases de análisis, requisitos y diseño.
+
+No debe utilizarse únicamente para páginas SEO.
+
+---
+
+CONOCIMIENTO UNIVERSAL #006 — SEPARACIÓN DE RESPONSABILIDADES
+
+La documentación SEO separa claramente:
+
+INVESTIGACIÓN
+↓
+DECISIÓN
+↓
+ARQUITECTURA
+↓
+DATOS
+↓
+CONTENIDO / IA
+↓
+VALIDACIÓN
+↓
+ORQUESTACIÓN
+↓
+PUBLICACIÓN
+
+Cada capa tiene una responsabilidad diferente.
+
+Especialmente importante:
+
+- la IA no decide la arquitectura;
+- N8N no decide la estrategia;
+- WordPress no decide qué páginas existen;
+- los datos no generan automáticamente decisiones.
+
+Decisión:
+
+Este principio se considera altamente reutilizable y debe convertirse en uno de los pilares de "BASE-PROYECTOS".
+
+---
+
+CONOCIMIENTO UNIVERSAL #007 — MODELO DE DATOS CANÓNICO
+
+El esquema SEO establece que existe un único modelo de datos canónico utilizado por las diferentes capas y que no deben crearse modelos paralelos incompatibles.
+
+También utiliza identificadores estables para mantener trazabilidad e idempotencia.
+
+Decisión:
+
+El concepto de:
+
+FUENTE DE DATOS CANÓNICA + IDENTIFICADORES ESTABLES + TRAZABILIDAD
+
+debe pasar a la metodología universal.
+
+La estructura concreta del modelo SEO, obviamente, permanecerá como módulo específico.
+
+---
+
+CONOCIMIENTO UNIVERSAL #008 — CONTRATOS ENTRE CAPAS
+
+El contrato IA → N8N demuestra otro patrón reutilizable:
+
+ENTRADA ESTRUCTURADA
+↓
+PROCESAMIENTO
+↓
+SALIDA ESTRUCTURADA
+↓
+VALIDACIÓN
+↓
+SIGUIENTE SISTEMA
+
+La salida debe ser predecible y validable, y cada capa debe respetar el contrato establecido.
+
+Decisión:
+
+"BASE-PROYECTOS" deberá incluir el concepto de contratos entre componentes/sistemas.
+
+Esto será aplicable a:
+
+- APIs;
+- IA;
+- N8N;
+- bases de datos;
+- aplicaciones web;
+- apps móviles;
+- servicios externos;
+- software de escritorio.
+
+---
+
+CONOCIMIENTO UNIVERSAL #009 — INDEPENDENCIA TECNOLÓGICA
+
+La arquitectura WordPress actual separa:
+
+DATOS
+↓
+BLOQUES
+↓
+RENDERER
+↓
+PLANTILLA
+↓
+TEMA / CSS
+↓
+HTML
+
+y evita que la arquitectura lógica dependa de Kadence, Astra, Elementor u otra herramienta visual concreta.
+
+Decisión:
+
+Este principio debe generalizarse:
+
+«La lógica del producto debe estar desacoplada de la tecnología de presentación cuando sea razonablemente posible.»
+
+Esto permitirá que una misma lógica pueda terminar en:
+
+- WordPress;
+- aplicación web;
+- aplicación móvil;
+- API;
+- otro frontend;
+- otro sistema de renderizado.
+
+---
+
+CONOCIMIENTO UNIVERSAL #010 — BLOQUES MODULARES
+
+La especificación de plantillas demuestra que los elementos lógicos pueden separarse de su representación visual.
+
+Un bloque puede tener:
+
+LÓGICA
++
+DATOS
++
+RENDERIZADO
++
+PRESENTACIÓN
+
+La representación visual puede cambiar sin destruir la lógica.
+
+Decisión:
+
+El concepto de componentización modular debe formar parte de "BASE-PROYECTOS".
+
+La lista de bloques SEO no es universal; el patrón de diseño modular sí lo es.
+
+---
+
+CONOCIMIENTO UNIVERSAL #011 — ESTADOS CONTROLADOS
+
+"estados-sistema.md" diferencia:
+
+1. decisión;
+2. estado del proceso;
+3. resultado de validación;
+4. incidencia.
+
+Esto evita utilizar una misma palabra para conceptos diferentes.
+
+Decisión:
+
+"BASE-PROYECTOS" deberá incluir un sistema de estados controlados y semánticamente diferenciados.
+
+Los estados concretos dependerán de cada proyecto.
+
+---
+
+CONTRADICCIONES / OBSERVACIONES
+
+Observación #001 — Roadmap universal demasiado específico
+
+"roadmap-fabrica-webs.md" está definido como metodología reutilizable, pero su alcance sigue estando limitado a sistemas de generación automática de webs.
+
+Decisión:
+
+No trasladar directamente este roadmap a "BASE-PROYECTOS".
+
+Se extraerán sus principios universales y se diseñará un nuevo roadmap verdaderamente agnóstico respecto al tipo de producto.
+
+---
+
+Observación #002 — Arquitectura SEO no equivale a arquitectura universal
+
+La metodología SEO tiene una secuencia muy útil, pero elementos como:
+
+- oportunidades SEO;
+- SERP;
+- localidades;
+- URLs SEO;
+- landings;
+- interlinking SEO;
+
+son específicos de ese módulo.
+
+Decisión:
+
+Utilizar la documentación SEO como fuente de patrones, no como estructura universal.
+
+---
+
+Observación #003 — WordPress es una implementación, no el núcleo
+
+La documentación actual ya refleja correctamente que WordPress es una capa de almacenamiento/renderizado/publicación y no el responsable de las decisiones estratégicas.
+
+Decisión:
+
+Este principio se conservará y se generalizará para que ninguna tecnología de implementación domine innecesariamente la arquitectura del proyecto.
+
+---
+
+DECISIONES TOMADAS EN ESTA ENTRADA
+
+1. "BASE-PROYECTOS" se construirá reutilizando conocimiento existente.
+2. La fuente persistente debe ser documental, no la memoria conversacional.
+3. Se utilizará una jerarquía de control.
+4. La ejecución será secuencial.
+5. Existirá una definición formal de bloqueo real.
+6. Se separarán responsabilidades entre capas.
+7. Se utilizarán modelos de datos canónicos.
+8. Se utilizarán contratos entre componentes.
+9. Se favorecerá el desacoplamiento tecnológico.
+10. Se favorecerá la componentización modular.
+11. Los estados deberán estar controlados y diferenciados.
+12. El roadmap universal de la fábrica de webs no se copiará directamente.
+13. La documentación SEO se utilizará como fuente de patrones y módulos, no como arquitectura universal.
+
+---
+
+ACCIONES REALIZADAS
+
+- Confirmada la existencia del repositorio "davidsaenz20/archivo-maestro".
+- Confirmada la estructura general de "proyecto/".
+- Confirmada la existencia de una carpeta SEO extensa.
+- Iniciada la extracción sistemática de principios reutilizables.
+- Separados conceptualmente los patrones universales de los elementos específicos de SEO.
+
+---
+
+PENDIENTES
+
+Continuar la auditoría de los documentos SEO restantes, especialmente:
+
+- investigación;
+- evidencias;
+- matrices;
+- competencia;
+- benchmark;
+- especificación IA;
+- estados completos;
+- implementación WordPress;
+- automatización;
+- validación;
+- sistema de bloques;
+- documentación de imágenes;
+- interlinking;
+- decisiones y registros.
+
+Después se deberá comprobar si existen otros documentos relevantes fuera de "proyecto/seo".
+
+---
+
+PRÓXIMO BLOQUE DE TRABAJO
+
+Continuar la auditoría de la documentación específica SEO y determinar qué patrones adicionales pueden convertirse en:
+
+- principios universales;
+- módulos reutilizables;
+- plantillas;
+- procedimientos;
+- fixtures.
+
+No crear todavía la estructura definitiva de "BASE-PROYECTOS".
+
+Progreso global estimado: 20 %.
+
+
+
+
