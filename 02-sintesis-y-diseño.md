@@ -1107,4 +1107,284 @@ Siguiente paso: diseñar el flujo exacto para crear un proyecto nuevo utilizando
 
 
 
+ENTRADA 004 — FLUJO UNIVERSAL PARA CREAR UN NUEVO PROYECTO
+
+Fecha: 25/08/2026
+
+Fase: 2 — Síntesis y diseño
+
+Progreso de la fase: 36 %
+
+---
+
+1. OBJETIVO
+
+Definir cómo se utilizará "BASE-PROYECTOS" cuando aparezca una idea nueva.
+
+La base debe funcionar como un sistema guiado:
+
+IDEA
+↓
+CLASIFICACIÓN
+↓
+INVESTIGACIÓN
+↓
+DEFINICIÓN
+↓
+SELECCIÓN DE MÓDULOS
+↓
+ARQUITECTURA
+↓
+ROADMAP
+↓
+CONSTRUCCIÓN
+↓
+VALIDACIÓN
+↓
+DESPLIEGUE
+↓
+OPERACIÓN
+
+---
+
+2. PASO 1 — CAPTURAR LA IDEA
+
+Toda nueva iniciativa comienza con una definición inicial, aunque sea incompleta.
+
+Debe registrarse:
+
+- qué se quiere construir;
+- qué problema pretende resolver;
+- para quién;
+- por qué podría ser útil;
+- qué resultado se espera.
+
+En esta fase no se decide todavía la tecnología.
+
+---
+
+3. PASO 2 — CLASIFICAR EL PROYECTO
+
+Se determina qué tipo de proyecto es.
+
+Ejemplos:
+
+WEB
+AUTOMATIZACIÓN
+IA
+IA + WHATSAPP
+APP
+API
+SAAS
+SOFTWARE
+SISTEMA HÍBRIDO
+
+Un proyecto puede pertenecer a más de un tipo.
+
+Ejemplo:
+
+ASISTENTE IA + WHATSAPP + AUTOMATIZACIÓN
+
+---
+
+4. PASO 3 — INVESTIGAR
+
+Antes de construir se investiga:
+
+- problema;
+- usuarios;
+- competencia;
+- viabilidad;
+- requisitos;
+- costes;
+- riesgos;
+- alternativas técnicas;
+- alternativas de negocio.
+
+La investigación debe producir decisiones documentadas.
+
+---
+
+5. PASO 4 — DEFINIR
+
+Una vez investigado se concreta:
+
+QUÉ
+PARA QUIÉN
+POR QUÉ
+CÓMO
+CON QUÉ LIMITACIONES
+
+El resultado es una definición suficientemente clara para diseñar el sistema.
+
+---
+
+6. PASO 5 — SELECCIONAR MÓDULOS
+
+Se seleccionan únicamente los módulos necesarios.
+
+Ejemplo:
+
+Automatización de facturas
+        ↓
+IA
+Documentos
+OCR
+API
+Base de datos
+Automatización
+
+No se deben añadir módulos simplemente porque estén disponibles.
+
+---
+
+7. PASO 6 — DISEÑAR LA ARQUITECTURA
+
+La arquitectura se decide después de conocer:
+
+- requisitos;
+- restricciones;
+- costes;
+- riesgos;
+- volumen;
+- mantenimiento;
+- escalabilidad.
+
+Aquí sí se decide la tecnología.
+
+---
+
+8. PASO 7 — CREAR EL ROADMAP
+
+El proyecto pasa de una idea a una secuencia ejecutable.
+
+Cada paso debe tener:
+
+OBJETIVO
+ENTREGABLE
+DEPENDENCIAS
+CRITERIO DE FINALIZACIÓN
+ESTADO
+
+---
+
+9. PASO 8 — CONSTRUIR
+
+Se ejecuta el roadmap.
+
+La construcción no debe modificar arbitrariamente las decisiones anteriores.
+
+Si aparece información nueva que obliga a cambiar una decisión:
+
+NUEVA EVIDENCIA
+↓
+REVISIÓN
+↓
+DECISIÓN DOCUMENTADA
+↓
+ACTUALIZACIÓN DEL ROADMAP
+
+---
+
+10. PASO 9 — VALIDAR
+
+No se considera terminado porque se haya construido.
+
+Debe demostrarse que:
+
+REQUISITO
+↓
+PRUEBA
+↓
+RESULTADO
+↓
+EVIDENCIA
+
+cumple los criterios definidos.
+
+---
+
+11. PASO 10 — DESPLEGAR
+
+Solo después de validar se pasa a producción.
+
+El despliegue deberá contemplar, según el proyecto:
+
+- seguridad;
+- backups;
+- configuración;
+- monitorización;
+- recuperación;
+- control de errores.
+
+---
+
+12. PASO 11 — OPERAR Y MEJORAR
+
+Una vez funcionando:
+
+MEDIR
+↓
+DETECTAR
+↓
+PRIORIZAR
+↓
+MEJORAR
+↓
+VOLVER A VALIDAR
+
+El proyecto entra en un ciclo continuo.
+
+---
+
+13. REGLA FUNDAMENTAL
+
+"BASE-PROYECTOS" no debe imponer una única forma de construir.
+
+Debe imponer un orden lógico de pensamiento y control.
+
+La tecnología, herramientas y arquitectura se adaptan al problema.
+
+---
+
+14. RESULTADO
+
+El flujo universal queda definido provisionalmente como:
+
+1. IDEA
+2. CLASIFICACIÓN
+3. INVESTIGACIÓN
+4. DEFINICIÓN
+5. MÓDULOS
+6. ARQUITECTURA
+7. ROADMAP
+8. CONSTRUCCIÓN
+9. VALIDACIÓN
+10. DESPLIEGUE
+11. OPERACIÓN
+12. MEJORA
+
+---
+
+ESTADO
+
+AUDITORÍA
+████████████████████ 100 %
+
+SÍNTESIS
+██████████████████░░ 90 %
+
+ARQUITECTURA
+████████████████░░░░ 80 %
+
+CONSTRUCCIÓN
+░░░░░░░░░░░░░░░░░░░░ 0 %
+
+Progreso Fase 2: 36 %.
+
+Siguiente paso: definir qué información mínima debe contener un proyecto antes de poder pasar de investigación a arquitectura.
+
+
+
+
 
