@@ -4604,5 +4604,524 @@ SÍNTESIS Y DISEÑO DE LA PLANTILLA BASE.
 
 
 
+ENTRADA 012 — SEPARACIÓN DEFINITIVA ENTRE PLANTILLA UNIVERSAL Y ROADMAP DE PROYECTO
+
+Fecha: 25/08/2026
+
+Progreso global estimado: 93 %
+
+ARCHIVO REVISADO
+
+- "proyecto/roadmap-proyecto.md"
+
+El roadmap actual está en versión 4.0 y declara que la documentación base del proyecto SEO está completada y preparada para implementación técnica.
+
+---
+
+INVESTIGACIÓN
+
+El roadmap contiene dos tipos de información claramente diferenciables:
+
+A. INFORMACIÓN UNIVERSAL
+
+Son principios reutilizables:
+
+- trabajar por fases;
+- investigación antes de implementación;
+- evidencias antes de decisiones;
+- arquitectura antes de automatización;
+- prototipo antes de escala;
+- validación antes de publicación;
+- medición posterior;
+- aprendizaje;
+- actualización controlada;
+- no regresión;
+- trazabilidad;
+- escalado progresivo.
+
+B. INFORMACIÓN ESPECÍFICA DEL PROYECTO SEO
+
+Son elementos que NO deben entrar en el núcleo universal:
+
+- "SERVICIO × LOCALIDAD";
+- SEO local;
+- motor de decisión SEO;
+- B01-B23;
+- WordPress/Kadence;
+- interlinking SEO;
+- URLs de servicios/localidades;
+- Fontanero Estepona;
+- indexación SEO;
+- alquiler de landings;
+- generación de leads SEO.
+
+---
+
+DECISIÓN #001 — EL ROADMAP ES UNA INSTANCIA DE LA PLANTILLA
+
+La futura "BASE-PROYECTOS" debe contener una plantilla de roadmap genérico.
+
+Pero el roadmap de cada proyecto será independiente.
+
+Modelo:
+
+BASE-PROYECTOS
+      ↓
+PLANTILLA DE ROADMAP
+      ↓
+PROYECTO CONCRETO
+      ↓
+ROADMAP DEL PROYECTO
+
+Por tanto:
+
+roadmap-proyecto.md
+
+no debe convertirse en un archivo universal.
+
+Debe convertirse conceptualmente en:
+
+TEMPLATE-ROADMAP
+
+y después cada proyecto generará su propia instancia.
+
+---
+
+DECISIÓN #002 — LAS FASES SON PATRONES, NO OBLIGACIONES
+
+El proyecto SEO actual utiliza una secuencia muy extensa:
+
+INVESTIGACIÓN
+↓
+MATRICES
+↓
+MOTOR
+↓
+ARQUITECTURA
+↓
+BLOQUES
+↓
+DATOS
+↓
+IA
+↓
+VALIDACIÓN
+↓
+AUTOMATIZACIÓN
+↓
+PUBLICACIÓN
+↓
+MEDICIÓN
+↓
+APRENDIZAJE
+
+Esta secuencia no debe imponerse a todos los proyectos.
+
+Debe convertirse en un catálogo de fases disponibles.
+
+Cada nuevo proyecto seleccionará las necesarias.
+
+---
+
+DECISIÓN #003 — EL ROADMAP DEBE PODER GENERARSE A PARTIR DEL TIPO DE PROYECTO
+
+Ejemplo conceptual:
+
+TIPO = WEB
+→ requisitos
+→ diseño
+→ implementación
+→ testing
+→ despliegue
+→ mantenimiento
+
+TIPO = AUTOMATIZACIÓN IA
+→ problema
+→ requisitos
+→ flujo
+→ datos
+→ IA
+→ integraciones
+→ testing
+→ despliegue
+→ monitorización
+
+TIPO = APP
+→ problema
+→ requisitos
+→ UX/UI
+→ arquitectura
+→ desarrollo
+→ testing
+→ publicación
+→ mantenimiento
+
+La plantilla debe proporcionar la estructura.
+
+El proyecto determina qué fases se activan.
+
+---
+
+DECISIÓN #004 — EL PROTOTIPO ES UNIVERSAL
+
+El roadmap SEO define una progresión:
+
+1
+↓
+3
+↓
+10
+↓
+50
+↓
+100+
+
+Los números son específicos del proyecto.
+
+Pero el principio es universal:
+
+«No escalar hasta haber validado una unidad representativa.»
+
+Este principio debe incorporarse al núcleo.
+
+---
+
+DECISIÓN #005 — ESCALADO PROGRESIVO
+
+El sistema universal deberá contemplar:
+
+PROTOTIPO
+↓
+PILOTO
+↓
+PEQUEÑA ESCALA
+↓
+ESCALA MEDIA
+↓
+ESCALA
+
+No se debe definir de antemano qué significa "10", "50" o "1000".
+
+Eso dependerá del proyecto.
+
+---
+
+DECISIÓN #006 — CALIDAD ANTES QUE CANTIDAD
+
+El proyecto SEO establece explícitamente:
+
+«calidad > cantidad.»
+
+El principio es universal y debe conservarse.
+
+Puede aplicarse a:
+
+- número de páginas;
+- número de automatizaciones;
+- número de clientes;
+- número de usuarios;
+- número de documentos procesados;
+- número de operaciones;
+- número de funcionalidades.
+
+Regla universal:
+
+«Escalar una solución incorrecta solo multiplica el problema.»
+
+---
+
+DECISIÓN #007 — LA ARQUITECTURA DEBE PRECEDER A LA AUTOMATIZACIÓN
+
+El roadmap confirma que:
+
+DECISIÓN
+↓
+ARQUITECTURA
+↓
+DATOS
+↓
+CONTRATOS
+↓
+VALIDACIÓN
+↓
+AUTOMATIZACIÓN
+
+Esto es especialmente importante para "BASE-PROYECTOS".
+
+N8N, scripts, IA o cualquier otra herramienta deben ejecutar una arquitectura previamente definida.
+
+---
+
+DECISIÓN #008 — SEPARAR LÓGICA Y PRESENTACIÓN
+
+En el proyecto actual existe una separación entre:
+
+- lógica;
+- datos;
+- contenido;
+- renderizado.
+
+Esto es directamente reutilizable para otros proyectos.
+
+Ejemplo:
+
+DATOS
+↓
+LÓGICA
+↓
+SALIDA ESTRUCTURADA
+↓
+PRESENTACIÓN
+
+La presentación concreta puede ser:
+
+- HTML/CSS;
+- WordPress;
+- aplicación móvil;
+- interfaz web;
+- PDF;
+- WhatsApp;
+- API;
+- otro sistema.
+
+---
+
+DECISIÓN #009 — LAS INTEGRACIONES SON CAPAS SUSTITUIBLES
+
+En el proyecto actual aparecen:
+
+IA
++
+N8N
++
+WORDPRESS
+
+Pero el principio universal es:
+
+SISTEMA CENTRAL
+↓
+INTEGRACIONES
+↓
+SERVICIOS EXTERNOS
+
+Una integración concreta no debe convertirse en dependencia conceptual de la metodología.
+
+---
+
+DECISIÓN #010 — PUBLICACIÓN Y DESPLIEGUE SON FASES
+
+El proyecto actual separa construcción, validación y publicación.
+
+Esto debe generalizarse.
+
+No importa si el resultado final es:
+
+- una web;
+- una API;
+- una app;
+- un SaaS;
+- una automatización;
+- un bot;
+- un programa.
+
+Siempre debe existir una transición controlada entre:
+
+DESARROLLO
+↓
+VALIDACIÓN
+↓
+DESPLIEGUE
+↓
+OPERACIÓN
+
+---
+
+DECISIÓN #011 — ACTUALIZACIÓN DE SISTEMAS EXISTENTES
+
+El roadmap contempla que una página existente pueda recibir:
+
+- nuevos datos;
+- nuevos bloques;
+- nuevo contenido;
+- nuevos enlaces;
+
+sin reconstruirse completamente.
+
+El principio universal es:
+
+«Los sistemas deben diseñarse, cuando sea razonable, para ser actualizables sin reconstrucción completa.»
+
+Esto será relevante tanto para webs como para automatizaciones, aplicaciones y SaaS.
+
+---
+
+DECISIÓN #012 — NO CONFUNDIR DOCUMENTACIÓN COMPLETADA CON PROYECTO VALIDADO
+
+El roadmap dice:
+
+DOCUMENTACIÓN COMPLETADA
+
+pero posteriormente establece:
+
+PILOTOS
+↓
+VALIDACIÓN
+↓
+AUTOMATIZACIÓN
+↓
+ESCALA
+
+Por tanto:
+
+«Documentar una solución no equivale a demostrar que funciona en producción.»
+
+Esta distinción debe quedar explícita en "BASE-PROYECTOS".
+
+---
+
+DECISIÓN #013 — ESTADOS UNIVERSALES
+
+A partir de los estados encontrados podemos establecer un patrón genérico:
+
+IDEA
+↓
+INVESTIGACIÓN
+↓
+DISEÑO
+↓
+DOCUMENTADO
+↓
+PROTOTIPO
+↓
+VALIDADO
+↓
+IMPLEMENTADO
+↓
+DESPLEGADO
+↓
+OPERATIVO
+↓
+EN MEJORA
+↓
+OBSOLETO
+
+No todos los proyectos necesitarán todos los estados.
+
+Pero la plantilla debe contemplarlos.
+
+---
+
+DECISIÓN #014 — CRITERIOS DE VALIDACIÓN DEPENDIENTES DEL PROYECTO
+
+La validación universal debe existir, pero sus pruebas serán específicas.
+
+Por ejemplo:
+
+Web:
+
+- responsive;
+- enlaces;
+- SEO;
+- rendimiento.
+
+Automatización:
+
+- entradas;
+- procesamiento;
+- errores;
+- duplicados;
+- reintentos;
+- salidas.
+
+App:
+
+- UX;
+- navegación;
+- estados;
+- compatibilidad;
+- seguridad.
+
+La metodología proporciona el mecanismo.
+
+El proyecto define las pruebas concretas.
+
+---
+
+DECISIÓN #015 — MONETIZACIÓN NO FORMA PARTE DEL NÚCLEO TÉCNICO
+
+El roadmap SEO incluye:
+
+- alquiler;
+- leads;
+- venta de leads;
+- servicios;
+- activos propios.
+
+Pero esto debe clasificarse como:
+
+MODELO DE NEGOCIO
+
+y no como metodología técnica universal.
+
+Un proyecto puede:
+
+- vender;
+- alquilar;
+- cobrar suscripción;
+- ser interno;
+- ser gratuito;
+- licenciarse;
+- generar leads.
+
+---
+
+DECISIÓN #016 — CONCLUSIÓN DE ESTA PARTE DE LA AUDITORÍA
+
+El "roadmap-proyecto.md" confirma que la futura plantilla necesita tres niveles claramente separados:
+
+1. METODOLOGÍA UNIVERSAL
+       ↓
+2. PLANTILLA DE PROYECTO
+       ↓
+3. ROADMAP DEL PROYECTO CONCRETO
+
+Esto evita que "BASE-PROYECTOS" se convierta accidentalmente en una copia del proyecto SEO.
+
+---
+
+ACCIONES REALIZADAS
+
+- Revisado "roadmap-proyecto.md".
+- Identificados los principios universales contenidos en él.
+- Separados los elementos SEO específicos.
+- Identificado el roadmap como instancia de proyecto, no como plantilla universal.
+- Consolidado el patrón de escalado progresivo.
+- Consolidada la separación lógica/presentación.
+- Consolidado el principio de arquitectura antes de automatización.
+- Identificado el modelo universal de estados.
+- Separados los criterios de validación universales de las pruebas específicas.
+- Separado el modelo de negocio de la metodología técnica.
+- Confirmado que documentación completada ≠ sistema validado.
+
+---
+
+ESTADO
+
+Progreso global: 93 %.
+
+Queda aproximadamente un 7 % de auditoría.
+
+Estamos muy cerca del punto de cierre.
+
+Lo siguiente será hacer la última revisión de los documentos generales restantes y una comprobación de contradicciones/duplicidades.
+
+Después de esa revisión podremos decir:
+
+«AUDITORÍA CERRADA»
+
+y pasar a diseñar la estructura definitiva de "BASE-PROYECTOS".
+
+
+
 
 
