@@ -15,6 +15,16 @@ El objetivo del protocolo es garantizar:
 - documentación;
 - ejecución hasta funcionamiento real.
 
+Además, el protocolo incorpora tres mecanismos transversales de control:
+
+- CLARIFY → aclarar qué se quiere conseguir realmente;
+- ANALYZE → comprobar que las decisiones y partes del proyecto son coherentes;
+- CONVERGE → comprobar que lo construido coincide con lo definido y que las evidencias demuestran el cumplimiento.
+
+Estos mecanismos no sustituyen las fases del proyecto.
+
+Forman parte del comportamiento obligatorio de la IA durante la ejecución.
+
 ---
 
 1. JERARQUÍA DE LA DOCUMENTACIÓN
@@ -74,7 +84,8 @@ Determina:
 - acciones;
 - entregables;
 - validaciones;
-- condiciones para avanzar.
+- condiciones para avanzar;
+- posición de CLARIFY, ANALYZE y CONVERGE dentro del flujo.
 
 ---
 
@@ -95,6 +106,8 @@ No determinan por sí mismas:
 
 La documentación de "01-UNIVERSAL" define reglas, principios y mecanismos reutilizables.
 
+Cuando una regla universal y una decisión específica del proyecto parezcan entrar en conflicto, debe analizarse el conflicto y registrarse la decisión correspondiente.
+
 ---
 
 2. RECUPERAR EL CONTEXTO
@@ -113,6 +126,8 @@ Antes de comenzar cualquier trabajo se debe revisar, cuando corresponda:
 No es necesario leer toda la documentación del repositorio.
 
 Debe consultarse únicamente la documentación necesaria para el paso actual.
+
+La IA no debe utilizar la memoria de la conversación como sustituto de la documentación persistente cuando la información pueda recuperarse del proyecto.
 
 ---
 
@@ -156,11 +171,11 @@ Regla fundamental
 
 La IA no puede convertir un medio técnico, una interfaz o una posible implementación en el objetivo principal del proyecto.
 
-Ejemplo:
+Ejemplo
 
 Usuario:
 
-«“Quiero una automatización de reservas para una peluquería.”»
+«"Quiero una automatización de reservas para una peluquería."»
 
 Interpretación correcta:
 
@@ -172,7 +187,7 @@ Interpretación correcta:
 
 Interpretación incorrecta:
 
-«“Crear una web para una peluquería.”»
+«"Crear una web para una peluquería."»
 
 La web podría formar parte de la solución, pero no puede convertirse en el objetivo principal sin que el usuario lo haya solicitado o confirmado.
 
@@ -192,27 +207,69 @@ Si la respuesta es negativa o dudosa:
 4. volver al punto correcto del flujo;
 5. preguntar al usuario cuando la interpretación no pueda resolverse con la información disponible.
 
-Regla de confirmación
+---
 
-Cuando una petición admita varias interpretaciones que puedan cambiar sustancialmente el proyecto, la IA debe presentar la interpretación antes de avanzar.
+3.2 CLARIFY — ACLARAR ANTES DE CONSTRUIR
 
-Debe confirmar especialmente cuando una posible interpretación:
+CLARIFY debe utilizarse obligatoriamente cuando la petición inicial o una decisión posterior pueda interpretarse de varias maneras relevantes.
 
-- cambia el tipo de producto;
-- cambia el objetivo;
-- cambia el usuario;
-- cambia el problema;
-- introduce una tecnología como si fuera el producto;
-- convierte una interfaz en el objetivo;
-- amplía significativamente el alcance.
+Su objetivo es evitar construir una solución correcta para un problema que el usuario realmente no pidió.
 
-No se debe elegir silenciosamente una interpretación que pueda alterar el proyecto.
+Debe determinar:
 
-Registro del objetivo
+- qué quiere conseguir realmente el usuario;
+- qué problema quiere resolver;
+- quién utilizará la solución;
+- cuál es el resultado esperado;
+- qué está dentro del alcance;
+- qué está fuera del alcance;
+- qué información crítica falta;
+- qué supuestos no deben realizarse.
 
-El objetivo primario debe quedar registrado en la documentación del proyecto y mantenerse estable durante toda la ejecución.
+CLARIFY no significa preguntar por todo
 
-Si posteriormente el usuario cambia expresamente el objetivo, debe registrarse como una decisión o cambio de alcance y actualizarse la documentación correspondiente.
+La IA debe evitar preguntas innecesarias.
+
+Solo debe preguntar cuando una información pueda cambiar de forma significativa:
+
+- el objetivo;
+- el producto;
+- el alcance;
+- el usuario;
+- la arquitectura;
+- el resultado final.
+
+Regla
+
+Si la ambigüedad no cambia materialmente el proyecto, la IA puede continuar.
+
+Si puede cambiar materialmente el proyecto, debe aclararse antes de continuar.
+
+---
+
+3.3 REGISTRO DE CLARIFY
+
+La salida de CLARIFY debe quedar reflejada en el proyecto cuando sea relevante para futuras decisiones.
+
+Como mínimo debe quedar determinado:
+
+OBJETIVO
+
+PROBLEMA
+
+USUARIO
+
+RESULTADO ESPERADO
+
+ALCANCE
+
+FUERA DE ALCANCE
+
+DUDAS CRÍTICAS
+
+No es obligatorio crear un documento adicional para cada CLARIFY.
+
+Debe utilizarse la documentación del proyecto que corresponda.
 
 ---
 
@@ -234,14 +291,97 @@ La IA debe:
 
 1. consultar la documentación necesaria;
 2. comprobar el objetivo primario cuando el trabajo pueda afectar al alcance;
-3. ejecutar;
-4. producir el entregable correspondiente;
-5. comprobar el resultado;
-6. registrar las decisiones relevantes.
+3. ejecutar CLARIFY cuando exista una ambigüedad crítica;
+4. ejecutar el trabajo;
+5. producir el entregable correspondiente;
+6. comprobar el resultado;
+7. registrar las decisiones relevantes;
+8. ejecutar ANALYZE cuando el trabajo implique decisiones relevantes.
 
 No debe introducir una nueva metodología durante la ejecución sin justificarla.
 
 Ninguna decisión técnica puede sustituir silenciosamente al objetivo del proyecto.
+
+---
+
+5.1 ANALYZE — CONTROL DE COHERENCIA
+
+ANALYZE debe utilizarse cuando una decisión pueda afectar de forma relevante al proyecto.
+
+Debe comprobar la coherencia entre:
+
+OBJETIVO → PROBLEMA → REQUISITOS → SOLUCIÓN → ARQUITECTURA → PLAN → IMPLEMENTACIÓN
+
+No es necesario realizar un análisis exhaustivo para cada acción pequeña.
+
+Debe realizarse cuando exista una decisión relevante, un cambio, una contradicción, una nueva información o una desviación potencial.
+
+ANALYZE debe detectar
+
+- contradicciones;
+- requisitos sin solución;
+- tareas sin propósito;
+- dependencias olvidadas;
+- riesgos relevantes;
+- decisiones técnicas injustificadas;
+- cambios de alcance;
+- desviaciones;
+- información desconocida que pueda afectar a una decisión crítica.
+
+Resultado
+
+ANALYZE debe producir internamente uno de estos estados:
+
+🟢 COHERENTE
+
+Se puede continuar.
+
+🟡 DUDAS
+
+Existe información que debe investigarse, verificarse o aclararse.
+
+🔴 CONTRADICCIÓN
+
+Debe corregirse antes de continuar.
+
+---
+
+5.2 REGLA DE ANALYZE
+
+Si ANALYZE detecta una contradicción crítica:
+
+NO SE DEBE CONTINUAR CONSTRUYENDO SOBRE ESA CONTRADICCIÓN.
+
+La IA debe:
+
+1. detener el paso afectado;
+2. identificar la contradicción;
+3. explicar su impacto;
+4. determinar si puede resolverse con documentación existente;
+5. investigar si procede;
+6. preguntar al usuario si es necesario;
+7. registrar la decisión;
+8. actualizar los documentos afectados;
+9. continuar únicamente después de resolverla.
+
+---
+
+5.3 ANALYZE Y CAMBIOS
+
+Cuando durante la construcción aparezca una decisión que pueda afectar:
+
+- objetivo;
+- requisitos;
+- arquitectura;
+- seguridad;
+- costes;
+- alcance;
+- integraciones;
+- funcionamiento real;
+
+se debe ejecutar ANALYZE antes de adoptar el cambio.
+
+Si el cambio modifica el proyecto, debe registrarse en "DECISIONES.md" y actualizar los documentos afectados.
 
 ---
 
@@ -259,6 +399,85 @@ No se considera terminado un paso simplemente porque:
 Debe comprobarse que el resultado cumple su criterio de salida.
 
 Además, cuando corresponda, debe comprobarse que el resultado sigue siendo coherente con el objetivo primario del proyecto.
+
+La validación de un paso no implica automáticamente que el proyecto completo esté terminado.
+
+---
+
+6.1 CONVERGE — CONTROL DE IMPLEMENTACIÓN
+
+CONVERGE debe utilizarse para comprobar que el resultado construido corresponde con lo que se había definido.
+
+Debe comparar:
+
+LO DEFINIDO
+
+con:
+
+LO IMPLEMENTADO
+
+y posteriormente:
+
+REQUISITOS → PRUEBAS → EVIDENCIAS
+
+CONVERGE debe comprobar
+
+- requisitos cumplidos;
+- funcionalidades implementadas;
+- diferencias entre diseño e implementación;
+- errores;
+- decisiones modificadas;
+- funcionalidades ausentes;
+- funcionalidades innecesarias;
+- evidencias insuficientes;
+- problemas descubiertos durante las pruebas.
+
+Resultado
+
+🟢 CONVERGE
+
+Lo construido corresponde con lo definido y las evidencias son suficientes.
+
+🟡 AJUSTAR
+
+Existen diferencias menores que deben corregirse.
+
+🔴 NO CONVERGE
+
+La implementación no corresponde suficientemente con el proyecto definido.
+
+No se puede cerrar el proyecto.
+
+---
+
+6.2 CUÁNDO EJECUTAR CONVERGE
+
+CONVERGE debe ejecutarse como mínimo:
+
+1. antes de considerar una solución funcional;
+2. después de pruebas relevantes;
+3. antes del despliegue cuando el proyecto lo requiera;
+4. después de comprobar el funcionamiento real;
+5. antes del cierre definitivo del proyecto.
+
+También puede ejecutarse antes si existe una desviación o duda relevante.
+
+---
+
+6.3 CONVERGE NO ES SOLO UNA COMPARACIÓN DE ARCHIVOS
+
+La IA no debe considerar CONVERGE satisfecho simplemente porque:
+
+- los archivos coincidan;
+- exista el código;
+- las configuraciones estén escritas;
+- las pruebas de desarrollo sean correctas.
+
+Debe comprobar que la solución:
+
+resuelve el problema real
+
+y que existe evidencia suficiente.
 
 ---
 
@@ -301,11 +520,13 @@ No se incorpora automáticamente.
 Debe:
 
 1. identificar el cambio;
-2. explicar por qué afecta al objetivo;
-3. distinguirlo del objetivo original;
-4. solicitar confirmación del usuario cuando corresponda;
-5. registrar la decisión;
-6. actualizar la documentación si el usuario confirma el cambio.
+2. ejecutar CLARIFY;
+3. explicar por qué afecta al objetivo;
+4. distinguirlo del objetivo original;
+5. ejecutar ANALYZE;
+6. solicitar confirmación del usuario cuando corresponda;
+7. registrar la decisión;
+8. actualizar la documentación si el usuario confirma el cambio.
 
 No se debe cambiar automáticamente de objetivo.
 
@@ -350,11 +571,12 @@ El roadmap puede cambiar cuando exista una razón real.
 Si es necesario modificarlo:
 
 1. explicar el motivo;
-2. registrar la decisión;
-3. actualizar el roadmap;
-4. actualizar "ESTADO.md";
-5. comprobar que el objetivo primario continúa siendo el mismo o registrar formalmente su modificación;
-6. continuar desde el nuevo paso.
+2. ejecutar ANALYZE;
+3. registrar la decisión;
+4. actualizar el roadmap;
+5. actualizar "ESTADO.md";
+6. comprobar que el objetivo primario continúa siendo el mismo o registrar formalmente su modificación;
+7. continuar desde el nuevo paso.
 
 No se debe cambiar el plan simplemente porque aparezca una idea mejor.
 
@@ -370,7 +592,8 @@ Solo se retrocede cuando:
 - existe un bloqueo;
 - una decisión anterior impide continuar;
 - aparece información nueva que invalida una decisión crítica;
-- se detecta una desviación respecto al objetivo primario.
+- se detecta una desviación respecto al objetivo primario;
+- CONVERGE determina que lo construido no corresponde con lo definido.
 
 Cuando se retrocede:
 
@@ -399,12 +622,14 @@ Debe:
 3. comprobar qué está hecho;
 4. identificar qué falta;
 5. comprobar el objetivo primario;
-6. consultar la documentación necesaria;
-7. ejecutar el trabajo correspondiente;
-8. validar;
-9. comprobar que no existe desviación del objetivo;
-10. actualizar el estado;
-11. continuar únicamente si el criterio de avance está cumplido.
+6. ejecutar CLARIFY si existe una ambigüedad crítica;
+7. ejecutar ANALYZE si existe una decisión, contradicción o cambio relevante;
+8. consultar la documentación necesaria;
+9. ejecutar el trabajo correspondiente;
+10. validar;
+11. ejecutar CONVERGE cuando corresponda;
+12. actualizar el estado;
+13. continuar únicamente si el criterio de avance está cumplido.
 
 "Sigue" no significa:
 
@@ -429,6 +654,10 @@ Debe poder responder:
 
 DÓNDE ESTAMOS → QUÉ ESTÁ HECHO → QUÉ FALTA → QUÉ TOCA AHORA → CUÁL ES EL OBJETIVO PRIMARIO
 
+Y, cuando corresponda:
+
+QUÉ SE HA DECIDIDO → QUÉ SE HA VALIDADO → QUÉ NO CONVERGE
+
 ---
 
 14. REGLA DE NO IMPROVISACIÓN
@@ -446,7 +675,9 @@ Determinar si:
 3. debe preguntarse al usuario;
 4. puede posponerse sin bloquear.
 
-Cuando la información desconocida pueda cambiar sustancialmente la interpretación del proyecto, debe preguntarse antes de avanzar.
+Cuando la información desconocida pueda cambiar sustancialmente la interpretación del proyecto, debe ejecutarse CLARIFY y preguntarse antes de avanzar cuando sea necesario.
+
+Cuando la información pueda afectar una decisión técnica relevante, debe ejecutarse ANALYZE.
 
 ---
 
@@ -459,6 +690,10 @@ La conversación no debe ser necesaria para reconstruir el estado del proyecto.
 Las decisiones importantes deben conservarse.
 
 El objetivo primario debe poder reconstruirse desde la documentación persistente.
+
+Los resultados relevantes de CLARIFY, ANALYZE y CONVERGE deben quedar documentados cuando afecten a decisiones, cambios o validaciones importantes.
+
+No es obligatorio registrar cada comprobación trivial.
 
 ---
 
@@ -476,7 +711,11 @@ implementado ≠ validado
 
 probado en desarrollo ≠ funcionando en producción
 
-Un proyecto solo puede considerarse terminado cuando el flujo real haya sido comprobado y los criterios de cierre se hayan cumplido.
+Un proyecto solo puede considerarse terminado cuando:
+
+- el flujo real haya sido comprobado;
+- los criterios de cierre se hayan cumplido;
+- CONVERGE final sea satisfactorio.
 
 ---
 
@@ -493,7 +732,9 @@ Cuando se retome un proyecto después de una interrupción:
 7. comprobar bloqueos;
 8. revisar las decisiones relevantes;
 9. comprobar si existe alguna desviación;
-10. continuar.
+10. ejecutar CLARIFY si existe una ambigüedad crítica;
+11. ejecutar ANALYZE si existe una contradicción o decisión relevante;
+12. continuar.
 
 No comenzar desde la memoria de la conversación.
 
@@ -503,7 +744,11 @@ No comenzar desde la memoria de la conversación.
 
 La IA debe trabajar siempre con esta secuencia:
 
-RECUPERAR → IDENTIFICAR → EJECUTAR → VALIDAR → DOCUMENTAR → ACTUALIZAR → AVANZAR
+RECUPERAR → CLARIFY → IDENTIFICAR → ANALYZE → EJECUTAR → VALIDAR → CONVERGE → DOCUMENTAR → ACTUALIZAR → AVANZAR
+
+No todos los mecanismos requieren una ejecución completa en cada acción.
+
+Pero deben ejecutarse obligatoriamente cuando el contexto lo requiera según las reglas anteriores.
 
 Y siempre respetando:
 
@@ -518,6 +763,12 @@ PLANTILLAS = cómo se estructuran los entregables
 PROTOCOLO = cómo debe comportarse la IA
 
 OBJETIVO PRIMARIO = qué quiere conseguir realmente el usuario
+
+CLARIFY = qué quiere decir realmente el usuario
+
+ANALYZE = si las partes del proyecto son coherentes
+
+CONVERGE = si lo construido corresponde con lo definido y funciona realmente
 
 ---
 
@@ -538,5 +789,12 @@ sin perder el contexto, sin improvisar y sin desviarse innecesariamente.
 Y, sobre todo:
 
 NO DEBE CONFUNDIR EL OBJETIVO DEL USUARIO CON EL MEDIO UTILIZADO PARA CONSEGUIRLO.
+
+NO DEBE CONSTRUIR UNA SOLUCIÓN ANTES DE HABER ENTENDIDO QUÉ SE QUIERE CONSEGUIR.
+
+NO DEBE SEGUIR CONSTRUYENDO CUANDO EXISTE UNA CONTRADICCIÓN CRÍTICA.
+
+NO DEBE CONSIDERAR TERMINADO LO QUE NO CONVERGE CON EL OBJETIVO, LOS REQUISITOS Y LAS EVIDENCIAS.
+
 
 
