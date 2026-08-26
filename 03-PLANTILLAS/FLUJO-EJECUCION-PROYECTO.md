@@ -20,11 +20,133 @@ Cada fase debe seguir este ciclo:
 
 ENTRADA → ANÁLISIS/TRABAJO → ENTREGABLE → VALIDACIÓN → ACTUALIZACIÓN DE ESTADO → AVANCE
 
+Además, cuando corresponda, el flujo utilizará tres mecanismos transversales:
+
+CLARIFY → ANALYZE → CONVERGE
+
+Estos mecanismos no son fases independientes.
+
+Forman parte del proceso de control de calidad del proyecto.
+
 No se debe avanzar a la siguiente fase mientras el criterio de salida de la fase actual no esté cumplido.
 
 Crear un archivo, completar una plantilla o realizar una configuración no significa que el trabajo esté terminado.
 
 Debe existir evidencia suficiente de que el resultado cumple su objetivo.
+
+---
+
+MECANISMOS TRANSVERSALES
+
+CLARIFY
+
+Propósito
+
+Asegurar que se entiende correctamente qué quiere conseguir el usuario antes de diseñar o construir.
+
+Preguntas que debe resolver
+
+- ¿Cuál es el objetivo primario?
+- ¿Qué problema se pretende resolver?
+- ¿Quién utilizará la solución?
+- ¿Cuál es el resultado esperado?
+- ¿Qué está dentro del alcance?
+- ¿Qué está fuera del alcance?
+- ¿Qué información crítica falta?
+- ¿Qué cosas no deben asumirse?
+
+Regla
+
+Si existe una ambigüedad crítica que pueda cambiar el proyecto, se debe resolver antes de continuar.
+
+Resultado
+
+Una definición suficientemente clara del objetivo y alcance inicial.
+
+---
+
+ANALYZE
+
+Propósito
+
+Comprobar que las partes del proyecto son coherentes entre sí.
+
+Debe comprobar:
+
+OBJETIVO → REQUISITOS → SOLUCIÓN → ARQUITECTURA → PLAN → TAREAS
+
+Debe detectar
+
+- contradicciones;
+- requisitos sin solución;
+- tareas innecesarias;
+- dependencias olvidadas;
+- riesgos no considerados;
+- decisiones técnicas injustificadas;
+- desviaciones del objetivo;
+- información desconocida que pueda afectar a decisiones críticas.
+
+Resultado
+
+El proyecto queda en uno de estos estados:
+
+🟢 COHERENTE
+
+Se puede continuar.
+
+🟡 DUDAS
+
+Hay información que debe investigarse o aclararse.
+
+🔴 CONTRADICCIÓN
+
+Debe corregirse antes de continuar.
+
+---
+
+CONVERGE
+
+Propósito
+
+Comprobar que lo construido realmente corresponde con lo definido.
+
+Debe comparar:
+
+LO DEFINIDO
+
+contra
+
+LO IMPLEMENTADO
+
+y posteriormente:
+
+REQUISITOS → PRUEBAS → EVIDENCIAS
+
+Debe detectar
+
+- requisitos incumplidos;
+- funcionalidades ausentes;
+- diferencias entre diseño e implementación;
+- errores;
+- decisiones que hayan cambiado sin registrarse;
+- partes construidas que no aportan al objetivo;
+- problemas descubiertos durante las pruebas.
+
+Resultado
+
+🟢 CONVERGE
+
+La implementación corresponde con lo definido y las evidencias son suficientes.
+
+🟡 AJUSTAR
+
+Existen diferencias menores que deben corregirse.
+
+🔴 NO CONVERGE
+
+La implementación no corresponde suficientemente con el proyecto definido.
+
+No se puede cerrar el proyecto.
 
 ---
 
@@ -37,6 +159,9 @@ Durante la ejecución:
 - Este documento determina el flujo general y los criterios de las fases.
 - Las plantillas determinan la estructura de los entregables.
 - El protocolo de ejecución determina cómo debe actuar la IA.
+- "DECISIONES.md" conserva las decisiones importantes.
+- "MEJORAS-SISTEMA.md" conserva la evolución del sistema.
+- "BENCHMARK-SISTEMA.md" conserva las comparaciones y aprendizajes externos.
 
 Si existe una contradicción, la IA debe detenerse y resolverla antes de continuar.
 
@@ -60,15 +185,30 @@ Puede existir:
 - proyecto existente;
 - automatización existente.
 
+CLARIFY
+
+Antes de considerar comprendida la petición, ejecutar CLARIFY.
+
+Determinar:
+
+- objetivo primario;
+- problema;
+- usuario;
+- resultado esperado;
+- alcance inicial;
+- información desconocida;
+- supuestos que no deben realizarse.
+
 Acciones
 
 1. Leer la petición.
-2. Identificar el objetivo.
-3. Identificar el problema.
-4. Identificar al usuario o usuarios.
-5. Identificar el resultado esperado.
-6. Detectar información desconocida.
-7. Determinar si existe información suficiente para comenzar el análisis.
+2. Ejecutar CLARIFY.
+3. Identificar el objetivo.
+4. Identificar el problema.
+5. Identificar al usuario o usuarios.
+6. Identificar el resultado esperado.
+7. Detectar información desconocida.
+8. Determinar si existe información suficiente para comenzar el análisis.
 
 Entregable
 
@@ -81,7 +221,8 @@ Debe quedar claro:
 - qué se quiere conseguir;
 - qué problema se pretende resolver;
 - para quién;
-- cuál es el resultado esperado.
+- cuál es el resultado esperado;
+- qué información crítica falta.
 
 Para avanzar
 
@@ -100,6 +241,14 @@ Determinar qué necesita realmente el proyecto.
 Entrada
 
 Resultado validado de Fase 1.
+
+ANALYZE
+
+Realizar un primer ANALYZE para comprobar que:
+
+objetivo → problema → usuarios → resultado esperado
+
+son coherentes.
 
 Acciones
 
@@ -130,6 +279,8 @@ Para avanzar
 No tomar decisiones críticas basadas en información desconocida.
 
 Si falta información crítica, preguntar.
+
+Si ANALYZE detecta una contradicción, resolverla antes de continuar.
 
 ---
 
@@ -200,6 +351,14 @@ Completar la plantilla de proyecto con:
 - criterios de éxito;
 - validación.
 
+ANALYZE
+
+Antes de cerrar la definición, comprobar:
+
+objetivo → alcance → requisitos → criterios de éxito
+
+y detectar cualquier contradicción.
+
 Entregable
 
 "definicion.md"
@@ -219,6 +378,8 @@ Debe quedar definido como mínimo:
 Para avanzar
 
 No comenzar el diseño técnico si el objetivo, alcance o requisitos críticos siguen siendo ambiguos.
+
+No avanzar si ANALYZE detecta una contradicción crítica.
 
 ---
 
@@ -339,6 +500,16 @@ Definir:
 - dependencias externas;
 - recuperación ante errores.
 
+ANALYZE
+
+Comprobar que:
+
+REQUISITOS → ARQUITECTURA
+
+es coherente.
+
+Todo requisito crítico debe tener una solución arquitectónica identificada.
+
 Entregable
 
 "arquitectura.md"
@@ -357,6 +528,8 @@ La arquitectura debe:
 Para avanzar
 
 No construir componentes cuya arquitectura crítica todavía no esté resuelta.
+
+No avanzar si ANALYZE detecta incompatibilidades críticas.
 
 ---
 
@@ -380,6 +553,14 @@ Acciones
 6. Identificar entregables.
 7. Establecer el siguiente paso concreto.
 8. Preparar el estado inicial de ejecución.
+
+ANALYZE
+
+Comprobar que:
+
+ARQUITECTURA → PLAN → TAREAS
+
+es ejecutable y no contiene tareas sin propósito.
 
 Entregable
 
@@ -433,6 +614,21 @@ Regla
 Trabajar siguiendo el paso actual registrado en "ESTADO.md".
 
 No saltar a tareas posteriores por iniciativa propia.
+
+ANALYZE DURANTE CAMBIOS IMPORTANTES
+
+Cuando durante la construcción aparezca una decisión que pueda afectar:
+
+- objetivo;
+- requisitos;
+- arquitectura;
+- seguridad;
+- costes;
+- alcance;
+
+se debe ejecutar ANALYZE antes de adoptar el cambio.
+
+Si el cambio modifica el proyecto, debe registrarse en "DECISIONES.md" y actualizar los documentos afectados.
 
 Entregable
 
@@ -505,6 +701,18 @@ Entrada
 
 Sistema probado.
 
+CONVERGE
+
+Ejecutar CONVERGE.
+
+Comparar:
+
+DEFINICIÓN → REQUISITOS → ARQUITECTURA → IMPLEMENTACIÓN → PRUEBAS
+
+Comprobar también:
+
+REQUISITOS → PRUEBAS → EVIDENCIAS
+
 Acciones
 
 Comprobar:
@@ -531,9 +739,25 @@ Validación
 
 Debe existir evidencia suficiente de que el sistema cumple el objetivo.
 
+CONVERGE debe producir:
+
+🟢 CONVERGE
+
+o
+
+🟡 AJUSTAR
+
+o
+
+🔴 NO CONVERGE
+
 Para avanzar
 
-El proyecto debe estar preparado para despliegue real.
+Si CONVERGE produce 🟢, el proyecto puede pasar a despliegue.
+
+Si produce 🟡, corregir las diferencias y volver a validar.
+
+Si produce 🔴, identificar la causa y retroceder a la fase correspondiente.
 
 ---
 
@@ -674,6 +898,14 @@ Objetivo
 
 Determinar que el proyecto ha cumplido su objetivo y puede considerarse terminado.
 
+CONVERGE FINAL
+
+Ejecutar una última comprobación:
+
+OBJETIVO → REQUISITOS → IMPLEMENTACIÓN → PRUEBAS → PRODUCCIÓN → EVIDENCIAS
+
+El proyecto no puede marcarse como terminado si existe una diferencia crítica.
+
 Comprobaciones finales
 
 - objetivo cumplido;
@@ -686,7 +918,8 @@ Comprobaciones finales
 - evidencias conservadas;
 - documentación actualizada;
 - decisiones importantes registradas;
-- incidencias críticas resueltas o aceptadas explícitamente.
+- incidencias críticas resueltas o aceptadas explícitamente;
+- CONVERGE final satisfactorio.
 
 Entregable
 
@@ -714,7 +947,7 @@ La IA debe:
 
 1. Leer el protocolo general antes de ejecutar.
 2. Leer el estado actual del proyecto.
-3. Identificar el paso actual.
+3. Identificar la fase y paso actuales.
 4. Consultar únicamente la documentación necesaria para ese paso.
 5. Consultar las plantillas correspondientes.
 6. Consultar los módulos necesarios.
@@ -722,20 +955,26 @@ La IA debe:
 8. Mantener separada la información general de la información específica del proyecto.
 9. No inventar información desconocida.
 10. Preguntar cuando falten datos críticos.
-11. Ejecutar únicamente el trabajo correspondiente al paso actual.
-12. No cambiar de fase por iniciativa propia.
-13. No confundir una mejora con un bloqueo.
-14. Registrar los bloqueos reales.
-15. Registrar las decisiones importantes.
-16. Crear o actualizar el entregable correspondiente.
-17. Validar el resultado antes de avanzar.
-18. Actualizar "ESTADO.md".
-19. Mantener actualizado el roadmap cuando cambie el plan.
-20. No considerar terminado un trabajo únicamente porque exista un archivo.
-21. No considerar terminado un sistema que no haya sido probado.
-22. No considerar terminado el proyecto hasta comprobar su funcionamiento real.
-23. Si detecta una necesidad fuera del paso actual que no sea un bloqueo, registrarla y continuar.
-24. Si detecta una contradicción entre documentos, detenerse y resolverla antes de continuar.
+11. Ejecutar CLARIFY cuando exista una ambigüedad crítica.
+12. Ejecutar ANALYZE cuando corresponda.
+13. Ejecutar CONVERGE antes de considerar terminada la solución.
+14. Ejecutar únicamente el trabajo correspondiente al paso actual.
+15. No cambiar de fase por iniciativa propia.
+16. No confundir una mejora con un bloqueo.
+17. Registrar los bloqueos reales.
+18. Registrar las decisiones importantes.
+19. Crear o actualizar el entregable correspondiente.
+20. Validar el resultado antes de avanzar.
+21. Actualizar "ESTADO.md".
+22. Mantener actualizado el roadmap cuando cambie el plan.
+23. No considerar terminado un trabajo únicamente porque exista un archivo.
+24. No considerar terminado un sistema que no haya sido probado.
+25. No considerar terminado el proyecto hasta comprobar su funcionamiento real.
+26. No considerar terminado el proyecto si CONVERGE no es satisfactorio.
+27. Si detecta una necesidad fuera del paso actual que no sea un bloqueo, registrarla y continuar.
+28. Si detecta una contradicción entre documentos, detenerse y resolverla antes de continuar.
+29. Si una decisión cambia el objetivo, alcance, requisitos o arquitectura, registrar el cambio.
+30. No introducir metodologías externas completas; incorporar únicamente mecanismos que hayan sido evaluados y aprobados.
 
 ---
 
@@ -750,10 +989,14 @@ la IA debe:
 1. recuperar el estado persistente;
 2. identificar la fase y paso actuales;
 3. comprobar el entregable pendiente;
-4. ejecutar el siguiente trabajo correspondiente al paso actual;
-5. validar;
-6. actualizar el estado;
-7. continuar únicamente si el criterio de avance está cumplido.
+4. comprobar si existe alguna decisión pendiente relevante;
+5. comprobar si existe algún bloqueo;
+6. ejecutar CLARIFY si existe una ambigüedad crítica;
+7. ejecutar ANALYZE cuando corresponda;
+8. ejecutar el siguiente trabajo correspondiente al paso actual;
+9. validar;
+10. actualizar el estado;
+11. continuar únicamente si el criterio de avance está cumplido.
 
 "Sigue" no autoriza a cambiar de fase, introducir una nueva metodología ni iniciar trabajo no relacionado con el paso actual.
 
@@ -776,6 +1019,23 @@ Una mejora pendiente no permite cambiar de fase ni desviarse del plan.
 
 ---
 
+REGLA DE CAMBIO
+
+Si durante la ejecución aparece una mejora o cambio que pueda afectar al proyecto:
+
+1. identificar el cambio;
+2. determinar su impacto;
+3. ejecutar ANALYZE;
+4. decidir si debe incorporarse;
+5. registrar la decisión;
+6. actualizar los documentos afectados;
+7. actualizar el roadmap si corresponde;
+8. continuar.
+
+No se incorporarán cambios importantes de forma silenciosa.
+
+---
+
 REGLA DE RETROCESO
 
 No se retrocede de fase salvo que exista un bloqueo o una validación que demuestre que una decisión anterior impide continuar.
@@ -793,10 +1053,8 @@ Si es necesario retroceder:
 
 PRINCIPIO FINAL
 
-Pensar → definir → diseñar → planificar → construir → probar → validar → desplegar → comprobar en producción → monitorizar → cerrar.
+Pensar → aclarar → analizar → definir → diseñar → planificar → construir → probar → converger → validar → desplegar → comprobar en producción → monitorizar → cerrar.
 
-El objetivo final no es producir documentación.
+El objetivo final 
 
-El objetivo final es:
 
-CONSTRUIR ALGO QUE FUNCIONE REALMENTE.
