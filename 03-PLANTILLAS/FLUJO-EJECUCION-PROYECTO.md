@@ -11,6 +11,7 @@ No sustituye:
 - "01-UNIVERSAL/PROTOCOLO-EJECUCION.md" → define el comportamiento operativo de la IA.
 - "00-CONTROL/ESTADO.md" → define dónde está actualmente el proyecto.
 - "03-PLANTILLAS/ROADMAP.md" → define el plan específico del proyecto.
+- "01-UNIVERSAL/ESTUDIO-PREVIO-VIABILIDAD.md" → define el estudio previo universal cuando el proyecto lo requiera.
 
 ---
 
@@ -20,7 +21,7 @@ Cada fase debe seguir este ciclo:
 
 ENTRADA → ANÁLISIS/TRABAJO → ENTREGABLE → VALIDACIÓN → ACTUALIZACIÓN DE ESTADO → AVANCE
 
-Además, cuando corresponda, el flujo utilizará tres mecanismos transversales:
+Además, cuando corresponda, el flujo utilizará mecanismos transversales:
 
 CLARIFY → ANALYZE → CONVERGE
 
@@ -75,7 +76,7 @@ Debe comprobar:
 
 OBJETIVO → REQUISITOS → SOLUCIÓN → ARQUITECTURA → PLAN → TAREAS
 
-Debe detectar
+Debe detectar:
 
 - contradicciones;
 - requisitos sin solución;
@@ -84,7 +85,8 @@ Debe detectar
 - riesgos no considerados;
 - decisiones técnicas injustificadas;
 - desviaciones del objetivo;
-- información desconocida que pueda afectar a decisiones críticas.
+- información desconocida que pueda afectar a decisiones críticas;
+- problemas de viabilidad.
 
 Resultado
 
@@ -122,7 +124,7 @@ y posteriormente:
 
 REQUISITOS → PRUEBAS → EVIDENCIAS
 
-Debe detectar
+Debe detectar:
 
 - requisitos incumplidos;
 - funcionalidades ausentes;
@@ -159,6 +161,7 @@ Durante la ejecución:
 - Este documento determina el flujo general y los criterios de las fases.
 - Las plantillas determinan la estructura de los entregables.
 - El protocolo de ejecución determina cómo debe actuar la IA.
+- "ESTUDIO-PREVIO-VIABILIDAD.md" determina cómo realizar el estudio previo de viabilidad cuando corresponda.
 - "DECISIONES.md" conserva las decisiones importantes.
 - "MEJORAS-SISTEMA.md" conserva la evolución del sistema.
 - "BENCHMARK-SISTEMA.md" conserva las comparaciones y aprendizajes externos.
@@ -264,7 +267,9 @@ Analizar:
 - restricciones;
 - riesgos;
 - costes relevantes;
-- información desconocida.
+- información desconocida;
+- incertidumbres críticas;
+- necesidad de realizar estudio previo de viabilidad.
 
 Entregable
 
@@ -272,19 +277,184 @@ Análisis inicial validado.
 
 Validación
 
-Debe existir una comprensión suficiente del problema y de sus restricciones para tomar decisiones de definición.
+Debe existir una comprensión suficiente del problema y de sus restricciones para determinar qué investigación y definición son necesarias.
 
 Para avanzar
 
 No tomar decisiones críticas basadas en información desconocida.
 
-Si falta información crítica, preguntar.
+Si falta información crítica, preguntar o determinar si puede investigarse.
 
 Si ANALYZE detecta una contradicción, resolverla antes de continuar.
 
+Si por la naturaleza del proyecto existe incertidumbre significativa sobre demanda, mercado, competencia, monetización, oportunidad o viabilidad, pasar a Fase 3.
+
+Si el proyecto no requiere un estudio previo de viabilidad, debe registrarse el motivo y pasar a Fase 4.
+
 ---
 
-FASE 3 — CLASIFICACIÓN
+FASE 3 — ESTUDIO PREVIO DE VIABILIDAD
+
+Objetivo
+
+Determinar, antes de comprometer recursos importantes en la construcción, si existe una oportunidad suficientemente razonable y cómo podría mejorarse la viabilidad de la propuesta.
+
+Esta fase es especialmente importante para proyectos empresariales, productos, servicios, webs comerciales, aplicaciones, SaaS, plataformas, automatizaciones comerciales, sistemas de IA y cualquier proyecto cuya construcción pueda implicar una inversión significativa.
+
+Entrada
+
+Análisis inicial validado de Fase 2.
+
+Acciones
+
+Consultar:
+
+"01-UNIVERSAL/ESTUDIO-PREVIO-VIABILIDAD.md"
+
+Realizar un estudio exhaustivo y proporcional al proyecto.
+
+Analizar, cuando corresponda:
+
+- problema;
+- usuario;
+- demanda;
+- mercado;
+- tendencias;
+- competencia directa;
+- competencia indirecta;
+- sustitutos;
+- soluciones existentes;
+- diferenciación;
+- propuesta de valor;
+- modelos de negocio;
+- monetización;
+- costes;
+- adquisición de usuarios;
+- viabilidad técnica;
+- viabilidad económica;
+- riesgos;
+- regulación;
+- escalabilidad;
+- barreras;
+- dependencias externas.
+
+Búsqueda activa de alternativas
+
+Si la propuesta inicial presenta una viabilidad débil o incierta, la IA debe buscar activamente alternativas que puedan mejorarla.
+
+Debe estudiar cuando sea razonable:
+
+- otros públicos;
+- otros nichos;
+- otros problemas;
+- otro posicionamiento;
+- otra propuesta de valor;
+- B2B;
+- B2C;
+- B2B2C;
+- suscripción;
+- pago por uso;
+- comisión;
+- generación de leads;
+- afiliación;
+- marketplace;
+- publicidad;
+- licencias;
+- servicio profesional;
+- reducción del alcance;
+- MVP alternativo;
+- automatización parcial;
+- integración con servicios existentes;
+- pivot parcial;
+- pivot completo.
+
+No debe recomendar abandonar una idea simplemente porque su primera formulación sea débil si existe una alternativa razonable que pueda aumentar su viabilidad.
+
+MVP
+
+Determinar cuál es la prueba más pequeña, rápida y económica que permita validar las hipótesis críticas.
+
+Entregable
+
+"estudio-viabilidad.md"
+
+o el entregable específico definido por la plantilla universal correspondiente.
+
+Validación
+
+El estudio debe contener:
+
+- evidencia;
+- hipótesis;
+- datos;
+- fuentes cuando se utilicen;
+- análisis;
+- alternativas;
+- riesgos;
+- valoración de viabilidad;
+- recomendación.
+
+Debe diferenciarse claramente entre:
+
+- hechos comprobados;
+- estimaciones;
+- hipótesis;
+- opiniones;
+- incertidumbres.
+
+Resultado
+
+La IA debe presentar una recomendación:
+
+🟢 CONTINUAR
+
+La oportunidad presenta una viabilidad razonable.
+
+🟠 PIVOTAR
+
+La propuesta original presenta problemas, pero existe una alternativa potencialmente mejor.
+
+🟡 VALIDAR MÁS
+
+La información disponible todavía no permite una conclusión suficientemente sólida.
+
+🔴 NO RECOMENDADO
+
+La evidencia disponible indica una relación riesgo/beneficio desfavorable.
+
+Regla fundamental
+
+La IA informa y recomienda.
+
+La IA NO decide unilateralmente si el proyecto continúa.
+
+La decisión final corresponde al usuario.
+
+El usuario puede decidir:
+
+- continuar;
+- continuar con cambios;
+- pivotar;
+- investigar más;
+- detener.
+
+Para avanzar
+
+Debe existir una decisión explícita del usuario cuando el estudio pueda afectar a la decisión de construir.
+
+Si el usuario decide continuar, pasar a Fase 4.
+
+Si decide pivotar y el cambio es sustancial, actualizar el proyecto y repetir el estudio cuando corresponda.
+
+Si decide investigar más, permanecer en esta fase hasta obtener la información necesaria.
+
+Si decide detener, registrar la decisión y cerrar correctamente el proyecto.
+
+Si el estudio no era necesario, esta fase se considera omitida y debe quedar registrado el motivo.
+
+---
+
+FASE 4 — CLASIFICACIÓN
 
 Objetivo
 
@@ -292,7 +462,7 @@ Determinar qué tipo o tipos de proyecto se están construyendo.
 
 Entrada
 
-Análisis inicial.
+Fases anteriores validadas y decisión de continuar cuando corresponda.
 
 Acciones
 
@@ -302,6 +472,7 @@ Acciones
 4. Consultar fixtures relacionados cuando sean útiles.
 5. Utilizar los fixtures únicamente como referencia.
 6. No copiar datos ficticios al proyecto real.
+7. Comprobar que la clasificación sigue siendo coherente con el resultado del estudio previo.
 
 Entregable
 
@@ -319,15 +490,15 @@ Si falta una categoría reutilizable, registrarla como necesidad antes de contin
 
 ---
 
-FASE 4 — DEFINICIÓN
+FASE 5 — DEFINICIÓN
 
 Objetivo
 
-Convertir la idea y el análisis en una definición concreta y verificable.
+Convertir la idea, el análisis y, cuando corresponda, el estudio de viabilidad en una definición concreta y verificable.
 
 Entrada
 
-Fases 1–3 validadas.
+Fases 1–4 validadas.
 
 Acciones
 
@@ -349,7 +520,9 @@ Completar la plantilla de proyecto con:
 - decisiones;
 - roadmap;
 - criterios de éxito;
-- validación.
+- validación;
+- hipótesis críticas cuando corresponda;
+- resultados relevantes del estudio previo cuando corresponda.
 
 ANALYZE
 
@@ -357,7 +530,9 @@ Antes de cerrar la definición, comprobar:
 
 objetivo → alcance → requisitos → criterios de éxito
 
-y detectar cualquier contradicción.
+y comprobar que la definición sigue siendo coherente con:
+
+problema → oportunidad → propuesta → viabilidad.
 
 Entregable
 
@@ -383,7 +558,7 @@ No avanzar si ANALYZE detecta una contradicción crítica.
 
 ---
 
-FASE 5 — SELECCIÓN DE MÓDULOS
+FASE 6 — SELECCIÓN DE MÓDULOS
 
 Objetivo
 
@@ -416,7 +591,7 @@ No deben quedar capacidades críticas sin resolver o identificadas como pendient
 
 ---
 
-FASE 6 — REQUISITOS
+FASE 7 — REQUISITOS
 
 Objetivo
 
@@ -472,7 +647,7 @@ No pasar a arquitectura con requisitos críticos ambiguos.
 
 ---
 
-FASE 7 — ARQUITECTURA
+FASE 8 — ARQUITECTURA
 
 Objetivo
 
@@ -533,7 +708,7 @@ No avanzar si ANALYZE detecta incompatibilidades críticas.
 
 ---
 
-FASE 8 — PLANIFICACIÓN
+FASE 9 — PLANIFICACIÓN
 
 Objetivo
 
@@ -553,6 +728,8 @@ Acciones
 6. Identificar entregables.
 7. Establecer el siguiente paso concreto.
 8. Preparar el estado inicial de ejecución.
+9. Incorporar las hipótesis críticas del estudio previo cuando corresponda.
+10. Incorporar las pruebas necesarias para validar dichas hipótesis.
 
 ANALYZE
 
@@ -586,7 +763,7 @@ Debe existir un primer paso ejecutable sin necesidad de improvisar.
 
 ---
 
-FASE 9 — CONSTRUCCIÓN
+FASE 10 — CONSTRUCCIÓN
 
 Objetivo
 
@@ -644,11 +821,11 @@ Debe existir una versión funcional suficiente para realizar pruebas.
 
 ---
 
-FASE 10 — PRUEBAS
+FASE 11 — PRUEBAS
 
 Objetivo
 
-Comprobar que el sistema funciona técnicamente.
+Comprobar que el sistema funciona técnicamente y que las hipótesis críticas que requieran prueba pueden ser evaluadas.
 
 Entrada
 
@@ -664,7 +841,8 @@ Realizar las pruebas necesarias:
 - seguridad;
 - rendimiento cuando sea necesario;
 - compatibilidad;
-- regresión.
+- regresión;
+- hipótesis críticas del proyecto cuando corresponda.
 
 Registrar:
 
@@ -691,7 +869,7 @@ El sistema debe superar las pruebas necesarias para poder validarse como soluci�
 
 ---
 
-FASE 11 — VALIDACIÓN
+FASE 12 — VALIDACIÓN
 
 Objetivo
 
@@ -713,6 +891,10 @@ Comprobar también:
 
 REQUISITOS → PRUEBAS → EVIDENCIAS
 
+Y cuando el proyecto tenga hipótesis de negocio:
+
+HIPÓTESIS → EVIDENCIAS → RESULTADO
+
 Acciones
 
 Comprobar:
@@ -725,7 +907,9 @@ Comprobar:
 6. experiencia del usuario;
 7. costes;
 8. estabilidad;
-9. criterios de éxito.
+9. criterios de éxito;
+10. hipótesis críticas;
+11. resultados obtenidos frente a las expectativas iniciales.
 
 Regla
 
@@ -761,7 +945,7 @@ Si produce 🔴, identificar la causa y retroceder a la fase correspondiente.
 
 ---
 
-FASE 12 — DESPLIEGUE
+FASE 13 — DESPLIEGUE
 
 Objetivo
 
@@ -810,7 +994,7 @@ El despliegue debe estar realizado y preparado para operaciones reales controlad
 
 ---
 
-FASE 13 — VALIDACIÓN EN PRODUCCIÓN
+FASE 14 — VALIDACIÓN EN PRODUCCIÓN
 
 Objetivo
 
@@ -847,7 +1031,7 @@ No considerar el proyecto terminado si solamente funciona en pruebas o entorno d
 
 ---
 
-FASE 14 — MONITORIZACIÓN
+FASE 15 — MONITORIZACIÓN
 
 Objetivo
 
@@ -873,188 +1057,6 @@ Monitorizar, cuando corresponda:
 Definir también:
 
 - qué se vigila;
-- cómo se detecta;
-- qué ocurre ante un error;
-- quién debe actuar;
-- cómo se recupera el servicio.
-
-Entregable
-
-Sistema monitorizado y procedimiento básico de actuación.
-
-Validación
-
-Debe existir una forma realista de detectar los problemas relevantes.
-
-Para avanzar
-
-La operación debe ser suficientemente controlable para considerar estable el proyecto.
-
----
-
-FASE 15 — CIERRE
-
-Objetivo
-
-Determinar que el proyecto ha cumplido su objetivo y puede considerarse terminado.
-
-CONVERGE FINAL
-
-Ejecutar una última comprobación:
-
-OBJETIVO → REQUISITOS → IMPLEMENTACIÓN → PRUEBAS → PRODUCCIÓN → EVIDENCIAS
-
-El proyecto no puede marcarse como terminado si existe una diferencia crítica.
-
-Comprobaciones finales
-
-- objetivo cumplido;
-- requisitos validados;
-- pruebas superadas;
-- seguridad revisada;
-- sistema desplegado;
-- funcionamiento real comprobado;
-- monitorización disponible;
-- evidencias conservadas;
-- documentación actualizada;
-- decisiones importantes registradas;
-- incidencias críticas resueltas o aceptadas explícitamente;
-- CONVERGE final satisfactorio.
-
-Entregable
-
-Proyecto cerrado y documentación final actualizada.
-
-Estado final
-
-El proyecto solo puede marcarse como:
-
-TERMINADO
-
-cuando los criterios anteriores estén cumplidos.
-
-El "ESTADO.md" debe reflejar:
-
-Estado: Terminado
-
-Progreso: 100 %
-
----
-
-REGLAS DE EJECUCIÓN PARA LA IA
-
-La IA debe:
-
-1. Leer el protocolo general antes de ejecutar.
-2. Leer el estado actual del proyecto.
-3. Identificar la fase y paso actuales.
-4. Consultar únicamente la documentación necesaria para ese paso.
-5. Consultar las plantillas correspondientes.
-6. Consultar los módulos necesarios.
-7. Consultar el tipo de proyecto cuando corresponda.
-8. Mantener separada la información general de la información específica del proyecto.
-9. No inventar información desconocida.
-10. Preguntar cuando falten datos críticos.
-11. Ejecutar CLARIFY cuando exista una ambigüedad crítica.
-12. Ejecutar ANALYZE cuando corresponda.
-13. Ejecutar CONVERGE antes de considerar terminada la solución.
-14. Ejecutar únicamente el trabajo correspondiente al paso actual.
-15. No cambiar de fase por iniciativa propia.
-16. No confundir una mejora con un bloqueo.
-17. Registrar los bloqueos reales.
-18. Registrar las decisiones importantes.
-19. Crear o actualizar el entregable correspondiente.
-20. Validar el resultado antes de avanzar.
-21. Actualizar "ESTADO.md".
-22. Mantener actualizado el roadmap cuando cambie el plan.
-23. No considerar terminado un trabajo únicamente porque exista un archivo.
-24. No considerar terminado un sistema que no haya sido probado.
-25. No considerar terminado el proyecto hasta comprobar su funcionamiento real.
-26. No considerar terminado el proyecto si CONVERGE no es satisfactorio.
-27. Si detecta una necesidad fuera del paso actual que no sea un bloqueo, registrarla y continuar.
-28. Si detecta una contradicción entre documentos, detenerse y resolverla antes de continuar.
-29. Si una decisión cambia el objetivo, alcance, requisitos o arquitectura, registrar el cambio.
-30. No introducir metodologías externas completas; incorporar únicamente mecanismos que hayan sido evaluados y aprobados.
-
----
-
-REGLA PARA "SIGUE"
-
-Cuando el usuario indique:
-
-"Sigue"
-
-la IA debe:
-
-1. recuperar el estado persistente;
-2. identificar la fase y paso actuales;
-3. comprobar el entregable pendiente;
-4. comprobar si existe alguna decisión pendiente relevante;
-5. comprobar si existe algún bloqueo;
-6. ejecutar CLARIFY si existe una ambigüedad crítica;
-7. ejecutar ANALYZE cuando corresponda;
-8. ejecutar el siguiente trabajo correspondiente al paso actual;
-9. validar;
-10. actualizar el estado;
-11. continuar únicamente si el criterio de avance está cumplido.
-
-"Sigue" no autoriza a cambiar de fase, introducir una nueva metodología ni iniciar trabajo no relacionado con el paso actual.
-
----
-
-REGLA DE BLOQUEO
-
-Se considera bloqueo únicamente aquello que impide completar el paso actual.
-
-No son bloqueos por sí mismos:
-
-- ideas nuevas;
-- mejoras;
-- optimizaciones;
-- alternativas tecnológicas;
-- refactorizaciones;
-- documentación no necesaria para el paso actual.
-
-Una mejora pendiente no permite cambiar de fase ni desviarse del plan.
-
----
-
-REGLA DE CAMBIO
-
-Si durante la ejecución aparece una mejora o cambio que pueda afectar al proyecto:
-
-1. identificar el cambio;
-2. determinar su impacto;
-3. ejecutar ANALYZE;
-4. decidir si debe incorporarse;
-5. registrar la decisión;
-6. actualizar los documentos afectados;
-7. actualizar el roadmap si corresponde;
-8. continuar.
-
-No se incorporarán cambios importantes de forma silenciosa.
-
----
-
-REGLA DE RETROCESO
-
-No se retrocede de fase salvo que exista un bloqueo o una validación que demuestre que una decisión anterior impide continuar.
-
-Si es necesario retroceder:
-
-1. identificar la causa;
-2. documentarla;
-3. actualizar "ESTADO.md";
-4. indicar qué fase debe revisarse;
-5. resolver el problema;
-6. volver al flujo normal.
-
----
-
-PRINCIPIO FINAL
-
-Pensar → aclarar → analizar → definir → diseñar → planificar → construir → probar → converger → validar → desplegar → comprobar en producción → monitorizar → cerrar.
-
-El objetivo final 
+- cómo
 
 
