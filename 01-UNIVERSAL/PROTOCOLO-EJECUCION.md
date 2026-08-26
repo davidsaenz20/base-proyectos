@@ -68,6 +68,8 @@ Determina:
 
 No determina el estado actual.
 
+El ROADMAP constituye la referencia para determinar qué trabajo estaba previsto y qué tareas pueden utilizarse para calcular el progreso.
+
 ---
 
 1.3 FLUJO DE EJECUCIÓN
@@ -129,6 +131,8 @@ Debe consultarse únicamente la documentación necesaria para el paso actual.
 
 La IA no debe utilizar la memoria de la conversación como sustituto de la documentación persistente cuando la información pueda recuperarse del proyecto.
 
+La memoria conversacional puede servir como apoyo contextual, pero la documentación persistente constituye la fuente de verdad para continuar un proyecto.
+
 ---
 
 3. IDENTIFICAR EL ESTADO
@@ -175,7 +179,7 @@ Ejemplo
 
 Usuario:
 
-«"Quiero una automatización de reservas para una peluquería."»
+«Quiero una automatización de reservas para una peluquería.»
 
 Interpretación correcta:
 
@@ -187,7 +191,7 @@ Interpretación correcta:
 
 Interpretación incorrecta:
 
-«"Crear una web para una peluquería."»
+«Crear una web para una peluquería.»
 
 La web podría formar parte de la solución, pero no puede convertirse en el objetivo principal sin que el usuario lo haya solicitado o confirmado.
 
@@ -273,6 +277,92 @@ Debe utilizarse la documentación del proyecto que corresponda.
 
 ---
 
+3.4 GESTIÓN DE APORTACIONES DEL USUARIO
+
+Durante cualquier proyecto el usuario puede aportar:
+
+- nueva información;
+- nuevas ideas;
+- requisitos;
+- ampliaciones;
+- correcciones;
+- cambios;
+- mejoras;
+- restricciones;
+- decisiones.
+
+Estas aportaciones no deben perderse ni incorporarse silenciosamente.
+
+Flujo obligatorio
+
+APORTACIÓN
+
+↓
+
+CLASIFICACIÓN
+
+↓
+
+ANÁLISIS
+
+↓
+
+DECISIÓN
+
+↓
+
+REGISTRO
+
+↓
+
+ACTUALIZACIÓN DEL PROYECTO
+
+Clasificación
+
+Toda aportación debe clasificarse como una de las siguientes categorías cuando corresponda:
+
+- información adicional;
+- requisito;
+- ampliación;
+- mejora;
+- idea futura;
+- cambio de alcance;
+- cambio de objetivo;
+- bloqueo;
+- decisión.
+
+Regla
+
+Una aportación que no cambie sustancialmente el proyecto puede incorporarse al trabajo correspondiente.
+
+Una aportación que pueda modificar:
+
+- objetivo;
+- alcance;
+- arquitectura;
+- costes;
+- riesgos;
+- resultado esperado;
+- funcionamiento final;
+
+debe pasar por ANALYZE antes de modificar el proyecto.
+
+Si cambia sustancialmente el objetivo primario, debe ejecutarse CLARIFY y solicitar confirmación del usuario cuando sea necesario.
+
+Principio
+
+Una nueva aportación del usuario no significa automáticamente rehacer el trabajo anterior.
+
+Primero debe determinarse:
+
+- qué cambia;
+- qué no cambia;
+- qué trabajo existente sigue siendo válido;
+- qué trabajo debe modificarse;
+- qué trabajo debe añadirse.
+
+---
+
 4. IDENTIFICAR EL PASO ACTUAL
 
 Debe existir una única acción principal en curso.
@@ -296,7 +386,8 @@ La IA debe:
 5. producir el entregable correspondiente;
 6. comprobar el resultado;
 7. registrar las decisiones relevantes;
-8. ejecutar ANALYZE cuando el trabajo implique decisiones relevantes.
+8. ejecutar ANALYZE cuando el trabajo implique decisiones relevantes;
+9. registrar cualquier nueva aportación relevante del usuario.
 
 No debe introducir una nueva metodología durante la ejecución sin justificarla.
 
@@ -314,7 +405,15 @@ OBJETIVO → PROBLEMA → REQUISITOS → SOLUCIÓN → ARQUITECTURA → PLAN →
 
 No es necesario realizar un análisis exhaustivo para cada acción pequeña.
 
-Debe realizarse cuando exista una decisión relevante, un cambio, una contradicción, una nueva información o una desviación potencial.
+Debe realizarse cuando exista:
+
+- una decisión relevante;
+- un cambio;
+- una contradicción;
+- nueva información;
+- una aportación del usuario;
+- una desviación potencial;
+- una modificación del alcance.
 
 ANALYZE debe detectar
 
@@ -491,9 +590,46 @@ Cuando un paso termine:
 4. registrar bloqueos si existen;
 5. comprobar que el objetivo primario permanece intacto;
 6. actualizar "00-CONTROL/ESTADO.md";
-7. establecer el siguiente paso únicamente cuando corresponda.
+7. actualizar las tareas correspondientes cuando proceda;
+8. actualizar el progreso únicamente si puede calcularse objetivamente;
+9. establecer el siguiente paso únicamente cuando corresponda.
 
 El estado debe reflejar la situación real del proyecto.
+
+---
+
+7.1 PROGRESO OBJETIVO
+
+La IA no debe inventar porcentajes de ejecución.
+
+El progreso general debe proceder del estado real de las tareas registradas en el ROADMAP o en el sistema de tareas del proyecto.
+
+Si todas las tareas tienen el mismo peso
+
+Progreso = tareas completadas / tareas totales × 100
+
+Si las tareas tienen diferente peso
+
+Progreso = peso completado / peso total × 100
+
+Reglas
+
+El porcentaje debe:
+
+1. poder justificarse;
+2. proceder del trabajo registrado;
+3. corresponder al estado real;
+4. poder reconstruirse;
+5. actualizarse cuando cambie el estado;
+6. no aumentar simplemente porque haya conversación;
+7. no aumentar simplemente porque se haya generado documentación;
+8. no utilizar estimaciones subjetivas de la IA.
+
+Si no existen suficientes datos:
+
+Progreso general: No calculable
+
+Nunca se debe inventar un porcentaje.
 
 ---
 
@@ -576,7 +712,8 @@ Si es necesario modificarlo:
 4. actualizar el roadmap;
 5. actualizar "ESTADO.md";
 6. comprobar que el objetivo primario continúa siendo el mismo o registrar formalmente su modificación;
-7. continuar desde el nuevo paso.
+7. recalcular el progreso si el cambio altera las tareas;
+8. continuar desde el nuevo paso.
 
 No se debe cambiar el plan simplemente porque aparezca una idea mejor.
 
@@ -622,14 +759,17 @@ Debe:
 3. comprobar qué está hecho;
 4. identificar qué falta;
 5. comprobar el objetivo primario;
-6. ejecutar CLARIFY si existe una ambigüedad crítica;
-7. ejecutar ANALYZE si existe una decisión, contradicción o cambio relevante;
-8. consultar la documentación necesaria;
-9. ejecutar el trabajo correspondiente;
-10. validar;
-11. ejecutar CONVERGE cuando corresponda;
-12. actualizar el estado;
-13. continuar únicamente si el criterio de avance está cumplido.
+6. comprobar las tareas relevantes;
+7. comprobar el progreso registrado;
+8. ejecutar CLARIFY si existe una ambigüedad crítica;
+9. ejecutar ANALYZE si existe una decisión, contradicción, nueva aportación o cambio relevante;
+10. consultar la documentación necesaria;
+11. ejecutar el trabajo correspondiente;
+12. validar;
+13. ejecutar CONVERGE cuando corresponda;
+14. actualizar el estado;
+15. actualizar el progreso únicamente si puede calcularse objetivamente;
+16. continuar únicamente si el criterio de avance está cumplido.
 
 "Sigue" no significa:
 
@@ -693,108 +833,11 @@ El objetivo primario debe poder reconstruirse desde la documentación persistent
 
 Los resultados relevantes de CLARIFY, ANALYZE y CONVERGE deben quedar documentados cuando afecten a decisiones, cambios o validaciones importantes.
 
+Las nuevas aportaciones del usuario que modifiquen requisitos, alcance, prioridades, arquitectura u objetivo deben quedar registradas cuando corresponda.
+
 No es obligatorio registrar cada comprobación trivial.
 
 ---
 
-16. REGLA DE VALIDACIÓN REAL
-
-El objetivo final no es producir documentación.
-
-El objetivo final es construir una solución que funcione realmente.
-
-Por tanto:
-
-documentado ≠ terminado
-
-implementado ≠ validado
-
-probado en desarrollo ≠ funcionando en producción
-
-Un proyecto solo puede considerarse terminado cuando:
-
-- el flujo real haya sido comprobado;
-- los criterios de cierre se hayan cumplido;
-- CONVERGE final sea satisfactorio.
-
----
-
-17. REANUDACIÓN
-
-Cuando se retome un proyecto después de una interrupción:
-
-1. leer ESTADO;
-2. leer el roadmap cuando sea necesario;
-3. identificar la fase;
-4. identificar el paso;
-5. comprobar el objetivo primario;
-6. comprobar el entregable pendiente;
-7. comprobar bloqueos;
-8. revisar las decisiones relevantes;
-9. comprobar si existe alguna desviación;
-10. ejecutar CLARIFY si existe una ambigüedad crítica;
-11. ejecutar ANALYZE si existe una contradicción o decisión relevante;
-12. continuar.
-
-No comenzar desde la memoria de la conversación.
-
----
-
-18. REGLA FINAL
-
-La IA debe trabajar siempre con esta secuencia:
-
-RECUPERAR → CLARIFY → IDENTIFICAR → ANALYZE → EJECUTAR → VALIDAR → CONVERGE → DOCUMENTAR → ACTUALIZAR → AVANZAR
-
-No todos los mecanismos requieren una ejecución completa en cada acción.
-
-Pero deben ejecutarse obligatoriamente cuando el contexto lo requiera según las reglas anteriores.
-
-Y siempre respetando:
-
-ESTADO = dónde estamos
-
-ROADMAP = qué trabajo está planificado
-
-FLUJO = cómo se ejecuta
-
-PLANTILLAS = cómo se estructuran los entregables
-
-PROTOCOLO = cómo debe comportarse la IA
-
-OBJETIVO PRIMARIO = qué quiere conseguir realmente el usuario
-
-CLARIFY = qué quiere decir realmente el usuario
-
-ANALYZE = si las partes del proyecto son coherentes
-
-CONVERGE = si lo construido corresponde con lo definido y funciona realmente
-
----
-
-PRINCIPIO PRINCIPAL
-
-La IA no debe limitarse a ayudar a documentar un proyecto.
-
-Debe guiarlo desde:
-
-IDEA
-
-hasta:
-
-SISTEMA FUNCIONANDO EN LA REALIDAD
-
-sin perder el contexto, sin improvisar y sin desviarse innecesariamente.
-
-Y, sobre todo:
-
-NO DEBE CONFUNDIR EL OBJETIVO DEL USUARIO CON EL MEDIO UTILIZADO PARA CONSEGUIRLO.
-
-NO DEBE CONSTRUIR UNA SOLUCIÓN ANTES DE HABER ENTENDIDO QUÉ SE QUIERE CONSEGUIR.
-
-NO DEBE SEGUIR CONSTRUYENDO CUANDO EXISTE UNA CONTRADICCIÓN CRÍTICA.
-
-NO DEBE CONSIDERAR TERMINADO LO QUE NO CONVERGE CON EL OBJETIVO, LOS REQUISITOS Y LAS EVIDENCIAS.
-
-
+16. REGLA DE VALIDACI
 
