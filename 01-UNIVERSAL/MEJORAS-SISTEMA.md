@@ -37,21 +37,11 @@ MEJORAS
 
 M-001 — Bloqueo del objetivo primario
 
-Estado: IMPLEMENTADA
+Estado: IMPLEMENTADA Y VALIDADA
 
 Problema
 
 El sistema podía confundir el objetivo del usuario con un medio técnico o una interfaz.
-
-Ejemplo
-
-Usuario:
-
-«Quiero una automatización de reservas para una peluquería.»
-
-El sistema podía desviarse hacia:
-
-«Crear una web para una peluquería.»
 
 Solución
 
@@ -66,13 +56,9 @@ Separar explícitamente:
 
 La tecnología o interfaz no puede convertirse automáticamente en el objetivo.
 
-Archivo afectado
-
-"01-UNIVERSAL/PROTOCOLO-EJECUCION.md"
-
 Validación
 
-Prueba realizada con el caso de automatización de reservas de una peluquería.
+Prueba realizada con el caso de automatización de reservas para una peluquería.
 
 Resultado: correcto.
 
@@ -99,10 +85,6 @@ Mantener:
 - coherencia;
 - eficiencia.
 
-Archivo afectado
-
-"01-UNIVERSAL/PROTOCOLO-EJECUCION.md"
-
 ---
 
 M-003 — Separación entre realidad y propuesta
@@ -122,55 +104,71 @@ Distinguir:
 - implementación;
 - evidencia.
 
-Inspiración
+Principio
 
-OpenSpec utiliza una separación explícita entre la fuente de verdad actual y los cambios propuestos.
-
-Archivo afectado
-
-"01-UNIVERSAL/PROTOCOLO-EJECUCION.md"
+Nunca presentar una propuesta como si ya estuviera implementada.
 
 ---
 
 M-004 — Clarificación previa
 
-Estado: PENDIENTE
+Estado: IMPLEMENTADA Y VALIDADA
 
 Objetivo
 
 Resolver ambigüedades antes de diseñar o implementar.
 
-Inspiración
+Mecanismo
 
-GitHub Spec Kit dispone de una fase específica de "clarify".
+Durante CLARIFY, la IA debe:
 
-Pendiente
+1. identificar el objetivo primario;
+2. detectar ambigüedades;
+3. identificar información desconocida;
+4. determinar qué cuestiones pueden cambiar sustancialmente el proyecto;
+5. preguntar al usuario cuando sea necesario;
+6. continuar únicamente con una interpretación suficientemente clara.
 
-Crear mecanismo específico de clarificación dentro del flujo de proyecto.
+Validación
+
+Probado durante la prueba de automatización de una solución para propietarios que desean alquilar una vivienda.
 
 ---
 
 M-005 — Análisis de coherencia
 
-Estado: PENDIENTE
+Estado: IMPLEMENTADA Y VALIDADA
 
 Objetivo
 
 Comprobar que:
 
-objetivo → requisitos → arquitectura → tareas
+objetivo → requisitos → arquitectura → tareas → implementación
 
 son coherentes entre sí.
 
-Inspiración
+Mecanismo
 
-Spec Kit incorpora "analyze" para cruzar los artefactos del proyecto y detectar incoherencias.
+Durante ANALYZE se deben detectar:
+
+- contradicciones;
+- requisitos faltantes;
+- desviaciones;
+- decisiones no justificadas;
+- información crítica desconocida;
+- diferencias entre lo planificado y lo realizado.
+
+Validación
+
+Durante la prueba se detectó que el objetivo de crear una solución para propietarios no debía convertirse automáticamente en una simple web.
+
+Resultado: correcto.
 
 ---
 
 M-006 — Convergencia
 
-Estado: PENDIENTE
+Estado: IMPLEMENTADA Y VALIDADA
 
 Objetivo
 
@@ -180,9 +178,21 @@ lo especificado ↔ lo implementado
 
 y detectar lo que falta.
 
-Inspiración
+Mecanismo
 
-Spec Kit incorpora "converge" para evaluar la implementación frente a la especificación.
+CONVERGE debe comprobar:
+
+- requisitos cumplidos;
+- requisitos pendientes;
+- funcionalidades implementadas;
+- funcionalidades no implementadas;
+- pruebas realizadas;
+- evidencias disponibles;
+- desviaciones existentes.
+
+Validación
+
+Validado conceptualmente durante las pruebas del sistema.
 
 ---
 
@@ -242,6 +252,8 @@ PRUEBA
 
 EVIDENCIA
 
+Cada elemento importante debe poder relacionarse con el anterior y el siguiente cuando corresponda.
+
 ---
 
 M-009 — Estrategia de evolución
@@ -262,10 +274,6 @@ Se incorporarán selectivamente mecanismos útiles de:
 - GSD;
 - otros sistemas relevantes.
 
-Motivo
-
-Los frameworks analizados resuelven diferentes capas del problema y tienen distintos niveles de ceremonia.
-
 Principio
 
 Reutilizar + adaptar + mejorar.
@@ -278,7 +286,7 @@ copiar + depender.
 
 M-010 — Especialización en automatización de negocio
 
-Estado: PENDIENTE
+Estado: IMPLEMENTADA Y VALIDADA CONCEPTUALMENTE
 
 Objetivo
 
@@ -299,35 +307,184 @@ Ejemplos
 - formularios;
 - automatizaciones;
 - agentes IA;
-- servicios externos.
+- servicios externos;
+- generación automática de contenidos;
+- generación y mantenimiento de sitios web.
 
-Próxima validación
+Validación
 
-Automatización de reservas para una peluquería.
+La prueba de reservas de peluquería y la nueva prueba de solución automatizada para propietarios demuestran que el sistema puede trabajar con proyectos donde la automatización es el objetivo principal.
+
+---
+
+M-011 — Gestión de aportaciones del usuario durante el proyecto
+
+Estado: INCORPORADA AL PROTOCOLO
+
+Origen
+
+Prueba de creación de una solución especializada para propietarios que desean alquilar una vivienda.
+
+Problema
+
+El usuario puede aportar nuevas ideas después de haber definido inicialmente el proyecto.
+
+Ejemplo:
+
+Objetivo inicial:
+
+Crear una solución para ayudar a propietarios que quieren alquilar una vivienda.
+
+Nueva aportación:
+
+Ayudar también con documentación, papeleo y trámites.
+
+La nueva aportación no debe:
+
+- perderse;
+- convertirse automáticamente en requisito;
+- modificar silenciosamente el objetivo;
+- interrumpir innecesariamente el trabajo actual.
+
+Solución
+
+Toda nueva aportación debe pasar por:
+
+APORTACIÓN
+
+↓
+
+CLASIFICACIÓN
+
+↓
+
+ANÁLISIS
+
+↓
+
+DECISIÓN
+
+↓
+
+REGISTRO
+
+↓
+
+INCORPORACIÓN AL ALCANCE O BACKLOG
+
+Clasificación mínima
+
+La aportación puede ser:
+
+- información adicional;
+- requisito;
+- ampliación;
+- mejora;
+- idea futura;
+- cambio de alcance;
+- cambio del objetivo;
+- bloqueo;
+- decisión del usuario.
+
+Regla
+
+Una aportación del usuario tiene prioridad sobre una suposición de la IA, pero no debe incorporarse automáticamente al alcance si cambia significativamente el proyecto.
+
+Si modifica el objetivo primario, requiere confirmación y registro explícito.
+
+Validación
+
+Detectada durante la prueba actual.
+
+Resultado: mecanismo necesario y aprobado para incorporación al sistema.
+
+---
+
+M-012 — Progreso objetivo basado en trabajo real
+
+Estado: INCORPORADA AL PROTOCOLO
+
+Origen
+
+Prueba real de ejecución mediante órdenes repetidas de:
+
+«Sigue trabajando».
+
+Problema
+
+La IA estaba comunicando porcentajes como:
+
+20% → 30% → 40% → 50%
+
+sin que dichos porcentajes procedieran necesariamente de tareas reales completadas.
+
+Esto puede crear una falsa percepción del estado del proyecto.
+
+Solución
+
+El porcentaje de ejecución debe calcularse a partir del trabajo real registrado en el roadmap o sistema de estado.
+
+Nunca debe utilizarse un porcentaje subjetivo simplemente para comunicar sensación de progreso.
+
+Principio
+
+PROGRESO = trabajo completado / trabajo planificado
+
+Cuando las tareas tengan diferente peso, puede utilizarse un cálculo ponderado.
+
+Regla
+
+La IA debe distinguir:
+
+- progreso del proyecto;
+- progreso de la fase;
+- progreso del paso;
+- trabajo realizado durante la sesión.
+
+Si no existe información suficiente para calcular un porcentaje fiable:
+
+no inventar el porcentaje.
+
+Debe comunicarse:
+
+«progreso no calculable todavía»
+
+o utilizarse únicamente un estado cualitativo.
+
+Validación
+
+Problema detectado durante la prueba actual.
+
+Resultado: mejora confirmada como necesaria.
 
 ---
 
 PRÓXIMAS MEJORAS
 
-M-011
+M-013 — Benchmark periódico frente a sistemas externos
 
-Crear mecanismo formal "CLARIFY".
+Comparar periódicamente BASE-PROYECTOS con sistemas relevantes para incorporar mecanismos útiles sin copiar metodologías completas.
 
-M-012
+---
 
-Crear mecanismo formal "ANALYZE".
-
-M-013
-
-Crear mecanismo formal "CONVERGE".
-
-M-014
-
-Crear benchmark periódico frente a frameworks externos.
-
-M-015
+M-014 — Agentes especializados adaptativos
 
 Definir agentes especializados únicamente cuando la complejidad del proyecto lo justifique.
+
+---
+
+M-015 — Métricas objetivas de proyecto
+
+Definir métricas adicionales para medir:
+
+- cumplimiento;
+- calidad;
+- cobertura;
+- errores;
+- validaciones;
+- tiempo;
+- deuda;
+- riesgo.
 
 ---
 
@@ -346,5 +503,79 @@ REGLA DE MEMORIA
 Las decisiones importantes del sistema deben registrarse aquí o en el documento específico que corresponda.
 
 La memoria conversacional puede ayudar a continuar una sesión, pero no constituye la fuente de verdad del sistema.
+
+---
+
+PRINCIPIO DE APORTACIONES
+
+El usuario puede introducir nuevas ideas, requisitos, cambios o información en cualquier momento durante la ejecución.
+
+El sistema debe poder incorporarlos sin perder:
+
+- objetivo;
+- contexto;
+- trazabilidad;
+- decisiones anteriores;
+- trabajo ya validado.
+
+Una nueva aportación no implica automáticamente rehacer el proyecto.
+
+Debe analizarse primero.
+
+---
+
+PRINCIPIO DE PROGRESO
+
+El sistema no debe utilizar porcentajes subjetivos para aparentar avance.
+
+Todo porcentaje debe poder explicarse mediante:
+
+ROADMAP + TAREAS + ESTADO + EVIDENCIA
+
+Si no puede justificarse:
+
+no se comunica como porcentaje objetivo.
+
+---
+
+PRINCIPIO FINAL
+
+BASE-PROYECTOS debe ser capaz de transformar:
+
+IDEA DEL USUARIO
+
++ 
+
+APORTACIONES DEL USUARIO
+
+↓
+
+CLARIFY
+
+↓
+
+ANALYZE
+
+↓
+
+PLANIFICACIÓN
+
+↓
+
+EJECUCIÓN
+
+↓
+
+VALIDACIÓN
+
+↓
+
+CONVERGE
+
+↓
+
+SISTEMA FUNCIONANDO EN LA REALIDAD
+
+manteniendo siempre al usuario como autoridad sobre el objetivo y utilizando la IA como sistema de análisis, ejecución y asistencia.
 
 
