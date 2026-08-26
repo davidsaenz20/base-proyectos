@@ -15,11 +15,15 @@ El objetivo del protocolo es garantizar:
 - documentación;
 - ejecución hasta funcionamiento real.
 
-Además, el protocolo incorpora tres mecanismos transversales de control:
+Además, el protocolo incorpora mecanismos transversales de control:
 
 - CLARIFY → aclarar qué se quiere conseguir realmente;
 - ANALYZE → comprobar que las decisiones y partes del proyecto son coherentes;
 - CONVERGE → comprobar que lo construido coincide con lo definido y que las evidencias demuestran el cumplimiento.
+
+Cuando el proyecto lo requiera, también debe utilizar:
+
+- ESTUDIO PREVIO DE VIABILIDAD → determinar si existe una oportunidad razonable y buscar alternativas para mejorar su viabilidad antes de comprometer recursos importantes.
 
 Estos mecanismos no sustituyen las fases del proyecto.
 
@@ -87,7 +91,8 @@ Determina:
 - entregables;
 - validaciones;
 - condiciones para avanzar;
-- posición de CLARIFY, ANALYZE y CONVERGE dentro del flujo.
+- posición de CLARIFY, ANALYZE y CONVERGE dentro del flujo;
+- cuándo debe realizarse el estudio previo de viabilidad.
 
 ---
 
@@ -112,6 +117,29 @@ Cuando una regla universal y una decisión específica del proyecto parezcan ent
 
 ---
 
+1.6 ESTUDIO PREVIO DE VIABILIDAD
+
+"01-UNIVERSAL/ESTUDIO-PREVIO-VIABILIDAD.md"
+
+Define cómo debe analizarse la viabilidad de una propuesta cuando la naturaleza del proyecto lo requiera.
+
+Determina:
+
+- qué aspectos investigar;
+- cómo analizar problema, usuario y mercado;
+- cómo estudiar competencia;
+- cómo analizar alternativas;
+- cómo estudiar monetización;
+- cómo estudiar costes;
+- cómo estudiar viabilidad técnica y económica;
+- cómo identificar riesgos;
+- cómo buscar pivotes;
+- cómo proponer MVP alternativos;
+- cómo formular una recomendación;
+- cómo separar recomendación del sistema y decisión final del usuario.
+
+---
+
 2. RECUPERAR EL CONTEXTO
 
 Antes de comenzar cualquier trabajo se debe revisar, cuando corresponda:
@@ -124,6 +152,10 @@ Antes de comenzar cualquier trabajo se debe revisar, cuando corresponda:
 6. documentación relevante;
 7. entregables existentes;
 8. último progreso registrado.
+
+Cuando el proyecto se encuentre en una fase de estudio previo de viabilidad, también debe consultarse:
+
+"01-UNIVERSAL/ESTUDIO-PREVIO-VIABILIDAD.md"
 
 No es necesario leer toda la documentación del repositorio.
 
@@ -175,33 +207,11 @@ Regla fundamental
 
 La IA no puede convertir un medio técnico, una interfaz o una posible implementación en el objetivo principal del proyecto.
 
-Ejemplo
-
-Usuario:
-
-«Quiero una automatización de reservas para una peluquería.»
-
-Interpretación correcta:
-
-- objetivo: automatizar las reservas;
-- problema: gestionar las reservas de forma eficiente;
-- sistema: sistema de automatización de reservas;
-- medios posibles: n8n, WhatsApp, calendario, formulario, web u otros;
-- interfaz: todavía por determinar.
-
-Interpretación incorrecta:
-
-«Crear una web para una peluquería.»
-
-La web podría formar parte de la solución, pero no puede convertirse en el objetivo principal sin que el usuario lo haya solicitado o confirmado.
-
-Regla de fidelidad
-
 Toda decisión posterior debe poder relacionarse con el objetivo primario.
 
 Antes de avanzar de una fase a otra, la IA debe comprobar:
 
-¿Lo que estamos construyendo sigue resolviendo el objetivo primario del usuario?
+¿Lo que estamos haciendo sigue resolviendo el objetivo primario del usuario?
 
 Si la respuesta es negativa o dudosa:
 
@@ -230,7 +240,7 @@ Debe determinar:
 - qué información crítica falta;
 - qué supuestos no deben realizarse.
 
-CLARIFY no significa preguntar por todo
+CLARIFY no significa preguntar por todo.
 
 La IA debe evitar preguntas innecesarias.
 
@@ -242,8 +252,6 @@ Solo debe preguntar cuando una información pueda cambiar de forma significativa
 - el usuario;
 - la arquitectura;
 - el resultado final.
-
-Regla
 
 Si la ambigüedad no cambia materialmente el proyecto, la IA puede continuar.
 
@@ -293,7 +301,7 @@ Durante cualquier proyecto el usuario puede aportar:
 
 Estas aportaciones no deben perderse ni incorporarse silenciosamente.
 
-Flujo obligatorio
+Flujo obligatorio:
 
 APORTACIÓN
 
@@ -317,9 +325,7 @@ REGISTRO
 
 ACTUALIZACIÓN DEL PROYECTO
 
-Clasificación
-
-Toda aportación debe clasificarse como una de las siguientes categorías cuando corresponda:
+Toda aportación debe clasificarse como:
 
 - información adicional;
 - requisito;
@@ -330,8 +336,6 @@ Toda aportación debe clasificarse como una de las siguientes categorías cuando
 - cambio de objetivo;
 - bloqueo;
 - decisión.
-
-Regla
 
 Una aportación que no cambie sustancialmente el proyecto puede incorporarse al trabajo correspondiente.
 
@@ -348,18 +352,6 @@ Una aportación que pueda modificar:
 debe pasar por ANALYZE antes de modificar el proyecto.
 
 Si cambia sustancialmente el objetivo primario, debe ejecutarse CLARIFY y solicitar confirmación del usuario cuando sea necesario.
-
-Principio
-
-Una nueva aportación del usuario no significa automáticamente rehacer el trabajo anterior.
-
-Primero debe determinarse:
-
-- qué cambia;
-- qué no cambia;
-- qué trabajo existente sigue siendo válido;
-- qué trabajo debe modificarse;
-- qué trabajo debe añadirse.
 
 ---
 
@@ -382,12 +374,13 @@ La IA debe:
 1. consultar la documentación necesaria;
 2. comprobar el objetivo primario cuando el trabajo pueda afectar al alcance;
 3. ejecutar CLARIFY cuando exista una ambigüedad crítica;
-4. ejecutar el trabajo;
-5. producir el entregable correspondiente;
-6. comprobar el resultado;
-7. registrar las decisiones relevantes;
-8. ejecutar ANALYZE cuando el trabajo implique decisiones relevantes;
-9. registrar cualquier nueva aportación relevante del usuario.
+4. determinar si el paso requiere estudio de viabilidad;
+5. ejecutar el trabajo;
+6. producir el entregable correspondiente;
+7. comprobar el resultado;
+8. registrar las decisiones relevantes;
+9. ejecutar ANALYZE cuando el trabajo implique decisiones relevantes;
+10. registrar cualquier nueva aportación relevante del usuario.
 
 No debe introducir una nueva metodología durante la ejecución sin justificarla.
 
@@ -395,13 +388,193 @@ Ninguna decisión técnica puede sustituir silenciosamente al objetivo del proye
 
 ---
 
-5.1 ANALYZE — CONTROL DE COHERENCIA
+5.1 ESTUDIO PREVIO DE VIABILIDAD
+
+Cuando la naturaleza del proyecto requiera comprobar si merece la pena construirlo, la IA debe realizar un estudio previo antes de comprometer recursos importantes en construcción.
+
+Debe utilizar:
+
+"01-UNIVERSAL/ESTUDIO-PREVIO-VIABILIDAD.md"
+
+El estudio debe ser exhaustivo y proporcional al riesgo del proyecto.
+
+Debe investigar, cuando corresponda:
+
+- problema;
+- usuario;
+- demanda;
+- mercado;
+- tendencias;
+- competencia;
+- sustitutos;
+- soluciones existentes;
+- diferenciación;
+- propuesta de valor;
+- monetización;
+- costes;
+- adquisición de usuarios;
+- viabilidad técnica;
+- viabilidad económica;
+- escalabilidad;
+- riesgos;
+- regulación;
+- barreras;
+- dependencias externas.
+
+La IA debe buscar activamente alternativas para mejorar la viabilidad cuando la propuesta inicial presente debilidades.
+
+Debe considerar, cuando corresponda:
+
+- cambio de público;
+- cambio de nicho;
+- cambio de problema;
+- cambio de posicionamiento;
+- cambio de propuesta de valor;
+- B2B;
+- B2C;
+- B2B2C;
+- suscripción;
+- pago por uso;
+- comisión;
+- generación de leads;
+- afiliación;
+- marketplace;
+- publicidad;
+- licencias;
+- servicio profesional;
+- reducción del alcance;
+- MVP alternativo;
+- automatización parcial;
+- integración con soluciones existentes;
+- pivot parcial;
+- pivot completo.
+
+Debe buscar también la forma más pequeña, barata y rápida de validar las hipótesis críticas.
+
+---
+
+5.2 RESULTADO DEL ESTUDIO DE VIABILIDAD
+
+El estudio debe producir una recomendación estructurada.
+
+La IA puede recomendar:
+
+🟢 CONTINUAR
+
+🟠 PIVOTAR
+
+🟡 VALIDAR MÁS
+
+🔴 NO RECOMENDADO
+
+La recomendación debe explicar:
+
+- principales evidencias;
+- principales oportunidades;
+- principales riesgos;
+- incertidumbres;
+- alternativas;
+- MVP recomendado;
+- nivel de confianza.
+
+---
+
+5.3 REGLA FUNDAMENTAL DE DECISIÓN
+
+La IA informa y recomienda.
+
+La IA NO decide unilateralmente el destino del proyecto.
+
+La decisión final corresponde siempre al usuario.
+
+El usuario puede decidir:
+
+- continuar;
+- continuar con cambios;
+- pivotar;
+- investigar más;
+- detener.
+
+Una recomendación:
+
+🔴 NO RECOMENDADO
+
+NO equivale automáticamente a:
+
+PROYECTO CANCELADO
+
+La IA debe respetar la decisión del usuario.
+
+Si el usuario decide continuar pese a una recomendación negativa:
+
+1. registrar la decisión;
+2. registrar la recomendación del sistema;
+3. registrar los riesgos aceptados cuando corresponda;
+4. actualizar el estado;
+5. continuar con la metodología.
+
+Si el usuario decide pivotar:
+
+1. registrar la decisión;
+2. identificar qué cambia;
+3. identificar qué permanece;
+4. repetir el estudio cuando el cambio sea sustancial;
+5. actualizar la documentación.
+
+Si el usuario decide detener:
+
+1. registrar la decisión;
+2. conservar el estudio;
+3. registrar los motivos;
+4. registrar oportunidades futuras;
+5. cerrar correctamente el proyecto.
+
+---
+
+5.4 ESTUDIO DE VIABILIDAD Y CONSTRUCCIÓN
+
+No debe iniciarse una construcción técnica significativa cuando el proyecto requiere estudio previo y todavía no existe:
+
+- estudio;
+- recomendación;
+- decisión del usuario.
+
+Puede realizarse una prueba técnica limitada si dicha prueba es necesaria para determinar la propia viabilidad.
+
+La prueba debe tener un objetivo concreto y no debe convertirse en construcción prematura.
+
+---
+
+5.5 ANALYZE DESPUÉS DEL ESTUDIO
+
+Después del estudio previo, cuando corresponda, ANALYZE debe comprobar:
+
+PROBLEMA → OPORTUNIDAD → PROPUESTA → VIABILIDAD → DECISIÓN → DEFINICIÓN
+
+Debe detectar:
+
+- contradicciones;
+- conclusiones no respaldadas;
+- hipótesis tratadas como hechos;
+- costes omitidos;
+- riesgos omitidos;
+- alternativas no consideradas cuando sean relevantes;
+- decisiones que no coincidan con las evidencias;
+- cambios de alcance.
+
+---
+
+6. ANALYZE — CONTROL DE COHERENCIA
 
 ANALYZE debe utilizarse cuando una decisión pueda afectar de forma relevante al proyecto.
 
 Debe comprobar la coherencia entre:
 
 OBJETIVO → PROBLEMA → REQUISITOS → SOLUCIÓN → ARQUITECTURA → PLAN → IMPLEMENTACIÓN
+
+Cuando el proyecto haya pasado por estudio de viabilidad, también debe comprobar:
+
+VIABILIDAD → DECISIÓN → DEFINICIÓN
 
 No es necesario realizar un análisis exhaustivo para cada acción pequeña.
 
@@ -413,9 +586,10 @@ Debe realizarse cuando exista:
 - nueva información;
 - una aportación del usuario;
 - una desviación potencial;
-- una modificación del alcance.
+- una modificación del alcance;
+- una conclusión relevante sobre viabilidad.
 
-ANALYZE debe detectar
+ANALYZE debe detectar:
 
 - contradicciones;
 - requisitos sin solución;
@@ -425,11 +599,10 @@ ANALYZE debe detectar
 - decisiones técnicas injustificadas;
 - cambios de alcance;
 - desviaciones;
-- información desconocida que pueda afectar a una decisión crítica.
+- información desconocida que pueda afectar a una decisión crítica;
+- inconsistencias entre viabilidad y plan.
 
-Resultado
-
-ANALYZE debe producir internamente uno de estos estados:
+Resultado:
 
 🟢 COHERENTE
 
@@ -445,7 +618,7 @@ Debe corregirse antes de continuar.
 
 ---
 
-5.2 REGLA DE ANALYZE
+6.1 REGLA DE ANALYZE
 
 Si ANALYZE detecta una contradicción crítica:
 
@@ -465,7 +638,7 @@ La IA debe:
 
 ---
 
-5.3 ANALYZE Y CAMBIOS
+6.2 ANALYZE Y CAMBIOS
 
 Cuando durante la construcción aparezca una decisión que pueda afectar:
 
@@ -484,7 +657,7 @@ Si el cambio modifica el proyecto, debe registrarse en "DECISIONES.md" y actuali
 
 ---
 
-6. VALIDAR
+7. VALIDAR
 
 Todo paso debe tener una validación.
 
@@ -503,7 +676,7 @@ La validación de un paso no implica automáticamente que el proyecto completo e
 
 ---
 
-6.1 CONVERGE — CONTROL DE IMPLEMENTACIÓN
+7.1 CONVERGE — CONTROL DE IMPLEMENTACIÓN
 
 CONVERGE debe utilizarse para comprobar que el resultado construido corresponde con lo que se había definido.
 
@@ -519,7 +692,11 @@ y posteriormente:
 
 REQUISITOS → PRUEBAS → EVIDENCIAS
 
-CONVERGE debe comprobar
+Cuando corresponda, también:
+
+HIPÓTESIS → EVIDENCIAS → RESULTADOS
+
+CONVERGE debe comprobar:
 
 - requisitos cumplidos;
 - funcionalidades implementadas;
@@ -529,9 +706,10 @@ CONVERGE debe comprobar
 - funcionalidades ausentes;
 - funcionalidades innecesarias;
 - evidencias insuficientes;
-- problemas descubiertos durante las pruebas.
+- problemas descubiertos durante las pruebas;
+- diferencias entre las hipótesis iniciales y los resultados reales.
 
-Resultado
+Resultado:
 
 🟢 CONVERGE
 
@@ -549,7 +727,7 @@ No se puede cerrar el proyecto.
 
 ---
 
-6.2 CUÁNDO EJECUTAR CONVERGE
+7.2 CUÁNDO EJECUTAR CONVERGE
 
 CONVERGE debe ejecutarse como mínimo:
 
@@ -563,7 +741,7 @@ También puede ejecutarse antes si existe una desviación o duda relevante.
 
 ---
 
-6.3 CONVERGE NO ES SOLO UNA COMPARACIÓN DE ARCHIVOS
+7.3 CONVERGE NO ES SOLO UNA COMPARACIÓN DE ARCHIVOS
 
 La IA no debe considerar CONVERGE satisfecho simplemente porque:
 
@@ -580,7 +758,7 @@ y que existe evidencia suficiente.
 
 ---
 
-7. ACTUALIZAR EL ESTADO
+8. ACTUALIZAR EL ESTADO
 
 Cuando un paso termine:
 
@@ -598,21 +776,21 @@ El estado debe reflejar la situación real del proyecto.
 
 ---
 
-7.1 PROGRESO OBJETIVO
+8.1 PROGRESO OBJETIVO
 
 La IA no debe inventar porcentajes de ejecución.
 
 El progreso general debe proceder del estado real de las tareas registradas en el ROADMAP o en el sistema de tareas del proyecto.
 
-Si todas las tareas tienen el mismo peso
+Si todas las tareas tienen el mismo peso:
 
 Progreso = tareas completadas / tareas totales × 100
 
-Si las tareas tienen diferente peso
+Si las tareas tienen diferente peso:
 
 Progreso = peso completado / peso total × 100
 
-Reglas
+Reglas:
 
 El porcentaje debe:
 
@@ -633,23 +811,23 @@ Nunca se debe inventar un porcentaje.
 
 ---
 
-8. CONTROL DE DESVIACIONES
+9. CONTROL DE DESVIACIONES
 
 Si durante el trabajo aparece una cuestión que no pertenece al paso actual:
 
-Si es necesaria para completar el paso
+Si es necesaria para completar el paso:
 
 Se incorpora al trabajo.
 
-Si es un bloqueo real
+Si es un bloqueo real:
 
 Se detiene el paso y se resuelve el bloqueo.
 
-Si es una mejora, idea o trabajo futuro
+Si es una mejora, idea o trabajo futuro:
 
 Se registra y se continúa con el paso actual.
 
-Si modifica el objetivo primario
+Si modifica el objetivo primario:
 
 No se incorpora automáticamente.
 
@@ -668,7 +846,7 @@ No se debe cambiar automáticamente de objetivo.
 
 ---
 
-9. BLOQUEOS
+10. BLOQUEOS
 
 Se considera bloqueo aquello que impide completar el paso actual.
 
@@ -678,166 +856,5 @@ Ejemplos:
 - dependencia imprescindible no disponible;
 - error técnico que impide continuar;
 - requisito incompatible;
-- decisión necesaria que no puede tomarse con la información disponible.
 
-No son bloqueos por sí mismos:
-
-- mejoras;
-- optimizaciones;
-- ideas nuevas;
-- alternativas;
-- refactorizaciones;
-- documentación no necesaria para el paso actual.
-
-Si existe un bloqueo:
-
-1. identificarlo;
-2. documentarlo;
-3. determinar qué falta;
-4. resolverlo;
-5. validar;
-6. continuar.
-
----
-
-10. CAMBIOS DE PLAN
-
-El roadmap puede cambiar cuando exista una razón real.
-
-Si es necesario modificarlo:
-
-1. explicar el motivo;
-2. ejecutar ANALYZE;
-3. registrar la decisión;
-4. actualizar el roadmap;
-5. actualizar "ESTADO.md";
-6. comprobar que el objetivo primario continúa siendo el mismo o registrar formalmente su modificación;
-7. recalcular el progreso si el cambio altera las tareas;
-8. continuar desde el nuevo paso.
-
-No se debe cambiar el plan simplemente porque aparezca una idea mejor.
-
----
-
-11. REGLA DE NO RETROCESO
-
-No se debe retroceder de fase por iniciativa propia.
-
-Solo se retrocede cuando:
-
-- una validación demuestra un problema;
-- existe un bloqueo;
-- una decisión anterior impide continuar;
-- aparece información nueva que invalida una decisión crítica;
-- se detecta una desviación respecto al objetivo primario;
-- CONVERGE determina que lo construido no corresponde con lo definido.
-
-Cuando se retrocede:
-
-1. documentar la causa;
-2. identificar la fase afectada;
-3. actualizar ESTADO;
-4. resolver;
-5. volver al flujo normal.
-
----
-
-12. REGLA PARA "SIGUE"
-
-Cuando el usuario indique:
-
-"Sigue"
-
-la IA debe interpretar la orden como:
-
-«Continuar el proyecto desde el estado persistente actual.»
-
-Debe:
-
-1. recuperar "ESTADO.md";
-2. identificar fase y paso actuales;
-3. comprobar qué está hecho;
-4. identificar qué falta;
-5. comprobar el objetivo primario;
-6. comprobar las tareas relevantes;
-7. comprobar el progreso registrado;
-8. ejecutar CLARIFY si existe una ambigüedad crítica;
-9. ejecutar ANALYZE si existe una decisión, contradicción, nueva aportación o cambio relevante;
-10. consultar la documentación necesaria;
-11. ejecutar el trabajo correspondiente;
-12. validar;
-13. ejecutar CONVERGE cuando corresponda;
-14. actualizar el estado;
-15. actualizar el progreso únicamente si puede calcularse objetivamente;
-16. continuar únicamente si el criterio de avance está cumplido.
-
-"Sigue" no significa:
-
-- cambiar de fase;
-- empezar una idea nueva;
-- cambiar el objetivo;
-- crear una nueva metodología;
-- investigar algo no relacionado;
-- rehacer trabajo ya validado.
-
----
-
-13. REGLA DE CONTINUIDAD
-
-La conversación puede interrumpirse en cualquier momento.
-
-Cuando el proyecto se reanude, la IA debe poder continuar utilizando la documentación persistente.
-
-No debe depender de recordar conversaciones anteriores.
-
-Debe poder responder:
-
-DÓNDE ESTAMOS → QUÉ ESTÁ HECHO → QUÉ FALTA → QUÉ TOCA AHORA → CUÁL ES EL OBJETIVO PRIMARIO
-
-Y, cuando corresponda:
-
-QUÉ SE HA DECIDIDO → QUÉ SE HA VALIDADO → QUÉ NO CONVERGE
-
----
-
-14. REGLA DE NO IMPROVISACIÓN
-
-Si existe información crítica desconocida:
-
-- no inventarla;
-- no asumirla como cierta;
-- no construir sobre ella.
-
-Determinar si:
-
-1. puede investigarse;
-2. puede verificarse;
-3. debe preguntarse al usuario;
-4. puede posponerse sin bloquear.
-
-Cuando la información desconocida pueda cambiar sustancialmente la interpretación del proyecto, debe ejecutarse CLARIFY y preguntarse antes de avanzar cuando sea necesario.
-
-Cuando la información pueda afectar una decisión técnica relevante, debe ejecutarse ANALYZE.
-
----
-
-15. REGLA DE DOCUMENTACIÓN
-
-Toda información necesaria para continuar el proyecto debe quedar registrada en la documentación correspondiente.
-
-La conversación no debe ser necesaria para reconstruir el estado del proyecto.
-
-Las decisiones importantes deben conservarse.
-
-El objetivo primario debe poder reconstruirse desde la documentación persistente.
-
-Los resultados relevantes de CLARIFY, ANALYZE y CONVERGE deben quedar documentados cuando afecten a decisiones, cambios o validaciones importantes.
-
-Las nuevas aportaciones del usuario que modifiquen requisitos, alcance, prioridades, arquitectura u objetivo deben quedar registradas cuando corresponda.
-
-No es obligatorio registrar cada comprobación trivial.
-
----
-
-16. REGLA DE VALIDACI
 
