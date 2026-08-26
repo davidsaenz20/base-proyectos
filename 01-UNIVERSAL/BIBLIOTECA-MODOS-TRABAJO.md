@@ -2,417 +2,517 @@ BIBLIOTECA DE MODOS DE TRABAJO
 
 PROPÓSITO
 
-Este documento define los modos de trabajo reutilizables que la IA debe aplicar durante cualquier proyecto.
+Este documento define el único modo especial de trabajo que puede activar el usuario durante un proyecto.
 
-No está limitado a auditorías.
+El objetivo es permitir que la IA trabaje de forma continua, autónoma y ordenada durante el máximo tiempo posible, sin que el usuario tenga que repetir constantemente órdenes como:
 
-Debe utilizarse durante:
+- "sigue";
+- "sigue trabajando";
+- "continúa";
+- "continúa trabajando".
+
+El modo de trabajo no define una actividad concreta.
+
+La IA debe decidir qué actividad corresponde realizar en cada momento según:
+
+- el objetivo del proyecto;
+- el estado actual;
+- el roadmap;
+- el protocolo de ejecución;
+- las decisiones registradas;
+- los requisitos;
+- la arquitectura;
+- los documentos existentes;
+- las tareas pendientes;
+- los resultados obtenidos;
+- las validaciones realizadas.
+
+Por tanto, el modo de trabajo puede implicar, según corresponda:
 
 - investigación;
 - análisis;
+- auditoría;
 - diseño;
 - planificación;
 - construcción;
 - programación;
 - automatización;
-- configuración;
 - integración;
 - pruebas;
 - depuración;
 - documentación;
-- revisión;
+- validación;
 - optimización;
 - mantenimiento;
-- cualquier otro trabajo autorizado dentro de un proyecto.
-
-Su finalidad es establecer un comportamiento operativo persistente y evitar que las instrucciones dependan exclusivamente de la memoria conversacional.
-
-La documentación persistente del proyecto es la fuente de verdad.
-
-La memoria conversacional es únicamente un apoyo.
+- corrección;
+- o cualquier combinación de estas actividades.
 
 ---
 
-1. REGLAS GENERALES
+1. ACTIVACIÓN
 
-Cuando el usuario active un modo de trabajo, la IA debe:
+El usuario puede activar el modo utilizando órdenes como:
 
-1. Identificar el modo solicitado.
-2. Consultar esta biblioteca.
-3. Consultar la documentación persistente relevante del proyecto.
-4. Determinar dónde quedó el trabajo.
-5. Identificar las tareas pendientes.
-6. Ejecutar todo lo que pueda realizar sin intervención del usuario.
-7. No pedir confirmaciones innecesarias.
-8. No repetir trabajo ya realizado.
-9. No inventar tareas, resultados ni porcentajes.
-10. Registrar las decisiones y hallazgos importantes en la documentación persistente correspondiente.
-11. Mantener trazabilidad entre trabajo realizado, decisiones y acciones.
-12. Detenerse solamente cuando exista una razón real para necesitar al usuario o cuando el trabajo haya terminado.
+«"Modo de trabajo."»
 
----
+«"Activa modo de trabajo."»
 
-2. MODO TRABAJO CONTINUO
+«"Ponerte en modo trabajo."»
 
-ORDENES ACTIVADORAS
+«"Activa el modo de trabajo y continúa."»
 
-Ejemplos:
+Estas órdenes significan:
 
-- "Sigue."
-- "Sigue trabajando."
-- "Continúa."
-- "Continúa trabajando."
-- "Sigue con el proyecto."
+«Trabaja de forma continua y realiza todo lo que sea necesario y posible para avanzar el proyecto, siguiendo las reglas y documentación persistente del proyecto.»
 
-SIGNIFICADO
+No es necesario que el usuario indique si debe auditar, construir, investigar o depurar.
 
-La orden significa:
-
-«Continúa ejecutando el trabajo autorizado todo lo que sea posible sin esperar otra orden de continuidad.»
-
-La IA no debe interpretar cada mensaje "sigue" como una tarea nueva.
-
-Debe continuar desde el punto exacto en el que quedó.
-
-COMPORTAMIENTO
-
-Mientras exista trabajo que pueda realizar:
-
-1. Consultar el estado persistente.
-2. Identificar la siguiente tarea.
-3. Ejecutarla.
-4. Comprobar el resultado.
-5. Actualizar internamente el progreso.
-6. Continuar con la siguiente tarea cuando sea posible.
-
-No debe interrumpir al usuario con actualizaciones innecesarias.
-
-Debe informar al usuario cuando:
-
-- necesite una decisión;
-- necesite información;
-- necesite modificar un archivo;
-- exista un bloqueo;
-- haya terminado;
-- o sea necesario comunicar un cambio importante.
+La IA debe determinarlo.
 
 ---
 
-3. APLICACIÓN UNIVERSAL DEL SEGUIMIENTO
+2. DESACTIVACIÓN
 
-El seguimiento debe utilizarse independientemente del tipo de trabajo.
+El usuario puede detener el modo mediante órdenes como:
 
-Ejemplos:
+«"Modo normal."»
 
-CONSTRUCCIÓN
+«"Desactiva el modo de trabajo."»
 
-CONSTRUYENDO: sistema de automatización
+«"Sal del modo de trabajo."»
 
-Ejecutado: 80 %
+Cuando el usuario desactive el modo:
 
-INVESTIGACIÓN
-
-INVESTIGANDO: mercado de asistentes IA
-
-Ejecutado: 65 %
-
-DISEÑO
-
-DISEÑANDO: arquitectura del proyecto
-
-Ejecutado: 45 %
-
-DEPURACIÓN
-
-DEPURANDO: sistema de generación web
-
-Ejecutado: 72 %
-
-DOCUMENTACIÓN
-
-DOCUMENTANDO: protocolo de ejecución
-
-Ejecutado: 90 %
-
-AUDITORÍA
-
-AUDITANDO: arquitectura documental
-
-Ejecutado: 83 %
-
-El formato debe representar siempre el trabajo real que se está ejecutando.
+- la IA deja de aplicar el comportamiento de trabajo continuo;
+- vuelve al funcionamiento conversacional normal;
+- responde a las peticiones concretas del usuario;
+- no continúa ejecutando trabajo pendiente de forma autónoma dentro de la conversación.
 
 ---
 
-4. PORCENTAJE DE EJECUCIÓN
+3. PERSISTENCIA DEL MODO
 
-El porcentaje debe calcularse sobre tareas reales.
+Una vez activado, el modo de trabajo permanece activo hasta que:
 
-Debe existir una lista de tareas identificables.
+1. el usuario lo desactive;
+2. el trabajo autorizado haya terminado;
+3. exista un bloqueo que requiera intervención del usuario;
+4. exista una limitación técnica que impida continuar.
+
+El usuario no tiene que volver a escribir "sigue".
+
+Si el usuario escribe simplemente:
+
+«"Sigue."»
+
+se interpreta como una confirmación de continuidad y la IA debe continuar trabajando.
+
+---
+
+4. PRINCIPIO DE AUTONOMÍA
+
+Mientras el modo de trabajo esté activo, la IA debe hacer el máximo trabajo útil posible dentro de las capacidades disponibles.
+
+Debe:
+
+1. consultar la documentación persistente;
+2. determinar el estado actual;
+3. identificar qué debe hacerse a continuación;
+4. ejecutar la siguiente tarea;
+5. validar el resultado;
+6. registrar las decisiones y hallazgos importantes;
+7. continuar con la siguiente tarea;
+8. repetir el ciclo mientras sea posible.
+
+No debe detenerse simplemente porque haya terminado una pequeña subtarea.
+
+Terminar una subtarea no significa terminar el trabajo.
+
+---
+
+5. LA IA DECIDE QUÉ FASE CORRESPONDE
+
+El usuario no tiene que decidir si ahora toca:
+
+- auditar;
+- investigar;
+- diseñar;
+- construir;
+- depurar;
+- probar;
+- documentar;
+- validar.
+
+La IA debe determinarlo utilizando la documentación del proyecto.
 
 Ejemplo:
 
-- 10 tareas totales.
-- 8 completadas.
-- 2 pendientes.
+Si el proyecto está en construcción pero la IA detecta una contradicción importante en la arquitectura:
+
+NO debe continuar construyendo ciegamente.
+
+Debe:
+
+1. detectar la contradicción;
+2. analizarla;
+3. determinar si requiere investigación;
+4. investigar si puede hacerlo;
+5. tomar una decisión;
+6. corregir la documentación o preparar la modificación necesaria;
+7. continuar con la construcción.
+
+El trabajo debe adaptarse al estado real del proyecto.
+
+---
+
+6. CAMBIOS DURANTE EL TRABAJO
+
+Las actividades no son compartimentos estancos.
+
+Durante cualquier trabajo puede ser necesario realizar otra actividad.
+
+Ejemplo:
+
+AUDITORÍA
+→ detectar problema
+→ investigar causa
+→ corregir documento
+→ validar corrección
+→ continuar auditoría.
+
+Otro ejemplo:
+
+CONSTRUCCIÓN
+→ detectar error
+→ depurar
+→ corregir
+→ probar
+→ continuar construcción.
+
+La IA no debe pedir al usuario que active otro modo para realizar estas actividades.
+
+Todas forman parte del mismo modo de trabajo.
+
+---
+
+7. INTERVENCIÓN DEL USUARIO
+
+La IA debe minimizar las interrupciones.
+
+Debe continuar trabajando sin consultar al usuario cuando pueda tomar una decisión utilizando las reglas y documentación existentes.
+
+Debe solicitar intervención únicamente cuando sea realmente necesario.
+
+Ejemplos:
+
+DECISIÓN NECESARIA
+
+Existe una decisión de negocio que no está definida y puede cambiar significativamente el resultado.
+
+INFORMACIÓN NECESARIA
+
+Falta información que solo puede proporcionar el usuario.
+
+MODIFICACIÓN MANUAL NECESARIA
+
+La IA ha determinado que debe modificarse un archivo, pero no dispone de permisos de escritura.
+
+En ese caso debe decir claramente:
+
+NECESITO QUE MODIFIQUES UN ARCHIVO.
+
+Y proporcionar:
+
+- archivo;
+- ruta;
+- motivo;
+- acción necesaria;
+- contenido completo que debe quedar en el archivo.
+
+No debe pedir pequeños cambios parciales si puede proporcionar el archivo completo.
+
+---
+
+8. REGLA DE NO INTERRUMPIR
+
+Mientras el modo de trabajo esté activo, la IA NO debe terminar una respuesta simplemente porque haya completado una pequeña parte del trabajo y pedir:
+
+«"¿Quieres que continúe?"»
+
+La respuesta debe continuar con el trabajo en el siguiente turno disponible.
+
+La IA solo debe detenerse cuando exista una razón real para hacerlo.
+
+---
+
+9. FUENTE DE VERDAD
+
+La IA debe consultar, según corresponda:
+
+- "00-CONTROL/ESTADO.md"
+- "00-CONTROL/ROADMAP.md"
+- "00-CONTROL/DECISIONES.md"
+- documentación universal;
+- protocolo de ejecución;
+- flujo de ejecución;
+- plantillas;
+- módulos;
+- documentación específica del proyecto;
+- documentación temporal;
+- registros persistentes de investigación y decisiones.
+
+La memoria conversacional nunca debe ser la única fuente necesaria para continuar correctamente.
+
+Si una conclusión importante existe únicamente en la conversación, debe trasladarse a la documentación persistente correspondiente cuando sea necesario.
+
+---
+
+10. TRAZABILIDAD
+
+Durante el modo de trabajo deben distinguirse:
+
+HALLAZGO
+
+Algo descubierto durante el trabajo.
+
+DECISIÓN
+
+Conclusión adoptada.
+
+ACCIÓN
+
+Trabajo realizado como consecuencia de la decisión.
+
+RESULTADO
+
+Resultado obtenido.
+
+VALIDACIÓN
+
+Comprobación de que el resultado es correcto.
+
+El ciclo recomendado es:
+
+HALLAZGO → DECISIÓN → ACCIÓN → RESULTADO → VALIDACIÓN
+
+Las decisiones importantes deben quedar registradas persistentemente.
+
+---
+
+11. PROGRESO
+
+Cuando el trabajo sea suficientemente largo como para necesitar seguimiento, la IA debe mantener una lista real de tareas.
+
+El porcentaje debe calcularse sobre esas tareas.
+
+Ejemplo:
+
+- 20 tareas identificadas;
+- 16 completadas;
+- 4 pendientes.
 
 Resultado:
 
 Ejecutado: 80 %
 Pendiente: 20 %
 
-No se permite utilizar porcentajes subjetivos o inventados.
-
-No se debe modificar el porcentaje únicamente para mostrar progreso.
-
-Si aparecen nuevas tareas necesarias durante el trabajo, deben incorporarse al conjunto de tareas y recalcularse el porcentaje.
-
-El porcentaje representa el progreso del trabajo actual.
+El porcentaje no puede ser inventado.
 
 No representa:
 
-- calidad;
-- confianza;
-- cantidad de archivos leídos;
-- sensación de avance;
+- tiempo empleado;
+- archivos leídos;
 - dificultad;
-- tiempo empleado.
+- sensación de progreso;
+- confianza de la IA.
+
+Representa únicamente el avance de las tareas identificadas.
+
+Si aparecen nuevas tareas necesarias, deben incorporarse y recalcular el porcentaje.
 
 ---
 
-5. FORMATO DE ESTADO
+12. FORMATO DE LAS ACTUALIZACIONES
 
-Cuando sea necesario informar del progreso, utilizar esta estructura:
+Cuando sea necesario informar al usuario mientras el modo está activo, utilizar este formato:
 
-[TIPO DE TRABAJO]: [OBJETIVO ACTUAL]
+MODO DE TRABAJO — [ACTIVIDAD ACTUAL]
 
 Ejecutado: XX %
 Pendiente: XX %
 
-ACABO DE HACER
+Acabo de hacer: [máximo 100 caracteres]
 
-Máximo 100 caracteres.
+Queda por hacer:
 
-Debe describir de forma extremadamente breve la acción realizada en el último turno.
+1. [tarea pendiente]
+2. [tarea pendiente]
+3. [tarea pendiente]
+4. [tarea pendiente]
 
-QUEDA POR HACER
+Siguiente tarea: [una única tarea]
 
-Enumerar las tareas pendientes más relevantes.
-
-Ejemplo:
-
-1. Revisar arquitectura.
-2. Resolver contradicción documental.
-3. Actualizar protocolo.
-4. Validar resultado.
-
-SIGUIENTE TAREA
-
-Indicar una única tarea:
-
-Siguiente: revisar arquitectura documental.
-
-INTERVENCIÓN DEL USUARIO
-
-Utilizar solamente una de estas opciones:
-
-- No necesito nada del usuario.
-- Necesito una decisión del usuario.
-- Necesito información del usuario.
-- Necesito que el usuario modifique un archivo.
-- Trabajo terminado.
+Intervención: [una de las opciones definidas]
 
 ---
 
-6. EJEMPLO DE ACTUALIZACIÓN
+13. RESUMEN DE CADA ACTUALIZACIÓN
 
-CONSTRUYENDO: sistema base de automatización
+La frase:
 
-Ejecutado: 80 %
-Pendiente: 20 %
+"Acabo de hacer"
 
-ACABO DE HACER
+debe tener un máximo de 100 caracteres.
 
-He terminado la integración entre los módulos principales.
+Debe explicar únicamente lo realizado desde la última actualización.
 
-QUEDA POR HACER
+Debe ser concreta y útil.
 
-1. Configurar validación.
-2. Ejecutar pruebas.
-3. Revisar errores.
-4. Documentar el resultado.
+No debe utilizarse para explicar todo el proyecto.
 
-SIGUIENTE TAREA
+El apartado:
 
-Siguiente: ejecutar pruebas de integración.
+"Queda por hacer"
 
-INTERVENCIÓN DEL USUARIO
+debe mostrar las tareas pendientes más importantes.
 
-No necesito nada del usuario.
+No es necesario mostrar todas las tareas internas si son numerosas.
+
+La siguiente tarea debe ser siempre una única tarea claramente identificada.
 
 ---
 
-7. INFORMACIÓN QUE DEBE PERSISTIR
+14. CUÁNDO INFORMAR
 
-Durante cualquier trabajo pueden aparecer:
+La IA no debe enviar actualizaciones constantemente si no aportan información útil.
 
-HALLAZGOS
+Debe informar especialmente cuando:
 
-Información descubierta durante el trabajo.
+- haya un cambio importante;
+- se haya completado una fase;
+- se haya descubierto un problema relevante;
+- se haya tomado una decisión importante;
+- necesite intervención del usuario;
+- haya terminado una parte significativa;
+- haya terminado todo el trabajo.
 
-DECISIONES
-
-Conclusiones adoptadas.
-
-ACCIONES
-
-Cambios que deben ejecutarse.
-
-RESULTADOS
-
-Resultados obtenidos.
-
-VALIDACIONES
-
-Comprobaciones realizadas.
-
-La información importante no debe permanecer únicamente en la conversación.
-
-Debe registrarse en el documento persistente apropiado.
+Si puede continuar sin necesidad de intervención, debe hacerlo.
 
 ---
 
-8. CICLO UNIVERSAL DE TRABAJO
+15. FINALIZACIÓN
 
-Todo trabajo debe seguir, cuando sea aplicable, este ciclo:
+Cuando todas las tareas necesarias estén terminadas y validadas:
 
-ENTRADA
-→ ANÁLISIS
-→ DECISIÓN
-→ EJECUCIÓN
-→ RESULTADO
-→ VALIDACIÓN
-→ ACTUALIZACIÓN
-→ SIGUIENTE TAREA
+MODO DE TRABAJO — TRABAJO TERMINADO
 
-No todas las tareas necesitan todas las etapas explícitamente, pero la IA debe mantener esta lógica.
+Ejecutado: 100 %
 
----
+Debe indicar brevemente:
 
-9. CUANDO EL TRABAJO SEA LARGO
+- qué se ha realizado;
+- qué se ha validado;
+- qué resultado se ha obtenido;
+- si existe alguna tarea fuera del alcance.
 
-Si el trabajo requiere varios turnos:
+El modo puede permanecer activo hasta que el usuario diga:
 
-1. Mantener una lista de tareas.
-2. Mantener el porcentaje calculado sobre esas tareas.
-3. Registrar decisiones importantes.
-4. Registrar hallazgos relevantes.
-5. Identificar siempre la siguiente tarea.
-6. No depender exclusivamente de la memoria conversacional.
-7. Consultar la documentación persistente al continuar.
-8. Evitar rehacer análisis anteriores.
-
-El usuario no debe tener que repetir constantemente el contexto.
-
-La orden "sigue" significa continuar desde el último punto registrado.
+«"Modo normal."»
 
 ---
 
-10. INTERVENCIÓN DEL USUARIO
+16. CONTINUIDAD ENTRE TURNOS
 
-La IA debe minimizar las interrupciones.
+Si el trabajo es demasiado largo para completarlo en un único turno:
 
-No debe solicitar al usuario que:
+1. identificar exactamente dónde se ha quedado;
+2. mantener las tareas pendientes;
+3. registrar decisiones importantes;
+4. registrar hallazgos relevantes;
+5. identificar la siguiente tarea;
+6. actualizar la documentación persistente cuando corresponda.
 
-- confirme cada paso;
-- diga continuamente "sigue";
-- copie pequeños fragmentos de archivos cuando pueda entregar el archivo completo;
-- tome decisiones que ya estén definidas documentalmente.
+Al continuar, la IA debe consultar nuevamente la documentación persistente y reconstruir el estado real.
 
-Debe solicitar intervención únicamente cuando sea necesaria.
-
----
-
-11. MODIFICACIÓN MANUAL DE ARCHIVOS
-
-Si la IA no dispone de permisos de escritura sobre el repositorio:
-
-1. Identificar el archivo.
-2. Explicar brevemente qué debe cambiar.
-3. Indicar si debe:
-   - crearse;
-   - sustituirse;
-   - modificarse;
-   - eliminarse.
-4. Entregar el contenido completo cuando sea necesario.
-5. Esperar a que el usuario confirme la modificación.
-6. Considerar la tarea pendiente hasta su validación.
-
-La IA no debe afirmar que un cambio está realizado si el usuario todavía no lo ha aplicado.
+No debe depender exclusivamente de la memoria de la conversación anterior.
 
 ---
 
-12. FINALIZACIÓN
+17. REGLA ESPECIAL PARA LOS PROYECTOS
 
-Un trabajo se considera terminado cuando:
+Cuando el modo de trabajo esté activo, la IA debe seguir las reglas del propio proyecto.
 
-1. todas las tareas necesarias están completadas;
-2. el resultado ha sido validado;
-3. las decisiones importantes están registradas;
-4. no quedan bloqueos;
-5. la documentación refleja el estado final.
+La biblioteca NO sustituye:
 
-La actualización final debe indicar:
+- el protocolo;
+- el roadmap;
+- el estado;
+- las decisiones;
+- los requisitos;
+- la arquitectura;
+- las normas técnicas;
+- las restricciones de negocio.
 
-Trabajo terminado — 100 %
+La biblioteca únicamente define:
 
-y resumir brevemente:
+«cómo debe comportarse la IA mientras trabaja.»
 
-- qué se hizo;
-- qué se validó;
-- qué resultado se obtuvo;
-- si queda alguna tarea fuera del alcance actual.
+El proyecto define:
+
+«qué debe hacerse.»
 
 ---
 
-13. REGLA FUNDAMENTAL
+18. PRIORIDAD DE DECISIÓN
 
-La IA debe trabajar de forma continua mientras tenga:
+Cuando el modo de trabajo esté activo, la IA debe utilizar este orden:
 
-- trabajo autorizado;
-- información suficiente;
-- herramientas disponibles;
-- y ninguna decisión pendiente del usuario.
+1. objetivo del proyecto;
+2. documentación persistente;
+3. estado actual;
+4. roadmap;
+5. protocolo de ejecución;
+6. decisiones registradas;
+7. requisitos;
+8. análisis actual;
+9. criterio técnico y empresarial;
+10. memoria conversacional como apoyo.
+
+Si existe una contradicción entre fuentes, debe detener el avance afectado y resolverla.
+
+---
+
+19. PRINCIPIO FUNDAMENTAL
+
+El modo de trabajo significa:
+
+«La IA trabaja de forma continua, decide qué actividad corresponde realizar, ejecuta todo lo que pueda, valida lo realizado, mantiene la trazabilidad y solo interrumpe al usuario cuando realmente necesita su intervención.»
+
+El usuario no tiene que indicar:
+
+- qué fase hacer;
+- cuándo investigar;
+- cuándo auditar;
+- cuándo construir;
+- cuándo depurar;
+- cuándo validar.
+
+La IA debe determinarlo siguiendo las reglas del proyecto.
 
 La orden:
 
-"Sigue trabajando"
+"Modo de trabajo."
 
-debe interpretarse como autorización para continuar con todo el trabajo pendiente, no como una petición para realizar únicamente una pequeña parte.
+activa este comportamiento.
 
-La IA debe priorizar:
+La orden:
 
-continuidad → trazabilidad → ejecución → validación → comunicación.
+"Modo normal."
 
----
+lo desactiva.
 
-14. PRINCIPIO DE FUENTE DE VERDAD
+Mientras esté activo:
 
-La biblioteca define el comportamiento general de los modos de trabajo.
+NO ES NECESARIO DECIR "SIGUE" EN CADA TURNO.
 
-Los documentos específicos del proyecto definen:
-
-- el objetivo;
-- el estado;
-- las decisiones;
-- el roadmap;
-- los requisitos;
-- la arquitectura;
-- las tareas;
-- y los resultados.
-
-La IA debe consultar ambas fuentes antes de continuar un trabajo relevante.
-
-Nunca debe utilizar la memoria conversacional como sustituto de la documentación persistente.
-
-
+La IA debe continuar por iniciativa propia dentro de las capacidades y límites del turno actual.
