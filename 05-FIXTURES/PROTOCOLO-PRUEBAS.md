@@ -1,9 +1,8 @@
-
 # PROTOCOLO DE PRUEBAS DE FIXTURES
 
 ## Propósito
 
-Definir cómo deben utilizarse los fixtures de `BASE-PROYECTOS` para comprobar que la metodología, los tipos de proyecto, los módulos y los procesos definidos en la BASE funcionan correctamente.
+Definir cómo deben utilizarse los fixtures de BASE-PROYECTOS para comprobar que la metodología, los tipos de proyecto, los módulos y los procesos definidos en la BASE funcionan correctamente.
 
 Un fixture no es un proyecto real.
 
@@ -30,7 +29,6 @@ Una descripción general del proyecto no constituye por sí misma una prueba.
 
 Cada fixture verificable debe poder definir:
 
-```text
 IDENTIFICACIÓN
 OBJETIVO
 ENTRADA
@@ -44,38 +42,28 @@ DEPENDENCIAS
 RIESGOS
 RESULTADO DE LA PRUEBA
 
-
 ---
 
-3. ENTRADA
+## 3. ENTRADA
 
 Debe definirse qué recibe el sistema.
 
 Puede ser:
 
-una petición de usuario;
-
-una idea de negocio;
-
-una especificación;
-
-una necesidad;
-
-datos estructurados;
-
-una combinación de módulos;
-
-una solicitud de modificación;
-
-un escenario de error.
-
+- una petición de usuario;
+- una idea de negocio;
+- una especificación;
+- una necesidad;
+- datos estructurados;
+- una combinación de módulos;
+- una solicitud de modificación;
+- un escenario de error.
 
 La entrada debe ser suficientemente concreta para poder repetir la prueba.
 
-
 ---
 
-4. CONTEXTO
+## 4. CONTEXTO
 
 Definir las condiciones conocidas del caso.
 
@@ -88,10 +76,9 @@ Usuario: cliente de empresa ficticia
 
 No deben incluirse datos innecesarios.
 
-
 ---
 
-5. PROCESO ESPERADO
+## 5. PROCESO ESPERADO
 
 Debe describirse qué debería hacer correctamente el sistema.
 
@@ -107,55 +94,38 @@ Ejemplo:
 
 El proceso debe poder compararse con el comportamiento real.
 
-
 ---
 
-6. RESULTADO ESPERADO
+## 6. RESULTADO ESPERADO
 
 Debe definirse qué debe producir el sistema.
 
 Puede ser:
 
-decisión;
-
-arquitectura;
-
-estructura;
-
-documentación;
-
-configuración;
-
-proyecto;
-
-código;
-
-páginas;
-
-datos;
-
-workflow;
-
-informe;
-
-identificación de riesgos.
-
+- decisión;
+- arquitectura;
+- estructura;
+- documentación;
+- configuración;
+- proyecto;
+- código;
+- páginas;
+- datos;
+- workflow;
+- informe;
+- identificación de riesgos.
 
 Debe evitarse utilizar únicamente expresiones subjetivas como:
 
-"debe estar bien";
-
-"debe funcionar";
-
-"debe ser correcto".
-
+"debe estar bien"
+"debe funcionar"
+"debe ser correcto"
 
 Hay que convertirlas en condiciones comprobables.
 
-
 ---
 
-7. CRITERIOS PASS
+## 7. CRITERIOS PASS
 
 Una prueba es PASS cuando se cumplen todos los criterios obligatorios definidos para ese caso.
 
@@ -170,34 +140,25 @@ PASS si:
 - identifica riesgos;
 - produce todos los elementos obligatorios.
 
-
 ---
 
-8. CRITERIOS FAIL
+## 8. CRITERIOS FAIL
 
 Una prueba es FAIL cuando:
 
-falta un elemento obligatorio;
-
-se utiliza un módulo incorrecto;
-
-se contradicen reglas de la BASE;
-
-se inventan datos;
-
-se ignoran dependencias;
-
-se omite una validación obligatoria;
-
-se produce un resultado incompatible con el tipo de proyecto.
-
+- falta un elemento obligatorio;
+- se utiliza un módulo incorrecto;
+- se contradicen reglas de la BASE;
+- se inventan datos;
+- se ignoran dependencias;
+- se omite una validación obligatoria;
+- se produce un resultado incompatible con el tipo de proyecto.
 
 Los fallos deben documentarse.
 
-
 ---
 
-9. PRUEBAS POSITIVAS
+## 9. PRUEBAS POSITIVAS
 
 Deben comprobar que el sistema funciona correctamente cuando la entrada es válida.
 
@@ -213,42 +174,34 @@ Resultado esperado
 ↓
 PASS
 
-
 ---
 
-10. PRUEBAS NEGATIVAS
+## 10. PRUEBAS NEGATIVAS
 
 También deben existir pruebas en las que el sistema deba detectar un problema.
 
 Ejemplos:
 
-falta información crítica;
-
-existe una dependencia incompatible;
-
-el modelo de negocio no es viable;
-
-un módulo requerido no existe;
-
-existen requisitos contradictorios;
-
-una integración no está disponible.
-
+- falta información crítica;
+- existe una dependencia incompatible;
+- el modelo de negocio no es viable;
+- un módulo requerido no existe;
+- existen requisitos contradictorios;
+- una integración no está disponible.
 
 En estos casos el resultado correcto puede ser:
 
 NO CONTINUAR
 
-o
+o:
 
 REQUIERE VALIDACIÓN
 
 No debe considerarse un fallo que el sistema rechace correctamente una entrada no válida.
 
-
 ---
 
-11. PRUEBAS DE COMBINACIÓN
+## 11. PRUEBAS DE COMBINACIÓN
 
 Los fixtures deben poder comprobar que varios módulos funcionan juntos.
 
@@ -266,73 +219,53 @@ AUTOMATIZACIÓN
 
 Debe comprobarse que:
 
-las responsabilidades están claras;
-
-no existen contradicciones;
-
-las dependencias están identificadas;
-
-la arquitectura es coherente.
-
-
+- las responsabilidades están claras;
+- no existen contradicciones;
+- las dependencias están identificadas;
+- la arquitectura es coherente.
 
 ---
 
-12. PRUEBAS DE TIPO DE PROYECTO
+## 12. PRUEBAS DE TIPO DE PROYECTO
 
-Cada tipo de proyecto debe tener al menos un fixture representativo.
+Cada tipo de proyecto importante debe tener al menos un fixture representativo.
 
-Tipos previstos pueden incluir:
+Los tipos actuales incluyen:
 
-WEB;
+- WEB;
+- WEB DE AFILIACIÓN;
+- APP MÓVIL;
+- SaaS;
+- Ecommerce;
+- API / Servicio;
+- Automatización;
+- Asistente IA;
+- Directorio;
+- Portal.
 
-WEB DE AFILIACIÓN;
-
-APP MÓVIL;
-
-SaaS;
-
-Ecommerce;
-
-API;
-
-Automatización;
-
-Directorio;
-
-Portal;
-
-otros tipos que se incorporen posteriormente.
-
+Cuando se incorpore un nuevo tipo de proyecto, debe evaluarse si necesita un fixture específico.
 
 No todos los tipos requieren inicialmente el mismo número de pruebas.
 
-
 ---
 
-13. PRUEBAS DE MÓDULOS
+## 13. PRUEBAS DE MÓDULOS
 
 Los módulos importantes deben poder comprobarse dentro de uno o varios fixtures.
 
 Debe comprobarse:
 
-identificación;
-
-selección;
-
-integración;
-
-dependencias;
-
-comportamiento esperado.
-
+- identificación;
+- selección;
+- integración;
+- dependencias;
+- comportamiento esperado.
 
 Un módulo no debe considerarse validado simplemente porque exista su archivo.
 
-
 ---
 
-14. PRUEBA DE CADENA COMPLETA
+## 14. PRUEBA DE CADENA COMPLETA
 
 La prueba más importante es la cadena:
 
@@ -356,89 +289,70 @@ RESULTADO
 
 El objetivo final de BASE-PROYECTOS es que esta cadena pueda ejecutarse de forma coherente.
 
-
 ---
 
-15. RESULTADO DE CADA PRUEBA
+## 15. RESULTADO DE CADA PRUEBA
 
-Cada fixture verificable debe terminar indicando:
+Cada fixture verificable debe terminar indicando uno de estos estados:
 
-Estado:
 PASS
 FAIL
 BLOCKED
 NOT RUN
 
-PASS
+### PASS
 
 La prueba cumple todos los criterios obligatorios.
 
-FAIL
+### FAIL
 
 El sistema produce un resultado incorrecto.
 
-BLOCKED
+### BLOCKED
 
 No puede ejecutarse porque falta una dependencia necesaria.
 
-NOT RUN
+### NOT RUN
 
 La prueba está definida pero todavía no se ha ejecutado.
 
-
 ---
 
-16. REGISTRO DE FALLOS
+## 16. REGISTRO DE FALLOS
 
 Cuando una prueba falle debe registrarse:
 
-fixture;
-
-prueba;
-
-fecha;
-
-problema;
-
-causa conocida o hipótesis;
-
-archivo o módulo afectado;
-
-corrección propuesta;
-
-nueva prueba necesaria.
-
+- fixture;
+- prueba;
+- fecha;
+- problema;
+- causa conocida o hipótesis;
+- archivo o módulo afectado;
+- corrección propuesta;
+- nueva prueba necesaria.
 
 No se debe ocultar un fallo simplemente modificando el estado a PASS.
 
-
 ---
 
-17. REPETIBILIDAD
+## 17. REPETIBILIDAD
 
 Una prueba debe poder repetirse con la misma entrada y obtener un resultado equivalente.
 
 Cuando el resultado dependa de información externa cambiante, debe registrarse:
 
-fuente;
-
-fecha;
-
-versión;
-
-condición relevante.
-
-
+- fuente;
+- fecha;
+- versión;
+- condición relevante.
 
 ---
 
-18. NO CONFUNDIR DOCUMENTACIÓN CON VALIDACIÓN
+## 18. NO CONFUNDIR DOCUMENTACIÓN CON VALIDACIÓN
 
 Un documento que diga:
 
-> "Comprobar navegación"
-
-
+"Comprobar navegación"
 
 no demuestra que la navegación haya sido comprobada.
 
@@ -452,69 +366,46 @@ Resultado esperado
 ↓
 Criterio PASS/FAIL
 
-
 ---
 
-19. PRIORIDAD
+## 19. PRIORIDAD
 
 Las pruebas deben priorizarse según el riesgo.
 
 Orden recomendado:
 
 1. reglas fundamentales de la BASE;
-
-
 2. identificación de tipos;
-
-
 3. selección de módulos;
-
-
 4. dependencias;
-
-
 5. arquitectura;
-
-
 6. construcción;
-
-
 7. validación;
-
-
 8. casos especiales;
-
-
 9. optimización.
-
-
-
 
 ---
 
-20. REGLA FINAL
+## 20. REGLA FINAL
 
 Un fixture solo demuestra que la BASE funciona cuando puede utilizarse para detectar correctamente:
 
-qué debe hacerse;
-
-qué no debe hacerse;
-
-qué resultado se espera;
-
-cuándo una prueba pasa;
-
-cuándo una prueba falla.
-
+- qué debe hacerse;
+- qué no debe hacerse;
+- qué resultado se espera;
+- cuándo una prueba pasa;
+- cuándo una prueba falla.
 
 La existencia de un fixture no equivale a una prueba superada.
 
-
 ---
 
-ESTADO
+## ESTADO
 
-Estado: Base inicial
+Estado: Base estructurada para validación
 
-Versión: 1.0
+Versión: 2.0
+
+Última revisión: 2026-08-28
+
 
