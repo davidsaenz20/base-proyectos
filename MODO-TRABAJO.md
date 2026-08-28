@@ -133,6 +133,102 @@ Nunca debe proporcionar únicamente fragmentos cuando sea necesario sustituir un
 
 ---
 
+# INTERVENCIÓN MANUAL UNO A UNO
+
+Cuando sea necesario que el usuario modifique o cree varios archivos manualmente, **NUNCA debe entregar varios archivos a la vez**.
+
+Debe trabajar las modificaciones **una por una y en orden**.
+
+Ejemplo:
+
+Si hay que modificar:
+
+1. `archivo-A.md`
+2. `archivo-B.md`
+3. `archivo-C.md`
+4. `archivo-D.md`
+
+ChatGPT debe entregar únicamente:
+
+**ARCHIVO 1 DE 4**
+
+`archivo-A.md`
+
+con su contenido completo.
+
+Después debe detenerse y esperar a que el usuario confirme mediante:
+
+**.**
+
+Cuando el usuario escriba **.**, ChatGPT debe considerar que puede continuar con el siguiente archivo pendiente.
+
+Entonces debe entregar:
+
+**ARCHIVO 2 DE 4**
+
+`archivo-B.md`
+
+y volver a detenerse.
+
+Debe continuar así hasta completar todos los archivos.
+
+---
+
+# MEMORIA DE CAMBIOS PENDIENTES
+
+Cuando existan varios archivos pendientes de modificación manual, ChatGPT debe mantener internamente una lista de trabajo pendiente.
+
+Debe recordar:
+
+- cuántos archivos deben modificarse;
+- cuáles son;
+- cuáles ya han sido entregados;
+- cuáles ya han sido confirmados por el usuario;
+- cuál es el siguiente archivo;
+- cuáles todavía están pendientes.
+
+Ejemplo:
+
+**Pendientes: 6**
+
+- Archivo 1 → entregado / pendiente de confirmación
+- Archivo 2 → pendiente
+- Archivo 3 → pendiente
+- Archivo 4 → pendiente
+- Archivo 5 → pendiente
+- Archivo 6 → pendiente
+
+Cuando el usuario confirme el primer archivo con **.**, ese archivo pasa a considerarse completado manualmente y ChatGPT debe continuar con el siguiente.
+
+**Nunca debe perder los archivos pendientes restantes.**
+
+No debe volver a empezar la lista desde cero.
+
+No debe volver a entregar un archivo ya confirmado.
+
+No debe saltarse archivos pendientes.
+
+---
+
+# REGLA DE UN SOLO ARCHIVO
+
+En cada intervención manual solo puede aparecer **un único archivo**.
+
+No entregar:
+
+- dos archivos;
+- tres archivos;
+- varios bloques de código correspondientes a distintos archivos;
+- una lista de contenidos completos.
+
+Aunque existan diez, veinte o más archivos pendientes, deben entregarse **uno por uno**.
+
+La secuencia será siempre:
+
+**DETECTAR → PREPARAR → ENTREGAR UN ARCHIVO → ESPERAR "." → CONTINUAR**
+
+---
+
 # CREACIÓN DE ARCHIVOS
 
 Si durante el trabajo se determina que debe existir un archivo que todavía no existe, ChatGPT debe indicarlo claramente.
@@ -157,6 +253,10 @@ Ejemplo:
 ...
 
 El usuario será quien cree manualmente el archivo.
+
+Si además existen otros archivos pendientes, no debe entregarlos en la misma respuesta.
+
+Debe esperar a que el usuario confirme con . antes de pasar al siguiente.
 
 
 ---
@@ -205,6 +305,8 @@ Debe entregar:
 
 4. Un bloque de código Markdown con botón de copia.
 
+5. Solo un archivo en cada intervención.
+
 No debe continuar como si el cambio ya estuviera aplicado.
 
 No debe volver a analizar el mismo problema como si nada hubiera ocurrido.
@@ -216,6 +318,8 @@ Cuando el usuario vuelva a indicar:
 .
 
 debe asumir que puede continuar desde ese punto y volver a analizar el estado disponible.
+
+Si quedan más archivos pendientes, debe entregar el siguiente archivo de la lista, no todos los restantes.
 
 
 ---
@@ -277,6 +381,8 @@ Máximo 30 caracteres en el encabezado.
 Indicar cuál es el siguiente trabajo que ChatGPT va a realizar autónomamente.
 
 No utilizar esta sección para asignar trabajo al usuario salvo que exista una intervención manual imprescindible.
+
+Si existe una intervención manual pendiente, indicar únicamente el siguiente archivo que corresponde entregar.
 
 TABLA DE TRABAJO
 
@@ -376,7 +482,9 @@ necesite una decisión que únicamente el usuario pueda tomar;
 exista un bloqueo real que impida continuar.
 
 
-Si necesita modificar o crear un archivo, debe entregar inmediatamente el contenido completo preparado para copiar y pegar.
+Si necesita modificar o crear un archivo, debe entregar inmediatamente un único archivo preparado para copiar y pegar.
+
+Si hay varios archivos pendientes, debe mantenerlos en una lista interna y entregarlos uno por uno, esperando . entre cada archivo.
 
 No debe limitarse a decir:
 
@@ -417,7 +525,19 @@ ChatGPT debe entonces:
 
 8. Continuar en el siguiente punto lógico.
 
-Y solo detenerse cuando sea imprescindible la intervención del usuario.
+Si para continuar necesita intervención manual:
+
+9. Identificar el archivo concreto.
+
+10. Entregar únicamente ese archivo completo.
+
+11. Esperar ".".
+
+12. Recuperar la lista de pendientes.
+
+13. Entregar el siguiente archivo.
+
+Y repetir el proceso hasta que todas las intervenciones manuales necesarias hayan sido completadas.
 
 
 ---
@@ -439,6 +559,10 @@ qué se hará después;
 y cuánto se ha avanzado.
 
 El formato de actualización nunca debe impedir que ChatGPT siga trabajando.
+
+Las modificaciones manuales deben realizarse siempre una por una.
+
+ChatGPT debe conservar la lista de modificaciones pendientes hasta completarlas.
 
 TRABAJAR PRIMERO.
 
