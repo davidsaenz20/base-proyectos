@@ -80,6 +80,7 @@ El inventario debe reflejar los archivos reales existentes, no una estructura pr
 | `02-MODULOS/WORDPRESS.md` | Integración con WordPress |
 | `02-MODULOS/ANALITICA.md` | Analítica |
 | `02-MODULOS/MODULO-AFILIACION-AUTOMATIZADA.md` | Automatización específica de proyectos de afiliación |
+| `02-MODULOS/DESCUBRIMIENTO-DEMANDA-E-INTENCIONES.md` | Descubrimiento de demanda, keywords, intenciones, clusters y oportunidades |
 
 ---
 
@@ -243,13 +244,21 @@ Eso no implica cambiar de metodología.
 El modo de trabajo permite:
 
 ANALIZAR
+
 ↓
+
 DECIDIR
+
 ↓
+
 CORREGIR
+
 ↓
+
 VALIDAR
+
 ↓
+
 CONTINUAR
 
 ---
@@ -268,11 +277,25 @@ Una modificación estructural no se considera completamente cerrada hasta compro
 
 ---
 
+## 8. MÓDULOS UNIVERSALES DE DEMANDA
+
+Cuando exista un módulo reutilizable relacionado con descubrimiento de demanda, keywords, intenciones, clusters u oportunidades, debe aparecer en este inventario.
+
+Su utilización no debe limitarse a un único tipo de proyecto.
+
+El módulo:
+
+`02-MODULOS/DESCUBRIMIENTO-DEMANDA-E-INTENCIONES.md`
+
+puede ser utilizado por diferentes tipos de proyectos cuando necesiten descubrir o validar demanda.
+
+---
+
 # ESTADO DEL INVENTARIO
 
 **Estado:** Actualizado y sincronizado con la estructura documental auditada.
 
-**Versión:** 2.2
+**Versión:** 2.3
 
 **Última revisión:** 2026-08-28
 
