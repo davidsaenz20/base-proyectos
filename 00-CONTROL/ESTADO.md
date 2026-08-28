@@ -1,350 +1,266 @@
-ESTADO DEL PROYECTO
+# ESTADO DEL PROYECTO
 
-«FUENTE ÚNICA DEL ESTADO OPERATIVO
-
-Este archivo determina dónde se encuentra actualmente el proyecto.
-
-Ningún otro documento debe utilizarse como fuente alternativa para determinar la fase, paso, progreso o siguiente acción actual.»
+> Estado operativo actual de BASE-PROYECTOS.
+>
+> Este archivo es la fuente de verdad sobre dónde estamos, qué está terminado, qué está pendiente y cuál es el siguiente trabajo.
 
 ---
 
-1. IDENTIFICACIÓN
+# 1. ESTADO ACTUAL
 
-Nombre del proyecto:
+**Proyecto:** BASE-PROYECTOS
 
-Tipo de proyecto:
+**Estado:** En desarrollo
 
-Versión:
+**Fase actual:** Fase 1 — Descubrimiento y definición de la BASE
 
-Fecha de inicio:
+**Objetivo actual:** Consolidar y validar la arquitectura de BASE-PROYECTOS antes de continuar ampliándola.
 
-Última actualización:
-
----
-
-2. OBJETIVO
-
-Objetivo principal:
-
-Problema que resuelve:
-
-Resultado esperado:
+**Última actualización:** 2026-08-28
 
 ---
 
-3. ESTADO ACTUAL
+# 2. ÚLTIMO PUNTO VÁLIDO
 
-Estado:
+Se ha realizado una revisión de la arquitectura general, documentación de control, tipos de proyecto y sistema de trabajo.
 
-- No iniciado
-- En ejecución
-- Bloqueado
-- En validación
-- En producción
-- Terminado
+Se ha identificado que la estructura general de la BASE está avanzada, pero el sistema de control operativo no estaba reflejando correctamente el estado real del trabajo.
 
-Fase actual:
-
-Paso actual:
-
-Objetivo del paso actual:
+También se ha creado `MODO-TRABAJO.md` en la raíz del repositorio para definir el protocolo de trabajo autónomo entre el usuario y ChatGPT.
 
 ---
 
-4. ENTREGABLE ACTUAL
+# 3. TRABAJO COMPLETADO
 
-Entregable esperado:
+## Arquitectura general
 
-Ubicación:
+**Estado:** Avanzado
 
-Estado del entregable:
+La estructura principal de BASE-PROYECTOS está definida y organizada por capas.
 
-- Pendiente
-- En construcción
-- Pendiente de validación
-- Validado
-- Bloqueado
+## Sistema de documentación
 
----
+**Estado:** Avanzado
 
-5. CRITERIO DE FINALIZACIÓN DEL PASO
+Existen estructuras separadas para:
 
-El paso actual se considera terminado cuando:
+- control;
+- documentación universal;
+- módulos;
+- plantillas;
+- tipos de proyecto;
+- fixtures;
+- proyectos;
+- temporal.
 
-- 
-- 
-- 
+## Tipos de proyecto
 
-El paso no se marcará como completado únicamente porque se haya realizado trabajo.
+**Estado:** En desarrollo avanzado
 
-Debe existir evidencia suficiente de que el criterio de finalización se ha cumplido.
+Existe documentación específica para los tipos de proyecto y se ha comprobado la existencia de `APP-MOVIL.md`.
 
----
+## Modo de trabajo
 
-6. PROGRESO
+**Estado:** Definido
 
-Progreso general: No calculado
+Se ha creado:
 
-Método de cálculo
+`MODO-TRABAJO.md`
 
-El progreso general debe calcularse utilizando las tareas reales registradas en el roadmap o sistema de planificación vigente.
+Su objetivo es permitir trabajo autónomo por bloques y utilizar `.` como comando rápido de continuación.
 
-Tareas con el mismo peso
+## Historial
 
-Progreso = tareas completadas / tareas totales × 100
+**Estado:** Revisado
 
-Tareas con diferente peso
-
-Cuando las tareas tengan diferente importancia o esfuerzo, se utilizará un sistema ponderado:
-
-Progreso = peso completado / peso total × 100
-
-Estados válidos de una tarea
-
-- Pendiente
-- En curso
-- Bloqueada
-- Completada
-- Validada
-
-Por defecto:
-
-- Pendiente = 0 %
-- En curso = 0 % hasta que exista un criterio específico de progreso
-- Bloqueada = 0 %
-- Completada = 100 %
-- Validada = 100 %
-
-Si un proyecto necesita porcentajes parciales dentro de una tarea, deberán definirse previamente mediante criterios objetivos.
-
-Reglas
-
-El porcentaje:
-
-1. debe poder justificarse;
-2. debe proceder del trabajo registrado;
-3. no debe aumentar simplemente por mantener una conversación;
-4. no debe aumentar simplemente por crear documentación;
-5. no debe ser estimado subjetivamente por la IA;
-6. debe actualizarse cuando cambie el estado real de las tareas;
-7. debe indicar claramente la fuente utilizada para calcularlo.
-
-Si no existen suficientes datos para calcularlo:
-
-Progreso general: No calculable
-
-Nunca se debe inventar un porcentaje.
+Se ha revisado el historial reciente del repositorio para reconstruir el estado del trabajo.
 
 ---
 
-7. TAREAS DEL PROYECTO
+# 4. PROBLEMAS IDENTIFICADOS
 
-Las tareas que determinen el progreso deben estar registradas explícitamente.
+## Problema 1 — Estado operativo
 
-ID| Tarea| Fase| Peso| Estado| Evidencia
-T-001| | | | Pendiente| 
-T-002| | | | Pendiente| 
-T-003| | | | Pendiente| 
+`00-CONTROL/ESTADO.md` no estaba registrando el estado real del proyecto.
 
-El cálculo del progreso debe utilizar esta tabla o el sistema equivalente de tareas definido para el proyecto.
+**Consecuencia:** el sistema no podía recuperar de forma fiable el punto exacto de trabajo.
 
----
-
-8. COMPLETADO
-
-- 
+**Acción:** convertir este archivo en la fuente persistente de estado.
 
 ---
 
-9. PENDIENTE
+## Problema 2 — Roadmap incompleto
 
-- 
+`00-CONTROL/ROADMAP.md` contiene las fases generales, pero todavía no contiene un roadmap específico del trabajo actual.
 
----
+**Consecuencia:** define el proceso general, pero no determina con precisión el siguiente trabajo concreto.
 
-10. BLOQUEOS
-
-Estado de bloqueos:
-
-- Ninguno.
-
-Si existe un bloqueo:
-
-Bloqueo:
-
-Causa:
-
-Qué falta para resolverlo:
-
-Acción prevista:
+**Acción:** completar el roadmap específico después de reconstruir y validar el estado.
 
 ---
 
-11. DECISIONES RELEVANTES
+# 5. TRABAJO PENDIENTE
 
-- 
+## Prioridad 1
 
-Las decisiones importantes que afecten al proyecto deben registrarse aquí o en la documentación específica correspondiente.
+Auditar completamente la estructura y contenido real de:
 
-Las nuevas aportaciones del usuario que modifiquen requisitos, alcance, prioridades o decisiones importantes deben registrarse cuando corresponda.
-
----
-
-12. VALIDACIONES
-
-Última validación
-
-Qué se validó:
-
-Resultado:
-
-Fecha:
-
-Evidencia:
-
----
-
-13. PRÓXIMO PASO
-
-Siguiente acción concreta:
+`04-TIPOS-PROYECTO/`
 
 Objetivo:
 
-Entregable esperado:
-
-Criterio para considerarlo terminado:
-
----
-
-14. HISTORIAL DE ESTADO
-
-Actualización
-
-Fecha:
-
-Fase:
-
-Paso:
-
-Acción realizada:
-
-Resultado:
-
-Evidencia:
+- comprobar todos los tipos existentes;
+- comprobar coherencia entre README y archivos;
+- detectar tipos faltantes;
+- detectar documentación duplicada o contradictoria;
+- comprobar que cada tipo contiene lo necesario para el sistema.
 
 ---
 
-15. GESTIÓN DE NUEVAS APORTACIONES
+## Prioridad 2
 
-Las nuevas ideas, requisitos o cambios aportados por el usuario durante la ejecución no deben perderse ni incorporarse silenciosamente.
+Auditar `00-CONTROL/`.
 
-Cada aportación debe analizarse antes de modificar el proyecto.
+Comprobar:
 
-Flujo
+- README;
+- ESTADO;
+- ROADMAP;
+- DECISIONES;
+- REGLAS;
+- INVENTARIO;
+- cualquier documento relacionado.
 
-APORTACIÓN
+Objetivo: conseguir un sistema de control coherente y recuperable.
 
-↓
+---
 
-CLASIFICACIÓN
+## Prioridad 3
 
-↓
+Actualizar el roadmap específico.
 
-ANÁLISIS
+Debe determinar:
 
-↓
+- objetivo actual;
+- fases;
+- tareas;
+- dependencias;
+- hitos;
+- criterios de finalización.
 
-DECISIÓN
+---
 
-↓
+## Prioridad 4
 
-REGISTRO
+Realizar auditoría global de coherencia.
 
-↓
+Comprobar que:
 
-ACTUALIZACIÓN DEL PROYECTO
+- los documentos se referencian correctamente;
+- no existen reglas contradictorias;
+- no faltan componentes necesarios;
+- no existen archivos obsoletos;
+- la estructura responde al objetivo de BASE-PROYECTOS.
 
-Clasificación
+---
 
-Una aportación puede ser:
+# 6. SIGUIENTE TAREA
 
-- información adicional;
-- requisito;
-- ampliación;
-- mejora;
-- idea futura;
-- cambio de alcance;
-- cambio de objetivo;
+La siguiente tarea lógica es:
+
+**AUDITAR 04-TIPOS-PROYECTO COMPLETAMENTE.**
+
+No realizar cambios estructurales antes de terminar esta auditoría salvo que aparezca un error crítico.
+
+---
+
+# 7. BLOQUEOS
+
+**Bloqueo actual:** Ninguno.
+
+**Intervención del usuario necesaria:** Ninguna después de registrar este estado.
+
+---
+
+# 8. CRITERIO PARA CONTINUAR
+
+Una vez completada la auditoría de `04-TIPOS-PROYECTO`, actualizar este archivo si los resultados modifican:
+
+- fase;
+- progreso;
+- problemas;
+- prioridades;
+- siguiente tarea.
+
+---
+
+# 9. PROGRESO ESTIMADO
+
+Estos porcentajes son aproximados y representan progreso real del trabajo, no cantidad de archivos.
+
+| Área | Progreso |
+|---|---:|
+| Arquitectura | 90% |
+| Control | 40% |
+| Tipos de proyecto | 70% |
+| Documentación | 75% |
+| Auditoría global | 20% |
+| Validación | 0% |
+| Construcción | 0% |
+| **TOTAL BASE** | **55%** |
+
+---
+
+# 10. REGLA DE ACTUALIZACIÓN
+
+Este archivo debe actualizarse cuando exista un cambio significativo en:
+
+- estado;
+- fase;
+- tarea;
+- prioridad;
 - bloqueo;
-- decisión.
+- decisión;
+- progreso.
 
-Regla
+No actualizarlo por cada acción trivial.
 
-Una aportación que no cambie sustancialmente el proyecto puede incorporarse al trabajo correspondiente.
-
-Una aportación que modifique significativamente:
-
-- el objetivo;
-- el alcance;
-- la arquitectura;
-- el coste;
-- los riesgos;
-- el resultado esperado;
-
-debe ser analizada y registrada antes de alterar el proyecto.
+Su función es permitir recuperar el trabajo incluso si el contexto de la conversación deja de estar disponible.
 
 ---
 
-16. REGLAS DE ESTE ARCHIVO
+# 11. SIGUIENTE PUNTO DE RECUPERACIÓN
 
-Este archivo debe:
+Si se pierde el contexto de la conversación, comenzar desde:
 
-1. reflejar siempre el estado real del proyecto;
-2. contener una única fase actual;
-3. contener un único paso actual;
-4. indicar qué está pendiente;
-5. indicar cuál es la siguiente acción;
-6. registrar bloqueos reales;
-7. registrar validaciones relevantes;
-8. registrar las tareas utilizadas para calcular el progreso;
-9. actualizarse después de cada paso validado;
-10. mantener trazabilidad suficiente para reconstruir el estado real.
+**Fase:** Descubrimiento y definición de BASE
 
-No debe utilizarse para:
+**Área:** `04-TIPOS-PROYECTO`
 
-- investigación extensa;
-- documentación técnica completa;
-- duplicar arquitectura;
-- almacenar contenido completo del proyecto;
-- almacenar ideas sin clasificar;
-- sustituir la documentación específica del proyecto.
+**Tarea:** Auditoría completa
+
+**Siguiente acción:** revisar README y todos los tipos existentes, contrastarlos entre sí y detectar incoherencias o faltantes.
 
 ---
 
-17. PRINCIPIO DE FUENTE ÚNICA
+# 12. REGLA FINAL
 
-Este archivo responde siempre a:
+Este archivo responde:
 
-¿DÓNDE ESTAMOS?
+**¿DÓNDE ESTAMOS?**
 
-¿QUÉ ESTÁ HECHO?
+**¿QUÉ HEMOS TERMINADO?**
 
-¿QUÉ FALTA?
+**¿QUÉ ESTÁ PENDIENTE?**
 
-¿ESTAMOS BLOQUEADOS?
+**¿QUÉ ESTÁ BLOQUEADO?**
 
-¿QUÉ TOCA AHORA?
+**¿QUÉ TOCA HACER AHORA?**
 
-¿CÓMO SE JUSTIFICA EL PROGRESO?
+El detalle de cómo trabajar pertenece a:
 
----
+`MODO-TRABAJO.md`
 
-PRINCIPIO
+El plan general pertenece a:
 
-El estado operativo debe representar la realidad del proyecto y no la percepción de avance de la IA.
-
-TRABAJO REGISTRADO → ESTADO → EVIDENCIA → PROGRESO
-
-Nunca:
-
-CONVERSACIÓN → ESTIMACIÓN → PORCENTAJE INVENTADO
+`00-CONTROL/ROADMAP.md`
