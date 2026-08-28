@@ -1,19 +1,18 @@
+TIPO DE PROYECTO WEB DE AFILIACIÓN
 
-# TIPO DE PROYECTO WEB DE AFILIACIÓN
-
-## Propósito
+Propósito
 
 Definir la metodología específica para proyectos web cuyo modelo de negocio principal o complementario sea la afiliación.
 
-Este documento especializa el tipo general `WEB.md` utilizando el módulo:
+Este documento especializa el tipo general "WEB.md" utilizando el módulo:
 
-`02-MODULOS/MODULO-AFILIACION-AUTOMATIZADA.md`
+"02-MODULOS/MODULO-AFILIACION-AUTOMATIZADA.md"
 
 No sustituye al tipo general WEB ni al módulo de afiliación.
 
 ---
 
-## OBJETIVO
+OBJETIVO
 
 Crear una web de afiliación funcional, útil para el usuario, mantenible, medible y preparada para generar ingresos mediante programas de afiliación.
 
@@ -23,7 +22,7 @@ El objetivo es construir un activo digital que pueda adquirir tráfico, generar 
 
 ---
 
-## MODELO DE NEGOCIO
+MODELO DE NEGOCIO
 
 Antes de construir debe definirse:
 
@@ -42,7 +41,7 @@ La existencia de un programa de afiliación no demuestra por sí misma la viabil
 
 ---
 
-## VALIDACIÓN PREVIA
+VALIDACIÓN PREVIA
 
 Antes de desarrollar la web completa debe investigarse:
 
@@ -72,7 +71,7 @@ No se debe construir una web completa cuando la hipótesis de negocio todavía s
 
 ---
 
-## ESTRUCTURA WEB
+ESTRUCTURA WEB
 
 La arquitectura puede incluir:
 
@@ -96,7 +95,7 @@ La estructura debe responder a las necesidades del usuario y no únicamente a la
 
 ---
 
-## CONTENIDO
+CONTENIDO
 
 El contenido debe aportar valor real.
 
@@ -119,7 +118,7 @@ No se debe publicar automáticamente contenido falso, duplicado, vacío o creado
 
 ---
 
-## DATOS DE AFILIACIÓN
+DATOS DE AFILIACIÓN
 
 Cuando el proyecto utilice catálogos externos:
 
@@ -135,7 +134,7 @@ Los datos dinámicos deben mantenerse separados del contenido editorial siempre 
 
 ---
 
-## PRODUCTOS Y SERVICIOS
+PRODUCTOS Y SERVICIOS
 
 Una web puede trabajar con:
 
@@ -155,7 +154,7 @@ La estructura debe adaptarse al tipo de conversión.
 
 ---
 
-## SEO
+SEO
 
 El SEO debe considerarse una posible fuente de tráfico, no una garantía de tráfico.
 
@@ -176,7 +175,7 @@ No se debe crear una gran cantidad de páginas únicamente para aumentar el núm
 
 ---
 
-## AUTOMATIZACIÓN
+AUTOMATIZACIÓN
 
 La automatización debe utilizarse para reducir trabajo repetitivo.
 
@@ -198,11 +197,10 @@ Las tareas que puedan producir errores graves deben incluir validaciones antes d
 
 ---
 
-## ARQUITECTURA RECOMENDADA
+ARQUITECTURA RECOMENDADA
 
 Cuando resulte adecuado:
 
-```text
 FUENTES DE AFILIACIÓN
         ↓
        N8N
@@ -227,32 +225,22 @@ La arquitectura real debe adaptarse al proyecto.
 
 No es obligatorio utilizar WordPress ni n8n si otra solución resulta más adecuada.
 
-
 ---
 
 WORDPRESS
 
 Cuando se utilice WordPress:
 
-separar contenido de datos dinámicos;
-
-utilizar una estructura mantenible;
-
-evitar dependencias innecesarias de plugins;
-
-controlar actualizaciones;
-
-realizar backups;
-
-proteger administración;
-
-optimizar rendimiento;
-
-evitar publicar automáticamente contenido sin validación cuando exista riesgo.
-
+- separar contenido de datos dinámicos;
+- utilizar una estructura mantenible;
+- evitar dependencias innecesarias de plugins;
+- controlar actualizaciones;
+- realizar backups;
+- proteger administración;
+- optimizar rendimiento;
+- evitar publicar automáticamente contenido sin validación cuando exista riesgo.
 
 Los componentes visuales deben poder reutilizarse entre páginas.
-
 
 ---
 
@@ -260,25 +248,17 @@ ESCALABILIDAD
 
 Si el proyecto forma parte de una flotilla de webs:
 
-reutilizar componentes;
-
-reutilizar workflows;
-
-reutilizar modelos de datos;
-
-reutilizar procesos;
-
-mantener independencia entre proyectos;
-
-controlar costes por web;
-
-medir resultados individualmente.
-
+- reutilizar componentes;
+- reutilizar workflows;
+- reutilizar modelos de datos;
+- reutilizar procesos;
+- mantener independencia entre proyectos;
+- controlar costes por web;
+- medir resultados individualmente.
 
 La creación de nuevas webs debe tener un coste marginal bajo.
 
 No se debe escalar una estrategia antes de demostrar que funciona en una muestra pequeña.
-
 
 ---
 
@@ -306,44 +286,27 @@ No se debe asumir que todas las webs de una flotilla tendrán el mismo rendimien
 
 Cada web debe considerarse una unidad económica medible.
 
-
 ---
 
 MÉTRICAS
 
 Registrar como mínimo cuando sea posible:
 
-visitas;
-
-usuarios;
-
-páginas vistas;
-
-impresiones;
-
-clics afiliados;
-
-CTR;
-
-conversiones;
-
-comisión;
-
-ingresos;
-
-costes;
-
-beneficio estimado;
-
-páginas indexadas;
-
-tiempo de mantenimiento;
-
-errores;
-
-estado de los programas afiliados.
-
-
+- visitas;
+- usuarios;
+- páginas vistas;
+- impresiones;
+- clics afiliados;
+- CTR;
+- conversiones;
+- comisión;
+- ingresos;
+- costes;
+- beneficio estimado;
+- páginas indexadas;
+- tiempo de mantenimiento;
+- errores;
+- estado de los programas afiliados.
 
 ---
 
@@ -351,31 +314,19 @@ COSTES
 
 Calcular:
 
-dominio;
-
-hosting;
-
-WordPress;
-
-plugins;
-
-APIs;
-
-feeds;
-
-automatización;
-
-IA;
-
-almacenamiento;
-
-mantenimiento;
-
-otros servicios externos.
-
+- dominio;
+- hosting;
+- WordPress;
+- plugins;
+- APIs;
+- feeds;
+- automatización;
+- IA;
+- almacenamiento;
+- mantenimiento;
+- otros servicios externos.
 
 Debe calcularse el coste mensual y anual atribuible a cada proyecto.
-
 
 ---
 
@@ -389,23 +340,14 @@ Una web que no alcance el punto de equilibrio después de un periodo razonable d
 
 Las posibles decisiones son:
 
-optimizar;
-
-cambiar monetización;
-
-cambiar contenido;
-
-cambiar estrategia;
-
-cambiar nicho;
-
-vender;
-
-cerrar;
-
-no renovar.
-
-
+- optimizar;
+- cambiar monetización;
+- cambiar contenido;
+- cambiar estrategia;
+- cambiar nicho;
+- vender;
+- cerrar;
+- no renovar.
 
 ---
 
@@ -413,27 +355,17 @@ CUMPLIMIENTO
 
 Antes de publicar deben revisarse las obligaciones aplicables al proyecto, incluyendo cuando corresponda:
 
-identificación del responsable;
-
-privacidad;
-
-cookies;
-
-consentimiento;
-
-condiciones de uso;
-
-divulgación de afiliación;
-
-derechos de terceros;
-
-uso de marcas;
-
-condiciones de los programas de afiliación.
-
+- identificación del responsable;
+- privacidad;
+- cookies;
+- consentimiento;
+- condiciones de uso;
+- divulgación de afiliación;
+- derechos de terceros;
+- uso de marcas;
+- condiciones de los programas de afiliación.
 
 No deben copiarse textos legales de terceros sin verificar su adecuación al proyecto.
-
 
 ---
 
@@ -441,29 +373,18 @@ SEGURIDAD
 
 Evaluar:
 
-WordPress;
-
-plugins;
-
-credenciales;
-
-APIs;
-
-claves;
-
-formularios;
-
-administración;
-
-backups;
-
-actualizaciones;
-
-integraciones externas.
-
+- WordPress;
+- plugins;
+- credenciales;
+- APIs;
+- claves;
+- formularios;
+- administración;
+- backups;
+- actualizaciones;
+- integraciones externas.
 
 Las claves y secretos nunca deben publicarse en el repositorio ni en el código del frontend.
-
 
 ---
 
@@ -473,60 +394,37 @@ Antes de considerar terminada una web:
 
 Negocio
 
-programa afiliado operativo;
-
-enlaces correctos;
-
-modelo de comisión comprobado;
-
-costes conocidos.
-
+- programa afiliado operativo;
+- enlaces correctos;
+- modelo de comisión comprobado;
+- costes conocidos.
 
 Contenido
 
-contenido útil;
-
-ausencia de errores evidentes;
-
-ausencia de contenido duplicado innecesario;
-
-datos actualizados.
-
+- contenido útil;
+- ausencia de errores evidentes;
+- ausencia de contenido duplicado innecesario;
+- datos actualizados.
 
 Técnica
 
-navegación;
-
-responsive;
-
-velocidad razonable;
-
-formularios;
-
-enlaces;
-
-imágenes;
-
-errores;
-
-seguridad básica;
-
-backups.
-
+- navegación;
+- responsive;
+- velocidad razonable;
+- formularios;
+- enlaces;
+- imágenes;
+- errores;
+- seguridad básica;
+- backups.
 
 Afiliación
 
-enlaces de afiliado;
-
-tracking;
-
-atribución cuando corresponda;
-
-actualización de productos/servicios;
-
-comprobación de enlaces rotos.
-
-
+- enlaces de afiliado;
+- tracking;
+- atribución cuando corresponda;
+- actualización de productos/servicios;
+- comprobación de enlaces rotos.
 
 ---
 
@@ -534,19 +432,14 @@ REGLA PRINCIPAL
 
 Una web de afiliación no debe medirse por:
 
-número de páginas;
-
-número de productos;
-
-cantidad de automatizaciones;
-
-cantidad de webs creadas.
-
+- número de páginas;
+- número de productos;
+- cantidad de automatizaciones;
+- cantidad de webs creadas.
 
 Debe medirse por:
 
 valor para el usuario + tráfico cualificado + conversiones + ingresos - costes.
-
 
 ---
 
@@ -554,19 +447,13 @@ RELACIÓN CON OTROS DOCUMENTOS
 
 Este tipo de proyecto utiliza:
 
-04-TIPOS-PROYECTO/WEB.md;
-
-02-MODULOS/MODULO-AFILIACION-AUTOMATIZADA.md;
-
-módulos universales aplicables;
-
-fixtures y pruebas correspondientes;
-
-documentación del proyecto concreto.
-
+- "04-TIPOS-PROYECTO/WEB.md";
+- "02-MODULOS/MODULO-AFILIACION-AUTOMATIZADA.md";
+- módulos universales aplicables;
+- fixtures y pruebas correspondientes;
+- documentación del proyecto concreto.
 
 Cuando exista conflicto, debe prevalecer la arquitectura general del sistema y la decisión documentada correspondiente.
-
 
 ---
 
@@ -575,9 +462,4 @@ ESTADO
 Estado: Base inicial
 
 Versión: 1.0
-
-Cuando lo hayas creado, dime **“hecho”**.
-
-Después de eso **no vamos a crear más documentos todavía**: revisaré `05-FIXTURES`, porque ahí es donde podemos convertir esta BASE en algo realmente verificable en lugar de seguir acumulando documentación.
-
 
