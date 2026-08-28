@@ -1,5 +1,3 @@
-
-
 # FIXTURE: PROYECTO APP MÓVIL
 
 ## OBJETIVO
@@ -143,16 +141,17 @@ APP
             VUELVE INTERNET
                   ↓
               SINCRONIZAR
+```
 
 La solución debe contemplar posibles conflictos y errores de sincronización.
 
-
 ---
 
-ARQUITECTURA ESPERADA
+## ARQUITECTURA ESPERADA
 
 Una solución válida puede seguir conceptualmente:
 
+```text
 APP MÓVIL
    ↓
 API
@@ -168,206 +167,156 @@ ALMACENAMIENTO LOCAL
 SINCRONIZACIÓN
    ↓
 API
+```
 
 La tecnología concreta no debe considerarse obligatoria.
 
-
 ---
 
-VALIDACIÓN
+## VALIDACIÓN
 
 El sistema debe comprobar como mínimo:
 
-instalación;
-
-apertura;
-
-inicio de sesión;
-
-navegación;
-
-consulta de visitas;
-
-registro de visita;
-
-fotografías;
-
-funcionamiento sin conexión;
-
-recuperación de conexión;
-
-sincronización;
-
-notificaciones;
-
-permisos;
-
-errores;
-
-cierre y reapertura;
-
-seguridad básica.
-
-
+- instalación;
+- apertura;
+- inicio de sesión;
+- navegación;
+- consulta de visitas;
+- registro de visita;
+- fotografías;
+- funcionamiento sin conexión;
+- recuperación de conexión;
+- sincronización;
+- notificaciones;
+- permisos;
+- errores;
+- cierre y reapertura;
+- seguridad básica.
 
 ---
 
-CASOS DE PRUEBA
+## CASOS DE PRUEBA
 
-TEST-01
+### TEST-01
 
-Caso: inicio de sesión correcto.
+**Caso:** inicio de sesión correcto.
 
-Resultado esperado: acceso al área de visitas.
+**Resultado esperado:** acceso al área de visitas.
 
-PASS: el usuario accede correctamente.
+**PASS:** el usuario accede correctamente.
 
-FAIL: se produce acceso incorrecto o error inesperado.
-
-
----
-
-TEST-02
-
-Caso: consultar visita asignada.
-
-Resultado esperado: se muestran los datos disponibles de la visita.
-
-PASS: la visita aparece correctamente.
-
-FAIL: la información no aparece o es incorrecta.
-
+**FAIL:** se produce acceso incorrecto o error inesperado.
 
 ---
 
-TEST-03
+### TEST-02
 
-Caso: registrar visita sin conexión.
+**Caso:** consultar visita asignada.
 
-Resultado esperado: la información queda almacenada localmente.
+**Resultado esperado:** se muestran los datos disponibles de la visita.
 
-PASS: la información permanece disponible para sincronización.
+**PASS:** la visita aparece correctamente.
 
-FAIL: se pierde la información.
-
-
----
-
-TEST-04
-
-Caso: recuperar conexión.
-
-Resultado esperado: los datos pendientes se sincronizan.
-
-PASS: los datos llegan correctamente al backend.
-
-FAIL: se duplican, pierden o corrompen datos.
-
+**FAIL:** la información no aparece o es incorrecta.
 
 ---
 
-TEST-05
+### TEST-03
 
-Caso: adjuntar fotografía.
+**Caso:** registrar visita sin conexión.
 
-Resultado esperado: la fotografía queda asociada a la visita.
+**Resultado esperado:** la información queda almacenada localmente.
 
-PASS: la fotografía se almacena correctamente.
+**PASS:** la información permanece disponible para sincronización.
 
-FAIL: se pierde o queda asociada incorrectamente.
-
-
----
-
-TEST-06
-
-Caso: credenciales incorrectas.
-
-Resultado esperado: acceso rechazado.
-
-PASS: el sistema rechaza el acceso.
-
-FAIL: el usuario obtiene acceso.
-
+**FAIL:** se pierde la información.
 
 ---
 
-TEST-07
+### TEST-04
 
-Caso: API no disponible.
+**Caso:** recuperar conexión.
 
-Resultado esperado: la aplicación gestiona el error sin bloquearse.
+**Resultado esperado:** los datos pendientes se sincronizan.
 
-PASS: muestra un estado controlado y permite continuar cuando sea posible.
+**PASS:** los datos llegan correctamente al backend.
 
-FAIL: la aplicación se bloquea o pierde datos.
-
+**FAIL:** se duplican, pierden o corrompen datos.
 
 ---
 
-CRITERIOS DE ACEPTACIÓN
+### TEST-05
+
+**Caso:** adjuntar fotografía.
+
+**Resultado esperado:** la fotografía queda asociada a la visita.
+
+**PASS:** la fotografía se almacena correctamente.
+
+**FAIL:** se pierde o queda asociada incorrectamente.
+
+---
+
+### TEST-06
+
+**Caso:** credenciales incorrectas.
+
+**Resultado esperado:** acceso rechazado.
+
+**PASS:** el sistema rechaza el acceso.
+
+**FAIL:** el usuario obtiene acceso.
+
+---
+
+### TEST-07
+
+**Caso:** API no disponible.
+
+**Resultado esperado:** la aplicación gestiona el error sin bloquearse.
+
+**PASS:** muestra un estado controlado y permite continuar cuando sea posible.
+
+**FAIL:** la aplicación se bloquea o pierde datos.
+
+---
+
+## CRITERIOS DE ACEPTACIÓN
 
 El fixture se considera válido cuando:
 
-el tipo APP-MOVIL se identifica correctamente;
-
-se reconocen los requisitos funcionales;
-
-se identifica la necesidad de backend;
-
-se identifica la API;
-
-se identifica el almacenamiento local;
-
-se identifica la sincronización;
-
-se contemplan seguridad y privacidad;
-
-se contemplan permisos;
-
-se contemplan notificaciones;
-
-existen pruebas verificables;
-
-existen pruebas negativas;
-
-la arquitectura no depende de una tecnología concreta sin justificación.
-
-
+- el tipo APP-MOVIL se identifica correctamente;
+- se reconocen los requisitos funcionales;
+- se identifica la necesidad de backend;
+- se identifica la API;
+- se identifica el almacenamiento local;
+- se identifica la sincronización;
+- se contemplan seguridad y privacidad;
+- se contemplan permisos;
+- se contemplan notificaciones;
+- existen pruebas verificables;
+- existen pruebas negativas;
+- la arquitectura no depende de una tecnología concreta sin justificación.
 
 ---
 
-PRUEBAS NEGATIVAS
+## PRUEBAS NEGATIVAS
 
 El sistema debe detectar como problemas:
 
 1. almacenar secretos del backend dentro de la aplicación;
-
-
 2. permitir acceso con credenciales incorrectas;
-
-
 3. perder datos registrados durante una desconexión;
-
-
 4. duplicar registros durante la sincronización;
-
-
 5. solicitar permisos que no correspondan a funciones reales;
-
-
 6. transmitir información sensible sin protección;
-
-
 7. permitir acceso no autorizado a visitas de otros usuarios.
-
-
-
 
 ---
 
-RESULTADO ESPERADO
+## RESULTADO ESPERADO
 
+```text
 TIPO DETECTADO:
 APP-MOVIL
 
@@ -395,12 +344,14 @@ RIESGOS DETECTADOS:
 
 PRUEBAS:
 PASS
-
+```
 
 ---
 
-ESTADO
+## ESTADO
 
-Estado: Fixture inicial
+**Estado:** Fixture inicial
 
-Versión: 1.0
+**Versión:** 1.0
+
+
