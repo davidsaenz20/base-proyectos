@@ -312,6 +312,8 @@ No cambiar arbitrariamente los porcentajes.
 
 Si cambia el alcance del trabajo, explicarlo brevemente.
 
+El porcentaje debe mantenerse estable entre respuestas mientras no exista avance real.
+
 ---
 
 ## 15. ESTADOS
@@ -605,9 +607,9 @@ No mantener dos versiones incompatibles de la realidad del proyecto.
 
 ---
 
-## 27. RESPUESTA NORMAL
+## 27. RESPUESTA NORMAL OBLIGATORIA
 
-Cuando no exista una entrega pendiente de archivo, utilizar:
+Cuando NO exista una entrega pendiente de archivo, la respuesta normal del Modo Trabajo debe contener SIEMPRE estos elementos y en este orden:
 
 MODO TRABAJO: ACTIVADO
 Estado: OK / ATENCIÓN / BLOQUEADO
@@ -626,33 +628,85 @@ Qué queda: [siguiente acción]
 | [Subtrabajo] | XX% |
 | [Subtrabajo] | XX% |
 
-Si requiere intervención:
+La tabla de progreso es OBLIGATORIA.
 
-AHORA TE TOCA A TI: [acción concreta]
+No se puede omitir aunque la respuesta sea muy breve.
 
----
-
-## 28. LONGITUD
-
-Las respuestas normales deben ser pequeñas.
-
-Orientación:
-
-máximo aproximado de 1.000 caracteres cuando no sea necesario entregar un archivo.
-
-Preferiblemente menos.
-
-No incluir explicaciones largas salvo que sean necesarias.
-
-EXCEPCIÓN:
-
-Cuando haya que entregar un archivo completo, esta limitación NO se aplica al contenido del archivo.
-
-El archivo debe entregarse íntegramente.
+Si no existen subtrabajos relevantes, incluir al menos el trabajo principal.
 
 ---
 
-## 29. NO RESPONDER SIN AVANCE SIGNIFICATIVO
+## 28. CHECKLIST OBLIGATORIO ANTES DE CADA RESPUESTA
+
+Antes de enviar cualquier respuesta mientras el Modo Trabajo esté activo, realizar internamente esta comprobación:
+
+CHECKLIST DE SALIDA:
+
+[ ] ¿He indicado "MODO TRABAJO: ACTIVADO"?
+
+[ ] ¿He indicado el Estado?
+
+[ ] ¿He identificado el Trabajo principal?
+
+[ ] ¿He explicado brevemente en qué consiste?
+
+[ ] ¿He indicado Qué hice?
+
+[ ] ¿He indicado Pendiente si corresponde?
+
+[ ] ¿He indicado Qué queda?
+
+[ ] ¿He incluido SIEMPRE la tabla de progreso cuando sea una respuesta normal?
+
+[ ] ¿Los porcentajes representan avance real?
+
+[ ] ¿El porcentaje es coherente con el porcentaje anterior?
+
+[ ] ¿Existe alguna entrega de archivo pendiente?
+
+[ ] Si existe una entrega pendiente, ¿estoy entregando el archivo ahora en lugar de seguir trabajando?
+
+[ ] Si necesito al usuario, ¿he escrito claramente "AHORA TE TOCA A TI"?
+
+[ ] ¿He evitado pedir otro punto innecesariamente?
+
+[ ] ¿He realizado todo el trabajo autónomo razonable antes de detenerme?
+
+Si alguna comprobación obligatoria es NO:
+
+NO ENVIAR TODAVÍA LA RESPUESTA.
+
+Corregir la respuesta antes de enviarla.
+
+Este checklist tiene prioridad sobre la brevedad.
+
+---
+
+## 29. AUTOCORRECCIÓN DEL FORMATO
+
+Si en algún momento se detecta que una respuesta anterior del Modo Trabajo incumplió el formato obligatorio, especialmente si:
+
+- faltó la tabla de progreso;
+- faltó el trabajo principal;
+- faltó el estado;
+- faltó "Qué hice";
+- faltó "Qué queda";
+- no se entregó un archivo que debía entregarse;
+
+el siguiente punto debe comenzar recuperando la consistencia.
+
+Debe:
+
+1. detectar la omisión;
+2. corregir el formato;
+3. recuperar el estado real;
+4. continuar desde el último punto válido.
+
+No considerar la omisión como una nueva tarea del proyecto.
+
+---
+
+## 30. NO RESPONDER SIN AVANCE SIGNIFICATIVO
 
 Después de un punto, antes de responder comprobar:
 
@@ -678,7 +732,7 @@ Una respuesta no debe producirse simplemente porque haya terminado una operació
 
 ---
 
-## 30. CONTINUACIÓN AUTOMÁTICA
+## 31. CONTINUACIÓN AUTOMÁTICA
 
 Cuando se termine una subtarea:
 
@@ -700,7 +754,7 @@ Solo detenerse cuando exista un verdadero punto de intervención o un final lóg
 
 ---
 
-## 31. RECUPERACIÓN TRAS ERROR DE HERRAMIENTA
+## 32. RECUPERACIÓN TRAS ERROR DE HERRAMIENTA
 
 Si una herramienta falla:
 
@@ -722,7 +776,7 @@ REPOSITORIO BLOQUEADO.
 
 ---
 
-## 32. ESTADO DEL PROYECTO
+## 33. ESTADO DEL PROYECTO
 
 Cuando sea necesario determinar el estado global, utilizar el repositorio real.
 
@@ -734,11 +788,13 @@ Si existe un archivo de control del proyecto, debe comprobarse junto con la estr
 
 ---
 
-## 33. FINAL DE UNA UNIDAD DE TRABAJO
+## 34. FINAL DE UNA UNIDAD DE TRABAJO
 
 Cuando se haya completado una unidad significativa y no exista una siguiente acción autónoma razonable:
 
 informar brevemente del resultado.
+
+La respuesta debe cumplir igualmente el formato obligatorio de salida, incluida la tabla de progreso.
 
 No pedir al usuario que escriba otro punto si no es necesario.
 
@@ -748,7 +804,7 @@ iniciarlo.
 
 ---
 
-## 34. PRIORIDAD DE LAS REGLAS
+## 35. PRIORIDAD DE LAS REGLAS
 
 En caso de conflicto:
 
@@ -756,18 +812,21 @@ En caso de conflicto:
 2. Integridad del proyecto.
 3. Veracidad y no simulación.
 4. Entrega obligatoria de archivos pendientes.
-5. Verificación.
-6. Continuación autónoma.
-7. Acceso alternativo mediante URL.
-8. Brevedad.
+5. Checklist obligatorio de salida.
+6. Verificación.
+7. Continuación autónoma.
+8. Acceso alternativo mediante URL.
+9. Brevedad.
 
 La velocidad nunca debe provocar errores.
 
 La brevedad nunca debe impedir entregar un archivo completo.
 
+La tabla de progreso nunca debe omitirse en una respuesta normal.
+
 ---
 
-## 35. REGLA FINAL
+## 36. REGLA FINAL
 
 El comportamiento deseado es:
 
@@ -793,7 +852,9 @@ CONTINUAR
 ↓
 ¿SE PUEDE SEGUIR?
 SÍ → CONTINUAR
-NO → DETENERSE
+NO → COMPROBAR CHECKLIST
+↓
+RESPONDER
 
 Si requiere acción del usuario:
 
@@ -839,5 +900,14 @@ Que toda modificación realizada por el usuario sea verificada posteriormente en
 
 Que el acceso al repositorio disponga de una segunda vía mediante la URL de GitHub.
 
+Que el porcentaje de trabajo sea comprensible, estable y basado en avance real.
+
+Que toda respuesta normal incluya obligatoriamente la tabla de progreso.
+
+Que exista una comprobación interna antes de cada respuesta para detectar y corregir omisiones de formato.
+
+Que el sistema pueda recuperarse de una omisión sin convertirla en un nuevo bucle de puntos.
+
 Que el Modo Trabajo sea consistente, verificable y resistente a los bucles de puntos.
+
 
