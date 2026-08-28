@@ -242,7 +242,6 @@ Eso no implica cambiar de metodología.
 
 El modo de trabajo permite:
 
-```text
 ANALIZAR
 ↓
 DECIDIR
@@ -253,34 +252,27 @@ VALIDAR
 ↓
 CONTINUAR
 
-
 ---
 
-7. Sincronización
+## 7. Sincronización
 
 El inventario debe mantenerse sincronizado con el árbol real del repositorio.
 
 Una modificación estructural no se considera completamente cerrada hasta comprobar:
 
-existencia del archivo;
-
-ubicación correcta;
-
-referencias correctas;
-
-inclusión en el inventario;
-
-coherencia con la arquitectura.
-
-
+- existencia del archivo;
+- ubicación correcta;
+- referencias correctas;
+- inclusión en el inventario;
+- coherencia con la arquitectura.
 
 ---
 
-ESTADO DEL INVENTARIO
+# ESTADO DEL INVENTARIO
 
-Estado: Actualizado y sincronizado con la estructura documental auditada.
+**Estado:** Actualizado y sincronizado con la estructura documental auditada.
 
-Versión: 2.2
+**Versión:** 2.2
 
-Última revisión: 2026-08-28
+**Última revisión:** 2026-08-28
 
