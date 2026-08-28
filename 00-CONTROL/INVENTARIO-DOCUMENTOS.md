@@ -52,6 +52,7 @@ El inventario debe reflejar los archivos reales existentes, no una estructura pr
 | `SEGURIDAD.md` | Reglas generales de seguridad |
 | `RIESGOS.md` | Gestión de riesgos |
 | `DOCUMENTACION.md` | Sistema de documentación |
+| `ESTUDIO-PREVIO-VIABILIDAD.md` | Estudio previo de viabilidad antes de iniciar un proyecto |
 | `CAMBIOS.md` | Registro y gestión de cambios |
 | `MEJORAS-SISTEMA.md` | Evolución y mejora del sistema |
 | `BENCHMARK-SISTEMA.md` | Evaluación y comparación del sistema |
@@ -271,5 +272,3 @@ Estado: Actualización estructural
 Versión: 2.0
 
 Última revisión: 2026-08-27
-
-
