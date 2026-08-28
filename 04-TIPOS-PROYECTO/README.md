@@ -70,19 +70,17 @@ Un tipo puede especializar a otro.
 
 Ejemplo:
 
-```text
 WEB
  ↓
 WEB-AFILIACION
 
-WEB-AFILIACION.md añade las reglas específicas del modelo de afiliación sin modificar WEB.md.
+`WEB-AFILIACION.md` añade las reglas específicas del modelo de afiliación sin modificar `WEB.md`.
 
 Del mismo modo, un proyecto puede utilizar más de un tipo cuando resulte necesario, siempre que no existan contradicciones.
 
-
 ---
 
-RELACIÓN CON LOS MÓDULOS
+## RELACIÓN CON LOS MÓDULOS
 
 Los tipos de proyecto indican qué módulos pueden resultar habituales.
 
@@ -98,35 +96,44 @@ CONFIGURACIÓN DEL PROYECTO
 
 Un módulo no debe duplicarse dentro de cada tipo de proyecto salvo que sea necesario para explicar su aplicación específica.
 
+---
+
+## RELACIÓN CON PLANTILLAS
+
+Los tipos de proyecto pueden recomendar plantillas concretas cuando estas aporten valor.
+
+Ejemplo:
+
+TIPO DE PROYECTO
+       ↓
+PLANTILLAS RECOMENDADAS
+       ↓
+CONFIGURACIÓN DEL PROYECTO
+
+Las plantillas contienen estructuras reutilizables.
+
+El tipo de proyecto determina cuáles pueden ser apropiadas para esa categoría.
+
+La información específica de un proyecto real no debe incorporarse a las plantillas generales.
 
 ---
 
-RELACIÓN CON PROYECTOS REALES
+## RELACIÓN CON PROYECTOS REALES
 
 Cuando se crea un proyecto nuevo:
 
 1. se identifica el tipo o tipos aplicables;
-
-
 2. se consulta su metodología;
-
-
 3. se seleccionan los módulos necesarios;
-
-
-4. se adapta la metodología al caso concreto;
-
-
-5. se registra la configuración del proyecto.
-
-
+4. se seleccionan las plantillas apropiadas;
+5. se adapta la metodología al caso concreto;
+6. se registra la configuración del proyecto.
 
 El proyecto real no debe modificar directamente los documentos generales de esta carpeta para almacenar información específica del cliente.
 
-
 ---
 
-SELECCIÓN DEL TIPO
+## SELECCIÓN DEL TIPO
 
 El sistema no debe seleccionar un tipo únicamente por coincidencia de palabras.
 
@@ -154,10 +161,9 @@ SAAS
 
 Si un proyecto no encaja claramente en un tipo existente, debe poder continuar utilizando la metodología universal y los módulos correspondientes.
 
-
 ---
 
-NO FORZAR CATEGORÍAS
+## NO FORZAR CATEGORÍAS
 
 Los tipos son herramientas de clasificación, no restricciones.
 
@@ -165,19 +171,14 @@ No se debe forzar un proyecto dentro de una categoría únicamente porque sea co
 
 Cuando una categoría existente no sea suficiente:
 
-puede combinarse con otra;
-
-puede utilizarse una categoría principal y especializaciones;
-
-puede recurrirse directamente a los módulos;
-
-o puede proponerse un nuevo tipo si existe una necesidad recurrente.
-
-
+- puede combinarse con otra;
+- puede utilizarse una categoría principal y especializaciones;
+- puede recurrirse directamente a los módulos;
+- puede proponerse un nuevo tipo si existe una necesidad recurrente.
 
 ---
 
-VALIDACIÓN
+## VALIDACIÓN
 
 Los tipos de proyecto deben poder comprobarse mediante fixtures.
 
@@ -193,43 +194,32 @@ y siguen:
 
 05-FIXTURES/PROTOCOLO-PRUEBAS.md
 
-
 ---
 
-REGLA
+## REGLA
 
 La información de esta carpeta debe ser:
 
-reutilizable;
-
-específica de la categoría;
-
-independiente de clientes concretos;
-
-compatible con 01-UNIVERSAL;
-
-compatible con 02-MODULOS.
-
+- reutilizable;
+- específica de la categoría;
+- independiente de clientes concretos;
+- compatible con `01-UNIVERSAL`;
+- compatible con `02-MODULOS`;
+- compatible con `03-PLANTILLAS`.
 
 No debe contener:
 
-credenciales;
-
-secretos;
-
-datos privados;
-
-información exclusiva de un proyecto;
-
-decisiones que solo sean válidas para un cliente concreto.
-
-
+- credenciales;
+- secretos;
+- datos privados;
+- información exclusiva de un proyecto;
+- decisiones que solo sean válidas para un cliente concreto.
 
 ---
 
-PRINCIPIO
+## PRINCIPIO
 
-La arquitectura general es:
+La arquitectura general de trabajo es:
 
 01-UNIVERSAL
       ↓
@@ -241,6 +231,8 @@ La arquitectura general es:
       ↓
 06-PROYECTOS
 
+Esta representación describe el flujo lógico de utilización, no una dependencia estricta de que una capa deba estar físicamente subordinada a otra.
+
 Los tipos adaptan.
 
 Los módulos especializan.
@@ -249,13 +241,13 @@ Las plantillas aceleran.
 
 Los proyectos reales ejecutan.
 
-
 ---
 
-ESTADO
+## ESTADO
 
 Estado: Base inicial estructurada
 
-Versión: 2.0
+Versión: 2.1
 
+Última revisión: 2026-08-28
 
