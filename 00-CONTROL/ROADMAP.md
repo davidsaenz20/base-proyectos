@@ -1,8 +1,8 @@
 # ROADMAP DEL PROYECTO
 
-> Plan específico de ejecución del proyecto.
+> Plan específico de ejecución de BASE-PROYECTOS.
 >
-> Define qué trabajo debe realizarse y en qué orden.
+> Define qué trabajo debe realizarse, en qué orden, qué entregables deben producirse y qué condiciones permiten avanzar.
 >
 > El estado operativo actual se registra exclusivamente en `00-CONTROL/ESTADO.md`.
 
@@ -10,299 +10,682 @@
 
 # 1. OBJETIVO DEL ROADMAP
 
-**Resultado que debe conseguir el proyecto:**
+**Resultado que debe conseguir BASE-PROYECTOS:**
+
+Construir una BASE de trabajo reutilizable que permita transformar una idea o necesidad en un proyecto real, desde el descubrimiento inicial hasta su construcción, validación, despliegue y operación.
+
+La BASE debe permitir:
+
+- analizar correctamente una necesidad;
+- identificar el tipo de proyecto;
+- seleccionar los módulos necesarios;
+- definir requisitos;
+- diseñar una arquitectura;
+- planificar la construcción;
+- ejecutar el proyecto;
+- validar el resultado;
+- detectar errores;
+- documentar decisiones;
+- reutilizar conocimientos y estructuras;
+- trabajar de forma reproducible;
+- evitar construir soluciones innecesariamente complejas;
+- mantener trazabilidad entre necesidad, diseño, construcción y validación.
+
+El objetivo final no es crear documentación por sí misma.
+
+El objetivo es disponer de un sistema de trabajo que pueda utilizarse para crear proyectos reales y funcionales.
 
 ---
 
-# 2. FASES DE EJECUCIÓN
+# 2. PRINCIPIOS DE EJECUCIÓN
+
+## 2.1 Validar antes de construir
+
+No debe comenzar una construcción importante mientras no exista suficiente información para determinar:
+
+- qué problema se resuelve;
+- para quién;
+- qué resultado se espera;
+- qué requisitos existen;
+- qué restricciones existen;
+- qué arquitectura es necesaria.
+
+---
+
+## 2.2 Simplicidad proporcional
+
+La solución debe ser tan sencilla como sea posible sin comprometer los requisitos.
+
+No deben añadirse:
+
+- herramientas;
+- servicios;
+- APIs;
+- bases de datos;
+- automatizaciones;
+- infraestructura;
+- módulos;
+
+si no existe una necesidad justificada.
+
+---
+
+## 2.3 Evidencia antes que suposición
+
+Cuando sea posible comprobar algo, debe comprobarse.
+
+No debe considerarse:
+
+- creado;
+- actualizado;
+- disponible;
+- funcional;
+- validado;
+
+simplemente porque exista una afirmación de que lo está.
+
+---
+
+## 2.4 Validación progresiva
+
+Cada etapa importante debe validarse antes de construir encima de ella.
+
+La estrategia recomendada es:
+
+ANALIZAR
+↓
+DEFINIR
+↓
+VALIDAR
+↓
+CONSTRUIR
+↓
+PROBAR
+↓
+VALIDAR
+↓
+ESCALAR
+
+---
+
+## 2.5 Reutilización
+
+Cuando una solución, regla, módulo o estructura pueda reutilizarse correctamente, debe incorporarse a la BASE.
+
+No duplicar conocimiento innecesariamente.
+
+---
+
+# 3. FASES DE EJECUCIÓN
 
 ## FASE 1 — DESCUBRIMIENTO Y DEFINICIÓN
 
-**Objetivo:** comprender el problema, usuario, contexto, oportunidad y alcance.
+**Objetivo:**
 
-**Trabajo previsto:**
-- investigación;
-- definición del problema;
-- usuario/cliente;
-- alcance;
-- hipótesis;
-- viabilidad inicial.
+Comprender el problema, usuario, contexto, oportunidad y alcance.
 
-**Entregable:** definición validada del proyecto.
+**Trabajo:**
+
+- investigar;
+- definir el problema;
+- identificar usuario/cliente;
+- definir objetivo;
+- determinar alcance;
+- formular hipótesis;
+- evaluar viabilidad inicial;
+- identificar restricciones;
+- identificar riesgos iniciales.
+
+**Entregable:**
+
+Definición validada del proyecto.
 
 **Criterio de finalización:**
-- problema y objetivo definidos;
+
+- problema definido;
+- objetivo definido;
+- usuario identificado;
 - alcance establecido;
-- viabilidad inicial evaluada.
+- hipótesis relevantes identificadas;
+- viabilidad inicial evaluada;
+- riesgos principales identificados.
 
 ---
 
 ## FASE 2 — REQUISITOS
 
-**Objetivo:** convertir la idea en requisitos verificables.
+**Objetivo:**
 
-**Trabajo previsto:**
+Convertir la idea en requisitos verificables.
+
+**Trabajo:**
+
 - requisitos funcionales;
 - requisitos técnicos;
 - restricciones;
+- requisitos de seguridad;
+- requisitos legales cuando correspondan;
+- requisitos de rendimiento cuando correspondan;
 - criterios de aceptación.
 
-**Entregable:** requisitos documentados y verificables.
+**Entregable:**
 
-**Criterio de finalización:** todos los requisitos críticos están definidos.
+Requisitos documentados y verificables.
+
+**Criterio de finalización:**
+
+Todos los requisitos críticos están definidos y pueden comprobarse.
 
 ---
 
-## FASE 3 — DISEÑO Y ARQUITECTURA
+## FASE 3 — TIPO Y CLASIFICACIÓN DEL PROYECTO
 
-**Objetivo:** definir cómo se construirá la solución.
+**Objetivo:**
 
-**Trabajo previsto:**
+Determinar qué tipo de proyecto se está construyendo.
+
+**Trabajo:**
+
+- identificar tipo principal;
+- identificar especializaciones;
+- identificar comportamiento específico;
+- identificar módulos derivados;
+- comprobar fixtures aplicables;
+- identificar necesidades particulares.
+
+**Entregable:**
+
+Clasificación del proyecto.
+
+**Criterio de finalización:**
+
+El tipo y las especializaciones relevantes están identificados y existe cobertura de prueba suficiente.
+
+---
+
+## FASE 4 — DISEÑO Y ARQUITECTURA
+
+**Objetivo:**
+
+Definir cómo se construirá la solución.
+
+**Trabajo:**
+
 - arquitectura;
 - componentes;
 - datos;
 - integraciones;
+- APIs;
 - seguridad;
-- decisiones técnicas.
+- almacenamiento;
+- interfaces;
+- decisiones técnicas;
+- dependencias.
 
-**Entregable:** arquitectura validada.
+**Entregable:**
 
-**Criterio de finalización:** la solución es técnicamente viable y construible.
+Arquitectura validada.
 
----
+**Criterio de finalización:**
 
-## FASE 4 — PLANIFICACIÓN TÉCNICA
-
-**Objetivo:** convertir la arquitectura en un plan ejecutable de construcción.
-
-**Trabajo previsto:**
-- tareas;
-- dependencias;
-- orden de implementación;
-- herramientas;
-- entorno de trabajo.
-
-**Entregable:** plan técnico de construcción.
-
-**Criterio de finalización:** existe una secuencia clara para construir el sistema.
+La solución es técnicamente viable, proporcional y construible.
 
 ---
 
-## FASE 5 — PREPARACIÓN DEL ENTORNO
+## FASE 5 — PLANIFICACIÓN TÉCNICA
 
-**Objetivo:** disponer del entorno necesario para construir y probar.
+**Objetivo:**
 
-**Trabajo previsto:**
+Convertir la arquitectura en un plan ejecutable.
+
+**Trabajo:**
+
+- dividir trabajo;
+- definir tareas;
+- establecer dependencias;
+- establecer orden;
+- determinar herramientas;
+- determinar entorno;
+- establecer criterios de validación por bloque.
+
+**Entregable:**
+
+Plan técnico de construcción.
+
+**Criterio de finalización:**
+
+Existe una secuencia clara y ejecutable.
+
+---
+
+## FASE 6 — PREPARACIÓN DEL ENTORNO
+
+**Objetivo:**
+
+Disponer de los recursos necesarios.
+
+**Trabajo:**
+
 - cuentas;
 - servicios;
 - repositorios;
 - credenciales;
 - variables;
-- herramientas.
+- herramientas;
+- dominios;
+- hosting;
+- APIs;
+- entornos de prueba.
 
-**Entregable:** entorno preparado.
+**Entregable:**
 
-**Criterio de finalización:** el entorno permite iniciar la construcción.
+Entorno preparado.
+
+**Criterio de finalización:**
+
+El entorno permite iniciar la construcción sin bloqueos conocidos.
 
 ---
 
-## FASE 6 — CONSTRUCCIÓN
+## FASE 7 — CONSTRUCCIÓN
 
-**Objetivo:** implementar la solución.
+**Objetivo:**
 
-**Trabajo previsto:**
+Implementar la solución.
+
+**Trabajo:**
+
 - componentes;
+- interfaces;
 - automatizaciones;
 - integraciones;
 - lógica;
 - almacenamiento;
-- interfaces necesarias.
+- workflows;
+- APIs;
+- documentación necesaria.
 
-**Entregable:** primera implementación funcional.
+**Entregable:**
 
-**Criterio de finalización:** las funcionalidades previstas están implementadas.
+Primera implementación funcional.
+
+**Criterio de finalización:**
+
+Las funcionalidades previstas para el bloque están implementadas y pueden probarse.
 
 ---
 
-## FASE 7 — INTEGRACIÓN
+## FASE 8 — INTEGRACIÓN
 
-**Objetivo:** conectar y comprobar conjuntamente todos los componentes.
+**Objetivo:**
 
-**Trabajo previsto:**
-- integraciones;
-- flujo de datos;
+Conectar los componentes y comprobar el flujo conjunto.
+
+**Trabajo:**
+
 - APIs;
 - servicios externos;
-- manejo de errores.
+- flujo de datos;
+- automatizaciones;
+- manejo de errores;
+- recuperación.
 
-**Entregable:** sistema integrado.
+**Entregable:**
 
-**Criterio de finalización:** el flujo completo puede recorrer los componentes necesarios.
+Sistema integrado.
+
+**Criterio de finalización:**
+
+El flujo previsto puede recorrer correctamente todos los componentes necesarios.
 
 ---
 
-## FASE 8 — TESTING TÉCNICO
+## FASE 9 — TESTING TÉCNICO
 
-**Objetivo:** detectar y corregir errores técnicos.
+**Objetivo:**
 
-**Trabajo previsto:**
+Detectar y corregir errores técnicos.
+
+**Trabajo:**
+
 - pruebas funcionales;
-- integración;
+- pruebas de integración;
+- pruebas negativas;
+- pruebas de errores;
 - seguridad;
 - rendimiento;
 - regresión.
 
-**Entregable:** resultados de testing y correcciones.
+**Entregable:**
 
-**Criterio de finalización:** no existen errores críticos pendientes para pasar a validación.
+Resultados de testing y correcciones.
+
+**Criterio de finalización:**
+
+No existen errores críticos conocidos que impidan pasar a validación.
 
 ---
 
-## FASE 9 — VALIDACIÓN
+## FASE 10 — VALIDACIÓN
 
-**Objetivo:** comprobar que la solución cumple los requisitos y criterios de aceptación.
+**Objetivo:**
 
-**Trabajo previsto:**
-- validación funcional;
-- validación técnica;
+Comprobar que la solución cumple los requisitos.
+
+**Trabajo:**
+
 - criterios de aceptación;
-- evidencias.
+- pruebas funcionales;
+- pruebas de usuario;
+- evidencias;
+- comparación con requisitos;
+- documentación de incidencias.
 
-**Entregable:** validación documentada.
+**Entregable:**
 
-**Criterio de finalización:** los criterios de aceptación están cumplidos o las incidencias aceptadas están documentadas.
+Validación documentada.
+
+**Criterio de finalización:**
+
+Los criterios de aceptación están cumplidos o las excepciones están documentadas y aceptadas.
 
 ---
 
-## FASE 10 — DESPLIEGUE
+## FASE 11 — DESPLIEGUE
 
-**Objetivo:** poner la solución en el entorno real.
+**Objetivo:**
 
-**Trabajo previsto:**
+Poner la solución en el entorno real.
+
+**Trabajo:**
+
 - configuración;
 - publicación;
 - dominio;
 - servicios;
 - seguridad;
+- backups;
 - comprobaciones post-despliegue.
 
-**Entregable:** sistema desplegado.
+**Entregable:**
 
-**Criterio de finalización:** el sistema está disponible en el entorno objetivo.
+Sistema desplegado.
+
+**Criterio de finalización:**
+
+El sistema está disponible en el entorno objetivo y supera las comprobaciones iniciales.
 
 ---
 
-## FASE 11 — PRUEBA REAL DE EXTREMO A EXTREMO
+## FASE 12 — PRUEBA REAL DE EXTREMO A EXTREMO
 
-**Objetivo:** comprobar el flujo real completo en condiciones reales o representativas.
+**Objetivo:**
 
-**Trabajo previsto:**
+Comprobar el flujo completo en condiciones reales o representativas.
+
+**Trabajo:**
+
 - entrada real;
 - procesamiento real;
 - integraciones reales;
 - salida real;
 - errores;
-- recuperación.
+- recuperación;
+- intervención manual.
 
-**Entregable:** evidencia de funcionamiento extremo a extremo.
+**Entregable:**
 
-**Criterio de finalización:** el flujo completo funciona sin intervención manual no prevista.
+Evidencia de funcionamiento extremo a extremo.
+
+**Criterio de finalización:**
+
+El flujo completo funciona sin intervención manual no prevista.
 
 ---
 
-## FASE 12 — MONITORIZACIÓN
+## FASE 13 — MONITORIZACIÓN
 
-**Objetivo:** asegurar que el sistema puede supervisarse después del despliegue.
+**Objetivo:**
 
-**Trabajo previsto:**
+Asegurar que el sistema puede supervisarse.
+
+**Trabajo:**
+
 - métricas;
 - logs;
 - alertas;
-- comprobaciones de disponibilidad;
+- disponibilidad;
+- errores;
+- consumo;
 - recuperación.
 
-**Entregable:** monitorización configurada y probada.
+**Entregable:**
 
-**Criterio de finalización:** los fallos relevantes pueden detectarse y gestionarse.
+Sistema de monitorización.
+
+**Criterio de finalización:**
+
+Los fallos relevantes pueden detectarse y gestionarse.
 
 ---
 
-## FASE 13 — OPERACIÓN
+## FASE 14 — OPERACIÓN
 
-**Objetivo:** establecer cómo se utilizará y mantendrá el sistema en funcionamiento.
+**Objetivo:**
 
-**Trabajo previsto:**
+Definir cómo se utilizará y mantendrá el sistema.
+
+**Trabajo:**
+
 - procedimientos;
 - mantenimiento;
 - soporte;
 - incidencias;
-- responsabilidades.
+- backups;
+- responsabilidades;
+- actualización;
+- documentación operativa.
 
-**Entregable:** procedimiento operativo.
+**Entregable:**
 
-**Criterio de finalización:** existe un procedimiento reproducible de operación.
+Procedimiento operativo.
+
+**Criterio de finalización:**
+
+Existe un procedimiento reproducible de operación y mantenimiento.
 
 ---
 
-## FASE 14 — OPTIMIZACIÓN
+## FASE 15 — OPTIMIZACIÓN
 
-**Objetivo:** mejorar el sistema después de comprobar su funcionamiento.
+**Objetivo:**
 
-**Trabajo previsto:**
+Mejorar el sistema después de comprobar su funcionamiento.
+
+**Trabajo:**
+
 - rendimiento;
 - costes;
 - fiabilidad;
 - automatización;
+- UX;
+- escalabilidad;
 - mejoras basadas en datos reales.
 
-**Entregable:** mejoras validadas.
+**Entregable:**
 
-**Criterio de finalización:** las mejoras aportan un beneficio verificable.
+Mejoras validadas.
+
+**Criterio de finalización:**
+
+Cada mejora aporta un beneficio verificable.
 
 ---
 
-## FASE 15 — CIERRE
+## FASE 16 — CIERRE
 
-**Objetivo:** consolidar el proyecto y dejarlo completamente documentado y reproducible.
+**Objetivo:**
 
-**Trabajo previsto:**
+Consolidar el proyecto y dejarlo documentado y reproducible.
+
+**Trabajo:**
+
 - documentación final;
 - evidencias;
 - decisiones;
 - lecciones aprendidas;
-- criterios de cierre.
+- configuración final;
+- criterios de cierre;
+- conocimientos reutilizables.
 
-**Entregable:** proyecto cerrado y reproducible.
+**Entregable:**
 
-**Criterio de finalización:** otra persona puede comprender, operar y mantener el sistema con la documentación disponible.
+Proyecto cerrado y reproducible.
 
----
+**Criterio de finalización:**
 
-# 3. DEPENDENCIAS
-
-Registrar dependencias importantes:
-
-- 
+Otra persona puede comprender, operar y mantener el sistema con la documentación disponible.
 
 ---
 
-# 4. HITOS
+# 4. DEPENDENCIAS PRINCIPALES
 
-## HITO 1
+Las dependencias deben determinarse durante el avance del proyecto.
+
+Categorías principales:
+
+- información;
+- usuarios;
+- datos;
+- APIs;
+- servicios externos;
+- cuentas;
+- credenciales;
+- hosting;
+- dominio;
+- infraestructura;
+- herramientas;
+- módulos;
+- requisitos legales;
+- recursos humanos.
+
+Una dependencia no debe considerarse disponible hasta que haya sido comprobada.
+
+---
+
+# 5. HITOS
+
+## HITO 1 — BASE ESTRUCTURADA
 
 **Resultado:**
 
-**Criterio:**
-
-## HITO 2
-
-**Resultado:**
+La estructura fundamental de BASE-PROYECTOS está definida.
 
 **Criterio:**
+
+Las capas principales existen y tienen responsabilidades claras.
 
 ---
 
-# 5. CAMBIOS DEL PLAN
+## HITO 2 — TIPOS DE PROYECTO DEFINIDOS
+
+**Resultado:**
+
+Los tipos de proyecto principales y sus especializaciones relevantes están documentados.
+
+**Criterio:**
+
+Cada especialización con comportamiento propio dispone de cobertura adecuada.
+
+---
+
+## HITO 3 — SISTEMA DE PRUEBAS
+
+**Resultado:**
+
+Los fixtures y el protocolo de pruebas permiten validar comportamientos.
+
+**Criterio:**
+
+Existen pruebas positivas y negativas y criterios PASS/FAIL claros.
+
+---
+
+## HITO 4 — CONTROL OPERATIVO
+
+**Resultado:**
+
+El sistema de control permite recuperar el estado real del proyecto.
+
+**Criterio:**
+
+`ESTADO.md`, `ROADMAP.md` y documentos de control son coherentes entre sí.
+
+---
+
+## HITO 5 — PRIMER PROYECTO REAL
+
+**Resultado:**
+
+BASE-PROYECTOS se utiliza para desarrollar un proyecto real.
+
+**Criterio:**
+
+El proyecto puede recorrer el proceso desde la entrada hasta la validación.
+
+---
+
+## HITO 6 — VALIDACIÓN END-TO-END
+
+**Resultado:**
+
+Un proyecto real creado mediante la BASE funciona en condiciones reales.
+
+**Criterio:**
+
+El flujo completo funciona y existe evidencia.
+
+---
+
+## HITO 7 — BASE REUTILIZABLE
+
+**Resultado:**
+
+BASE-PROYECTOS puede utilizarse para nuevos proyectos sin rehacer su estructura fundamental.
+
+**Criterio:**
+
+Un nuevo proyecto puede comenzar utilizando la BASE existente.
+
+---
+
+# 6. CRITERIOS DE AVANCE ENTRE FASES
+
+No se debe avanzar únicamente porque una fase haya consumido tiempo.
+
+Para avanzar debe cumplirse su criterio de finalización.
+
+Si falta información crítica:
+
+**REQUIERE VALIDACIÓN**
+
+Si existe un error que impide continuar:
+
+**BLOQUEADO**
+
+Si la fase cumple sus criterios:
+
+**COMPLETADA**
+
+Si aún no se ha ejecutado:
+
+**PENDIENTE**
+
+---
+
+# 7. GESTIÓN DE CAMBIOS DEL PLAN
+
+Cuando una auditoría o una prueba demuestre que el plan debe cambiar:
 
 **Fecha:**
 
@@ -310,31 +693,114 @@ Registrar dependencias importantes:
 
 **Motivo:**
 
-**Consecuencia:**
+**Impacto:**
+
+**Nueva prioridad:**
+
+**Dependencias afectadas:**
+
+Los cambios importantes deben reflejarse también en `ESTADO.md` cuando afecten al estado operativo.
 
 ---
 
-# 6. REGLA
+# 8. REGLAS DE PRIORIZACIÓN
 
-Este documento responde a:
+Cuando existan varias tareas posibles, priorizar:
 
-**¿QUÉ TRABAJO HAY QUE REALIZAR?**
+1. bloqueos;
+2. errores críticos;
+3. inconsistencias de arquitectura;
+4. problemas de control;
+5. requisitos faltantes;
+6. validaciones;
+7. construcción;
+8. mejoras;
+9. optimización.
 
-**¿EN QUÉ ORDEN?**
+No optimizar una parte que todavía no ha sido validada.
 
-**¿QUÉ ENTREGABLE PRODUCE CADA FASE?**
+---
 
-**¿QUÉ CRITERIO PERMITE CONSIDERARLA TERMINADA?**
+# 9. RELACIÓN CON OTROS DOCUMENTOS
 
-No responde a:
+Este documento define:
 
-**¿EN QUÉ FASE ESTAMOS AHORA?**
+**QUÉ TRABAJO HAY QUE REALIZAR.**
 
-**¿QUÉ ESTÁ HACIENDO LA IA AHORA?**
+**EN QUÉ ORDEN.**
 
-**¿QUÉ TOCA INMEDIATAMENTE?**
+**QUÉ ENTREGABLE PRODUCE CADA FASE.**
 
-Esa información pertenece exclusivamente a:
+**QUÉ CRITERIO PERMITE CONSIDERARLA TERMINADA.**
 
-`00-CONTROL/ESTADO.md`
+---
+
+`00-CONTROL/ESTADO.md` define:
+
+**DÓNDE ESTAMOS AHORA.**
+
+**QUÉ ESTÁ TERMINADO.**
+
+**QUÉ ESTÁ PENDIENTE.**
+
+**QUÉ ESTÁ BLOQUEADO.**
+
+**QUÉ TOCA HACER AHORA.**
+
+---
+
+`MODO-TRABAJO.md` define:
+
+**CÓMO DEBE EJECUTARSE EL TRABAJO ENTRE EL USUARIO Y LA IA.**
+
+---
+
+`05-FIXTURES/PROTOCOLO-PRUEBAS.md` define:
+
+**CÓMO DEBEN VALIDARSE LOS FIXTURES.**
+
+---
+
+# 10. REGLA FINAL
+
+El roadmap no debe convertirse en una lista estática de tareas.
+
+Debe servir como estructura de planificación.
+
+Cuando el trabajo real demuestre que una tarea, dependencia o fase debe cambiar, el roadmap puede modificarse.
+
+Toda modificación importante debe conservar la trazabilidad del motivo.
+
+El objetivo del roadmap es conseguir que BASE-PROYECTOS pase de:
+
+IDEA
+↓
+ANÁLISIS
+↓
+DEFINICIÓN
+↓
+DISEÑO
+↓
+CONSTRUCCIÓN
+↓
+VALIDACIÓN
+↓
+DESPLIEGUE
+↓
+OPERACIÓN
+↓
+MEJORA
+
+de forma reproducible, verificable y proporcional.
+
+---
+
+# ESTADO
+
+**Estado:** Roadmap estructurado y pendiente de ejecución progresiva.
+
+**Versión:** 2.0
+
+**Última revisión:** 2026-08-28
+
 
