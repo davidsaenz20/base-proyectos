@@ -1,6 +1,6 @@
-# MODO TRABAJO
+MODO TRABAJO
 
-## 1. FUNCIÓN
+1. FUNCIÓN
 
 Este archivo define el modo operativo de trabajo entre el usuario y ChatGPT sobre el repositorio BASE-PROYECTOS.
 
@@ -10,7 +10,7 @@ Su función es controlar cómo debe trabajar ChatGPT, cuándo debe continuar, cu
 
 ---
 
-## 2. ACTIVACIÓN
+2. ACTIVACIÓN
 
 El modo se activa cuando el usuario escriba:
 
@@ -33,7 +33,7 @@ MODO TRABAJO: ACTIVADO
 
 ---
 
-## 3. PERSISTENCIA
+3. PERSISTENCIA
 
 Una vez activado, MODO TRABAJO permanece activo durante la sesión.
 
@@ -58,7 +58,7 @@ No interpretar frases ambiguas como una desactivación.
 
 ---
 
-## 4. RECUPERACIÓN
+4. RECUPERACIÓN
 
 El modo no debe depender únicamente de recordar instrucciones antiguas de la conversación.
 
@@ -67,13 +67,15 @@ Cuando sea necesario recuperar el modo:
 1. Leer MODO-TRABAJO.md.
 2. Comprobar el estado real del repositorio.
 3. Recuperar el último punto válido.
-4. Continuar desde ahí.
+4. Recuperar la tarea principal actual.
+5. Recuperar cualquier acción pendiente que haya quedado expresamente asignada al usuario.
+6. Continuar desde ahí.
 
 La documentación persistente del repositorio tiene prioridad sobre suposiciones basadas únicamente en la conversación.
 
 ---
 
-## 5. COMANDO RÁPIDO
+5. COMANDO RÁPIDO
 
 Mientras MODO TRABAJO esté activo, si el usuario envía únicamente:
 
@@ -81,7 +83,7 @@ Mientras MODO TRABAJO esté activo, si el usuario envía únicamente:
 
 el significado exacto es:
 
-CONTINÚA TRABAJANDO.
+CONTINÚA TRABAJANDO DESDE EL ÚLTIMO PUNTO VÁLIDO.
 
 El punto debe interpretarse como una orden de continuación.
 
@@ -89,10 +91,11 @@ Ante un punto:
 
 1. Recuperar las reglas de MODO-TRABAJO.md.
 2. Comprobar el estado del proyecto.
-3. Identificar el último punto válido.
-4. Determinar la siguiente tarea lógica.
-5. Continuar trabajando.
-6. No pedir confirmación.
+3. Identificar la tarea principal actual.
+4. Comprobar si existe una acción pendiente previamente indicada al usuario.
+5. Si existe una acción pendiente, ejecutar esa acción primero.
+6. Si no existe, continuar con la siguiente tarea lógica.
+7. No pedir confirmación.
 
 No interpretar el punto como una pregunta.
 
@@ -100,34 +103,76 @@ No desactivar el modo.
 
 ---
 
-## 6. INDICADOR VISUAL OBLIGATORIO
+6. PRIORIDAD DE ACCIONES PENDIENTES
 
-Toda respuesta producida mientras MODO TRABAJO esté activo debe comenzar con:
+Las acciones pendientes tienen prioridad sobre cualquier nuevo trabajo autónomo.
 
-MODO TRABAJO: ACTIVADO
+Si ChatGPT ha terminado una respuesta indicando:
 
-y después indicar inmediatamente el estado:
+AHORA TE TOCA A TI
 
-Estado: 🟢 OK
+o ha indicado que en el siguiente mensaje entregará:
 
-Los estados permitidos son:
+- un archivo completo;
+- contenido para crear un archivo;
+- contenido para sustituir un archivo;
+- una instrucción concreta necesaria para continuar;
 
-🟢 OK
-Todo funciona correctamente y el trabajo puede continuar.
+entonces esa acción queda registrada como:
 
-🟡 ATENCIÓN
-Existe una incidencia o información pendiente, pero todavía es posible continuar parcial o razonablemente.
+ACCIÓN PENDIENTE PRIORITARIA.
 
-🔴 BLOQUEADO
-No es posible continuar correctamente sin intervención externa o del usuario.
+Si posteriormente el usuario envía únicamente:
 
-Si el estado no es 🟢 OK, explicarlo brevemente.
+.
 
-Nunca mostrar 🟢 OK si no se ha podido comprobar razonablemente el estado necesario para continuar.
+ChatGPT debe ejecutar primero esa acción pendiente.
+
+NO debe iniciar otra auditoría.
+
+NO debe repetir el resumen anterior.
+
+NO debe continuar con otra tarea.
+
+NO debe volver a decir que entregará el archivo en el próximo mensaje.
+
+Debe entregar directamente el contenido prometido.
 
 ---
 
-## 7. OBJETIVO
+7. REGLA DE ENTREGA DE ARCHIVOS
+
+Cuando sea necesario crear o modificar un archivo y el usuario realiza manualmente los cambios:
+
+1. Comprobar primero el archivo actual si existe.
+2. Determinar exactamente qué debe cambiar.
+3. Preparar el contenido completo actualizado.
+4. Indicar la ruta exacta.
+5. Entregar el contenido completo en un único bloque de código.
+6. No entregar solamente fragmentos cuando se haya solicitado sustitución completa.
+7. Detenerse después de entregar el archivo.
+
+La respuesta debe indicar claramente:
+
+AHORA TE TOCA A TI
+
+y explicar brevemente qué debe hacer el usuario.
+
+---
+
+8. PROMESA DE ENTREGA
+
+ChatGPT NO debe terminar un bloque diciendo que entregará un archivo en el próximo mensaje si puede entregarlo en el mismo mensaje.
+
+Si por cualquier motivo decide dejar la entrega para el siguiente mensaje, debe registrar internamente esa entrega como:
+
+ACCIÓN PENDIENTE PRIORITARIA.
+
+En ese caso, el siguiente "." obliga a entregar el archivo antes de realizar cualquier otra tarea.
+
+---
+
+9. OBJETIVO
 
 Maximizar el trabajo autónomo de ChatGPT y minimizar las intervenciones necesarias del usuario.
 
@@ -149,7 +194,7 @@ LEER
 
 ---
 
-## 8. AUTONOMÍA
+10. AUTONOMÍA
 
 Si ChatGPT puede tomar razonablemente una decisión con la información disponible:
 
@@ -175,7 +220,7 @@ Preguntar únicamente cuando:
 
 ---
 
-## 9. BLOQUES DE TRABAJO
+11. BLOQUES DE TRABAJO
 
 Trabajar en bloques largos y útiles.
 
@@ -189,7 +234,7 @@ Realizar tantos pasos consecutivos como sea razonablemente posible.
 
 ---
 
-## 10. CRITERIOS DE PARADA
+12. CRITERIOS DE PARADA
 
 Continuar trabajando hasta que ocurra una de estas situaciones:
 
@@ -209,7 +254,7 @@ No detenerse simplemente porque una tarea individual haya terminado si existe ot
 
 ---
 
-## 11. INTERVENCIÓN DEL USUARIO
+13. INTERVENCIÓN DEL USUARIO
 
 Cuando sea necesaria una acción del usuario, detener el trabajo y escribir:
 
@@ -228,7 +273,7 @@ No continuar con tareas que dependan de esa acción hasta recibir confirmación.
 
 ---
 
-## 12. GITHUB
+14. GITHUB
 
 Antes de trabajar:
 
@@ -253,95 +298,215 @@ El usuario realiza manualmente las modificaciones que se le indiquen.
 
 ---
 
-## 13. PRIORIDADES
+15. TAREA PRINCIPAL
 
-Prioridad:
+En cada bloque debe existir UNA única tarea principal claramente identificada.
 
-1. Corrección
-2. Coherencia
-3. Continuidad
-4. Utilidad
-5. Velocidad
-6. Brevedad
+La tarea principal debe describirse de forma breve y concreta.
 
-No sacrificar corrección por terminar rápidamente.
+Ejemplos:
+
+AUDITORÍA — 04-TIPOS-PROYECTO
+
+CONSTRUCCIÓN — Sistema de selección de tipos
+
+VALIDACIÓN — Fixtures de tipos de proyecto
+
+DOCUMENTACIÓN — Actualización de ESTADO.md
+
+CORRECCIÓN — Incoherencias entre README y documentos
+
+No utilizar "Trabajo total" como una categoría ambigua.
+
+El porcentaje Total siempre representa el progreso de esta tarea principal actual.
 
 ---
 
-## 14. FORMATO OBLIGATORIO
+16. DESCRIPCIÓN DE LA TAREA PRINCIPAL
 
-Mientras MODO TRABAJO esté activo, toda respuesta de trabajo debe utilizar exactamente esta estructura:
+Antes de los porcentajes debe explicarse en una sola frase qué se está haciendo.
+
+Formato:
+
+Trabajo principal:
+[Tipo de trabajo] — [objetivo concreto]
+
+Ejemplos:
+
+Trabajo principal:
+Auditoría — revisar todos los documentos de 04-TIPOS-PROYECTO y detectar incoherencias.
+
+Trabajo principal:
+Construcción — crear el sistema que seleccionará automáticamente los tipos de proyecto.
+
+Trabajo principal:
+Validación — comprobar mediante fixtures que los tipos definidos funcionan correctamente.
+
+La explicación debe ser suficientemente breve para entender el objetivo sin leer el resto de la respuesta.
+
+---
+
+17. PORCENTAJES
+
+Los porcentajes representan progreso real de la TAREA PRINCIPAL ACTUAL.
+
+El porcentaje Total NO representa:
+
+- porcentaje de archivos leídos;
+- porcentaje de mensajes;
+- porcentaje de acciones;
+- porcentaje de todo el repositorio;
+- una valoración arbitraria del estado general de BASE-PROYECTOS.
+
+El porcentaje Total responde exclusivamente a:
+
+¿Cuánto hemos avanzado en la tarea principal actual?
+
+Ejemplo:
+
+Trabajo principal:
+Auditoría — revisar 04-TIPOS-PROYECTO completo.
+
+Total: 40%
+
+Esto significa que la auditoría de 04-TIPOS-PROYECTO está aproximadamente al 40%.
+
+---
+
+18. ESTABILIDAD DE LOS PORCENTAJES
+
+Los porcentajes deben ser estables y coherentes.
+
+No modificar un porcentaje simplemente porque se haya realizado una acción pequeña.
+
+Actualizarlo cuando exista un avance significativo.
+
+No reiniciar los porcentajes sin explicar el motivo.
+
+Si cambia la tarea principal, comenzar una nueva medición y dejar claro que se trata de una nueva tarea.
+
+Ejemplo:
+
+Tarea anterior:
+Auditoría — 04-TIPOS-PROYECTO — 100%
+
+Nueva tarea:
+Corrección — incoherencias detectadas — 0%
+
+Esto evita mezclar trabajos diferentes.
+
+---
+
+19. SUBTRABAJOS
+
+Los subtrabajos son opcionales.
+
+Solo mostrarlos cuando ayuden a entender el progreso.
+
+No es necesario explicar cada subtrabajo si resulta evidente.
+
+Ejemplo:
+
+Trabajo| Progreso
+Auditoría 04-TIPOS-PROYECTO| 60%
+README| 100%
+Documentos individuales| 50%
+Coherencia| 30%
+
+Si los subtrabajos no aportan información útil, utilizar únicamente:
+
+Trabajo| Progreso
+Auditoría 04-TIPOS-PROYECTO| 60%
+
+---
+
+20. FORMATO OBLIGATORIO
+
+Mientras MODO TRABAJO esté activo, toda respuesta de trabajo debe utilizar esta estructura:
 
 MODO TRABAJO: ACTIVADO
 Estado: 🟢 OK
 
+Trabajo principal:
+[Máximo 180 caracteres]
+
 Qué hice:
-[Máximo 500 caracteres]
+[Máximo 400 caracteres]
 
 Pendiente:
-[Máximo 300 caracteres]
+[Máximo 250 caracteres]
 
 Qué queda por hacer:
-[Máximo 300 caracteres]
+[Máximo 250 caracteres]
 
-| Trabajo | Progreso |
-|---|---:|
-| Total | XX% |
-| Subtrabajo | XX% |
-| Subtrabajo | XX% |
-| Subtrabajo | XX% |
+Trabajo| Progreso
+[Tarea principal]| XX%
+[Subtrabajo opcional]| XX%
+[Subtrabajo opcional]| XX%
 
-No añadir explicaciones innecesarias.
+Si existe una acción pendiente para el usuario, debe aparecer inmediatamente después de esta información:
 
-Si el estado es 🟡 ATENCIÓN o 🔴 BLOQUEADO, sustituir el estado correspondiente y explicar brevemente el motivo.
+AHORA TE TOCA A TI
+
+y después el contenido necesario.
 
 ---
 
-## 15. LÍMITE DE INFORMACIÓN
+21. INDICADOR VISUAL
+
+Toda respuesta debe comenzar exactamente con:
+
+MODO TRABAJO: ACTIVADO
+
+y después:
+
+Estado: 🟢 OK
+
+Los estados permitidos son:
+
+🟢 OK
+Todo funciona correctamente y el trabajo puede continuar.
+
+🟡 ATENCIÓN
+Existe una incidencia o información pendiente, pero todavía es posible continuar parcial o razonablemente.
+
+🔴 BLOQUEADO
+No es posible continuar correctamente sin intervención externa o del usuario.
+
+Nunca mostrar 🟢 OK si no se ha podido comprobar razonablemente el estado necesario para continuar.
+
+---
+
+22. LÍMITE DE INFORMACIÓN
 
 La respuesta visible debe ser pequeña.
 
 Objetivo aproximado:
 
-Máximo 1.200 caracteres de texto, sin contar la tabla.
+Máximo 1.200 caracteres de texto, sin contar la tabla ni el contenido de archivos que sea necesario entregar.
 
 Priorizar:
 
-1. trabajo realizado;
-2. problemas encontrados;
-3. acción necesaria del usuario;
-4. siguiente tarea.
+1. trabajo principal;
+2. resultado;
+3. pendiente;
+4. siguiente acción;
+5. intervención necesaria del usuario.
 
 No mostrar razonamientos internos extensos.
 
 ---
 
-## 16. PORCENTAJES
-
-Los porcentajes representan progreso real del trabajo.
-
-NO representan simplemente:
-
-- número de archivos;
-- número de mensajes;
-- número de acciones;
-- cantidad de documentos leídos.
-
-El porcentaje debe valorar el trabajo realmente completado.
-
-El porcentaje Total representa el progreso global del objetivo actual.
-
-Los porcentajes son estimaciones de control y no deben mostrar una falsa precisión.
-
----
-
-## 17. ESTADO PERSISTENTE
+23. ESTADO PERSISTENTE
 
 Al finalizar cada bloque debe quedar claro:
 
+- tarea principal;
+- progreso;
 - qué se ha terminado;
 - qué está pendiente;
-- cuál es la siguiente tarea.
+- siguiente acción;
+- cualquier acción pendiente del usuario.
 
 Cuando exista documentación persistente de estado en el repositorio, utilizarla como referencia principal.
 
@@ -349,7 +514,24 @@ No depender exclusivamente de la memoria de la conversación.
 
 ---
 
-## 18. CONTINUIDAD
+24. ACTUALIZACIÓN DEL ESTADO
+
+Cuando exista un cambio significativo en:
+
+- fase;
+- tarea principal;
+- progreso;
+- bloqueo;
+- decisión;
+- siguiente acción;
+
+debe actualizarse la documentación persistente correspondiente cuando sea necesario.
+
+No actualizarla por cada acción trivial.
+
+---
+
+25. CONTINUIDAD
 
 Si el bloque termina y todavía puede continuar el trabajo:
 
@@ -363,11 +545,17 @@ El punto significa:
 
 CONTINÚA DESDE EL ÚLTIMO PUNTO VÁLIDO.
 
-Al recibirlo, volver a recuperar las reglas y el estado antes de continuar.
+Antes de continuar:
+
+1. recuperar las reglas;
+2. recuperar el estado;
+3. comprobar acciones pendientes;
+4. ejecutar primero cualquier acción pendiente;
+5. continuar con la tarea principal.
 
 ---
 
-## 19. DESACTIVACIÓN
+26. DESACTIVACIÓN
 
 MODO TRABAJO solamente se desactiva mediante una orden explícita:
 
@@ -377,7 +565,7 @@ Cuando se desactive, dejar de aplicar este formato y estas reglas hasta una nuev
 
 ---
 
-## 20. REGLA FUNDAMENTAL
+27. REGLA FUNDAMENTAL
 
 Mientras MODO TRABAJO esté activo:
 
@@ -393,9 +581,11 @@ El usuario puede limitarse a enviar:
 
 y ChatGPT debe continuar desde el último estado válido.
 
+Si existe una acción pendiente previamente prometida al usuario, esa acción tiene prioridad absoluta.
+
 ---
 
-## 21. PRINCIPIO FINAL
+28. PRINCIPIO FINAL
 
 MODO TRABAJO debe conseguir:
 
@@ -405,7 +595,11 @@ MÁXIMO TRABAJO ÚTIL DE CHATGPT
 +
 ESTADO RECUPERABLE
 +
+PROGRESO COMPRENSIBLE
++
 RESPUESTAS CORTAS
++
+ENTREGA INMEDIATA DE ACCIONES PENDIENTES
 +
 PARADA SOLO CUANDO SEA NECESARIA LA INTERVENCIÓN DEL USUARIO.
 
