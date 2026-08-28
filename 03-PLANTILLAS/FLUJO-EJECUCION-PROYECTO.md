@@ -10,7 +10,9 @@ No sustituye:
 
 - "01-UNIVERSAL/PROTOCOLO-EJECUCION.md" → define el comportamiento operativo de la IA.
 - "00-CONTROL/ESTADO.md" → define dónde está actualmente el proyecto.
-- "03-PLANTILLAS/ROADMAP.md" → define el plan específico del proyecto.
+
+- "03-PLANTILLAS/PLANTILLA-ROADMAP.md" → define la estructura para crear el plan específico del proyecto.
+- 
 - "01-UNIVERSAL/ESTUDIO-PREVIO-VIABILIDAD.md" → define el estudio previo universal cuando el proyecto lo requiera.
 
 ---
