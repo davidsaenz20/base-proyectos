@@ -284,6 +284,21 @@ A partir de las intenciones y oportunidades debe determinarse:
 
 La arquitectura no debe derivarse automáticamente de una lista de keywords.
 
+Cuando el proyecto dependa de la generación o reorganización de URLs a partir de intenciones de búsqueda, debe utilizarse:
+
+`02-MODULOS/GENERACION-ARQUITECTURA-URLS-POR-INTENCION.md`
+
+Este módulo convierte las intenciones y oportunidades detectadas en:
+
+- decisiones de páginas;
+- agrupaciones;
+- URLs;
+- tipos de página;
+- prioridades;
+- arquitectura.
+
+La decisión debe realizarse antes de pasar a la selección definitiva de plantillas y construcción.
+
 ---
 
 # 10. DECISIONES
@@ -679,4 +694,5 @@ La investigación debe ser proporcional a la incertidumbre.
 La arquitectura debe derivarse de las necesidades reales del proyecto.
 
 La automatización debe escalar valor, no únicamente volumen.
+
 
