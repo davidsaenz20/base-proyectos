@@ -1,4 +1,3 @@
-
 # INVENTARIO DE DOCUMENTOS
 
 ## Objetivo
@@ -139,12 +138,15 @@ El inventario debe reflejar los archivos reales existentes, no una estructura pr
 | `README.md` | Explicación y reglas de los fixtures |
 | `PROTOCOLO-PRUEBAS.md` | Protocolo para definir y ejecutar pruebas |
 | `proyecto-web.md` | Fixture verificable de proyecto web |
+| `proyecto-web-afiliacion.md` | Fixture verificable de web de afiliación |
+| `proyecto-app-movil.md` | Fixture verificable de aplicación móvil |
 | `proyecto-saas.md` | Fixture de proyecto SaaS |
 | `proyecto-ecommerce.md` | Fixture de proyecto ecommerce |
 | `proyecto-api-servicio.md` | Fixture de API/servicio |
 | `proyecto-asistente-ia.md` | Fixture de asistente de IA |
 | `proyecto-automatizacion.md` | Fixture de automatización |
 | `proyecto-directorio.md` | Fixture de directorio |
+| `proyecto-directorio-local.md` | Fixture verificable de directorio local |
 | `proyecto-portal.md` | Fixture de portal |
 
 ---
@@ -241,34 +243,30 @@ CORREGIR
 VALIDAR
 ↓
 CONTINUAR
-
+```
 
 ---
 
-7. Sincronización
+## 7. Sincronización
 
 El inventario debe mantenerse sincronizado con el árbol real del repositorio.
 
 Una modificación estructural no se considera completamente cerrada hasta comprobar:
 
-existencia del archivo;
-
-ubicación correcta;
-
-referencias correctas;
-
-inclusión en el inventario;
-
-coherencia con la arquitectura.
-
-
+- existencia del archivo;
+- ubicación correcta;
+- referencias correctas;
+- inclusión en el inventario;
+- coherencia con la arquitectura.
 
 ---
 
-ESTADO DEL INVENTARIO
+# ESTADO DEL INVENTARIO
 
-Estado: Actualización estructural
+**Estado:** Actualizado y sincronizado con la estructura documental auditada.
 
-Versión: 2.0
+**Versión:** 2.1
 
-Última revisión: 2026-08-27
+**Última revisión:** 2026-08-28
+
+
