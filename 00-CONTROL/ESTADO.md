@@ -3,6 +3,8 @@
 > Estado operativo actual de BASE-PROYECTOS.
 >
 > Este archivo es la fuente de verdad sobre dónde estamos, qué está terminado, qué está pendiente y cuál es el siguiente trabajo.
+>
+> Debe mantenerse sincronizado con el estado real del repositorio.
 
 ---
 
@@ -12,9 +14,9 @@
 
 **Estado:** En desarrollo
 
-**Fase actual:** Fase 1 — Descubrimiento y definición de la BASE
+**Fase actual:** Fase 1 — Consolidación y validación de la BASE
 
-**Objetivo actual:** Consolidar y validar la arquitectura de BASE-PROYECTOS antes de continuar ampliándola.
+**Objetivo actual:** Consolidar la arquitectura documental, comprobar la coherencia entre todas las capas y validar que BASE-PROYECTOS pueda utilizarse realmente antes de iniciar un proyecto real.
 
 **Última actualización:** 2026-08-28
 
@@ -22,20 +24,31 @@
 
 # 2. ÚLTIMO PUNTO VÁLIDO
 
-Se ha realizado una revisión de la arquitectura general, documentación de control, tipos de proyecto, fixtures y sistema de trabajo.
+Se ha realizado una revisión de la arquitectura general y de las principales capas documentales de BASE-PROYECTOS.
 
-La auditoría de `04-TIPOS-PROYECTO/` se considera completada en esta etapa.
+Se considera completada la auditoría inicial de:
 
-Se ha comprobado la existencia y coherencia de los tipos principales y de las especializaciones actualmente identificadas.
+- `00-CONTROL/`;
+- `04-TIPOS-PROYECTO/`.
 
-También se han incorporado fixtures específicos para:
+También se han revisado de forma estructural:
+
+- `01-UNIVERSAL/`;
+- `02-MODULOS/`;
+- `03-PLANTILLAS/`;
+- `05-FIXTURES/`;
+- `06-PROYECTOS/`.
+
+Se han incorporado o revisado fixtures específicos para:
 
 - WEB DE AFILIACIÓN;
 - DIRECTORIO-LOCAL.
 
-El protocolo de pruebas ha sido actualizado para establecer una regla de cobertura específica para especializaciones.
+El protocolo de pruebas establece que las especializaciones que introducen comportamiento, requisitos, módulos, validaciones, riesgos, dependencias o reglas propias deben disponer de cobertura específica.
 
 Se ha creado y definido `MODO-TRABAJO.md` en la raíz del repositorio para establecer el protocolo de trabajo autónomo entre el usuario y ChatGPT.
+
+El trabajo ya no debe volver a comenzar por la auditoría individual de `00-CONTROL/`, salvo que una auditoría posterior detecte una inconsistencia que obligue a revisarlo.
 
 ---
 
@@ -66,13 +79,32 @@ Existen estructuras separadas para:
 
 ---
 
+## Control
+
+**Estado:** Auditoría inicial completada
+
+Se han comprobado los principales documentos de control y su función dentro del sistema.
+
+Documentos principales:
+
+- `README.md`;
+- `ESTADO.md`;
+- `ROADMAP.md`;
+- `DECISIONES.md`;
+- `REGLAS.md`;
+- `INVENTARIO-DOCUMENTOS.md`.
+
+El sistema de control debe utilizarse como fuente de verdad operativa, pero sus documentos deben mantenerse sincronizados entre sí.
+
+---
+
 ## Tipos de proyecto
 
 **Estado:** Auditoría inicial completada
 
 Se ha revisado la estructura de `04-TIPOS-PROYECTO/`.
 
-Se ha comprobado la existencia de los tipos y especializaciones actualmente definidos.
+Se han comprobado los tipos y especializaciones actualmente definidos.
 
 Entre ellos:
 
@@ -88,7 +120,7 @@ Entre ellos:
 - DIRECTORIO-LOCAL;
 - Portal.
 
-Las especializaciones que introducen comportamiento propio disponen de cobertura específica mediante fixtures.
+Las especializaciones que introducen comportamiento propio deben disponer de cobertura específica mediante fixtures.
 
 ---
 
@@ -100,8 +132,12 @@ Se han incorporado o actualizado fixtures para comprobar comportamientos especí
 
 Fixtures revisados:
 
-- `05-FIXTURES/proyecto-web-afiliacion.md`
-- `05-FIXTURES/proyecto-directorio-local.md`
+- `05-FIXTURES/proyecto-web-afiliacion.md`;
+- `05-FIXTURES/proyecto-directorio-local.md`.
+
+La existencia de un fixture no implica por sí sola que el comportamiento esté validado.
+
+La validación real debe ejecutarse posteriormente.
 
 ---
 
@@ -113,7 +149,7 @@ Se ha actualizado:
 
 `05-FIXTURES/PROTOCOLO-PRUEBAS.md`
 
-El protocolo incluye ahora una regla específica para determinar cuándo una especialización necesita un fixture propio y cuándo puede quedar cubierta por el fixture de su tipo base.
+El protocolo establece una regla específica para determinar cuándo una especialización necesita un fixture propio y cuándo puede quedar cubierta por el fixture de su tipo base.
 
 ---
 
@@ -121,7 +157,7 @@ El protocolo incluye ahora una regla específica para determinar cuándo una esp
 
 **Estado:** Definido
 
-Se ha creado:
+Existe:
 
 `MODO-TRABAJO.md`
 
@@ -132,18 +168,14 @@ El modo de trabajo debe permitir:
 - comprobar el estado real antes de continuar;
 - recuperar el último punto válido;
 - trabajar de forma autónoma;
+- evitar pedir confirmaciones innecesarias;
 - detenerse únicamente cuando sea necesaria la intervención del usuario;
 - identificar claramente cuándo el usuario debe modificar un archivo;
+- entregar el contenido completo del archivo cuando sea necesaria una modificación manual;
+- entregar dicho contenido en una única caja copiable;
 - comprobar posteriormente que la modificación existe realmente en GitHub;
-- evitar ciclos de mensajes en los que el usuario tenga que enviar puntos sin que exista una acción real pendiente.
-
----
-
-## Historial
-
-**Estado:** Revisado
-
-Se ha revisado el historial reciente del repositorio y de trabajo para reconstruir el estado operativo.
+- evitar ciclos de mensajes en los que el usuario tenga que enviar puntos sin que exista una acción real pendiente;
+- utilizar una vía alternativa de acceso cuando la vía principal no permita comprobar el repositorio.
 
 ---
 
@@ -151,94 +183,148 @@ Se ha revisado el historial reciente del repositorio y de trabajo para reconstru
 
 ## Problema 1 — Estado operativo desactualizado
 
-`00-CONTROL/ESTADO.md` no estaba reflejando correctamente los avances realizados.
+`00-CONTROL/ESTADO.md` estaba indicando como siguiente tarea la auditoría completa de `00-CONTROL/`, aunque esa auditoría ya había sido realizada.
 
-**Consecuencia:** el sistema podía recuperar un punto de trabajo anterior aunque algunas tareas ya hubieran sido completadas.
+**Consecuencia:**
 
-**Acción:** actualizar este archivo para convertirlo en una fuente persistente y actualizada del estado operativo.
+El sistema podía recuperar un punto de trabajo anterior y repetir tareas ya realizadas.
 
----
+**Acción:**
 
-## Problema 2 — Roadmap incompleto
-
-`00-CONTROL/ROADMAP.md` contiene las fases generales, pero todavía necesita convertirse en un roadmap específico del trabajo actual.
-
-**Consecuencia:** define el proceso general, pero no determina con suficiente precisión las tareas, dependencias e hitos concretos.
-
-**Acción:** auditar y completar el roadmap después de actualizar el estado.
+Este archivo se actualiza para establecer como siguiente punto la auditoría cruzada de toda la BASE.
 
 ---
 
-## Problema 3 — Cobertura de especializaciones
+## Problema 2 — Roadmap pendiente de sincronización
 
-Se detectó que la existencia de un tipo base no garantiza que sus especializaciones estén realmente cubiertas.
+`00-CONTROL/ROADMAP.md` contiene las fases generales del trabajo, pero debe comprobarse contra el estado real de la BASE.
 
-**Acción realizada:** actualizar `PROTOCOLO-PRUEBAS.md` para exigir cobertura específica cuando una especialización introduzca comportamiento, requisitos, módulos, validaciones, riesgos, dependencias o reglas propias.
+**Consecuencia:**
+
+El roadmap puede describir correctamente el proceso general sin reflejar con suficiente precisión el punto operativo actual.
+
+**Acción:**
+
+Auditar el roadmap contra el estado real después de completar la comprobación cruzada.
+
+---
+
+## Problema 3 — Auditoría cruzada pendiente
+
+Las diferentes capas han sido revisadas parcialmente, pero todavía no se ha completado una auditoría cruzada exhaustiva.
+
+Debe comprobarse que:
+
+- las rutas existen;
+- las referencias entre documentos son correctas;
+- los tipos están conectados con sus módulos;
+- los tipos están conectados con sus plantillas;
+- las especializaciones están cubiertas;
+- los fixtures corresponden a los comportamientos que deben probar;
+- no existen reglas contradictorias;
+- no existen documentos obsoletos;
+- el estado coincide con el repositorio real.
+
+---
+
+## Problema 4 — Validación funcional pendiente
+
+La documentación y los fixtures existen, pero todavía falta demostrar mediante pruebas reales que las reglas producen los resultados esperados.
+
+**Consecuencia:**
+
+Una BASE documentalmente correcta puede contener errores que solo aparezcan al intentar utilizarla.
+
+**Acción:**
+
+Ejecutar validaciones reales mediante los fixtures antes de considerar la BASE terminada.
+
+---
+
+## Problema 5 — Porcentajes de progreso
+
+Los porcentajes históricos incluidos en este archivo eran estimaciones aproximadas y no estaban respaldados por una métrica suficientemente objetiva.
+
+**Acción:**
+
+A partir de ahora, los porcentajes deben utilizarse como indicadores de avance funcional por área y no como porcentaje de archivos existentes.
+
+El porcentaje global solo debe modificarse cuando exista evidencia suficiente para justificar el cambio.
+
+No debe utilizarse una media simple de archivos.
 
 ---
 
 # 5. TRABAJO PENDIENTE
 
-## Prioridad 1
+## Prioridad 1 — Auditoría cruzada de la BASE
 
-Auditar completamente `00-CONTROL/`.
+Comprobar conjuntamente:
 
-Comprobar:
-
-- README;
-- ESTADO;
-- ROADMAP;
-- DECISIONES;
-- REGLAS;
-- INVENTARIO;
-- cualquier documento relacionado.
+- `00-CONTROL/`;
+- `01-UNIVERSAL/`;
+- `02-MODULOS/`;
+- `03-PLANTILLAS/`;
+- `04-TIPOS-PROYECTO/`;
+- `05-FIXTURES/`;
+- `06-PROYECTOS/`.
 
 Objetivo:
 
-Conseguir un sistema de control coherente, actualizado y recuperable.
+Determinar si todas las capas son coherentes entre sí.
 
 ---
 
-## Prioridad 2
+## Prioridad 2 — Sincronización del sistema de control
 
-Completar el roadmap específico.
+Después de la auditoría cruzada:
 
-Debe determinar:
-
-- objetivo actual;
-- fases;
-- tareas;
-- dependencias;
-- hitos;
-- criterios de finalización;
-- orden de ejecución.
+- actualizar `ESTADO.md`;
+- actualizar `ROADMAP.md` si es necesario;
+- actualizar `INVENTARIO-DOCUMENTOS.md` si es necesario;
+- registrar decisiones nuevas en `DECISIONES.md` si procede.
 
 ---
 
-## Prioridad 3
+## Prioridad 3 — Validación real mediante fixtures
 
-Realizar auditoría global de coherencia.
+Ejecutar pruebas reales sobre los fixtures disponibles.
+
+Objetivo:
 
 Comprobar que:
 
-- los documentos se referencian correctamente;
-- no existen reglas contradictorias;
-- no faltan componentes necesarios;
-- no existen archivos obsoletos;
-- los tipos de proyecto están correctamente conectados con sus módulos;
-- los fixtures cubren los comportamientos necesarios;
-- el sistema de trabajo coincide con el estado real;
-- la estructura responde al objetivo de BASE-PROYECTOS.
+- las entradas son interpretadas correctamente;
+- las reglas se aplican;
+- los módulos adecuados son seleccionados;
+- las plantillas adecuadas son seleccionadas;
+- los tipos de proyecto se comportan como corresponde;
+- las especializaciones reciben su tratamiento específico;
+- los errores se detectan;
+- los resultados pueden verificarse.
 
 ---
 
-## Prioridad 4
+## Prioridad 4 — Corrección de errores encontrados
 
-Iniciar validación real de la BASE mediante los fixtures disponibles.
+Cuando una validación detecte un problema:
 
-Objetivo:
+1. identificar el origen;
+2. determinar qué documento o componente es responsable;
+3. corregirlo;
+4. volver a ejecutar la validación afectada;
+5. comprobar que no se ha introducido una contradicción;
+6. actualizar el estado.
 
-Comprobar que las reglas documentadas no solo existen, sino que permiten obtener resultados correctos y detectar errores.
+---
+
+## Prioridad 5 — Proyecto real de prueba
+
+Solo cuando la BASE haya superado la validación funcional:
+
+Iniciar un proyecto real utilizando exclusivamente el sistema construido.
+
+El proyecto real servirá como prueba definitiva de que la BASE permite pasar desde una necesidad inicial hasta un resultado funcional.
 
 ---
 
@@ -246,35 +332,58 @@ Comprobar que las reglas documentadas no solo existen, sino que permiten obtener
 
 La siguiente tarea lógica es:
 
-**AUDITAR `00-CONTROL/` COMPLETAMENTE.**
-
-La auditoría de `04-TIPOS-PROYECTO/` ya está completada en este bloque y no debe volver a considerarse la siguiente tarea salvo que la auditoría de control encuentre una inconsistencia que obligue a revisarla.
+**AUDITORÍA CRUZADA DE TODA LA BASE.**
 
 Orden previsto:
 
-1. auditar `00-CONTROL/README.md`;
-2. auditar `00-CONTROL/ESTADO.md`;
-3. auditar `00-CONTROL/ROADMAP.md`;
-4. auditar documentos de decisiones y reglas;
-5. comprobar referencias cruzadas;
-6. actualizar lo necesario;
-7. establecer el siguiente punto válido.
+1. comprobar la estructura real del repositorio;
+2. comprobar `00-CONTROL`;
+3. comprobar `01-UNIVERSAL`;
+4. comprobar `02-MODULOS`;
+5. comprobar `03-PLANTILLAS`;
+6. comprobar `04-TIPOS-PROYECTO`;
+7. comprobar `05-FIXTURES`;
+8. comprobar `06-PROYECTOS`;
+9. cruzar referencias entre capas;
+10. detectar contradicciones;
+11. detectar archivos faltantes u obsoletos;
+12. determinar correcciones necesarias;
+13. actualizar `ESTADO.md`;
+14. actualizar `ROADMAP.md` si procede;
+15. establecer un nuevo punto válido.
+
+No repetir auditorías ya completadas salvo que una dependencia o inconsistencia descubierta posteriormente obligue a revisarlas.
 
 ---
 
 # 7. BLOQUEOS
 
-**Bloqueo actual:** Ninguno.
+**Bloqueo actual:** Ninguno conocido.
 
-**Intervención del usuario necesaria:** Únicamente cuando sea necesario modificar manualmente un archivo o realizar una acción que no pueda ejecutar el sistema.
+**Intervención del usuario necesaria:**
 
-Si una herramienta de acceso al repositorio falla, debe utilizarse como alternativa la URL pública del repositorio:
+Únicamente cuando sea necesario:
+
+- modificar manualmente un archivo;
+- copiar contenido proporcionado por ChatGPT al repositorio;
+- realizar una acción externa que el sistema no pueda ejecutar;
+- proporcionar información imprescindible que no exista en el repositorio.
+
+Si una herramienta de acceso al repositorio falla, debe intentarse una vía alternativa.
+
+Repositorio público de respaldo:
 
 `https://github.com/davidsaenz20/base-proyectos.git`
 
 La imposibilidad temporal de utilizar una vía de acceso no debe interpretarse automáticamente como un problema del proyecto.
 
 Debe intentarse una vía alternativa antes de declarar el trabajo bloqueado.
+
+Si tampoco es posible recuperar la información necesaria, declarar explícitamente:
+
+**BLOQUEADO — ACCESO O LECTURA INSUFICIENTE**
+
+No inventar contenido.
 
 ---
 
@@ -286,37 +395,58 @@ Después de cada modificación relevante:
 2. comprobar que la ruta es correcta;
 3. comprobar que el contenido está actualizado;
 4. comprobar que no se ha perdido contenido necesario;
-5. actualizar este archivo si cambia el estado;
-6. determinar automáticamente la siguiente tarea.
+5. comprobar que las referencias relacionadas siguen siendo válidas;
+6. actualizar este archivo si cambia el estado;
+7. determinar automáticamente la siguiente tarea.
 
 No considerar una modificación realizada simplemente porque el usuario indique que la ha subido.
 
-Debe verificarse en el repositorio.
+Debe verificarse en el repositorio siempre que sea técnicamente posible.
+
+Si un archivo puede leerse pero su contenido completo no puede recuperarse de forma fiable:
+
+**BLOQUEADO — LECTURA INCOMPLETA**
+
+No sobrescribir el archivo mediante una reconstrucción parcial.
 
 ---
 
-# 9. PROGRESO ESTIMADO
+# 9. PROGRESO FUNCIONAL
 
-Estos porcentajes representan una estimación del progreso funcional del trabajo, no el porcentaje de archivos creados.
+Los porcentajes representan una estimación del avance funcional de cada área.
+
+No representan el porcentaje de archivos creados.
 
 | Área | Progreso |
 |---|---:|
 | Arquitectura | 90% |
-| Control | 50% |
+| Control | 90% |
+| Universal | 60% |
+| Módulos | 50% |
+| Plantillas | 50% |
 | Tipos de proyecto | 90% |
 | Fixtures | 75% |
 | Protocolo de pruebas | 80% |
 | Documentación | 80% |
-| Auditoría global | 30% |
-| Validación | 5% |
+| Auditoría cruzada | 20% |
+| Validación funcional | 5% |
 | Construcción | 0% |
-| **TOTAL BASE** | **60%** |
+| **TOTAL BASE** | **≈65%** |
 
-Estos porcentajes pueden cambiar cuando una auditoría posterior demuestre que una parte estaba sobrevalorada o infravalorada.
+Estos porcentajes son indicadores operativos y pueden cambiar cuando una auditoría o validación aporte evidencia nueva.
 
-El porcentaje total no debe calcularse simplemente como una media de archivos.
+El porcentaje global no debe calcularse como una media simple de archivos.
 
-Debe representar el avance funcional aproximado hacia una BASE coherente, validada y utilizable.
+Debe representar el avance funcional aproximado hacia una BASE:
+
+- coherente;
+- validada;
+- reutilizable;
+- ejecutable;
+- mantenible;
+- utilizable para construir proyectos reales.
+
+Si no existe evidencia suficiente para modificar un porcentaje, debe mantenerse el último valor válido.
 
 ---
 
@@ -332,7 +462,9 @@ Este archivo debe actualizarse cuando exista un cambio significativo en:
 - decisión;
 - progreso;
 - cobertura;
-- validación.
+- validación;
+- arquitectura;
+- punto de recuperación.
 
 No actualizarlo por cada acción trivial.
 
@@ -346,21 +478,27 @@ Si se pierde el contexto de la conversación, comenzar desde:
 
 **Proyecto:** BASE-PROYECTOS
 
-**Fase:** Fase 1 — Descubrimiento y definición de la BASE
+**Fase:** Fase 1 — Consolidación y validación de la BASE
 
-**Área:** `00-CONTROL/`
-
-**Tarea:** Auditoría completa del sistema de control.
+**Área:** Auditoría cruzada de la BASE
 
 **Último bloque completado:**
 
+- revisión inicial de `00-CONTROL/`;
 - auditoría inicial de `04-TIPOS-PROYECTO/`;
-- actualización de `05-FIXTURES/PROTOCOLO-PRUEBAS.md`;
-- incorporación/revisión de fixtures de especializaciones.
+- revisión estructural de `01-UNIVERSAL/`;
+- revisión estructural de `02-MODULOS/`;
+- revisión estructural de `03-PLANTILLAS/`;
+- revisión estructural de `05-FIXTURES/`;
+- revisión estructural de `06-PROYECTOS/`;
+- actualización del protocolo de pruebas para especializaciones;
+- incorporación/revisión de fixtures específicos.
 
 **Siguiente acción:**
 
-Auditar `00-CONTROL/` y convertir el sistema de control en una fuente coherente y recuperable del estado del proyecto.
+Realizar la auditoría cruzada de todas las capas y determinar las correcciones necesarias antes de iniciar la validación funcional.
+
+No volver automáticamente a auditar `00-CONTROL/` como tarea principal.
 
 ---
 
@@ -390,6 +528,22 @@ Las reglas de validación de fixtures pertenecen a:
 
 `05-FIXTURES/PROTOCOLO-PRUEBAS.md`
 
+El inventario documental pertenece a:
+
+`00-CONTROL/INVENTARIO-DOCUMENTOS.md`
+
+Las decisiones estructurales pertenecen a:
+
+`00-CONTROL/DECISIONES.md`
+
 Este archivo debe mantenerse sincronizado con el estado real del repositorio.
+
+Nunca debe utilizarse para justificar que una tarea está terminada si no existe evidencia suficiente.
+
+Nunca debe inventarse un estado para evitar un bloqueo.
+
+Nunca debe reconstruirse parcialmente un archivo que no pueda recuperarse de forma fiable.
+
+El objetivo del sistema de estado es permitir continuar el trabajo de forma autónoma, verificable y recuperable.
 
 
