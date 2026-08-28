@@ -241,9 +241,64 @@ Los tipos actuales incluyen:
 - Automatización;
 - Asistente IA;
 - Directorio;
+- DIRECTORIO-LOCAL;
 - Portal.
 
-Cuando se incorpore un nuevo tipo de proyecto, debe evaluarse si necesita un fixture específico.
+### Regla de cobertura de especializaciones
+
+Una especialización no debe considerarse cubierta únicamente porque exista el fixture de su tipo base.
+
+Al incorporar o detectar una especialización, debe comprobarse qué comportamiento adicional introduce.
+
+Una especialización necesita cobertura específica cuando introduce uno o más de los siguientes elementos:
+
+- comportamiento propio;
+- requisitos propios;
+- módulos propios;
+- validaciones propias;
+- riesgos propios;
+- dependencias propias;
+- reglas de negocio propias;
+- procesos propios.
+
+Cuando una especialización no introduzca ningún comportamiento que quede fuera del fixture del tipo base, puede utilizarse el fixture base como cobertura.
+
+En ese caso debe documentarse explícitamente que la cobertura de la especialización queda satisfecha por el fixture base y explicar por qué.
+
+Cuando exista comportamiento específico que no pueda comprobarse mediante el fixture base, debe existir un fixture específico.
+
+### Especializaciones actuales
+
+#### WEB DE AFILIACIÓN
+
+Debe disponer de cobertura específica porque incorpora elementos propios de afiliación, monetización, enlaces de seguimiento y validaciones relacionadas.
+
+Fixture asociado:
+
+`05-FIXTURES/proyecto-web-afiliacion.md`
+
+#### DIRECTORIO-LOCAL
+
+Debe disponer de cobertura específica porque incorpora elementos propios de servicio + localidad, generación de páginas, SEO local, calidad de datos, contenido duplicado y escalabilidad.
+
+Fixture asociado:
+
+`05-FIXTURES/proyecto-directorio-local.md`
+
+### Incorporación de nuevos tipos o especializaciones
+
+Cuando se incorpore un nuevo tipo de proyecto:
+
+1. comprobar si es un tipo independiente o una especialización;
+2. identificar qué comportamiento añade;
+3. identificar sus requisitos;
+4. identificar sus módulos;
+5. identificar sus validaciones;
+6. identificar sus riesgos;
+7. identificar sus dependencias;
+8. comprobar si el fixture base cubre completamente ese comportamiento;
+9. crear fixture específico si existe comportamiento no cubierto;
+10. documentar la decisión.
 
 No todos los tipos requieren inicialmente el mismo número de pruebas.
 
@@ -398,13 +453,17 @@ Un fixture solo demuestra que la BASE funciona cuando puede utilizarse para dete
 
 La existencia de un fixture no equivale a una prueba superada.
 
+La cobertura de un tipo especializado debe evaluarse por comportamiento y no únicamente por coincidencia de nombres.
+
+Toda nueva especialización debe pasar por la regla de cobertura definida en este protocolo.
+
 ---
 
 ## ESTADO
 
 Estado: Base estructurada para validación
 
-Versión: 2.0
+Versión: 2.1
 
 Última revisión: 2026-08-28
 
