@@ -23,6 +23,104 @@ El sistema debe trabajar de forma:
 - escalable;
 - orientada a resultados.
 
+# 1.1. CONTINUIDAD Y AMPLIACIÓN DE PROYECTOS EXISTENTES
+
+Un proyecto no termina necesariamente cuando se publica su primera versión.
+
+Una web, sistema o negocio ya construido puede continuar evolucionando mediante:
+
+- nuevas URLs;
+- nuevos contenidos;
+- nuevas categorías;
+- nuevos núcleos temáticos;
+- nuevas funcionalidades;
+- nuevas formas de monetización;
+- nuevas integraciones;
+- nuevas automatizaciones;
+- mejoras;
+- actualizaciones;
+- ampliaciones comerciales.
+
+Cuando el usuario indique que está trabajando sobre un proyecto existente, NO se debe reiniciar automáticamente el proceso desde cero.
+
+Primero se debe:
+
+1. identificar el proyecto existente;
+2. leer su documentación actual;
+3. determinar su estado real;
+4. identificar qué partes ya están construidas;
+5. identificar qué partes están publicadas;
+6. identificar qué se quiere añadir, modificar o ampliar;
+7. conservar las decisiones y componentes existentes que sigan siendo válidos;
+8. aplicar únicamente las fases necesarias para la nueva actuación;
+9. integrar el resultado con lo ya existente.
+
+Ejemplo:
+
+Si una web ya tiene:
+
+- una categoría publicada;
+- 10 URLs;
+- 10 contenidos;
+- WordPress funcionando;
+- automatizaciones funcionando;
+
+y el usuario quiere crear una segunda categoría con 10 nuevos contenidos, el sistema debe tratarlo como una AMPLIACIÓN DEL PROYECTO EXISTENTE.
+
+No debe reconstruir:
+
+- la web;
+- la categoría existente;
+- las URLs existentes;
+- los contenidos existentes;
+- las automatizaciones existentes;
+
+salvo que la nueva actuación requiera modificarlos.
+
+El mismo principio se aplica si el usuario quiere:
+
+- añadir un nuevo núcleo;
+- añadir nuevas URLs a un núcleo existente;
+- crear una nueva categoría;
+- añadir una tienda de afiliados;
+- incorporar una nueva funcionalidad;
+- ampliar la monetización;
+- crear nuevos contenidos;
+- reorganizar una parte de la arquitectura;
+- mejorar una sección existente.
+
+El proceso deberá adaptarse al alcance de la actuación.
+
+Por tanto:
+
+PROYECTO NUEVO
+↓
+PROCESO COMPLETO NECESARIO
+
+PROYECTO EXISTENTE
+↓
+RECUPERAR ESTADO ACTUAL
+↓
+IDENTIFICAR ACTUACIÓN
+↓
+APLICAR SOLO LAS FASES NECESARIAS
+↓
+INTEGRAR CON LO EXISTENTE
+↓
+MEDIR
+↓
+CONTINUAR EVOLUCIONANDO
+
+La existencia de un proyecto publicado no impide volver a utilizar las fases de investigación, demanda, intención, validación, matriz, arquitectura o construcción cuando una nueva actuación lo requiera.
+
+El sistema debe reutilizar el trabajo existente y evitar repetir trabajo innecesariamente.
+
+Una ampliación puede ser pequeña y no requerir todas las fases.
+
+Una ampliación grande puede requerir volver a ejecutar prácticamente todo el proceso para esa nueva parte.
+
+La decisión debe depender del alcance real de la actuación, no de una regla rígida.
+
 ---
 
 # 2. PRINCIPIO GENERAL
