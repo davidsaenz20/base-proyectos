@@ -2,547 +2,323 @@
 
 ## OBJETIVO
 
-Este modo permite que ChatGPT continúe trabajando de forma autónoma desde el último punto válido.
+Este modo permite que ChatGPT trabaje de forma autónoma sobre el proyecto.
 
-Cuando el usuario active este modo al comenzar un chat, ChatGPT debe:
+Cuando el usuario active el MODO DE TRABAJO, ChatGPT debe:
 
-**ANALIZAR → DETECTAR → DECIDIR → CONSTRUIR → VALIDAR → CONTINUAR**
+1. Leer las reglas de este archivo.
+2. Comprobar el estado real del proyecto.
+3. Recuperar el último punto válido.
+4. Continuar el trabajo desde ese punto.
+5. Ejecutar autónomamente todas las tareas que pueda realizar.
+6. No pedir confirmación mientras pueda continuar trabajando.
 
-El objetivo principal no es generar informes, sino **hacer avanzar el proyecto continuamente**.
-
-ChatGPT debe trabajar de forma autónoma siempre que sea posible.
-
-Puede:
-
-- analizar archivos;
-- revisar la arquitectura;
-- detectar errores;
-- detectar inconsistencias;
-- detectar carencias;
-- diseñar soluciones;
-- crear estructuras;
-- crear contenido;
-- mejorar documentos;
-- preparar nuevas funcionalidades;
-- revisar relaciones entre archivos;
-- comprobar coherencia;
-- planificar el siguiente paso;
-- validar lo que pueda validarse sin intervención del usuario.
-
-No debe limitarse a describir lo que encuentra.
-
-Cuando detecte un problema, debe determinar qué solución corresponde y continuar trabajando sobre ella.
+El objetivo es que el proyecto avance de forma continua.
 
 ---
 
-# ACTIVACIÓN
+# REGLA PRINCIPAL DE EJECUCIÓN
 
-Cuando el usuario indique que se active el **MODO DE TRABAJO**, ChatGPT debe recuperar:
+Una vez activado el MODO DE TRABAJO:
 
-- el último punto válido;
-- el estado real del proyecto;
-- las reglas de este archivo;
-- los trabajos ya realizados;
-- los trabajos pendientes;
-- los problemas detectados;
-- las correcciones que todavía no hayan sido aplicadas.
+**CHATGPT DEBE CONTINUAR TRABAJANDO AUTÓNOMAMENTE.**
 
-A partir de ese momento debe continuar automáticamente.
+No debe detenerse después de cada tarea.
 
-Cuando el usuario envíe únicamente:
+No debe detenerse para informar de cada pequeño avance.
+
+No debe preguntar "¿quieres que continúe?".
+
+No debe esperar instrucciones si existe un siguiente trabajo lógico que pueda realizar.
+
+Debe analizar, investigar, comprobar, decidir, construir y validar todo aquello que pueda realizar autónomamente.
+
+---
+
+# ÚNICAS CONDICIONES DE PARADA
+
+El trabajo autónomo SOLO puede detenerse por UNA de estas dos condiciones:
+
+## CONDICIÓN 1 — ACCIÓN MANUAL DEL USUARIO
+
+ChatGPT debe detenerse cuando llegue a un punto en el que sea imprescindible que el usuario realice una acción manual.
+
+Por ejemplo:
+
+- crear un archivo;
+- modificar un archivo;
+- sustituir un archivo;
+- copiar contenido al repositorio;
+- pegar contenido en GitHub;
+- ejecutar una acción que ChatGPT no pueda ejecutar;
+- tomar una decisión que solamente pueda tomar el usuario.
+
+Cuando esto ocurra, ChatGPT debe detenerse.
+
+Debe indicar claramente:
+
+- qué archivo hay que crear o modificar;
+- la ruta exacta;
+- qué debe hacer el usuario;
+- el contenido completo preparado;
+- el siguiente paso necesario.
+
+Si se trata de un archivo, debe entregarlo dentro de un único bloque de código Markdown para facilitar la copia.
+
+### REGLA DE UN SOLO ARCHIVO
+
+Si hay varios archivos que requieren intervención manual:
+
+**SOLO SE DEBE ENTREGAR UNO CADA VEZ.**
+
+Después de entregar un archivo:
+
+**CHATGPT DEBE DETENERSE.**
+
+El usuario realizará la acción manual y posteriormente escribirá:
 
 **.**
 
-debe interpretarse como:
-
-**"Continúa trabajando desde el último punto válido."**
-
-No debe pedir confirmación.
-
-No debe preguntar qué hacer a continuación si existe una tarea autónoma clara.
-
-Debe continuar con el siguiente trabajo lógico.
+Al recibir **.**, ChatGPT debe comprobar el estado y continuar con el siguiente punto pendiente.
 
 ---
 
-# TRABAJO AUTÓNOMO
+# CONDICIÓN 2 — LÍMITE DE TRES MINUTOS
 
-Mientras exista trabajo que pueda realizarse sin intervención del usuario, ChatGPT debe continuar.
+Si ChatGPT continúa trabajando y han transcurrido aproximadamente tres minutos desde el inicio del ciclo autónomo:
 
-Debe priorizar:
+**DEBE DETENER EL CICLO.**
 
-1. errores que puedan provocar problemas posteriores;
-2. inconsistencias entre archivos;
-3. información incorrecta;
-4. estructuras incompletas;
-5. dependencias sin resolver;
-6. funcionalidades o documentos faltantes;
-7. mejoras necesarias;
-8. validaciones pendientes;
-9. construcción de nuevas partes del sistema.
+Aunque todavía existan tareas que pueda realizar.
 
-No debe detenerse simplemente porque haya encontrado un problema.
+No debe continuar indefinidamente.
 
-Debe investigar el problema y determinar la solución.
+Debe informar brevemente:
 
----
+- qué ha realizado;
+- dónde se encuentra;
+- qué queda pendiente;
+- porcentaje de ejecución.
 
-# DETECCIÓN DE PROBLEMAS
+Después debe detenerse.
 
-Cuando se encuentre un problema, ChatGPT debe indicarlo claramente.
-
-No es suficiente escribir únicamente:
-
-🟡 **ATENCIÓN**
-
-Debe explicar brevemente:
-
-**qué está mal;**
-
-**por qué es un problema;**
-
-**qué hay que corregir.**
-
-Ejemplo:
-
-🟡 **ATENCIÓN**
-
-Varios fixtures indican `Progreso: 100 %`, pero no existe una ejecución real de sus pruebas.
-
-**Hay que corregir:** separar el estado documental del estado de ejecución y actualizar los fixtures afectados.
-
----
-
-# CORRECCIÓN AUTÓNOMA
-
-Si la solución puede realizarse sin modificar archivos del repositorio, ChatGPT debe realizarla dentro del trabajo que esté desarrollando.
-
-Si la solución requiere modificar un archivo existente, ChatGPT debe:
-
-1. analizar primero el archivo actual;
-2. determinar exactamente qué debe cambiar;
-3. preparar la versión corregida completa;
-4. detenerse cuando sea necesaria la intervención manual del usuario;
-5. indicar claramente qué archivo debe modificarse;
-6. proporcionar el contenido completo actualizado;
-7. entregarlo dentro de un bloque de código Markdown;
-8. permitir que el usuario lo copie mediante el botón de copia.
-
-Nunca debe proporcionar únicamente fragmentos cuando sea necesario sustituir un archivo completo.
-
----
-
-# INTERVENCIÓN MANUAL UNO A UNO
-
-Cuando sea necesario que el usuario modifique o cree varios archivos manualmente, **NUNCA debe entregar varios archivos a la vez**.
-
-Debe trabajar las modificaciones **una por una y en orden**.
-
-Ejemplo:
-
-Si hay que modificar:
-
-1. `archivo-A.md`
-2. `archivo-B.md`
-3. `archivo-C.md`
-4. `archivo-D.md`
-
-ChatGPT debe entregar únicamente:
-
-**ARCHIVO 1 DE 4**
-
-`archivo-A.md`
-
-con su contenido completo.
-
-Después debe detenerse y esperar a que el usuario confirme mediante:
+Cuando el usuario escriba:
 
 **.**
 
-Cuando el usuario escriba **.**, ChatGPT debe considerar que puede continuar con el siguiente archivo pendiente.
-
-Entonces debe entregar:
-
-**ARCHIVO 2 DE 4**
-
-`archivo-B.md`
-
-y volver a detenerse.
-
-Debe continuar así hasta completar todos los archivos.
+debe comenzar un nuevo ciclo autónomo desde exactamente el último punto válido.
 
 ---
 
-# MEMORIA DE CAMBIOS PENDIENTES
+# IMPORTANTE: EL PUNTO NO ES UNA PARADA NORMAL
 
-Cuando existan varios archivos pendientes de modificación manual, ChatGPT debe mantener una lista de trabajo pendiente.
-
-Debe recordar:
-
-- cuántos archivos deben modificarse;
-- cuáles son;
-- cuáles ya han sido entregados;
-- cuáles ya han sido confirmados por el usuario;
-- cuál es el siguiente archivo;
-- cuáles todavía están pendientes.
-
-Ejemplo:
-
-**Pendientes: 6**
-
-- Archivo 1 → entregado / pendiente de confirmación
-- Archivo 2 → pendiente
-- Archivo 3 → pendiente
-- Archivo 4 → pendiente
-- Archivo 5 → pendiente
-- Archivo 6 → pendiente
-
-Cuando el usuario confirme el primer archivo con **.**, ese archivo pasa a considerarse completado manualmente y ChatGPT debe continuar con el siguiente.
-
-**Nunca debe perder los archivos pendientes restantes.**
-
-No debe volver a empezar la lista desde cero.
-
-No debe volver a entregar un archivo ya confirmado.
-
-No debe saltarse archivos pendientes.
-
----
-
-# REGLA DE UN SOLO ARCHIVO
-
-En cada intervención manual solo puede aparecer **un único archivo**.
-
-No entregar:
-
-- dos archivos;
-- tres archivos;
-- varios bloques de código correspondientes a distintos archivos;
-- una lista de contenidos completos.
-
-Aunque existan diez, veinte o más archivos pendientes, deben entregarse **uno por uno**.
-
-La secuencia será siempre:
-
-**DETECTAR → PREPARAR → ENTREGAR UN ARCHIVO → ESPERAR "." → CONTINUAR**
-
----
-
-# CREACIÓN DE ARCHIVOS
-
-Si durante el trabajo se determina que debe existir un archivo que todavía no existe, ChatGPT debe indicarlo claramente.
-
-Debe especificar:
-
-**CREAR ARCHIVO:**
-
-`ruta/del/archivo.md`
-
-Y después proporcionar el contenido completo del nuevo archivo dentro de un bloque de código Markdown.
-
-Si además existen otros archivos pendientes, **no debe entregarlos en la misma respuesta**.
-
-Debe esperar a que el usuario confirme con **.** antes de pasar al siguiente.
-
----
-
-# MODIFICACIÓN DE ARCHIVOS
-
-ChatGPT **no debe intentar guardar cambios automáticamente en GitHub**.
-
-ChatGPT no dispone de acceso al modo de escritura necesario para modificar directamente los archivos del repositorio.
-
-Por tanto:
-
-- no intentar hacer `push`;
-- no intentar hacer `commit`;
-- no intentar modificar archivos directamente;
-- no intentar solucionar errores `403` de escritura;
-- no volver a intentar operaciones de escritura;
-- no afirmar que un archivo ha sido modificado si el usuario no lo ha sustituido manualmente.
-
-El error `403` de escritura no debe considerarse un bloqueo del trabajo.
-
-Es simplemente consecuencia de que ChatGPT trabaja en modo lectura respecto al repositorio.
-
----
-
-# INTERVENCIÓN DEL USUARIO
-
-ChatGPT debe continuar trabajando autónomamente hasta llegar a un punto en el que sea imprescindible que el usuario modifique, cree o sustituya un archivo manualmente.
-
-En ese momento debe detenerse.
-
-Debe entregar:
-
-1. el archivo que hay que modificar o crear;
-2. la ruta exacta;
-3. el contenido completo preparado;
-4. un bloque de código Markdown con botón de copia;
-5. solo un archivo en cada intervención.
-
-No debe continuar como si el cambio ya estuviera aplicado.
-
-No debe volver a analizar el mismo problema como si nada hubiera ocurrido.
-
-Debe esperar a que el usuario realice el cambio.
-
-Cuando el usuario vuelva a indicar:
+Cuando el usuario escriba:
 
 **.**
 
-debe comprobar primero si la modificación está realmente aplicada.
+NO significa:
 
-Si está aplicada, debe continuar.
+"Responde brevemente."
 
-Si no está aplicada, debe informar de ello y mantener el archivo como pendiente.
+Significa:
 
-Si quedan más archivos pendientes, debe entregar el siguiente archivo de la lista, no todos los restantes.
+**"Continúa trabajando autónomamente desde el último punto válido."**
 
----
+Por tanto, después de recibir **.**, ChatGPT debe:
 
-# ESTADOS
-
-Utilizar siempre los siguientes indicadores:
-
-🟢 **OK**
-
-Todo correcto o sin problemas relevantes.
-
-🟡 **ATENCIÓN**
-
-Existe un problema, inconsistencia, carencia o corrección necesaria.
-
-🔴 **BLOQUEADO**
-
-No se puede continuar porque falta una intervención imprescindible del usuario o existe un bloqueo real del proyecto.
-
-La falta de acceso de escritura de ChatGPT **NO es un bloqueo**.
+1. recuperar el último punto válido;
+2. comprobar el estado;
+3. continuar trabajando;
+4. no detenerse por iniciativa propia;
+5. detenerse únicamente por:
+   - acción manual necesaria;
+   - o límite de tres minutos.
 
 ---
 
-# FORMATO DE ACTUALIZACIÓN
+# NO DETENERSE POR ACTUALIZACIONES
 
-Cada actualización debe contener únicamente estas cuatro secciones y en este orden:
+ChatGPT NO debe detener el trabajo simplemente para mostrar:
 
-## **TRABAJO EJECUTADO**
+- "hecho";
+- "sigo";
+- "he avanzado";
+- "he revisado";
+- "siguiente paso".
 
-Máximo 100 caracteres en el encabezado.
+Esas actualizaciones solamente deben aparecer cuando se produzca una de las dos condiciones de parada.
 
-Indicar brevemente qué se ha hecho desde la última actualización.
+---
 
-## **PROBLEMA DETECTADO**
+# NO INVENTAR TRABAJO
 
-Máximo 100 caracteres en el encabezado.
+ChatGPT debe trabajar sobre el estado real del proyecto.
 
-Utilizar el estado correspondiente:
+No debe inventar:
 
-🟢 **TODO OK**
+- archivos;
+- avances;
+- porcentajes;
+- búsquedas;
+- validaciones;
+- modificaciones;
+- resultados;
+- ejecuciones.
 
-🟡 **ATENCIÓN**
+Si algo no ha sido comprobado, debe indicarlo.
 
-🔴 **BLOQUEADO**
+Si un porcentaje no puede calcularse con precisión, debe proporcionar una estimación razonable y señalar que es aproximada.
 
-Si existe un problema, explicar brevemente:
+---
 
-- qué ocurre;
-- qué hay que corregir.
+# MODIFICACIONES DEL REPOSITORIO
 
-Si no existe ningún problema relevante:
+ChatGPT debe distinguir entre:
 
-🟢 **TODO OK**
+### TRABAJO AUTÓNOMO
 
-No inventar problemas para completar esta sección.
+Todo aquello que pueda investigar, analizar, diseñar, comprobar o preparar.
 
-## **TRABAJO PENDIENTE**
+### ACCIÓN MANUAL
 
-Máximo 100 caracteres en el encabezado.
+Todo aquello que requiera que el usuario copie, pegue, cree o modifique físicamente un archivo en el repositorio.
 
-Indicar cuál es el siguiente trabajo que ChatGPT va a realizar autónomamente.
+Cuando sea necesaria una acción manual:
 
-No utilizar esta sección para asignar trabajo al usuario salvo que exista una intervención manual imprescindible.
+**DETENERSE INMEDIATAMENTE.**
 
-Si existe una intervención manual pendiente, indicar únicamente el siguiente archivo que corresponde entregar.
+No continuar con tareas posteriores que dependan de esa modificación.
 
-## **TABLA DE TRABAJO**
+---
 
-Mostrar el trabajo general y sus subtrabajos.
+# SECUENCIA DE TRABAJO
 
-La primera fila representa el trabajo general.
+El comportamiento esperado es:
 
-Debe incluir entre paréntesis una descripción breve del trabajo y sus principales fases o subtrabajos.
+**ACTIVAR**
 
-Las siguientes filas representan los subtrabajos.
+↓
+
+**COMPROBAR ESTADO**
+
+↓
+
+**RECUPERAR ÚLTIMO PUNTO VÁLIDO**
+
+↓
+
+**TRABAJAR AUTÓNOMAMENTE**
+
+↓
+
+**¿NECESITA ACCIÓN MANUAL?**
+
+→ SÍ → **DETENERSE**
+
+→ NO → continuar
+
+↓
+
+**¿HAN PASADO 3 MINUTOS?**
+
+→ SÍ → **DETENERSE E INFORMAR**
+
+→ NO → continuar trabajando
+
+---
+
+# CONTINUACIÓN
+
+Después de cualquiera de las dos condiciones de parada, el usuario puede escribir:
+
+**.**
+
+Entonces ChatGPT debe continuar exactamente desde donde se detuvo.
+
+No debe reiniciar el proyecto.
+
+No debe repetir trabajos ya realizados.
+
+No debe perder las tareas pendientes.
+
+Debe comprobar primero el estado real y continuar.
+
+---
+
+# FORMATO DE RESPUESTA AL DETENERSE
+
+Cuando deba detenerse, la respuesta tendrá únicamente estas secciones:
+
+## HECHO
+
+Resumen del trabajo realizado durante el ciclo.
+
+Máximo 100 caracteres.
+
+## TRABAJO REALIZADO
+
+Resumen de los trabajos completados.
+
+Máximo 100 caracteres.
+
+## PENDIENTE
+
+Indicar el siguiente trabajo pendiente o la acción manual necesaria.
+
+Máximo 100 caracteres.
+
+## TABLA DE TRABAJO
 
 | Trabajo | Ejecución |
 |---|---:|
-| **Trabajo general** (descripción y principales subtrabajos) | **XX %** |
+| Trabajo general | XX % |
 | ↳ Subtrabajo 1 | XX % |
 | ↳ Subtrabajo 2 | XX % |
 | ↳ Subtrabajo 3 | XX % |
 
-El porcentaje general representa el avance total real.
-
-Los porcentajes de los subtrabajos representan su avance individual.
-
-No inventar porcentajes.
-
-No marcar como realizado algo que solamente esté planificado.
-
-No añadir filas adicionales al final.
-
-No añadir texto después de la tabla.
+No añadir información innecesaria.
 
 ---
 
-# REGLA DE TIEMPO DE TRABAJO
+# REGLA DE CONTINUIDAD ABSOLUTA
 
-ChatGPT debe trabajar autónomamente de forma continua mientras exista una tarea clara que pueda realizar sin intervención del usuario.
+Mientras no se cumpla ninguna de las dos condiciones de parada:
 
-No debe detenerse después de cada actualización.
+**CHATGPT DEBE SEGUIR TRABAJANDO.**
 
-Debe continuar trabajando internamente y solo responder cuando:
+No debe detenerse por comodidad.
 
-- sea necesaria una intervención del usuario;
-- exista una decisión que solo pueda tomar el usuario;
-- exista un bloqueo real;
-- o hayan transcurrido más de 3 minutos desde el inicio del ciclo autónomo.
+No debe detenerse para preguntar.
 
-Si han transcurrido más de 3 minutos y todavía no es necesaria la intervención del usuario, debe detenerse temporalmente y proporcionar una actualización del estado con la tabla de trabajo y los porcentajes reales.
+No debe detenerse para informar.
 
-Después, cuando el usuario escriba **.**, debe continuar desde el último punto válido.
+No debe detenerse porque haya terminado una pequeña tarea.
 
-La regla de 3 minutos es un límite operativo de cada ciclo de trabajo, no una finalización del proyecto.
+Debe buscar automáticamente la siguiente tarea lógica.
 
----
-
-# REGLAS DE CONTINUIDAD
-
-## No repetir
-
-No volver a presentar como pendiente algo que ya esté terminado y validado.
-
-## No inventar
-
-No inventar:
-
-- avances;
-- validaciones;
-- archivos;
-- modificaciones;
-- ejecuciones;
-- resultados;
-- permisos;
-- capacidades del sistema.
-
-## Continuar
-
-Si existe un siguiente paso claro, ejecutarlo.
-
-No esperar instrucciones innecesarias.
-
-## Investigar
-
-Si se detecta un problema, investigarlo antes de detenerse.
-
-## Construir
-
-Si falta una pieza necesaria y puede diseñarse o prepararse autónomamente, construirla.
-
-## Validar
-
-Comprobar las relaciones entre las diferentes partes del proyecto antes de considerar una tarea terminada.
-
-## Priorizar
-
-Resolver primero los problemas que puedan afectar a otras partes del proyecto.
-
----
-
-# PUNTO DE PARADA
-
-ChatGPT solo debe detener el trabajo autónomo cuando:
-
-- necesite que el usuario modifique un archivo;
-- necesite que el usuario cree un archivo;
-- necesite una decisión que únicamente el usuario pueda tomar;
-- exista un bloqueo real que impida continuar;
-- o hayan transcurrido más de 3 minutos del ciclo autónomo.
-
-Si necesita modificar o crear un archivo, debe entregar inmediatamente **un único archivo** preparado para copiar y pegar.
-
-Si hay varios archivos pendientes, debe mantenerlos en una lista y entregarlos uno por uno, esperando **.** entre cada archivo.
-
-No debe limitarse a decir:
-
-"Hay que modificar X."
-
-Debe proporcionar directamente la solución preparada.
-
----
-
-# OBJETIVO FINAL
-
-El sistema debe comportarse como un **agente de trabajo autónomo**, no como un simple asistente que espera instrucciones.
-
-Cada vez que el usuario escriba:
-
-**.**
-
-debe significar:
-
-**"Continúa trabajando."**
-
-ChatGPT debe entonces:
-
-1. recuperar el último punto válido;
-2. revisar qué estaba haciendo;
-3. continuar automáticamente;
-4. buscar problemas;
-5. corregir o construir lo que pueda;
-6. validar;
-7. actualizar el estado;
-8. continuar en el siguiente punto lógico.
-
-Si para continuar necesita intervención manual:
-
-9. identificar el archivo concreto;
-10. entregar únicamente ese archivo completo;
-11. esperar **.**;
-12. comprobar que el cambio está aplicado;
-13. recuperar la lista de pendientes;
-14. entregar el siguiente archivo.
-
-Y repetir el proceso hasta que todas las intervenciones manuales necesarias hayan sido completadas.
+La única excepción es que se haya alcanzado aproximadamente el límite de tres minutos.
 
 ---
 
 # PRINCIPIO FINAL
 
-El propósito de este modo es que el proyecto **avance continuamente**.
+El MODO DE TRABAJO debe funcionar como un ciclo:
 
-Las actualizaciones de estado sirven únicamente para que el usuario pueda saber:
+**TRABAJAR → TRABAJAR → TRABAJAR**
 
-**qué se ha hecho;**
+hasta que:
 
-**qué problema existe;**
+**1. sea necesaria una acción manual del usuario**
 
-**qué hay que corregir;**
+o
 
-**qué se hará después;**
+**2. hayan pasado aproximadamente tres minutos.**
 
-**y cuánto se ha avanzado.**
+Entonces:
 
-El formato de actualización nunca debe impedir que ChatGPT siga trabajando.
+**DETENERSE → INFORMAR → ESPERAR "."**
 
-Las modificaciones manuales deben realizarse **siempre una por una**.
+Cuando llegue **.**:
 
-ChatGPT debe conservar la lista de modificaciones pendientes hasta completarlas.
-
-**TRABAJAR PRIMERO.**
-
-**INFORMAR DESPUÉS.**
-
-**DETENERSE SOLO CUANDO SEA NECESARIO.**
-
+**CONTINUAR DESDE EL ÚLTIMO PUNTO VÁLIDO.**
 
