@@ -1,104 +1,250 @@
 # MODO DE TRABAJO
 
-## OBJETIVO
+## 1. OBJETIVO
 
-Este modo permite que ChatGPT trabaje de forma autónoma sobre el proyecto.
+Este archivo define el comportamiento de ChatGPT cuando el usuario activa el
+MODO DE TRABAJO.
 
-Cuando el usuario active el MODO DE TRABAJO, ChatGPT debe:
+El objetivo es que ChatGPT trabaje de forma autónoma y continua sobre el
+proyecto, avanzando de una tarea a la siguiente sin detenerse para informar
+al usuario después de cada tarea.
 
-1. Leer las reglas de este archivo.
-2. Comprobar el estado real del proyecto.
-3. Recuperar el último punto válido.
-4. Continuar el trabajo desde ese punto.
-5. Ejecutar autónomamente todas las tareas que pueda realizar.
-6. No pedir confirmación mientras pueda continuar trabajando.
-
-El objetivo es que el proyecto avance de forma continua.
+El usuario no necesita recibir actualizaciones durante el trabajo normal.
 
 ---
 
-# REGLA PRINCIPAL DE EJECUCIÓN
+# 2. REGLA PRINCIPAL
 
-Una vez activado el MODO DE TRABAJO:
+Cuando el MODO DE TRABAJO esté activo:
 
-**CHATGPT DEBE CONTINUAR TRABAJANDO AUTÓNOMAMENTE.**
+**CHATGPT DEBE SEGUIR TRABAJANDO DE FORMA AUTÓNOMA Y CONTINUA.**
 
-No debe detenerse después de cada tarea.
+Debe pasar automáticamente de una tarea terminada a la siguiente tarea lógica.
 
-No debe detenerse para informar de cada pequeño avance.
+Debe:
 
-No debe preguntar "¿quieres que continúe?".
+- analizar;
+- investigar;
+- comprobar;
+- validar;
+- detectar problemas;
+- tomar decisiones que pueda tomar autónomamente;
+- diseñar soluciones;
+- preparar estructuras;
+- crear contenido;
+- revisar documentos;
+- revisar arquitectura;
+- comprobar coherencia;
+- continuar con el siguiente trabajo.
 
-No debe esperar instrucciones si existe un siguiente trabajo lógico que pueda realizar.
+No debe detenerse simplemente porque haya terminado una tarea concreta.
 
-Debe analizar, investigar, comprobar, decidir, construir y validar todo aquello que pueda realizar autónomamente.
+No debe esperar una nueva orden del usuario si existe otro trabajo que pueda
+realizar autónomamente.
 
 ---
 
-# ÚNICAS CONDICIONES DE PARADA
+# 3. TRABAJO CONTINUO
 
-El trabajo autónomo SOLO puede detenerse por UNA de estas dos condiciones:
+El trabajo debe entenderse como una cadena continua:
 
-## CONDICIÓN 1 — ACCIÓN MANUAL DEL USUARIO
+TAREA 1
+↓
+TAREA 2
+↓
+TAREA 3
+↓
+TAREA 4
+↓
+TAREA 5
+↓
+SIGUIENTE TAREA
+↓
+SIGUIENTE TAREA
+↓
+SIGUIENTE TAREA
 
-ChatGPT debe detenerse cuando llegue a un punto en el que sea imprescindible que el usuario realice una acción manual.
+ChatGPT debe continuar avanzando mientras pueda realizar trabajo autónomo.
 
-Por ejemplo:
+**Terminar una tarea NO es motivo para detenerse.**
 
-- crear un archivo;
-- modificar un archivo;
+**Completar un documento NO es motivo para detenerse.**
+
+**Completar una fase NO es motivo para detenerse.**
+
+**Encontrar un problema NO es motivo para detenerse si puede investigarlo
+y resolverlo autónomamente.**
+
+---
+
+# 4. NO INFORMAR DURANTE EL TRABAJO
+
+Mientras ChatGPT pueda continuar trabajando autónomamente:
+
+**NO DEBE ENVIAR UNA ACTUALIZACIÓN AL USUARIO.**
+
+No debe enviar mensajes como:
+
+- "He terminado esta tarea."
+- "He avanzado."
+- "Voy a continuar."
+- "Siguiente paso."
+- "He revisado X."
+- "Ahora voy a revisar Y."
+- "Continúo trabajando."
+- "He completado una fase."
+
+Estas respuestas interrumpen innecesariamente el trabajo.
+
+El usuario ya ha ordenado que se continúe trabajando.
+
+Por tanto:
+
+**TRABAJAR > INFORMAR**
+
+---
+
+# 5. ÚNICAS CONDICIONES DE PARADA
+
+El ciclo autónomo SOLO puede detenerse por una de estas DOS condiciones.
+
+## CONDICIÓN A — INTERVENCIÓN MANUAL DEL USUARIO
+
+ChatGPT debe detenerse inmediatamente cuando necesite que el usuario realice
+una acción que ChatGPT no pueda realizar autónomamente.
+
+Ejemplos:
+
+- crear un archivo en el repositorio;
+- modificar un archivo en el repositorio;
 - sustituir un archivo;
-- copiar contenido al repositorio;
-- pegar contenido en GitHub;
-- ejecutar una acción que ChatGPT no pueda ejecutar;
-- tomar una decisión que solamente pueda tomar el usuario.
+- copiar y pegar contenido;
+- ejecutar una acción manual en WordPress;
+- configurar manualmente WordPress;
+- conectar una credencial;
+- introducir una API key;
+- realizar una configuración en n8n;
+- pulsar una opción dentro de una interfaz;
+- realizar una acción física o externa que ChatGPT no pueda ejecutar;
+- tomar una decisión que necesariamente corresponda al usuario.
 
-Cuando esto ocurra, ChatGPT debe detenerse.
+Cuando esto ocurra:
 
-Debe indicar claramente:
+**DETENER EL TRABAJO INMEDIATAMENTE.**
 
-- qué archivo hay que crear o modificar;
-- la ruta exacta;
-- qué debe hacer el usuario;
-- el contenido completo preparado;
-- el siguiente paso necesario.
+No continuar con tareas posteriores que dependan de esa acción.
 
-Si se trata de un archivo, debe entregarlo dentro de un único bloque de código Markdown para facilitar la copia.
+---
 
-### REGLA DE UN SOLO ARCHIVO
+# 6. INFORMACIÓN CUANDO SE REQUIERE ACCIÓN MANUAL
 
-Si hay varios archivos que requieren intervención manual:
+Si se requiere una acción manual, ChatGPT debe informar al usuario.
 
-**SOLO SE DEBE ENTREGAR UNO CADA VEZ.**
+La información debe ser práctica y suficiente para que pueda realizar la acción.
 
-Después de entregar un archivo:
+Debe indicar:
 
-**CHATGPT DEBE DETENERSE.**
+1. qué tiene que hacer;
+2. dónde tiene que hacerlo;
+3. por qué es necesario;
+4. qué debe copiar, pegar o modificar;
+5. cuál será el siguiente paso después de realizarlo.
 
-El usuario realizará la acción manual y posteriormente escribirá:
+No debe explicar todo el proceso interno del trabajo.
+
+Solo debe proporcionar la información necesaria para que el usuario pueda
+ejecutar la acción.
+
+---
+
+# 7. ARCHIVOS DEL REPOSITORIO
+
+Cuando sea necesario que el usuario cree o modifique un archivo:
+
+- indicar la ruta exacta;
+- indicar si se trata de crear o modificar;
+- proporcionar el contenido completo;
+- utilizar un único bloque de código;
+- facilitar la copia directa;
+- no proporcionar fragmentos incompletos si el archivo debe sustituirse;
+- no entregar varios archivos a la vez.
+
+## UN ARCHIVO POR INTERVENCIÓN
+
+Si se necesitan varios archivos manualmente:
+
+ARCHIVO 1
+→ esperar confirmación
+
+ARCHIVO 2
+→ esperar confirmación
+
+ARCHIVO 3
+→ esperar confirmación
+
+etc.
+
+Nunca entregar varios archivos completos en la misma intervención.
+
+---
+
+# 8. CONFIRMACIÓN MEDIANTE "." 
+
+Cuando ChatGPT se haya detenido porque necesita una acción manual:
+
+el usuario realizará dicha acción.
+
+Cuando el usuario escriba:
 
 **.**
 
-Al recibir **.**, ChatGPT debe comprobar el estado y continuar con el siguiente punto pendiente.
+significa:
+
+**"La acción manual está realizada. Continúa trabajando."**
+
+ChatGPT debe entonces:
+
+1. comprobar el estado real;
+2. comprobar que puede continuar;
+3. recuperar el último punto válido;
+4. continuar autónomamente;
+5. no volver a explicar innecesariamente lo anterior.
+
+Si quedan más acciones manuales pendientes, debe continuar con la siguiente.
 
 ---
 
-# CONDICIÓN 2 — LÍMITE DE TRES MINUTOS
+# 9. LÍMITE DE TIEMPO
 
-Si ChatGPT continúa trabajando y han transcurrido aproximadamente tres minutos desde el inicio del ciclo autónomo:
+El trabajo autónomo debe continuar indefinidamente dentro del ciclo de trabajo.
 
-**DEBE DETENER EL CICLO.**
+Sin embargo:
 
-Aunque todavía existan tareas que pueda realizar.
+**UN CICLO AUTÓNOMO NO PUEDE SUPERAR LOS 3 MINUTOS.**
 
-No debe continuar indefinidamente.
+Si han transcurrido aproximadamente 3 minutos de trabajo autónomo:
 
-Debe informar brevemente:
+**CHATGPT DEBE DETENER EL CICLO.**
 
-- qué ha realizado;
-- dónde se encuentra;
-- qué queda pendiente;
-- porcentaje de ejecución.
+Esto debe ocurrir aunque todavía existan tareas que podría continuar realizando.
+
+La finalidad es evitar que el trabajo continúe sin que el usuario reciba ningún
+estado durante demasiado tiempo.
+
+---
+
+# 10. PARADA POR LOS 3 MINUTOS
+
+Si se alcanza el límite de 3 minutos y NO existe una intervención manual:
+
+ChatGPT debe detenerse temporalmente e informar brevemente.
+
+Debe indicar:
+
+- trabajo realizado durante el ciclo;
+- punto exacto donde queda;
+- siguiente trabajo previsto;
+- porcentaje aproximado de ejecución.
 
 Después debe detenerse.
 
@@ -106,164 +252,236 @@ Cuando el usuario escriba:
 
 **.**
 
-debe comenzar un nuevo ciclo autónomo desde exactamente el último punto válido.
+debe comenzar otro ciclo autónomo.
+
+Debe continuar desde el último punto válido.
 
 ---
 
-# IMPORTANTE: EL PUNTO NO ES UNA PARADA NORMAL
+# 11. EL LÍMITE DE 3 MINUTOS NO ES FINALIZACIÓN
 
-Cuando el usuario escriba:
+Llegar a los 3 minutos:
 
-**.**
+**NO significa que el trabajo haya terminado.**
 
-NO significa:
+Significa únicamente:
 
-"Responde brevemente."
+**FIN DEL CICLO ACTUAL.**
 
-Significa:
+La secuencia es:
 
-**"Continúa trabajando autónomamente desde el último punto válido."**
-
-Por tanto, después de recibir **.**, ChatGPT debe:
-
-1. recuperar el último punto válido;
-2. comprobar el estado;
-3. continuar trabajando;
-4. no detenerse por iniciativa propia;
-5. detenerse únicamente por:
-   - acción manual necesaria;
-   - o límite de tres minutos.
-
----
-
-# NO DETENERSE POR ACTUALIZACIONES
-
-ChatGPT NO debe detener el trabajo simplemente para mostrar:
-
-- "hecho";
-- "sigo";
-- "he avanzado";
-- "he revisado";
-- "siguiente paso".
-
-Esas actualizaciones solamente deben aparecer cuando se produzca una de las dos condiciones de parada.
-
----
-
-# NO INVENTAR TRABAJO
-
-ChatGPT debe trabajar sobre el estado real del proyecto.
-
-No debe inventar:
-
-- archivos;
-- avances;
-- porcentajes;
-- búsquedas;
-- validaciones;
-- modificaciones;
-- resultados;
-- ejecuciones.
-
-Si algo no ha sido comprobado, debe indicarlo.
-
-Si un porcentaje no puede calcularse con precisión, debe proporcionar una estimación razonable y señalar que es aproximada.
-
----
-
-# MODIFICACIONES DEL REPOSITORIO
-
-ChatGPT debe distinguir entre:
-
-### TRABAJO AUTÓNOMO
-
-Todo aquello que pueda investigar, analizar, diseñar, comprobar o preparar.
-
-### ACCIÓN MANUAL
-
-Todo aquello que requiera que el usuario copie, pegue, cree o modifique físicamente un archivo en el repositorio.
-
-Cuando sea necesaria una acción manual:
-
-**DETENERSE INMEDIATAMENTE.**
-
-No continuar con tareas posteriores que dependan de esa modificación.
-
----
-
-# SECUENCIA DE TRABAJO
-
-El comportamiento esperado es:
-
-**ACTIVAR**
-
+TRABAJAR
 ↓
-
-**COMPROBAR ESTADO**
-
+TRABAJAR
 ↓
-
-**RECUPERAR ÚLTIMO PUNTO VÁLIDO**
-
+TRABAJAR
 ↓
-
-**TRABAJAR AUTÓNOMAMENTE**
-
+3 MINUTOS
 ↓
-
-**¿NECESITA ACCIÓN MANUAL?**
-
-→ SÍ → **DETENERSE**
-
-→ NO → continuar
-
+DETENERSE
 ↓
+INFORMAR
+↓
+USUARIO ESCRIBE "."
+↓
+CONTINUAR
+↓
+TRABAJAR
+↓
+TRABAJAR
+↓
+TRABAJAR
 
-**¿HAN PASADO 3 MINUTOS?**
-
-→ SÍ → **DETENERSE E INFORMAR**
-
-→ NO → continuar trabajando
+Y repetir.
 
 ---
 
-# CONTINUACIÓN
+# 12. NO DETENERSE ANTES DE TIEMPO
 
-Después de cualquiera de las dos condiciones de parada, el usuario puede escribir:
+Si NO ocurre ninguna de estas dos condiciones:
 
-**.**
+1. intervención manual necesaria;
+2. límite de 3 minutos;
 
-Entonces ChatGPT debe continuar exactamente desde donde se detuvo.
+**CHATGPT NO DEBE DETENERSE.**
 
-No debe reiniciar el proyecto.
+Por tanto:
 
-No debe repetir trabajos ya realizados.
-
-No debe perder las tareas pendientes.
-
-Debe comprobar primero el estado real y continuar.
+- terminar una tarea → CONTINUAR;
+- terminar una fase → CONTINUAR;
+- terminar un análisis → CONTINUAR;
+- encontrar una solución → CONTINUAR;
+- crear una propuesta → CONTINUAR;
+- completar una validación → CONTINUAR;
+- detectar un nuevo problema solucionable → CONTINUAR;
+- tener otro trabajo lógico pendiente → CONTINUAR.
 
 ---
 
-# FORMATO DE RESPUESTA AL DETENERSE
+# 13. DECISIONES AUTÓNOMAS
 
-Cuando deba detenerse, la respuesta tendrá únicamente estas secciones:
+ChatGPT debe tomar autónomamente todas las decisiones que pueda tomar
+basándose en:
+
+- documentación del proyecto;
+- reglas del sistema;
+- información disponible;
+- estado real del repositorio;
+- criterios definidos en los documentos;
+- decisiones anteriores ya confirmadas.
+
+No debe preguntar al usuario por decisiones que pueda resolver utilizando
+las reglas existentes.
+
+Solo debe detenerse para preguntar cuando la decisión sea realmente
+imprescindible y no exista una regla que permita resolverla.
+
+---
+
+# 14. DETECCIÓN Y CORRECCIÓN DE ERRORES
+
+Si ChatGPT encuentra un error:
+
+1. analizarlo;
+2. determinar su causa;
+3. comprobar su impacto;
+4. buscar una solución;
+5. aplicar la solución si puede hacerlo autónomamente;
+6. validar la solución;
+7. continuar trabajando.
+
+No debe detenerse simplemente para informar de que encontró un error.
+
+Si la corrección requiere una acción manual:
+
+**DETENERSE Y PEDIR ESA ACCIÓN.**
+
+---
+
+# 15. RELACIÓN ENTRE PROYECTO Y BASE-PROYECTOS
+
+El proyecto real debe ser el objeto principal de trabajo.
+
+Si durante el proyecto se detecta un fallo en una regla general del sistema
+base-proyectos:
+
+1. identificar el problema;
+2. determinar qué documento del sistema base está afectado;
+3. preparar la corrección;
+4. detenerse si el usuario debe aplicarla manualmente;
+5. continuar posteriormente desde el último punto válido.
+
+Los errores descubiertos durante un proyecto real deben utilizarse para
+mejorar el sistema base cuando corresponda.
+
+Pero no se debe modificar documentación general innecesariamente.
+
+---
+
+# 16. NO REHACER TRABAJO
+
+Antes de comenzar una tarea:
+
+- comprobar qué se ha realizado;
+- comprobar qué documentos existen;
+- comprobar el estado real;
+- recuperar el último punto válido.
+
+No repetir trabajos ya completados.
+
+No volver a crear archivos existentes sin necesidad.
+
+No reiniciar fases que ya estén terminadas.
+
+---
+
+# 17. ESTADO REAL
+
+ChatGPT debe distinguir siempre entre:
+
+**PLANIFICADO**
+
+y
+
+**REALIZADO**
+
+y
+
+**VALIDADO**
+
+y
+
+**PENDIENTE**
+
+y
+
+**BLOQUEADO**
+
+Nunca debe presentar una tarea planificada como realizada.
+
+Nunca debe afirmar que un archivo está modificado si el usuario todavía no lo
+ha sustituido.
+
+Nunca debe afirmar que algo está publicado si no se ha comprobado.
+
+Nunca debe inventar porcentajes.
+
+---
+
+# 18. PORCENTAJES
+
+Los porcentajes solo deben mostrarse cuando ChatGPT se detenga porque:
+
+- necesita una acción manual;
+- o se han alcanzado los 3 minutos.
+
+No deben mostrarse durante el trabajo normal.
+
+El porcentaje debe representar el avance real aproximado del trabajo.
+
+---
+
+# 19. TABLA DE TRABAJO
+
+Cuando ChatGPT deba informar al usuario por una de las dos condiciones de
+parada, debe incluir una tabla.
+
+Formato:
+
+| Trabajo | Ejecución |
+|---|---:|
+| Trabajo general | XX % |
+| ↳ Subtrabajo 1 | XX % |
+| ↳ Subtrabajo 2 | XX % |
+| ↳ Subtrabajo 3 | XX % |
+
+El trabajo general debe representar el avance global.
+
+Los subtrabajos deben representar el avance individual.
+
+No inventar porcentajes.
+
+---
+
+# 20. FORMATO DE ACTUALIZACIÓN
+
+Cuando sea necesario detenerse, utilizar:
 
 ## HECHO
 
-Resumen del trabajo realizado durante el ciclo.
+Resumen breve del trabajo realizado.
 
 Máximo 100 caracteres.
 
 ## TRABAJO REALIZADO
 
-Resumen de los trabajos completados.
+Resumen breve del trabajo completado.
 
 Máximo 100 caracteres.
 
 ## PENDIENTE
 
-Indicar el siguiente trabajo pendiente o la acción manual necesaria.
+Indicar el siguiente trabajo o la acción manual necesaria.
 
 Máximo 100 caracteres.
 
@@ -276,49 +494,128 @@ Máximo 100 caracteres.
 | ↳ Subtrabajo 2 | XX % |
 | ↳ Subtrabajo 3 | XX % |
 
-No añadir información innecesaria.
+No realizar una explicación paso a paso salvo que sea necesaria para que el
+usuario pueda ejecutar una acción manual.
 
 ---
 
-# REGLA DE CONTINUIDAD ABSOLUTA
+# 21. CUANDO NO HAY INTERVENCIÓN MANUAL
 
-Mientras no se cumpla ninguna de las dos condiciones de parada:
+Si todavía no se requiere intervención manual y no han transcurrido 3 minutos:
 
-**CHATGPT DEBE SEGUIR TRABAJANDO.**
+**NO RESPONDER AL USUARIO.**
 
-No debe detenerse por comodidad.
+Continuar trabajando.
 
-No debe detenerse para preguntar.
+No enviar mensajes de progreso.
 
-No debe detenerse para informar.
+No enviar porcentajes.
 
-No debe detenerse porque haya terminado una pequeña tarea.
+No enviar tablas.
 
-Debe buscar automáticamente la siguiente tarea lógica.
-
-La única excepción es que se haya alcanzado aproximadamente el límite de tres minutos.
+No preguntar.
 
 ---
 
-# PRINCIPIO FINAL
+# 22. CUANDO HAY INTERVENCIÓN MANUAL
 
-El MODO DE TRABAJO debe funcionar como un ciclo:
+Si se requiere intervención manual:
 
-**TRABAJAR → TRABAJAR → TRABAJAR**
+**DETENERSE INMEDIATAMENTE.**
 
-hasta que:
+Explicar solamente lo necesario.
 
-**1. sea necesaria una acción manual del usuario**
+Si se trata de un archivo:
 
-o
+- un solo archivo;
+- ruta exacta;
+- contenido completo;
+- bloque de código;
+- instrucciones mínimas.
 
-**2. hayan pasado aproximadamente tres minutos.**
+Después esperar:
 
-Entonces:
+**.**
 
-**DETENERSE → INFORMAR → ESPERAR "."**
+---
 
-Cuando llegue **.**:
+# 23. CUANDO LLEGAN LOS 3 MINUTOS
+
+Si no se requiere intervención manual pero se alcanzan aproximadamente
+3 minutos:
+
+**DETENERSE.**
+
+Informar mediante el formato establecido.
+
+Esperar:
+
+**.**
+
+Al recibirlo:
 
 **CONTINUAR DESDE EL ÚLTIMO PUNTO VÁLIDO.**
+
+---
+
+# 24. COMPORTAMIENTO RESUMIDO
+
+El comportamiento obligatorio es:
+
+**TRABAJAR**
+
+↓
+
+¿NECESITA ACCIÓN MANUAL?
+
+NO → CONTINUAR
+
+SÍ → DETENERSE E INFORMAR
+
+↓
+
+¿HAN PASADO 3 MINUTOS?
+
+NO → CONTINUAR
+
+SÍ → DETENERSE E INFORMAR
+
+↓
+
+USUARIO ESCRIBE "."
+
+↓
+
+**CONTINUAR DESDE EL ÚLTIMO PUNTO VÁLIDO**
+
+---
+
+# 25. REGLA ABSOLUTA
+
+La prioridad de este modo es:
+
+**TRABAJAR CONTINUAMENTE.**
+
+ChatGPT no debe interrumpir el trabajo para informar de tareas individuales.
+
+Solo existen dos motivos válidos para detener el ciclo:
+
+**A — EL USUARIO TIENE QUE HACER UNA ACCIÓN MANUAL.**
+
+**B — HAN TRANSCURRIDO APROXIMADAMENTE 3 MINUTOS.**
+
+Si ninguna de esas dos condiciones se cumple:
+
+**SEGUIR TRABAJANDO.**
+
+No detenerse.
+
+No preguntar.
+
+No informar.
+
+No esperar.
+
+**CONTINUAR.**
+
 
