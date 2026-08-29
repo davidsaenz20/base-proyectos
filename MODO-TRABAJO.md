@@ -5,7 +5,7 @@
 Este archivo define cómo debe comportarse ChatGPT cuando el usuario activa
 el MODO DE TRABAJO.
 
-Este modo es TEMPORAL.
+El modo es temporal.
 
 No permanece activo permanentemente.
 
@@ -19,7 +19,7 @@ El usuario activa el modo escribiendo:
 
 MODO TRABAJO: ACTIVAR
 
-Desde ese momento se aplican todas las reglas de este archivo.
+Desde ese momento se aplican las reglas de este archivo.
 
 ## CONTINUAR
 
@@ -29,7 +29,11 @@ Mientras el modo esté activo, cuando el usuario escriba:
 
 significa:
 
-**CONTINÚA DESDE EL ÚLTIMO PUNTO VÁLIDO.**
+CONTINÚA DESDE EL ÚLTIMO PUNTO VÁLIDO.
+
+No significa "responde".
+
+Significa "sigue trabajando".
 
 ## DESACTIVAR
 
@@ -39,21 +43,11 @@ MODO TRABAJO: DESACTIVAR
 
 Al recibir esta orden:
 
-**EL MODO DE TRABAJO QUEDA DESACTIVADO INMEDIATAMENTE.**
+MODO = INACTIVO
 
-Desde ese momento ChatGPT vuelve al funcionamiento conversacional normal.
+Las reglas de ejecución autónoma dejan de aplicarse inmediatamente.
 
-Puede:
-
-- explicar;
-- debatir;
-- preguntar;
-- analizar con el usuario;
-- responder extensamente;
-- pedir confirmaciones;
-- trabajar de la forma habitual.
-
-Las reglas de ejecución autónoma de este archivo dejan de aplicarse.
+ChatGPT vuelve al funcionamiento conversacional normal.
 
 ---
 
@@ -61,137 +55,218 @@ Las reglas de ejecución autónoma de este archivo dejan de aplicarse.
 
 Cuando el modo esté ACTIVO:
 
-**CHATGPT DEBE TRABAJAR AUTÓNOMAMENTE Y DE FORMA CONTINUA.**
+CHATGPT DEBE REALIZAR EL MÁXIMO TRABAJO AUTÓNOMO POSIBLE.
 
-Debe pasar automáticamente de una tarea a la siguiente.
+Debe encadenar tareas automáticamente.
+
+Debe pasar de un trabajo al siguiente sin esperar confirmación.
 
 Debe continuar mientras pueda realizar trabajo útil.
 
+IMPORTANTE:
+
 Terminar una tarea NO es motivo para responder.
+
+Terminar un subtrabajo NO es motivo para responder.
 
 Terminar una fase NO es motivo para responder.
 
 Encontrar una solución NO es motivo para responder.
 
-Detectar un problema solucionable NO es motivo para responder.
+Encontrar un error solucionable NO es motivo para responder.
 
-Si puede continuar:
+Si puede continuar trabajando:
 
-**CONTINUAR TRABAJANDO.**
-
----
-
-# 4. SILENCIO DURANTE EL TRABAJO
-
-Mientras el modo esté activo y ChatGPT pueda continuar trabajando:
-
-**NO DEBE ENVIAR MENSAJES DE PROGRESO.**
-
-No debe informar después de cada tarea.
-
-No debe decir:
-
-- hecho;
-- sigo;
-- siguiente paso;
-- he avanzado;
-- he terminado;
-- porcentaje;
-- resumen.
-
-El usuario ya ha ordenado continuar.
-
-**TRABAJAR > INFORMAR**
+CONTINUAR.
 
 ---
 
-# 5. CICLO AUTÓNOMO
+# 4. OBJETIVO DE CADA EJECUCIÓN
 
-Cada "." recibido mientras el modo está activo inicia un
-nuevo ciclo autónomo.
+Cada vez que el usuario active o continúe el MODO DE TRABAJO:
 
-El ciclo es:
+1. leer MODO-TRABAJO.md;
+2. identificar el proyecto indicado;
+3. comprobar el estado real disponible;
+4. recuperar el último punto válido;
+5. identificar el trabajo prioritario;
+6. dividirlo en subtrabajos cuando sea necesario;
+7. ejecutar el máximo trabajo autónomo posible;
+8. pasar automáticamente al siguiente trabajo;
+9. continuar hasta que exista una condición real de parada.
 
-ESTADO REAL
-↓
-ÚLTIMO PUNTO VÁLIDO
-↓
-TRABAJO
-↓
-SIGUIENTE TAREA
-↓
-TRABAJO
-↓
-SIGUIENTE TAREA
-↓
-TRABAJO
-↓
-...
-
-ChatGPT debe continuar sin pedir confirmación.
+NO detenerse simplemente porque un trabajo concreto haya terminado.
 
 ---
 
-# 6. PRIORIDAD
+# 5. SILENCIO DURANTE LA EJECUCIÓN
 
-Dentro de cada ciclo:
+ChatGPT NO debe generar voluntariamente mensajes intermedios durante
+el trabajo autónomo.
 
-1. trabajo pendiente inmediato;
-2. validaciones necesarias;
-3. corrección de errores;
-4. siguiente tarea lógica;
-5. tareas secundarias útiles;
-6. documentación.
+No debe detenerse para informar de:
 
-No detenerse entre ellas.
+- una tarea terminada;
+- una búsqueda terminada;
+- una decisión tomada;
+- un error solucionable;
+- un análisis terminado;
+- una fase terminada.
+
+Debe utilizar la capacidad de trabajo disponible para continuar.
+
+TRABAJAR > INFORMAR.
+
+---
+
+# 6. CONTINUIDAD
+
+El objetivo es maximizar la continuidad dentro de cada ejecución.
+
+Cuando termine un trabajo:
+
+TRABAJO TERMINADO
+↓
+SIGUIENTE TRABAJO
+↓
+CONTINUAR
+
+Cuando termine una fase:
+
+FASE TERMINADA
+↓
+SIGUIENTE FASE
+↓
+CONTINUAR
+
+Cuando encuentre un error:
+
+ERROR
+↓
+ANALIZAR
+↓
+RESOLVER SI ES POSIBLE
+↓
+VALIDAR
+↓
+CONTINUAR
+
+NO generar una respuesta solamente porque haya terminado uno de estos pasos.
 
 ---
 
 # 7. DECISIONES AUTÓNOMAS
 
-ChatGPT debe tomar autónomamente las decisiones que pueda resolver usando:
+ChatGPT debe tomar autónomamente las decisiones que pueda resolver mediante:
 
-- documentación base;
-- documentación del proyecto;
-- estado real;
+- documentación existente;
+- estado real del proyecto;
+- reglas de base-proyectos;
 - decisiones anteriores;
-- criterios definidos;
-- este protocolo.
+- criterios ya establecidos;
+- investigación necesaria.
 
-No preguntar si existe una solución razonable que pueda determinar
-autónomamente.
+No debe pedir confirmación si existe una solución razonable que pueda
+determinar autónomamente.
 
 ---
 
 # 8. ERRORES
 
-Si encuentra un error:
+Cuando encuentre un error:
 
-1. analizar;
-2. investigar;
-3. resolver;
-4. validar;
-5. continuar.
+1. analizarlo;
+2. determinar su causa;
+3. investigar si es necesario;
+4. buscar una solución;
+5. validar la solución;
+6. continuar trabajando.
 
-No informar simplemente porque ha encontrado un error.
+NO informar simplemente porque haya encontrado un error.
 
-Si la solución requiere una acción manual:
+Si el error requiere obligatoriamente una acción manual del usuario:
 
-**DETENERSE.**
+DETENER.
 
 ---
 
-# 9. PRIMERA CONDICIÓN DE PARADA: ACCIÓN MANUAL
+# 9. GITHUB: SOLO LECTURA
 
-El ciclo debe detenerse inmediatamente cuando sea imprescindible
-que el usuario haga algo que ChatGPT no pueda realizar.
+REGLA ABSOLUTA:
+
+CHATGPT NO DEBE INTENTAR ESCRIBIR, MODIFICAR, CREAR NI ELIMINAR
+ARCHIVOS DIRECTAMENTE EN EL REPOSITORIO DE GITHUB.
+
+La conexión disponible se utiliza para:
+
+- leer archivos;
+- revisar documentación;
+- comprobar el estado;
+- analizar código;
+- investigar el contenido del repositorio;
+- comparar información disponible.
+
+NO intentar:
+
+- crear archivos;
+- modificar archivos;
+- eliminar archivos;
+- hacer commits;
+- hacer push;
+- actualizar ramas;
+- modificar el repositorio directamente.
+
+La integración no dispone de permisos de escritura.
+
+Los intentos de escritura producen errores de permisos, normalmente 403.
+
+El usuario YA CONOCE esta limitación.
+
+Por tanto:
+
+NO intentar escribir para comprobar si funciona.
+
+NO informar repetidamente de que no se puede escribir.
+
+NO desperdiciar trabajo intentando operaciones de escritura.
+
+---
+
+# 10. CAMBIOS EN EL REPOSITORIO
+
+Cuando el trabajo requiera modificar o crear un archivo del repositorio:
+
+1. identificar exactamente el archivo;
+2. determinar qué debe cambiar;
+3. preparar el contenido completo;
+4. indicar la ruta exacta;
+5. entregar el contenido en un bloque de código;
+6. detener el ciclo.
+
+El usuario realizará manualmente el cambio.
+
+Después el usuario escribirá:
+
+.
+
+ChatGPT deberá comprobar el estado actualizado y continuar.
+
+---
+
+# 11. UNA ACCIÓN MANUAL
+
+Esta es una condición válida de parada.
+
+Detenerse cuando sea imprescindible que el usuario realice una acción
+que ChatGPT no pueda realizar.
 
 Ejemplos:
 
-- crear un archivo;
 - modificar un archivo;
+- crear un archivo;
 - copiar contenido;
 - pegar contenido;
+- instalar WordPress;
 - configurar WordPress;
 - configurar n8n;
 - introducir credenciales;
@@ -200,160 +275,147 @@ Ejemplos:
 - realizar una acción externa;
 - tomar una decisión que corresponda exclusivamente al usuario.
 
-No continuar con trabajos posteriores que dependan de esa acción.
+No continuar con trabajos que dependan de esa acción.
 
 ---
 
-# 10. ARCHIVOS
+# 12. ARCHIVOS
 
-Si se necesita crear o modificar un archivo:
+Cuando el usuario tenga que modificar o crear un archivo:
 
 - indicar ruta exacta;
-- indicar acción;
+- indicar si debe crear o sustituir;
 - entregar contenido completo;
-- utilizar un único bloque de código;
-- facilitar la copia;
+- utilizar un bloque de código;
+- no entregar fragmentos ambiguos;
+- no intentar modificarlo directamente;
 - detenerse.
 
-## UNA INTERVENCIÓN MANUAL CADA VEZ
+Si existen varios cambios:
 
-Si existen varios archivos:
-
-ARCHIVO 1
+PRIMERA ACCIÓN MANUAL
 ↓
 esperar "."
 ↓
-ARCHIVO 2
+comprobar
 ↓
-esperar "."
-↓
-ARCHIVO 3
-
-No entregar varios archivos manuales simultáneamente.
+SIGUIENTE ACCIÓN MANUAL
 
 ---
 
-# 11. SEGUNDA CONDICIÓN DE PARADA: TIEMPO
+# 13. LÍMITE TEMPORAL
 
-Cada ciclo autónomo tiene un límite operativo aproximado de:
+El modo debe intentar trabajar durante el máximo tiempo posible dentro
+de la ejecución disponible.
 
-**3 MINUTOS**
+Como protección contra ciclos excesivamente largos o bloqueados,
+se establece un límite operativo aproximado de:
 
-Si se alcanza aproximadamente ese límite:
+3 MINUTOS.
 
-**DETENER EL CICLO.**
+Este límite es una referencia de seguridad.
 
-No continuar indefinidamente dentro del mismo ciclo.
+NO debe utilizarse como motivo para detenerse a los pocos segundos.
 
-El límite no significa que el proyecto haya terminado.
+NO detenerse voluntariamente antes si todavía existe trabajo autónomo útil.
 
-Significa únicamente:
+Si se alcanza aproximadamente el límite:
 
-**FIN DEL CICLO ACTUAL.**
+DETENER EL CICLO.
 
 ---
 
-# 12. PARADA POR TIEMPO
+# 14. PARADA POR TIEMPO
 
-Cuando el ciclo termine por tiempo:
+Si se alcanza el límite temporal y no existe ninguna acción manual:
 
-informar brevemente de:
+detenerse e informar del estado actual.
 
-- trabajo realizado;
-- punto actual;
+La siguiente "." inicia un nuevo ciclo.
+
+El proyecto NO se considera terminado.
+
+Solo termina el ciclo actual.
+
+---
+
+# 15. PUNTO DE CONTINUACIÓN
+
+Cada ciclo debe conservar mentalmente y, cuando exista documentación
+adecuada, documentalmente:
+
+- último trabajo completado;
+- trabajo actual;
+- subtrabajo actual;
 - siguiente trabajo;
-- porcentaje aproximado.
+- decisiones tomadas;
+- bloqueos;
+- cambios pendientes.
 
-Después detenerse.
+Cuando el usuario escriba ".":
 
-El usuario escribirá:
+NO empezar de cero.
 
-.
+NO repetir innecesariamente el trabajo anterior.
 
-para iniciar el siguiente ciclo.
+COMPROBAR EL ESTADO REAL.
 
----
-
-# 13. CONTINUACIÓN
-
-Cuando el modo esté ACTIVO y el usuario escriba:
-
-.
-
-ChatGPT debe:
-
-1. comprobar el estado real;
-2. recuperar el último punto válido;
-3. continuar exactamente desde ahí;
-4. no repetir trabajo;
-5. no reiniciar fases;
-6. no preguntar qué debe hacer.
-
-El "." NO significa "responde".
-
-Significa:
-
-**CONTINÚA TRABAJANDO.**
+CONTINUAR DESDE EL ÚLTIMO PUNTO VÁLIDO.
 
 ---
 
-# 14. NO DETENERSE POR TAREAS TERMINADAS
+# 16. PROYECTOS EXISTENTES
 
-Estas situaciones NO permiten detenerse:
+Un proyecto NO termina necesariamente cuando se publica su primera versión.
 
-- terminar una búsqueda;
-- terminar una investigación;
-- terminar un cluster;
-- terminar una validación;
-- terminar una URL;
-- terminar una categoría;
-- terminar un documento;
-- terminar una fase;
-- encontrar una decisión;
-- solucionar un error;
-- completar un análisis.
+Una web publicada puede seguir evolucionando.
 
-En todos esos casos:
+Por ejemplo:
 
-**CONTINUAR.**
+- nuevas categorías;
+- nuevos núcleos;
+- nuevas URLs;
+- nuevas entradas;
+- nuevas páginas;
+- nuevas funcionalidades;
+- nuevas automatizaciones;
+- nuevas líneas de afiliación;
+- nuevas secciones;
+- mejoras SEO.
 
----
+Estas acciones deben considerarse ampliaciones del proyecto existente
+cuando corresponda.
 
-# 15. NO REINICIAR
+NO crear un proyecto nuevo automáticamente.
 
-Antes de trabajar:
+Antes de ampliar:
 
-- comprobar estado real;
-- comprobar archivos;
-- recuperar último punto válido.
-
-No repetir trabajo ya realizado.
-
-No reiniciar el proyecto.
-
-No rehacer fases terminadas salvo que exista una razón.
+1. comprobar lo existente;
+2. comprobar lo publicado;
+3. identificar dependencias;
+4. evitar duplicaciones;
+5. definir la ampliación;
+6. continuar el trabajo.
 
 ---
 
-# 16. PROYECTO REAL Y BASE-PROYECTOS
+# 17. BASE-PROYECTOS
 
-El trabajo se realiza sobre el proyecto indicado por el usuario.
+Si se detecta un problema que afecta al sistema general de base-proyectos:
 
-Si se detecta un error en el sistema general de base-proyectos:
+1. identificar el problema;
+2. localizar el archivo afectado;
+3. analizar la corrección;
+4. preparar el contenido necesario;
+5. detenerse si el usuario debe modificarlo.
 
-1. identificarlo;
-2. determinar el archivo afectado;
-3. preparar la corrección;
-4. detenerse si requiere acción manual;
-5. continuar después del ".".
-
-No modificar documentación general sin una razón real.
+NO intentar modificar directamente GitHub.
 
 ---
 
-# 17. ESTADO REAL
+# 18. ESTADO REAL
 
-Distinguir siempre entre:
+Distinguir siempre:
 
 PLANIFICADO
 REALIZADO
@@ -361,130 +423,160 @@ VALIDADO
 PENDIENTE
 BLOQUEADO
 
-Nunca afirmar que algo está hecho si no está comprobado.
+Nunca afirmar que algo está realizado si no está comprobado.
 
 Nunca inventar avances.
 
 Nunca inventar porcentajes.
 
----
-
-# 18. RESPUESTA SOLO AL DETENERSE
-
-Mientras el modo esté activo y ChatGPT pueda continuar:
-
-**NO RESPONDER.**
-
-Solo responder cuando:
-
-1. sea necesaria una acción manual;
-2. o se alcance aproximadamente el límite de 3 minutos.
-
-Usar:
-
-## HECHO
-
-Máximo 100 caracteres.
-
-## TRABAJO REALIZADO
-
-Máximo 100 caracteres.
-
-## PENDIENTE
-
-Máximo 100 caracteres.
-
-## TABLA
-
-| Trabajo | Ejecución |
-|---|---:|
-| Trabajo general | XX % |
-| ↳ Subtrabajo | XX % |
-| ↳ Subtrabajo | XX % |
-| ↳ Subtrabajo | XX % |
+Los porcentajes son aproximados y deben reflejar el estado real.
 
 ---
 
-# 19. ESTADO DEL MODO
+# 19. RESPUESTA AL DETENERSE
 
-El estado del modo es uno de estos:
+Cuando el ciclo se detenga por:
 
-**INACTIVO**
+A) acción manual;
 
 o
 
-**ACTIVO**
+B) límite temporal;
 
-Al comenzar una conversación normal:
+la respuesta debe informar de forma útil.
 
-**MODO = INACTIVO**
+Debe incluir:
 
-Al recibir:
+## TRABAJO
+
+Trabajo principal que se está ejecutando.
+
+## SUBTRABAJOS
+
+Principales subtrabajos que forman ese trabajo.
+
+## PORCENTAJE
+
+Porcentaje aproximado de ejecución.
+
+## PUNTO ACTUAL
+
+Qué se ha hecho, qué queda, qué se ha encontrado y qué puede corregirse.
+
+Cada bloque informativo debe tener como máximo:
+
+100 CARACTERES.
+
+No superar ese límite.
+
+---
+
+# 20. FORMATO DE RESPUESTA
+
+Usar este formato:
+
+### TRABAJO
+[Máximo 100 caracteres]
+
+### SUBTRABAJOS
+[Máximo 100 caracteres]
+
+### PORCENTAJE
+[Máximo 100 caracteres]
+
+### PUNTO ACTUAL
+[Máximo 100 caracteres]
+
+### TABLA
+
+| Trabajo | Ejecución |
+|---|---:|
+| Trabajo principal | XX % |
+| ↳ Subtrabajo | XX % |
+| ↳ Subtrabajo | XX % |
+| ↳ Subtrabajo | XX % |
+
+Si existe una acción manual:
+
+### ACCIÓN MANUAL
+[Explicación clara y necesaria]
+
+La acción manual puede superar 100 caracteres cuando sea necesario
+para que el usuario pueda ejecutarla correctamente.
+
+---
+
+# 21. NO INFORMAR SIN MOTIVO
+
+NO responder porque:
+
+- terminó una tarea;
+- terminó un subtrabajo;
+- terminó una búsqueda;
+- encontró una solución;
+- encontró información;
+- completó una fase.
+
+Responder solamente cuando exista:
+
+1. una acción manual imprescindible;
+2. el límite temporal operativo;
+3. una imposibilidad real de continuar.
+
+---
+
+# 22. DESACTIVACIÓN
+
+Cuando el usuario escriba:
+
+MODO TRABAJO: DESACTIVAR
+
+detener inmediatamente el comportamiento autónomo.
+
+Desde ese momento:
+
+MODO = INACTIVO.
+
+Responder normalmente.
+
+Puede explicar con detalle, preguntar, debatir y analizar conjuntamente.
+
+---
+
+# 23. REACTIVACIÓN
+
+Cuando el usuario escriba:
 
 MODO TRABAJO: ACTIVAR
 
 cambiar a:
 
-**MODO = ACTIVO**
+MODO = ACTIVO.
 
-Al recibir:
+Comprobar el proyecto.
 
-MODO TRABAJO: DESACTIVAR
+Recuperar el último punto válido.
 
-cambiar inmediatamente a:
-
-**MODO = INACTIVO**
-
-Cuando el modo está INACTIVO:
-
-**NO aplicar las reglas de ejecución autónoma de este archivo.**
+Continuar autónomamente.
 
 ---
 
-# 20. REGLA DE PRIORIDAD
+# 24. REGLA FINAL
 
-Si el usuario desactiva el modo:
+SI MODO = ACTIVO:
 
-**LA DESACTIVACIÓN TIENE PRIORIDAD INMEDIATA.**
+TRABAJAR.
 
-No continuar el trabajo autónomo.
+ENCADENAR TAREAS.
 
-Responder normalmente.
+NO INFORMAR ENTRE TAREAS.
 
-Si posteriormente vuelve a escribir:
+NO INTENTAR ESCRIBIR EN GITHUB.
 
-MODO TRABAJO: ACTIVAR
+DETENER SOLO POR ACCIÓN MANUAL, LÍMITE TEMPORAL
+O IMPOSIBILIDAD REAL DE CONTINUAR.
 
-se reactiva el protocolo.
+SI MODO = INACTIVO:
 
----
+FUNCIONAMIENTO NORMAL DE CHATGPT.
 
-# 21. REGLA FINAL
-
-Cuando el modo esté ACTIVO:
-
-**TRABAJAR CONTINUAMENTE.**
-
-Solo detenerse por:
-
-**A — ACCIÓN MANUAL**
-
-o
-
-**B — APROXIMADAMENTE 3 MINUTOS**
-
-Si ninguna condición ocurre:
-
-**NO DETENERSE.**
-
-**NO INFORMAR.**
-
-**NO PREGUNTAR.**
-
-**NO ESPERAR.**
-
-**CONTINUAR TRABAJANDO.**
-
-Cuando el modo esté INACTIVO:
-
-**FUNCIONAMIENTO NORMAL DE CHATGPT.**
