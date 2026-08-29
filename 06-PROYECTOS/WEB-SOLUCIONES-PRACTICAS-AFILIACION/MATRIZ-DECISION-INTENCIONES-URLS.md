@@ -123,6 +123,18 @@ URL:
 
 "/senderismo/que-llevar/"
 
+Posibles subintenciones
+
+- ruta de un día
+- ruta larga
+- invierno
+- verano
+- montaña
+- lluvia
+- niños
+
+Estas variantes no deben convertirse todavía automáticamente en URLs.
+
 ---
 
 S3 — Mochilas de senderismo
@@ -351,6 +363,7 @@ Consultas
 - esterilla camping
 - aislante camping
 - esterilla montaña
+- esterilla R-Value
 
 Intención: comercial
 
@@ -358,7 +371,7 @@ Necesidad: aislamiento y comodidad para dormir.
 
 Decisión: 🟡 PENDIENTE
 
-Motivo: comprobar demanda independiente frente a saco + descanso.
+Motivo: existe una necesidad diferenciada y potencial comercial, pero todavía debe comprobarse la suficiente demanda independiente antes de convertirla en URL definitiva.
 
 ---
 
@@ -446,6 +459,8 @@ Intención: preparación + comercial
 
 Necesidad: saber qué equipo comprar para comenzar.
 
+SERP: existen guías de equipo y kits comerciales de iniciación.
+
 Decisión: 🟢 CREAR
 
 URL:
@@ -491,29 +506,88 @@ Necesidad: elegir carrete.
 
 Decisión: 🟡 PENDIENTE
 
-Motivo: validar volumen y evitar fragmentación excesiva de equipamiento.
+Motivo: aunque existe una intención comercial clara, debe comprobarse si conviene una URL independiente o si la información debe integrarse en la guía de equipo básico y/o en las páginas de modalidades.
 
 ---
 
-P5 — Técnicas de pesca
+P5A — Spinning
 
 Consultas
 
 - cómo pescar a spinning
+- spinning principiantes
+- pesca spinning
+- equipo spinning principiante
+- caña spinning principiante
+- señuelos spinning
+- cómo empezar a pescar spinning
+
+Intención: aprendizaje + comercial
+
+Necesidad: aprender una modalidad concreta y elegir el equipo adecuado.
+
+SERP: existen guías específicas de spinning para principiantes, con equipo, técnica, montaje y escenarios diferenciados.
+
+Decisión: 🟢 CREAR
+
+Tipo: guía práctica + guía de compra
+
+URL:
+
+"/pesca/spinning/"
+
+Nota: no tratar spinning simplemente como una sección de "técnicas de pesca". La evidencia actual muestra una intención suficientemente diferenciada para investigarla y desarrollarla como unidad propia.
+
+---
+
+P5B — Surfcasting
+
+Consultas
+
+- cómo pescar a surfcasting
+- surfcasting principiantes
+- pesca surfcasting
+- equipo surfcasting
+- caña surfcasting
+- carrete surfcasting
+- cómo empezar surfcasting
+
+Intención: aprendizaje + comercial
+
+Necesidad: aprender una modalidad concreta y elegir el equipo adecuado.
+
+SERP: existen guías específicas de surfcasting para principiantes, con equipo, montaje, cebos, lance y lectura de playa.
+
+Decisión: 🟢 CREAR
+
+Tipo: guía práctica + guía de compra
+
+URL:
+
+"/pesca/surfcasting/"
+
+Nota: no tratar surfcasting simplemente como una sección de "técnicas de pesca". La evidencia actual muestra una intención suficientemente diferenciada para investigarla y desarrollarla como unidad propia.
+
+---
+
+P5C — Otras técnicas de pesca
+
+Consultas
+
 - cómo pescar a fondo
-- cómo pescar con flotador
+- pesca con flotador
 - pesca desde costa
 - pesca en río
 - pesca en mar
-- surfcasting
+- otras modalidades
 
 Intención: aprendizaje
 
-Necesidad: aprender una técnica concreta.
+Necesidad: aprender otras técnicas o decidir qué modalidad practicar.
 
 Decisión: 🟡 PENDIENTE
 
-Motivo: requiere una investigación específica de SERP para determinar qué técnicas justifican URL independiente.
+Motivo: no crear todavía URLs individuales. Investigar primero cada modalidad y determinar si existe suficiente demanda y diferenciación.
 
 ---
 
@@ -577,7 +651,7 @@ Intención: solución específica
 
 Necesidad: cultivar disponiendo de poco espacio.
 
-SERP: existen guías específicas de balcón.
+SERP: existen guías específicas de huerto urbano y balcón.
 
 Decisión: 🟢 CREAR
 
@@ -624,7 +698,7 @@ Necesidad: elegir recipiente adecuado.
 
 Decisión: 🟡 PENDIENTE
 
-Motivo: determinar si merece URL independiente o debe integrarse en "huerto/balcon/".
+Motivo: determinar si merece URL independiente o debe integrarse en "/huerto/balcon/".
 
 ---
 
@@ -731,6 +805,7 @@ Decisión: 🟡 PENDIENTE
 8. RESUMEN DE DECISIONES
 
 Cluster| Decisión
+
 Senderismo principiantes| 🟢 CREAR
 Senderismo qué llevar| 🟢 CREAR
 Senderismo mochilas| 🟢 CREAR
@@ -738,6 +813,7 @@ Senderismo calzado| 🟢 CREAR
 Senderismo ropa| 🟡 PENDIENTE
 Senderismo seguridad| 🟣 SECCIÓN
 Senderismo organizar mochila| 🟣 SECCIÓN
+
 Acampada principiantes| 🟢 CREAR
 Acampada qué llevar| 🟢 CREAR
 Tiendas de campaña| 🟢 CREAR
@@ -745,18 +821,23 @@ Sacos de dormir| 🟢 CREAR
 Esterillas| 🟡 PENDIENTE
 Cocina camping| 🟢 CREAR
 Iluminación camping| 🟣 SECCIÓN
+
 Pesca principiantes| 🟢 CREAR
 Pesca equipo básico| 🟢 CREAR
 Cañas| 🟢 CREAR
 Carretes| 🟡 PENDIENTE
-Técnicas pesca| 🟡 PENDIENTE
+Spinning| 🟢 CREAR
+Surfcasting| 🟢 CREAR
+Otras técnicas de pesca| 🟡 PENDIENTE
 Licencias pesca| 🟡 PENDIENTE
+
 Huerto principiantes| 🟢 CREAR
 Huerto balcón| 🟢 CREAR
 Qué plantar| 🟢 CREAR
 Macetas| 🟡 PENDIENTE
 Riego| 🟣 SECCIÓN
 Problemas/plagas| 🟡 PENDIENTE
+
 Emergencias casa| 🟡 PENDIENTE
 Apagones| 🟡 PENDIENTE
 Emergencias coche| 🟡 PENDIENTE
@@ -765,7 +846,7 @@ Emergencias coche| 🟡 PENDIENTE
 
 9. PRIMERA ARQUITECTURA CANDIDATA
 
-Todavía no es definitiva, pero la matriz permite ver ya una estructura mucho más limpia:
+Todavía no es definitiva, pero la matriz permite ver ya una estructura más limpia:
 
 /
 ├── senderismo/
@@ -784,20 +865,26 @@ Todavía no es definitiva, pero la matriz permite ver ya una estructura mucho m�
 ├── pesca/
 │   ├── principiantes/
 │   ├── equipo-basico/
-│   └── canas/
+│   ├── canas/
+│   ├── spinning/
+│   └── surfcasting/
 │
 └── huerto/
     ├── principiantes/
     ├── balcon/
     └── que-plantar/
 
-URLs aprobadas provisionalmente: 13
+URLs aprobadas provisionalmente: 15
 
-URLs pendientes: 9
+URLs pendientes: 10
 
 Secciones absorbidas: 4
 
 Descartadas: 0 por ahora.
+
+IMPORTANTE:
+
+Estas URLs siguen siendo provisionales hasta completar la validación global.
 
 ---
 
@@ -823,6 +910,10 @@ Si demuestra una necesidad independiente:
 
 → CREAR
 
+Si una modalidad, categoría o subtema demuestra una intención suficientemente diferenciada:
+
+→ puede convertirse en un cluster independiente y seguir su propia validación.
+
 ---
 
 11. SIGUIENTE FASE
@@ -835,8 +926,10 @@ Una vez consolidada esta primera matriz:
 4. validar demanda cuantitativa cuando sea posible;
 5. revisar monetización;
 6. revisar canibalización;
-7. cerrar arquitectura;
-8. generar el mapa definitivo de URLs.
+7. revisar arquitectura entre clusters;
+8. cerrar arquitectura;
+9. generar el mapa definitivo de URLs.
 
-Estado actual: MATRIZ PRELIMINAR COMPLETADA.
+Estado actual: MATRIZ PRELIMINAR EN VALIDACIÓN.
+
 
