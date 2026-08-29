@@ -1,201 +1,147 @@
 # PROTOCOLO DE EJECUCIÓN
 
-## Objetivo
+## 1. OBJETIVO
 
-Definir el proceso para ejecutar un proyecto desde la idea inicial hasta su validación y puesta en funcionamiento.
+Este protocolo define cómo debe ejecutarse un proyecto utilizando `base-proyectos`.
 
-El protocolo debe permitir adaptar el proceso al tipo de proyecto sin perder control, trazabilidad, validación ni capacidad de reutilización.
+Su función es impedir:
 
----
+- construir demasiado pronto;
+- confundir hipótesis con hechos;
+- generar URLs sin intención real;
+- generar páginas por volumen matemático;
+- repetir trabajo existente;
+- crear contenido sin demanda validada cuando la demanda sea relevante;
+- tomar decisiones importantes sin registrarlas.
 
-# FASES
+El sistema debe trabajar de forma:
 
-1. Analizar la idea.
-2. Evaluar viabilidad.
-3. Definir requisitos.
-4. Determinar necesidades de investigación.
-5. Descubrir y validar demanda cuando corresponda.
-6. Definir las intenciones y oportunidades cuando corresponda.
-7. Tomar decisiones.
-8. Diseñar la arquitectura.
-9. Seleccionar módulos y plantillas.
-10. Planificar la implementación.
-11. Construir.
-12. Probar.
-13. Corregir.
-14. Validar.
-15. Desplegar.
-16. Monitorizar.
-17. Mejorar.
-
-Cada fase debe producir un resultado verificable antes de considerar que la fase está completada.
-
-El proceso debe avanzar de forma iterativa cuando una prueba detecte errores, nueva información o nuevas necesidades.
+- ordenada;
+- verificable;
+- modular;
+- reutilizable;
+- escalable;
+- orientada a resultados.
 
 ---
 
-# 1. ANALIZAR LA IDEA
+# 2. PRINCIPIO GENERAL
 
-Determinar:
+No construir primero para descubrir después si existe una oportunidad.
 
-- qué se quiere construir;
-- qué problema se pretende resolver;
-- quién es el usuario;
-- cuál es el resultado esperado;
-- cuál es el modelo de negocio cuando corresponda;
-- qué hipótesis existen;
-- qué información falta;
-- qué decisiones deberán tomarse.
+Siempre que sea posible:
 
-No comenzar la construcción mientras existan incertidumbres fundamentales que puedan cambiar la solución.
+PROBLEMA
+
+↓
+
+INVESTIGACIÓN
+
+↓
+
+DEMANDA
+
+↓
+
+INTENCIONES
+
+↓
+
+VALIDACIÓN
+
+↓
+
+OPORTUNIDADES
+
+↓
+
+SOLUCIÓN
+
+↓
+
+ARQUITECTURA
+
+↓
+
+CONSTRUCCIÓN
+
+↓
+
+MEDICIÓN
+
+↓
+
+MEJORA
 
 ---
 
-# 2. EVALUAR VIABILIDAD
+# 3. ESTADO DE LA INFORMACIÓN
 
-Realizar el estudio previo correspondiente.
+Toda información relevante debe clasificarse como:
 
-Evaluar, cuando sea aplicable:
+- CONFIRMADO
+- PROBABLE
+- HIPÓTESIS
+- DESCARTADO
+- DESCONOCIDO
+- PENDIENTE DE VALIDACIÓN
 
+No presentar una hipótesis como un hecho.
+
+No completar información desconocida mediante invención.
+
+---
+
+# 4. PRIMERA FASE: ENTENDER EL PROYECTO
+
+Antes de construir:
+
+1. entender la idea;
+2. identificar el objetivo;
+3. identificar el usuario;
+4. identificar el problema;
+5. identificar la solución propuesta;
+6. identificar el modelo de negocio;
+7. identificar las restricciones;
+8. identificar los recursos disponibles;
+9. identificar las dependencias;
+10. comprobar si existe documentación previa.
+
+Si falta información crítica, detenerse y solicitarla o investigarla.
+
+---
+
+# 5. VALIDAR ANTES DE CONSTRUIR
+
+Determinar qué debe validarse.
+
+Según el proyecto puede ser necesario investigar:
+
+- existencia del problema;
 - demanda;
+- intención de búsqueda;
 - competencia;
-- oportunidad;
-- modelo de negocio;
+- mercado;
+- viabilidad económica;
+- dificultad técnica;
+- posibilidad de automatización;
+- capacidad de adquisición;
 - monetización;
-- costes;
-- recursos;
-- tecnología;
-- riesgos;
-- capacidad de ejecución;
-- escalabilidad;
-- requisitos legales;
-- dependencias.
+- riesgos.
 
-Cuando el proyecto dependa de tráfico procedente de búsquedas, la existencia de demanda debe investigarse de acuerdo con las reglas de descubrimiento de demanda.
+No asumir que una idea es viable porque técnicamente puede construirse.
 
 ---
 
-# 3. DEFINIR REQUISITOS
+# 6. DESCUBRIMIENTO DE DEMANDA E INTENCIONES
 
-Definir los requisitos funcionales y no funcionales.
-
-Los requisitos deben indicar, cuando corresponda:
-
-- usuarios;
-- funcionalidades;
-- contenido;
-- datos;
-- integraciones;
-- monetización;
-- SEO;
-- páginas;
-- arquitectura;
-- automatizaciones;
-- seguridad;
-- analítica;
-- criterios de éxito.
-
-Los requisitos pueden modificarse si una investigación posterior demuestra que la hipótesis inicial era incorrecta.
-
----
-
-# 4. DETERMINAR LAS NECESIDADES DE INVESTIGACIÓN
-
-Antes de diseñar la arquitectura debe determinarse qué información necesita el proyecto para tomar decisiones correctamente.
-
-Preguntas mínimas:
-
-- ¿La demanda ya está definida?
-- ¿Las necesidades de los usuarios son conocidas?
-- ¿Las URLs ya están justificadas?
-- ¿Existe una matriz predeterminada?
-- ¿El proyecto depende de SEO?
-- ¿Depende de búsquedas de usuarios?
-- ¿Necesitamos descubrir problemas o necesidades?
-- ¿Necesitamos descubrir keywords?
-- ¿Necesitamos analizar intenciones?
-- ¿Necesitamos descubrir nuevas oportunidades?
-
-El objetivo es evitar tanto la investigación insuficiente como la investigación innecesaria.
-
----
-
-# 5. DESCUBRIMIENTO Y VALIDACIÓN DE DEMANDA
-
-## 5.1 CUÁNDO ACTIVAR EL MÓDULO
-
-Cuando el proyecto dependa de conocer qué buscan o necesitan los usuarios, debe utilizarse:
+Cuando el proyecto dependa de búsquedas de usuarios, utilizar:
 
 `02-MODULOS/DESCUBRIMIENTO-DEMANDA-E-INTENCIONES.md`
 
-Esto incluye, entre otros:
+La secuencia será:
 
-- webs de afiliación;
-- webs de contenido;
-- generación de leads;
-- servicios;
-- e-commerce;
-- directorios;
-- comparadores;
-- marketplaces;
-- proyectos locales;
-- SaaS dependientes de adquisición orgánica;
-- herramientas o recursos basados en búsquedas;
-- otros proyectos donde las búsquedas determinen la arquitectura o adquisición.
-
----
-
-## 5.2 DETERMINAR SI LA DEMANDA YA ESTÁ ESTRUCTURADA
-
-Debe distinguirse entre dos situaciones.
-
-### CASO A — DEMANDA O ESTRUCTURA PREDEFINIDA
-
-Si el proyecto dispone de una estructura previamente justificada, puede utilizarse como punto de partida.
-
-Ejemplo:
-
-`servicio + localidad`
-
-En este caso no es obligatorio descubrir desde cero todas las URLs mediante keyword research.
-
-Sin embargo, puede realizarse investigación para:
-
-- validar la estructura;
-- detectar variantes;
-- detectar nuevas intenciones;
-- descubrir oportunidades;
-- priorizar;
-- evitar páginas innecesarias;
-- mejorar la arquitectura.
-
-### CASO B — DEMANDA NO DEFINIDA
-
-Si todavía no se conoce:
-
-- qué busca el usuario;
-- qué problemas tiene;
-- qué necesidades existen;
-- qué soluciones espera;
-- qué páginas deberían existir;
-
-debe ejecutarse el módulo de descubrimiento de demanda antes de fijar definitivamente la arquitectura.
-
----
-
-# 6. PROCESO DE DESCUBRIMIENTO DE DEMANDA
-
-Cuando corresponda:
-
-IDEA
-
-↓
-
-PROBLEMA / MERCADO
-
-↓
-
-INVESTIGACIÓN DE DEMANDA
+IDEA / TEMA / SERVICIO
 
 ↓
 
@@ -229,6 +175,8 @@ TIPOS DE PÁGINA / SOLUCIÓN
 
 ARQUITECTURA
 
+El sistema debe descubrir la demanda antes de generar masivamente URLs.
+
 ---
 
 # 7. REGLA KEYWORD → INTENCIÓN → URL
@@ -246,6 +194,8 @@ Una URL debe existir cuando exista una razón real para que esa página satisfag
 Por tanto:
 
 `KEYWORD ≠ INTENCIÓN ≠ URL`
+
+La cantidad de keywords no determina la cantidad de URLs.
 
 ---
 
@@ -267,9 +217,70 @@ Las búsquedas deben agruparse por necesidad e intención, no solamente por simi
 
 ---
 
-# 9. DECIDIR LAS URLS
+# 9. MATRIZ DE DECISIÓN DE INTENCIÓN
 
-A partir de las intenciones y oportunidades debe determinarse:
+Antes de convertir las intenciones detectadas en arquitectura o URLs, debe utilizarse:
+
+`02-MODULOS/MATRIZ-DECISION-INTENCION-URL.md`
+
+cuando el proyecto genere, reorganice o priorice páginas a partir de búsquedas.
+
+La matriz debe determinar para cada intención si corresponde:
+
+- CREAR URL;
+- AGRUPAR;
+- CONVERTIR EN SECCIÓN;
+- DESCARTAR;
+- MANTENER PENDIENTE DE VALIDACIÓN.
+
+Debe comprobar, cuando corresponda:
+
+- realidad de la intención;
+- relación con el proyecto;
+- diferenciación respecto a otras intenciones;
+- demanda;
+- SERP;
+- necesidad;
+- posibilidad de aportar valor;
+- solapamiento;
+- potencial comercial;
+- necesidad de URL independiente.
+
+La matriz es un mecanismo de decisión.
+
+No es simplemente documentación.
+
+No se debe pasar directamente de keywords a URLs cuando esta fase sea necesaria.
+
+---
+
+# 10. AGRUPACIÓN Y CLUSTERS
+
+Después de analizar las intenciones, agrupar consultas que respondan a la misma necesidad.
+
+Agrupar cuando:
+
+- la necesidad sea esencialmente la misma;
+- la respuesta esperada sea equivalente;
+- exista un fuerte solapamiento de SERP;
+- una misma página pueda resolver adecuadamente las consultas;
+- separar las consultas genere páginas redundantes.
+
+Separar cuando:
+
+- cambie la necesidad;
+- cambie significativamente la solución;
+- cambie la intención;
+- la SERP sea diferente;
+- exista una intención comercial independiente;
+- exista una intención local real;
+- una página independiente aporte valor claramente superior.
+
+---
+
+# 11. DECIDIR LAS URLS
+
+A partir de las intenciones validadas y de la matriz de decisión debe determinarse:
 
 - qué URLs crear;
 - qué URLs agrupar;
@@ -284,16 +295,16 @@ A partir de las intenciones y oportunidades debe determinarse:
 
 La arquitectura no debe derivarse automáticamente de una lista de keywords.
 
-Cuando el proyecto dependa de la generación o reorganización de URLs a partir de intenciones de búsqueda, debe utilizarse:
+Cuando el proyecto dependa de la generación o reorganización de URLs a partir de intenciones de búsqueda, utilizar:
 
 `02-MODULOS/GENERACION-ARQUITECTURA-URLS-POR-INTENCION.md`
 
-Este módulo convierte las intenciones y oportunidades detectadas en:
+Este módulo convierte las decisiones obtenidas en:
 
-- decisiones de páginas;
 - agrupaciones;
-- URLs;
+- decisiones de páginas;
 - tipos de página;
+- URLs;
 - prioridades;
 - arquitectura.
 
@@ -301,27 +312,147 @@ La decisión debe realizarse antes de pasar a la selección definitiva de planti
 
 ---
 
-# 10. DECISIONES
+# 12. REGLA CONTRA LA EXPLOSIÓN DE URLS
 
-Registrar las decisiones importantes en:
+No realizar combinaciones cartesianas de variables sin validación.
 
-`00-CONTROL/DECISIONES.md`
+Ejemplo incorrecto:
 
-Una decisión importante debe poder relacionarse con:
+`10 servicios × 1.000 localidades × 10 variantes = 100.000 URLs`
 
-- problema;
-- evidencia;
-- investigación;
-- intención;
-- oportunidad;
-- solución;
-- consecuencia.
+La cantidad matemática de combinaciones no demuestra que existan 100.000 intenciones.
 
-Cuando la investigación de demanda cambie una hipótesis inicial, debe registrarse el cambio.
+Primero:
+
+CONSULTAS
+
+↓
+
+INTENCIONES
+
+↓
+
+CLUSTERS
+
+↓
+
+VALIDACIÓN
+
+↓
+
+DECISIÓN
+
+↓
+
+URLS
+
+Solo las combinaciones justificadas pueden convertirse en páginas.
 
 ---
 
-# 11. DISEÑAR LA ARQUITECTURA
+# 13. LOCALIZACIÓN
+
+La combinación:
+
+`SERVICIO + LOCALIDAD`
+
+no debe convertirse automáticamente en una URL.
+
+Antes debe determinarse:
+
+- si existe intención local;
+- si la localidad es relevante;
+- si existe demanda;
+- si existen resultados locales;
+- si existe diferenciación;
+- si puede aportarse valor;
+- si tiene sentido comercial.
+
+La presencia de una localidad en una consulta no demuestra por sí sola que deba existir una landing.
+
+---
+
+# 14. VARIABLES
+
+Las variables detectadas deben analizarse individualmente.
+
+Ejemplos:
+
+- localidad;
+- modalidad;
+- categoría;
+- tamaño;
+- presupuesto;
+- duración;
+- nivel;
+- temporada;
+- clima;
+- tipo de usuario;
+- contexto.
+
+Una variable solo debe convertirse en dimensión de URL cuando:
+
+- modifica realmente la intención;
+- existe evidencia suficiente;
+- aporta valor;
+- puede mantenerse;
+- no genera una explosión artificial de páginas.
+
+---
+
+# 15. OPORTUNIDADES
+
+Una intención validada no implica automáticamente una página.
+
+Determinar si existe una oportunidad real teniendo en cuenta:
+
+- demanda;
+- problema;
+- competencia;
+- posibilidad de aportar valor;
+- monetización;
+- dificultad;
+- recursos;
+- prioridad.
+
+Clasificar las oportunidades como:
+
+- ALTA;
+- MEDIA;
+- BAJA;
+- PENDIENTE.
+
+Registrar las razones de las decisiones importantes.
+
+---
+
+# 16. TIPOS DE PÁGINA
+
+El tipo de página debe derivarse de la intención.
+
+Ejemplos:
+
+`INTENCIÓN INFORMATIVA → GUÍA`
+
+`INTENCIÓN DE PREPARACIÓN → GUÍA / CHECKLIST`
+
+`INTENCIÓN COMPARATIVA → COMPARATIVA`
+
+`INTENCIÓN COMERCIAL → RECOMENDACIÓN / RANKING`
+
+`INTENCIÓN TRANSACCIONAL → PÁGINA COMERCIAL`
+
+`INTENCIÓN LOCAL → LANDING LOCAL`
+
+`INTENCIÓN DE PRODUCTO → REVIEW / FICHA`
+
+`INTENCIÓN COMPLEJA → SOLUCIÓN INTEGRAL`
+
+No asumir que todas las URLs necesitan la misma plantilla.
+
+---
+
+# 17. DISEÑAR LA ARQUITECTURA
 
 La arquitectura debe diseñarse después de disponer de la información necesaria para determinar qué debe existir.
 
@@ -332,6 +463,10 @@ DEMANDA
 ↓
 
 INTENCIONES
+
+↓
+
+MATRIZ DE DECISIÓN
 
 ↓
 
@@ -349,6 +484,10 @@ TIPOS DE PÁGINA
 
 ARQUITECTURA
 
+↓
+
+URLS
+
 Cuando exista una estructura predeterminada y justificada:
 
 ESTRUCTURA
@@ -361,9 +500,11 @@ VALIDACIÓN
 
 ARQUITECTURA
 
+La arquitectura debe representar las necesidades del usuario y la lógica del proyecto.
+
 ---
 
-# 12. SELECCIONAR MÓDULOS Y PLANTILLAS
+# 18. SELECCIONAR MÓDULOS Y PLANTILLAS
 
 Antes de construir:
 
@@ -372,13 +513,13 @@ Antes de construir:
 3. identificar módulos necesarios en `02-MODULOS/`;
 4. identificar plantillas aplicables en `03-PLANTILLAS/`;
 5. comprobar que no exista documentación equivalente;
-6. definir las dependencias.
+6. definir dependencias.
 
-El módulo de descubrimiento de demanda debe activarse cuando las condiciones descritas anteriormente lo requieran.
+Los módulos de demanda, intención y arquitectura deben activarse cuando las condiciones descritas anteriormente lo requieran.
 
 ---
 
-# 13. DISEÑO DE PÁGINAS Y PLANTILLAS
+# 19. DISEÑO DE PÁGINAS Y PLANTILLAS
 
 Cuando existan diferentes intenciones, no asumir que todas las URLs deben utilizar exactamente la misma estructura.
 
@@ -399,191 +540,109 @@ Ejemplo:
 
 `INTENCIÓN COMPARATIVA → PLANTILLA COMPARATIVA`
 
-`INTENCIÓN TRANSACCIONAL → PLANTILLA COMERCIAL`
-
 `INTENCIÓN LOCAL → PLANTILLA LOCAL`
 
-Una misma plantilla puede reutilizarse cuando realmente sea adecuada.
+---
+
+# 20. CONSTRUCCIÓN
+
+Construir únicamente después de disponer de:
+
+- problema suficientemente entendido;
+- solución definida;
+- arquitectura validada;
+- decisiones registradas;
+- módulos identificados;
+- dependencias conocidas.
+
+La construcción debe seguir el orden definido por la arquitectura y las prioridades.
 
 ---
 
-# 14. PLANIFICAR LA IMPLEMENTACIÓN
+# 21. AUTOMATIZACIÓN
 
-Definir:
+La automatización debe utilizarse para reducir trabajo repetitivo, no para sustituir la validación.
 
-- orden de construcción;
-- dependencias;
-- automatizaciones;
-- fuentes de datos;
-- herramientas;
-- APIs;
-- WordPress u otra tecnología;
-- generación de contenido;
-- generación de páginas;
-- analítica;
-- validaciones.
+Puede automatizar:
 
-Cuando existan muchas URLs, priorizar por:
+- descubrimiento;
+- recopilación de consultas;
+- clasificación inicial;
+- agrupación inicial;
+- extracción de datos;
+- generación de candidatos;
+- generación de estructuras;
+- creación de contenidos;
+- publicación;
+- medición;
+- actualización.
 
-- oportunidad;
-- demanda;
-- dificultad;
-- valor comercial;
-- capacidad de conversión;
-- recursos necesarios.
-
-No es obligatorio construir todas las URLs de una vez.
+Pero las decisiones críticas deben conservar trazabilidad.
 
 ---
 
-# 15. CONSTRUIR
+# 22. GENERACIÓN MASIVA
 
-Construir siguiendo:
+Antes de generar grandes cantidades de páginas comprobar:
 
-- requisitos;
-- decisiones;
-- arquitectura;
-- tipo de proyecto;
-- módulos;
-- plantillas;
-- reglas de calidad.
+- que la intención esté validada;
+- que exista una razón para cada página;
+- que no exista duplicación;
+- que no exista canibalización;
+- que las variables estén justificadas;
+- que la plantilla corresponda a la intención;
+- que pueda mantenerse la calidad;
+- que exista una estrategia de actualización.
 
-Cuando el proyecto sea escalable, reutilizar componentes y automatizaciones.
-
-La automatización no debe generar páginas únicamente por volumen.
-
-Cada página debe tener una función definida.
+Nunca generar miles de páginas únicamente porque el sistema puede hacerlo.
 
 ---
 
-# 16. PROBAR
+# 23. MEDICIÓN
 
-Ejecutar las pruebas correspondientes.
+Después de publicar:
 
-Comprobar, cuando aplique:
+- medir resultados;
+- comparar con hipótesis;
+- detectar páginas sin rendimiento;
+- detectar nuevas consultas;
+- detectar nuevas intenciones;
+- revisar conversiones;
+- revisar monetización;
+- revisar problemas técnicos;
+- revisar oportunidades.
 
-- funcionalidad;
-- arquitectura;
-- navegación;
-- contenido;
-- SEO;
-- datos;
-- automatizaciones;
-- integraciones;
-- rendimiento;
-- seguridad;
-- conversión.
+La arquitectura no es necesariamente definitiva.
+
+Los datos reales pueden justificar cambios.
 
 ---
 
-# 17. CORREGIR
+# 24. BUCLE DE APRENDIZAJE
 
-Cuando una prueba detecte un problema:
+El sistema debe funcionar como:
 
-1. registrar el problema;
-2. identificar la causa;
-3. determinar la corrección;
-4. aplicar la corrección;
-5. repetir la prueba.
-
-Si el problema procede de una hipótesis de demanda incorrecta:
-
-DATOS
+INVESTIGACIÓN
 
 ↓
 
-NUEVA INVESTIGACIÓN
+DECISIÓN
 
 ↓
 
-NUEVA INTENCIÓN
+CONSTRUCCIÓN
 
 ↓
-
-NUEVA DECISIÓN
-
-↓
-
-CORRECCIÓN
-
-↓
-
-VALIDACIÓN
-
----
-
-# 18. VALIDAR
-
-La fase se considera completada cuando existe evidencia suficiente de que el resultado cumple los criterios definidos.
-
-No basta con que el sistema funcione técnicamente.
-
-Debe comprobarse también que resuelve el problema previsto.
-
----
-
-# 19. VALIDACIÓN DE PROYECTOS BASADOS EN SEO
-
-Cuando el proyecto dependa de búsquedas, después de publicar deben analizarse:
-
-- impresiones;
-- clics;
-- posiciones;
-- consultas reales;
-- nuevas keywords;
-- nuevas intenciones;
-- páginas con tráfico;
-- páginas sin tráfico;
-- conversiones;
-- comportamiento del usuario.
-
-Los datos reales pueden modificar la arquitectura futura.
-
----
-
-# 20. DESPLEGAR
-
-Realizar el despliegue previsto cuando:
-
-- las pruebas necesarias hayan sido superadas;
-- los errores críticos estén resueltos;
-- la configuración esté comprobada;
-- la medición esté preparada.
-
----
-
-# 21. MONITORIZAR
-
-Monitorizar:
-
-- errores;
-- rendimiento;
-- tráfico;
-- conversiones;
-- costes;
-- disponibilidad;
-- seguridad;
-- comportamiento;
-- resultados SEO;
-- nuevas oportunidades.
-
----
-
-# 22. MEJORAR
-
-Los datos obtenidos deben alimentar nuevamente el sistema.
-
-Ejemplo:
 
 PUBLICACIÓN
 
 ↓
 
-DATOS REALES
+DATOS
 
 ↓
 
-NUEVAS CONSULTAS
+ANÁLISIS
 
 ↓
 
@@ -591,108 +650,164 @@ NUEVAS INTENCIONES
 
 ↓
 
-NUEVAS OPORTUNIDADES
+NUEVAS DECISIONES
 
 ↓
 
 MEJORA
 
+El proyecto debe aprender de sus propios datos.
+
+---
+
+# 25. DECISIONES
+
+Registrar las decisiones importantes en:
+
+`00-CONTROL/DECISIONES.md`
+
+Una decisión importante debe poder relacionarse con:
+
+- problema;
+- evidencia;
+- investigación;
+- intención;
+- oportunidad;
+- solución;
+- consecuencia.
+
+Cuando la investigación de demanda cambie una hipótesis inicial, debe registrarse el cambio.
+
+---
+
+# 26. DOCUMENTACIÓN
+
+Toda modificación estructural debe reflejarse en la documentación correspondiente.
+
+No crear documentos duplicados si ya existe uno adecuado.
+
+Antes de crear un nuevo archivo:
+
+1. buscar si existe uno equivalente;
+2. comprobar su función;
+3. determinar si debe modificarse;
+4. solo crear uno nuevo si existe una necesidad real.
+
+---
+
+# 27. CONTROL DE CALIDAD
+
+Antes de considerar una fase terminada comprobar:
+
+- ¿la información está validada?
+- ¿las hipótesis están identificadas?
+- ¿las intenciones están clasificadas?
+- ¿la matriz ha sido aplicada cuando corresponde?
+- ¿las URLs tienen una razón real?
+- ¿se ha evitado la generación artificial de páginas?
+- ¿la arquitectura es coherente?
+- ¿las decisiones importantes están registradas?
+- ¿los archivos están correctamente ubicados?
+- ¿las dependencias están resueltas?
+
+Si alguna respuesta crítica es "no", la fase no está terminada.
+
+---
+
+# 28. PRINCIPIO DE TRABAJO
+
+No avanzar por avanzar.
+
+Cada paso debe responder:
+
+1. ¿Qué sabemos?
+2. ¿Qué no sabemos?
+3. ¿Qué necesitamos validar?
+4. ¿Qué decisión debemos tomar?
+5. ¿Qué archivo o módulo corresponde?
+6. ¿Qué consecuencia tendrá?
+7. ¿Cuál es el siguiente paso mínimo útil?
+
+El objetivo no es producir muchos archivos ni muchas páginas.
+
+El objetivo es construir un sistema que permita tomar mejores decisiones y ejecutar proyectos reales de forma reproducible.
+
+---
+
+# 29. REGLA DE ORO
+
+Nunca:
+
+`IDEA → KEYWORDS → URLS → CONTENIDO`
+
+Cuando el proyecto dependa de demanda, utilizar:
+
+`IDEA`
+
 ↓
 
-NUEVAS PÁGINAS / CAMBIOS
+`DEMANDA`
 
----
+↓
 
-# CONTROL DEL PROYECTO
+`KEYWORDS / CONSULTAS`
 
-El estado del proyecto debe mantenerse sincronizado con:
+↓
 
-- `00-CONTROL/ESTADO.md`
-- `00-CONTROL/ROADMAP.md`
-- `00-CONTROL/DECISIONES.md`
-- `00-CONTROL/INVENTARIO-DOCUMENTOS.md`
+`INTENCIONES`
 
----
+↓
 
-# USO DE PLANTILLAS
+`PROBLEMAS / NECESIDADES`
 
-Las plantillas de `03-PLANTILLAS/` deben reutilizarse cuando sean aplicables.
+↓
 
-No se debe crear una estructura nueva si una plantilla existente puede resolver la necesidad sin introducir complejidad innecesaria.
+`SERP`
 
----
+↓
 
-# USO DE MÓDULOS
+`MATRIZ DE DECISIÓN`
 
-Los módulos de `02-MODULOS/` deben utilizarse cuando aporten una capacidad necesaria para el proyecto.
+↓
 
-Los módulos deben mantenerse independientes y reutilizables siempre que sea posible.
+`CLUSTERS`
 
-No se deben duplicar módulos para resolver una misma función.
+↓
 
----
+`OPORTUNIDADES`
 
-# TIPO DE PROYECTO
+↓
 
-Antes de iniciar la construcción debe identificarse el tipo de proyecto y consultar el documento correspondiente dentro de:
+`TIPOS DE PÁGINA`
 
-`04-TIPOS-PROYECTO/`
+↓
 
----
+`ARQUITECTURA`
 
-# FIXTURES
+↓
 
-Cuando exista un fixture aplicable en:
+`URLS`
 
-`05-FIXTURES/`
+↓
 
-debe utilizarse para validar que la metodología puede ejecutarse correctamente.
+`CONTENIDO`
 
----
+↓
 
-# VALIDACIÓN DEL PROCESO
+`PUBLICACIÓN`
 
-La finalización de una fase no debe basarse únicamente en que exista documentación.
+↓
 
-Debe existir evidencia suficiente de que el resultado funciona según los requisitos definidos.
+`MEDICIÓN`
 
----
+↓
 
-# CRITERIO DE FINALIZACIÓN
+`MEJORA`
 
-Un proyecto solo puede considerarse finalizado cuando:
+La keyword es una señal.
 
-- los requisitos principales están cubiertos;
-- las decisiones importantes están registradas;
-- las investigaciones necesarias se han realizado;
-- las hipótesis críticas han sido validadas cuando corresponda;
-- las pruebas necesarias se han ejecutado;
-- los errores críticos están resueltos;
-- el despliegue previsto se ha realizado cuando corresponda;
-- el resultado ha sido validado;
-- la documentación necesaria está actualizada.
+La intención es la unidad de decisión.
 
----
+La página es una solución.
 
-# REGLA FINAL
-
-El protocolo debe responder siempre a cuatro preguntas:
-
-1. ¿Qué problema estamos resolviendo?
-2. ¿Qué evidencia tenemos?
-3. ¿Qué debemos construir?
-4. ¿Cómo sabremos que funciona?
-
-Cuando las respuestas dependan de conocer qué buscan o necesitan los usuarios, debe utilizarse:
-
-`02-MODULOS/DESCUBRIMIENTO-DEMANDA-E-INTENCIONES.md`
-
-Cuando la demanda o estructura ya esté suficientemente definida, no debe realizarse investigación redundante.
-
-La investigación debe ser proporcional a la incertidumbre.
-
-La arquitectura debe derivarse de las necesidades reales del proyecto.
-
-La automatización debe escalar valor, no únicamente volumen.
-
-
+La URL es la representación técnica de esa solución.
