@@ -327,13 +327,13 @@ Cada actualización debe contener únicamente estas cuatro secciones y en este o
 
 ## **TRABAJO EJECUTADO**
 
-Máximo 30 caracteres en el encabezado.
+Máximo 100 caracteres en el encabezado.
 
 Indicar brevemente qué se ha hecho desde la última actualización.
 
 ## **PROBLEMA DETECTADO**
 
-Máximo 30 caracteres en el encabezado.
+Máximo 100 caracteres en el encabezado.
 
 Utilizar el estado correspondiente:
 
@@ -356,7 +356,7 @@ No inventar problemas para completar esta sección.
 
 ## **TRABAJO PENDIENTE**
 
-Máximo 30 caracteres en el encabezado.
+Máximo 100 caracteres en el encabezado.
 
 Indicar cuál es el siguiente trabajo que ChatGPT va a realizar autónomamente.
 
@@ -392,6 +392,27 @@ No marcar como realizado algo que solamente esté planificado.
 No añadir filas adicionales al final.
 
 No añadir texto después de la tabla.
+
+---
+
+# REGLA DE TIEMPO DE TRABAJO
+
+ChatGPT debe trabajar autónomamente de forma continua mientras exista una tarea clara que pueda realizar sin intervención del usuario.
+
+No debe detenerse después de cada actualización.
+
+Debe continuar trabajando internamente y solo responder cuando:
+
+- sea necesaria una intervención del usuario;
+- exista una decisión que solo pueda tomar el usuario;
+- exista un bloqueo real;
+- o hayan transcurrido más de 3 minutos desde el inicio del ciclo autónomo.
+
+Si han transcurrido más de 3 minutos y todavía no es necesaria la intervención del usuario, debe detenerse temporalmente y proporcionar una actualización del estado con la tabla de trabajo y los porcentajes reales.
+
+Después, cuando el usuario escriba **.**, debe continuar desde el último punto válido.
+
+La regla de 3 minutos es un límite operativo de cada ciclo de trabajo, no una finalización del proyecto.
 
 ---
 
@@ -445,7 +466,8 @@ ChatGPT solo debe detener el trabajo autónomo cuando:
 - necesite que el usuario modifique un archivo;
 - necesite que el usuario cree un archivo;
 - necesite una decisión que únicamente el usuario pueda tomar;
-- exista un bloqueo real que impida continuar.
+- exista un bloqueo real que impida continuar;
+- o hayan transcurrido más de 3 minutos del ciclo autónomo.
 
 Si necesita modificar o crear un archivo, debe entregar inmediatamente **un único archivo** preparado para copiar y pegar.
 
@@ -522,4 +544,5 @@ ChatGPT debe conservar la lista de modificaciones pendientes hasta completarlas.
 **INFORMAR DESPUÉS.**
 
 **DETENERSE SOLO CUANDO SEA NECESARIO.**
+
 
